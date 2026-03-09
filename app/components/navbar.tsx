@@ -48,7 +48,7 @@ function Navbar() {
       >
         {/* Left: 2 links inside a bordered box */}
         <div
-          className="hidden md:flex gap-6"
+          className="hidden md:flex gap-6 text-[#fdf9dc]"
           style={{
            
             padding: '6px 16px',
