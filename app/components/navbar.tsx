@@ -48,23 +48,23 @@ function Navbar() {
       >
         {/* Left: 2 links inside a bordered box */}
         <div
-          className="hidden md:flex gap-6 text-[#fdf9dc]"
+          className="hidden md:flex gap-6 "
           style={{
            
             padding: '6px 16px',
           }}
         >
           <a
-            className="font-neue-light text-[19px] hover:underline transition"
+            className="font-neue-light text-[18px] hover:underline transition text-[#fdf9dc]"
             href="#stories"
-            style={{ color: menuLinkColor }}
+            
           >
             Stories
           </a>
           <a
-            className="font-neue-light text-[19px] hover:underline transition"
+            className="font-neue-light text-[18px] hover:underline transition text-[#fdf9dc]"
             href="#about"
-            style={{ color: menuLinkColor }}
+            
           >
             About
           </a>
@@ -79,7 +79,7 @@ function Navbar() {
 
         {/* Right: Menu button */}
         <button
-          className="font-neue-light text-[16px] md:text-[20px] text-[#fdf9dc] bg-transparent border-none outline-none cursor-pointer ml-auto"
+          className="font-neue-light text-[16px] md:text-[18px] text-[#fdf9dc] bg-transparent border-none outline-none cursor-pointer ml-auto"
           onClick={() => setOpen(true)}
         >
           MENU
