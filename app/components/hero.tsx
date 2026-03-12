@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useState } from "react";
 import Button from "./button";
+import Link from "next/link";
 
 const heroText = [
   "Your Wedding: A Story Unfolds",
@@ -30,7 +31,7 @@ function Hero() {
       />
 
       {/* Overlay for better text visibility */}
-      <div className="absolute inset-0 bg-black/60 z-10" />
+      <div className="absolute inset-0 bg-black/40 z-10" />
 
       {/* Animated Text */}
       <div
@@ -57,7 +58,13 @@ function Hero() {
         ))}
          
          <div className="mt-20 animate-hero-fade">
-          <Button variant="outline">Tell us your story</Button>
+          <Link
+          href="/contact"
+          className={`group inline-flex items-center gap-3 font-neue-medium text-[#fdf9dc] text-sm tracking-wide border border-[#fdf9dc]/40 px-6 py-3  backdrop-blur-sm bg-white/10 hover:bg-white/20 hover:border-[#fdf9dc]/70 transition-all duration-300 `}
+          style={{ transitionDelay: '0.42s' }}
+        >
+         Tell us your story
+        </Link>
         </div>
        
       </div>

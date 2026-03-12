@@ -2,7 +2,7 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className="bg-[#fdf9dc] w-full border-t border-[#5a5a4c] pt-8 pb-4 px-4 md:px-12">
+    <footer className="bg-[#fdf9dc] w-full border-t pt-8 pb-4 px-4 md:px-12">
       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 md:gap-12">
         {/* Left: Brand and links */}
         <div className="flex flex-col gap-4 min-w-[180px] md:min-w-[220px]">
@@ -28,7 +28,7 @@ function Footer() {
             className="px-6 md:px-8 py-3 md:py-4 border border-[#5a5a4c] font-neue-regular text-base md:text-lg text-[#5a5a4c] bg-transparent hover:bg-black hover:text-white transition-colors duration-300 w-full text-center"
             style={{ fontFamily: 'var(--font-neue-regular)' }}
           >
-            Follow my adventures on Instagram
+            Follow us on Instagram
           </a>
         </div>
         {/* Right: Info */}

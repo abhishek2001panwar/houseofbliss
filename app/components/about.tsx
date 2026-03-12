@@ -1,60 +1,100 @@
 'use client'
 import React, { useState } from 'react'
 import Button from './button'
+import Link from 'next/link'
 
 const images = [
-  'https://www.houseofbliss.co.in/wp-content/uploads/2025/06/Untitled-design-10.webp',
-  'https://www.houseofbliss.co.in/wp-content/uploads/2025/06/Untitled-design-11.webp'
+  '/about1.webp',
+  '/about2.webp'
 ]
 
-const content = {
-  title: "CLASSIC MOMENT'S\nCAPTURED WITH EDGE",
-  description: `Blending artistic vision with emotional storytelling, House of Bliss stands at the forefront of modern wedding documentation. For over ten years, their lens has captured not just moments, but memories - preserving love stories in frames that last forever. House of Bliss has redefined the visual narrative of Indian weddings time and again. For nearly a decade, they have crafted timeless photographs and films that live on in the hearts of thousands.`
-}
+const services = [
+  {
+    number: '',
+    title: "CLASSIC MOMENT'S CAPTURED WITH EDGE",
+    description: `Blending artistic vision with emotional storytelling, House of Bliss stands at the forefront of modern wedding documentation. For over ten years, their lens has captured not just moments, but memories. Blending artistic vision with emotional storytelling, House of Bliss stands at the forefront of modern wedding documentation. For nearly a decade, they have crafted timeless photographs and films that live on in the hearts of thousands`,
+    link: 'Explore more'
+  },
+  
+ 
+]
 
-function About() {
+export function About() {
   const [active, setActive] = useState(0)
 
-  // Flip animation handler
-  const handleFlip = () => {
-    setActive((prev) => (prev + 1) % images.length)
-  }
-
   return (
-    <section className="w-full min-h-[70vh] bg-[#41453D] flex items-center justify-center py-12 px-4 md:px-20">
-      <div className="max-w-5xl w-full flex flex-col md:flex-row items-center gap-8 md:gap-12">
-        {/* Left: Flipping image and number */}
-        <div className="relative w-full max-w-[340px] h-[340px] md:h-[440px] flex flex-col items-center justify-center mb-8 md:mb-0">
-          <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-            <div className="text-[#fdf9dc] font-editorial text-[2rem] sm:text-[2.5rem] md:text-[3.5rem] absolute left-[-40px] sm:left-[-60px] top-0">{active + 1}</div>
-          </div>
+    <section className="relative w-full h-screen bg-[#41453D] flex items-center justify-center py-52 px-4 md:px-16">
+      <div className="max-w-6xl w-full flex flex-col md:flex-row gap-12 md:gap-16">
+
+        {/* Left: Overlapping/offset image collage */}
+        <div className="relative w-full md:w-[45%] min-h-[480px] flex-shrink-0">
+          {/* Back image - offset top-right */}
           <div
-            className="w-full h-full rounded-xl overflow-hidden shadow-lg bg-black transition-transform duration-700 cursor-pointer"
-            style={{
-              transform: `perspective(800px) rotateY(${active * 180}deg)`,
-              transition: 'transform 0.7s cubic-bezier(0.77,0,0.175,1)'
-            }}
-            onClick={handleFlip}
+            className="absolute top-0 right-0 w-[75%] h-[80%] rounded-sm overflow-hidden shadow-xl z-10"
           >
             <img
-              src={images[active]}
+              src={images[0]}
               alt="House of Bliss Wedding"
               className="w-full h-full object-cover"
-              style={{ transition: 'opacity 0.7s cubic-bezier(0.77,0,0.175,1)' }}
+            />
+          </div>
+          {/* Front image - offset bottom-left, overlapping */}
+          <div
+            className="absolute bottom-0 left-0 w-[58%] h-[65%] rounded-sm overflow-hidden shadow-2xl z-20"
+          >
+            <img
+              src={images[1]}
+              alt="House of Bliss Wedding"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
-        {/* Right: Content */}
-        <div className="flex-1 flex flex-col justify-center">
-          <h2 className="font-editorial text-[#fdf9dc] text-[1.5rem] sm:text-[2.2rem] md:text-[3rem] mb-6 whitespace-pre-line">{content.title}</h2>
-          <p className="font-neue-light text-[#fdf9dc] text-[1rem] sm:text-[1.1rem] mb-8 max-w-xl">{content.description}</p>
-          <a href="#contact" className="inline-block font-neue-medium text-[#54564c] px-6 py-3">
-            <Button variant="filled">Get in Touch</Button>
-          </a>
+
+        {/* Right: Numbered service list */}
+        <div className="flex-1 flex flex-col justify-center gap-10">
+          {services.map((service, i) => (
+            <div key={i} className="flex gap-6 items-start border-t border-[#fdf9dc]/10 pt-8 first:border-t-0 first:pt-0">
+              {/* Number */}
+              <span className="font-editorial text-[#fdf9dc]/40 text-[1.4rem] mt-1 w-8 flex-shrink-0">
+                {service.number}
+              </span>
+              {/* Content */}
+              <div className="flex flex-col gap-3">
+                <h3 className="font-editorial text-[#fdf9dc] text-[1.3rem] sm:text-[2.6rem] leading-tight">
+                  {service.title}
+                </h3>
+                <p className="font-neue-light text-[#fdf9dc]/70 text-[0.95rem] leading-relaxed max-w-md">
+                  {service.description}
+                </p>
+                <Link
+                  href="/about"
+                  className="font-neue-medium text-[#fdf9dc] text-[1.2rem] underline underline-offset-4 decoration-[#fdf9dc]/40 hover:decoration-[#fdf9dc] transition-all w-fit mt-1"
+                >
+                  {service.link}
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
+
+      </div>
+       <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+        <svg
+          viewBox="0 0 1140 130"
+          className="w-full h-[120px]"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,120 
+               C200,160 350,40 520,80
+               C700,120 900,30 1100,70
+               C1250,100 1350,70 1440,90
+               L1440,180
+               L0,180 Z"
+            fill="#F4F1E5"
+          />
+        </svg>
       </div>
     </section>
   )
 }
-
-export default About

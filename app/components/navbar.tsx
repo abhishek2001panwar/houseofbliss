@@ -1,14 +1,15 @@
-'use client';
-import React, { useState, useEffect } from 'react';
+"use client";
+import Link from "next/link";
+import React, { useState, useEffect } from "react";
 
-const overlayBg = '#fdf9dc';
-const menuLinkColor = '#5a5a4c';
+const overlayBg = "#fdf9dc";
+const menuLinkColor = "#5a5a4c";
 const menuLinks = [
-  'Home',
-  'About',
-  'Portfolio',
-  'Blogs',
-  'Say hi',
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Portfolio", href: "/portfolio" },
+  { name: "Blogs", href: "/blogs" },
+  { name: "Say hi", href: "/contact" },
 ];
 
 function Navbar() {
@@ -31,8 +32,8 @@ function Navbar() {
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
   return (
@@ -40,42 +41,43 @@ function Navbar() {
       <nav
         className="fixed top-0 left-0 w-full flex items-center justify-between py-8 md:py-6 px-4 md:px-20 z-50 transition-all duration-300"
         style={{
-          backdropFilter: scrolled ? 'blur(16px) saturate(1.4)' : 'none',
-          WebkitBackdropFilter: scrolled ? 'blur(16px) saturate(1.4)' : 'none',
-          backgroundColor: scrolled ? 'rgba(0, 0, 0, 0.25)' : 'transparent',
-          boxShadow: scrolled ? '0 1px 0 0 rgba(255,255,255,0.08)' : 'none',
+          backdropFilter: scrolled ? "blur(16px) saturate(1.4)" : "none",
+          WebkitBackdropFilter: scrolled ? "blur(16px) saturate(1.4)" : "none",
+          backgroundColor: scrolled ? "rgba(0, 0, 0, 0.25)" : "transparent",
+          boxShadow: scrolled ? "0 1px 0 0 rgba(255,255,255,0.08)" : "none",
         }}
       >
         {/* Left: 2 links inside a bordered box */}
         <div
           className="hidden md:flex gap-6 "
           style={{
-           
-            padding: '6px 16px',
+            padding: "6px 16px",
           }}
         >
           <a
             className="font-neue-light text-[18px] hover:underline transition text-[#fdf9dc]"
-            href="#stories"
-            
+            href="/portfolio"
           >
-            Stories
+            Portfolio
           </a>
           <a
             className="font-neue-light text-[18px] hover:underline transition text-[#fdf9dc]"
-            href="#about"
-            
+            href="/about"
           >
             About
           </a>
         </div>
 
         {/* Center: Brand — absolutely centered so it's always in the middle */}
-        <div className="absolute left-1/2 -translate-x-1/2">
-          <span className="font-editorial text-[1.35rem] md:text-[2rem] text-white tracking-tight select-none whitespace-nowrap">
-            HOUSE OF BLISS
-          </span>
-        </div>
+        
+          <div className="absolute left-1/2 -translate-x-1/2">
+          <Link href={"/"}>
+            <span className="font-editorial text-[1.3rem] md:text-[2rem] text-white tracking-tight select-none whitespace-nowrap">
+              HOUSE OF BLISS
+            </span>
+             </Link>
+          </div>
+       
 
         {/* Right: Menu button */}
         <button
@@ -88,8 +90,11 @@ function Navbar() {
 
       {/* Full-page overlay menu */}
       <div
-        className={`fixed top-0 left-0 w-full h-full z-40 flex flex-col items-center bg-[#fdf9dc] transition-transform duration-700 ${open ? 'translate-y-0' : 'translate-y-full'}`}
-        style={{ fontFamily: 'var(--font-editorial)', pointerEvents: open ? 'auto' : 'none' }}
+        className={`fixed top-0 left-0 w-full h-full z-[60] flex flex-col items-center bg-[#fdf9dc] transition-transform duration-700 ${open ? "translate-y-0" : "translate-y-full"}`}
+        style={{
+          fontFamily: "var(--font-editorial)",
+          pointerEvents: open ? "auto" : "none",
+        }}
       >
         <button
           className="absolute top-8 right-8 text-[2rem] text-[#5a5a4c] bg-transparent border-none cursor-pointer font-neue-light"
@@ -101,21 +106,22 @@ function Navbar() {
         <div className="mt-24 flex flex-col items-center gap-8 w-full">
           {menuLinks.map((link, idx) => (
             <div
-              key={link}
+              key={link.href}
               className="transition-all duration-700"
               style={{
                 transitionDelay: `${0.1 + idx * 0.1}s`,
                 opacity: open ? 1 : 0,
-                transform: open ? 'translateY(0)' : 'translateY(100px)',
+                transform: open ? "translateY(0)" : "translateY(100px)",
               }}
             >
-              <a
-                href={`#${link.replace(/\s+/g, '').toLowerCase()}`}
-                className="font-editorial text-[clamp(2rem,6vw,4rem)] hover:underline transition"
+              <Link
+                href={`${link.href}`}
+                className="font-editorial text-[clamp(2rem,6vw,4rem)] hover:underline transition duration-200"
                 style={{ color: menuLinkColor }}
+                onClick={() => setOpen(false)}
               >
-                {link}
-              </a>
+                {link.name}
+              </Link>
             </div>
           ))}
         </div>
