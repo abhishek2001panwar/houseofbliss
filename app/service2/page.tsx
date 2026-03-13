@@ -525,7 +525,7 @@ function page() {
           <div
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 17,
+              fontSize: 18,
               lineHeight: 1.85,
               color: "#3a3a35",
             }}
@@ -558,15 +558,7 @@ function page() {
           ...twoColGrid,
         }}
       >
-        {/* Left col: image */}
-        <ParallaxImg
-          src="/about/about1.png"
-          alt="photographer with camera"
-          height={480}
-          speed={0.055}
-        />
-
-        {/* Right col: text */}
+         {/* Right col: text */}
         <div style={{ paddingTop: isMobile ? 0 : 40 }}>
           <h2
             style={{
@@ -584,7 +576,7 @@ function page() {
           <div
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 17,
+              fontSize: 18,
               lineHeight: 1.85,
               color: "#3a3a35",
             }}
@@ -608,6 +600,15 @@ function page() {
             </p>
           </div>
         </div>
+        {/* Left col: image */}
+        <ParallaxImg
+          src="/about/about1.png"
+          alt="photographer with camera"
+          height={480}
+          speed={0.055}
+        />
+
+       
       </section>
 
       <section
@@ -646,7 +647,7 @@ function page() {
           <div
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 17,
+              fontSize: 18,
               lineHeight: 1.85,
               color: "#3a3a35",
             }}
@@ -712,7 +713,7 @@ function page() {
           <div
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 17,
+              fontSize: 18,
               lineHeight: 1.85,
               color: "#3a3a35",
             }}
@@ -864,7 +865,7 @@ Book Your Pre-Wedding Shoot with House of Bliss
           <div
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 17,
+              fontSize: 18,
               lineHeight: 1.85,
               color: "#3a3a35",
             }}

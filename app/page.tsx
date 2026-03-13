@@ -1,5 +1,6 @@
 import { About } from "./components/about";
 import About2 from "./components/about2";
+import AuraMemorySection from "./components/AuraMemorySection";
 import Contact from "./components/contact";
 import Cta from "./components/cta";
 import FAQ from "./components/faq";
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <About />
       <Gallery />
+      <AuraMemorySection  />
       <About2 />
       <Stories />
       <Testimonial />

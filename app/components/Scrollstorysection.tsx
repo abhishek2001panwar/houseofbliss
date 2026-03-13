@@ -148,12 +148,15 @@ export default function ScrollStorySection({
       >
         <span
           style={{
-            fontFamily: "var(--font-neue-light, sans-serif)",
-            fontSize: 10,
-            letterSpacing: "0.22em",
+            fontFamily: "var(--font-editorial, serif)",
+            fontSize: 25,
+            letterSpacing: "0.1em",
             textTransform: "uppercase",
-            color: accentColor,
-            opacity: 0.6,
+            color: "#000000",
+            opacity: "",
+            fontWeight: 700,
+            fontStyle: "bold",
+            
           }}
         >
           {tag}
@@ -163,7 +166,7 @@ export default function ScrollStorySection({
             width: 36,
             height: 1,
             background: accentColor,
-            opacity: 0.18,
+            opacity: "",
           }}
         />
       </div>
@@ -172,14 +175,15 @@ export default function ScrollStorySection({
       {lines && (
         <div
           style={{
-            fontFamily: "var(--font-editorial, serif)",
-            fontWeight: 300,
+            fontFamily: "var(--font-neue-light)",
+            fontWeight: 200,
             // ← smaller than before, clearly body-ish size not heading
-            fontSize: "clamp(17px, 2vw, 26px)",
+            fontSize: 20,
             letterSpacing: "-0.01em",
             // ← wide paragraph width
-            maxWidth: "min(960px, 90%)",
+            maxWidth: "min(960px, 96%)",
             color: textColor,
+            
           }}
         >
           {lines.map((line, i) => (
@@ -201,7 +205,7 @@ export default function ScrollStorySection({
               <p
                 style={{
                   fontFamily: "var(--font-neue-light, sans-serif)",
-                  fontSize: "clamp(13px, 1.15vw, 15px)",
+                  fontSize: 17,
                   lineHeight: 1.85,
                   color: textColor,
                   opacity: 0.68,
@@ -242,7 +246,7 @@ export default function ScrollStorySection({
                         margin: "0 0 5px",
                         fontFamily: "var(--font-editorial, serif)",
                         fontWeight: 300,
-                        fontSize: "clamp(15px, 1.5vw, 20px)",
+                        fontSize: 20,
                         color: textColor,
                         letterSpacing: "-0.01em",
                         lineHeight: 1.25,
@@ -254,7 +258,7 @@ export default function ScrollStorySection({
                       style={{
                         margin: 0,
                         fontFamily: "var(--font-neue-light, sans-serif)",
-                        fontSize: "clamp(12px, 1.05vw, 13.5px)",
+                        fontSize: 17,
                         lineHeight: 1.82,
                         color: textColor,
                         opacity: 0.5,
@@ -275,7 +279,7 @@ export default function ScrollStorySection({
                 style={{
                   marginTop: "clamp(28px, 4.5vh, 48px)",
                   fontFamily: "var(--font-neue-light, sans-serif)",
-                  fontSize: "clamp(13px, 1.15vw, 15px)",
+                  fontSize: 18,
                   lineHeight: 1.85,
                   color: textColor,
                   opacity: 0.68,
@@ -289,13 +293,13 @@ export default function ScrollStorySection({
       )}
 
       {/* ── bottom rule ── */}
-      <div
+      {/* <div
         style={{
           marginTop: "clamp(40px, 7vh, 72px)",
           height: 1,
           background: "rgba(30,30,26,0.09)",
         }}
-      />
+      /> */}
     </div>
   );
 }

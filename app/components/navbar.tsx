@@ -356,10 +356,10 @@ function Navbar({ theme = "light", color }: NavbarProps) {
       >
         {/* Left: desktop links — all use `ink` color */}
         <div className="hidden md:flex gap-5 items-center">
-          <a className="uppercase font-neue-light text-[15px] hover:underline transition"
-            style={{ color: ink }} href="/portfolio">Portfolio</a>
-          <a className="uppercase font-neue-light text-[15px] hover:underline transition"
-            style={{ color: ink }} href="/about">About</a>
+          <Link className="uppercase font-neue-light text-[15px] hover:underline transition"
+            style={{ color: ink }} href="/portfolio">Portfolio</Link>
+          <Link className="uppercase font-neue-light text-[15px] hover:underline transition"
+            style={{ color: ink }} href="/about">About</Link>
 
           <button onClick={() => setServicesOpen((p) => !p)} aria-expanded={servicesOpen}
             className="flex items-center gap-1.5 focus:outline-none group">

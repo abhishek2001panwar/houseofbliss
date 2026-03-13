@@ -13,7 +13,7 @@ const Contact = () => {
     <>
     <Navbar theme="light"/>
       <section className="bg-[#41453D] pt-32">
-        <div className="max-w-8xl mx-auto px-7 ">
+        <div className="max-w-7xl mx-auto px-7 ">
           <div className="flex flex-col md:flex-row items-start justify-center pt-3">
             <div className="flex-1 flex flex-col justify-center md:pr-8">
               <h2 className="font-editorial text-[#fdf9dc] text-5xl md:text-6xl mb-8">

@@ -501,19 +501,19 @@ function page() {
           <div
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
+              fontSize: 17,
               lineHeight: 1.85,
               color: "#3a3a35",
             }}
           >
             <p style={{ margin: "0 0 12px" }}>
               At House of Bliss, we know your Wedding Day is not simply an
-              occasion—it is a classic story, an emotion, and a visual
+              occasion-it is a classic story, an emotion, and a visual
               celebration
             </p>
             <p style={{ margin: "0 0 12px" }}>
               As specialists in cinematic wedding photography, we create and
-              craft every heartbeat, tear, laugh, and promise—all under the
+              craft every heartbeat, tear, laugh, and promise-all under the
               authority we have earned in directing and the artistry of an
               artist's eye.
             </p>
@@ -578,7 +578,7 @@ function page() {
           <p
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
+              fontSize: 18,
               lineHeight: 1.85,
               color: "#3a3a35",
               margin: 0,
@@ -643,7 +643,7 @@ function page() {
           <p
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 15.5,
+              fontSize: 18,
               lineHeight: 1.85,
               color: "#3a3a35",
               margin: "0 0 20px",
@@ -689,7 +689,7 @@ function page() {
           <p
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
+              fontSize: 18,
               lineHeight: 1.85,
               color: "#3a3a35",
               margin: 0,

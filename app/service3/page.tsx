@@ -547,7 +547,7 @@ function page() {
           <div
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
+              fontSize: 18,
               lineHeight: 1.85,
               color: "#3a3a35",
             }}
@@ -622,7 +622,7 @@ function page() {
           <p
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
+              fontSize: 18,
               lineHeight: 1.85,
               color: "#3a3a35",
               margin: 0,
@@ -633,12 +633,42 @@ function page() {
             fleeting, unscripted moments of laughter, tears, and ritualistic
             embraces with you are what make your day special.
           </p>
-          <h2>This is why couples choose us…</h2>
-          <li>Custom Wedding Photography Packages</li>
-          <li>Over Ten Years of Experience </li>
-          <li>Utilizing The Latest Equipment & Techniques</li>
-          <li>Creative & Candid Photography Style</li>
-          <li>A Team of Leading Wedding Photographers in Bangalore</li>
+         <div className="max-w-3xl mx-auto mt-10">
+
+  <h2 className="text-2xl mb-6 text-[#41453D]">
+    This is why couples choose us…
+  </h2>
+
+  <ul className="space-y-4 text-lg text-[#41453D]">
+    
+    <li className="flex items-start gap-3">
+      <span className="text-xl">✦</span>
+      <span>Custom Wedding Photography Packages</span>
+    </li>
+
+    <li className="flex items-start gap-3">
+      <span className="text-xl">✦</span>
+      <span>Over Ten Years of Experience</span>
+    </li>
+
+    <li className="flex items-start gap-3">
+      <span className="text-xl">✦</span>
+      <span>Utilizing The Latest Equipment & Techniques</span>
+    </li>
+
+    <li className="flex items-start gap-3">
+      <span className="text-xl">✦</span>
+      <span>Creative & Candid Photography Style</span>
+    </li>
+
+    <li className="flex items-start gap-3">
+      <span className="text-xl">✦</span>
+      <span>A Team of Leading Wedding Photographers in Bangalore</span>
+    </li>
+
+  </ul>
+
+</div>
         </div>
 
         <div style={{ order: isMobile ? 0 : 1 }}>
@@ -690,7 +720,7 @@ function page() {
           <div
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
+              fontSize: 18,
               lineHeight: 1.85,
               color: "#3a3a35",
             }}
@@ -701,19 +731,37 @@ function page() {
               This is why we have structured our pricing and packages so that we
               do our best to be accommodating. Included in our packages are:
             </p>
-            <p style={{ margin: "0 0 12px" }}>
-              <li>Partial wedding packages and full wedding packages</li>
-              <li>Pre-Wedding & Post-Wedding packages</li>
-              <li>
-                Add-ons like albums, reels, drone package, and a short
-                teaser{" "}
-              </li>
-            </p>
-            <p style={{ margin: "0 0 12px" }}>
-              We would like to believe that we are one of the cheapest wedding
-              photographers in Bangaluru without sacrificing creativity and
-              professionalism.{" "}
-            </p>
+           <div className="max-w-3xl mx-auto text-[#41453D] leading-relaxed">
+
+ 
+  <ul className="space-y-4 text-lg text-[#41453D]">
+    
+    <li className="flex items-start gap-3">
+      <span className="text-xl">✦</span>
+      <span>Partial wedding packages and full wedding packages</span>
+    </li>
+
+    <li className="flex items-start gap-3">
+      <span className="text-xl">✦</span>
+      <span>Over Ten Years of Experience</span>
+    </li>
+
+    <li className="flex items-start gap-3">
+      <span className="text-xl">✦</span>
+      <span>Utilizing The Latest Equipment & Techniques</span>
+    </li>
+
+   
+
+  </ul>
+
+  <p className="text-lg mb-6 mt-3">
+    We would like to believe that we are one of the cheapest wedding
+    photographers in Bangaluru without sacrificing creativity and
+    professionalism.
+  </p>
+
+</div>
           </div>
         </div>
       </section>
@@ -742,8 +790,8 @@ function page() {
             marginTop: 12,
             fontFamily: "var(--font-neue-light, sans-serif)",
             fontSize: 11,
-            letterSpacing: "0.1em",
-            color: "rgba(30,30,26,0.45)",
+            letterSpacing: "0.12em",
+            color: "#000000",
             textTransform: "uppercase",
             fontStyle: "bold",
           }}
@@ -796,7 +844,7 @@ function page() {
           <p
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
+              fontSize: 18,
               lineHeight: 1.85,
               color: "#3a3a35",
               margin: 0,
@@ -915,7 +963,7 @@ function page() {
           <div
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
+              fontSize: 18,
               lineHeight: 1.85,
               color: "#3a3a35",
             }}
@@ -989,7 +1037,7 @@ function page() {
               fontFamily: "var(--font-neue-light, sans-serif)",
               fontSize: 11,
               letterSpacing: "0.1em",
-              color: "rgba(30,30,26,0.45)",
+              color: "#000000",
               textTransform: "uppercase",
               fontStyle: "bold",
             }}
@@ -1023,7 +1071,7 @@ function page() {
               fontFamily: "var(--font-neue-light, sans-serif)",
               fontSize: 11,
               letterSpacing: "0.1em",
-              color: "rgba(30,30,26,0.45)",
+              color: "#000000",
               textTransform: "uppercase",
               fontStyle: "bold",
             }}

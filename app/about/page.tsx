@@ -232,7 +232,6 @@ function ManifestoCarousel() {
         </div>
       ))}
 
-      {/* prev / next */}
       {["prev", "next"].map((dir) => (
         <button
           key={dir}
@@ -263,24 +262,11 @@ function ManifestoCarousel() {
             outline: "none",
             transition: "background 0.2s, border-color 0.2s",
           }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLElement).style.background =
-              "rgba(255,255,255,0.22)";
-            (e.currentTarget as HTMLElement).style.borderColor =
-              "rgba(255,255,255,0.8)";
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLElement).style.background =
-              "rgba(255,255,255,0.1)";
-            (e.currentTarget as HTMLElement).style.borderColor =
-              "rgba(255,255,255,0.4)";
-          }}
         >
           {dir === "prev" ? "←" : "→"}
         </button>
       ))}
 
-      {/* dots */}
       <div
         style={{
           position: "absolute",
@@ -310,7 +296,6 @@ function ManifestoCarousel() {
         ))}
       </div>
 
-      {/* counter */}
       <div
         style={{
           position: "absolute",
@@ -344,565 +329,458 @@ function page() {
 
   return (
     <>
-    <Navbar theme="dark"/>
-    <div
-      style={{ background: "#fefee8", minHeight: "100vh", overflowX: "hidden" }}
-    >
-      {/* ── HERO ── */}
+      {/* ── RESPONSIVE STYLES ── */}
+      <style>{`
+        .about-hero-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0 60px;
+          align-items: end;
+          padding-bottom: 56px;
+        }
+        .about-intro-section {
+          padding: 80px 7%;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0 60px;
+          align-items: start;
+        }
+        .about-promise-section {
+          padding: 80px 7%;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0 60px;
+          align-items: center;
+        }
+        .about-bangalore-section {
+          padding: 80px 7%;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0 80px;
+          align-items: start;
+        }
+        .about-travel-header {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0 60px;
+          align-items: start;
+          margin-bottom: 48px;
+        }
+        .about-travel-images {
+          display: grid;
+          grid-template-columns: 1.6fr 1fr 1.2fr;
+          gap: 16px;
+          align-items: end;
+        }
+        /* hide extra travel images on mobile */
+        .travel-img-hide-mobile { display: block; }
+
+        @media (max-width: 768px) {
+          .about-hero-grid {
+            grid-template-columns: 1fr;
+            gap: 24px 0;
+            padding-bottom: 36px;
+          }
+          .about-intro-section {
+            padding: 48px 5%;
+            grid-template-columns: 1fr;
+            gap: 32px 0;
+          }
+          .about-intro-section .intro-text {
+            padding-top: 0 !important;
+          }
+          .about-promise-section {
+            padding: 48px 5%;
+            grid-template-columns: 1fr;
+            gap: 32px 0;
+          }
+          /* On mobile: image comes first (order trick) */
+          .about-promise-section .promise-text { order: 2; }
+          .about-promise-section .promise-img  { order: 1; }
+          .about-bangalore-section {
+            padding: 48px 5%;
+            grid-template-columns: 1fr;
+            gap: 32px 0;
+          }
+          .about-bangalore-section .bangalore-img { order: 1; }
+          .about-bangalore-section .bangalore-text { order: 2; padding-top: 0 !important; }
+          .about-travel-header {
+            grid-template-columns: 1fr;
+            gap: 16px 0;
+            margin-bottom: 28px;
+          }
+          .about-travel-images {
+            grid-template-columns: 1fr;
+            gap: 12px;
+          }
+          .travel-img-hide-mobile { display: none; }
+          .about-hero-padding {
+            padding: 110px 5% 0 !important;
+          }
+          .about-travel-section {
+            padding: 48px 5% !important;
+          }
+        }
+      `}</style>
+
+      <Navbar theme="dark" />
       <div
-      className="pt-32"
-        style={{
-          padding: "190px 7% 0",
-          borderBottom: "1px solid rgba(30,30,26,0.1)",
-        }}
+        style={{ background: "#fefee8", minHeight: "100vh", overflowX: "hidden" }}
       >
+        {/* ── HERO ── */}
         <div
+          className="about-hero-padding"
           style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "0 60px",
-            alignItems: "end",
-            paddingBottom: 56,
+            padding: "190px 7% 0",
+            borderBottom: "1px solid rgba(30,30,26,0.1)",
           }}
         >
-          {/* left: big heading */}
-          <div>
-           
-            <h1
+          <div className="about-hero-grid">
+            {/* left: big heading */}
+            <div>
+              <h1
+                style={{
+                  fontFamily: "var(--font-editorial, serif)",
+                  fontWeight: 300,
+                  fontSize: "clamp(42px, 9vw, 120px)",
+                  color: "#1e1e1a",
+                  margin: 0,
+                  lineHeight: 0.88,
+                  letterSpacing: "-0.03em",
+                  transform: `translateY(${-scrollY * 0.08}px)`,
+                  transition: "transform 0.05s linear",
+                }}
+              >
+                About
+                <br />
+                House of Bliss
+              </h1>
+            </div>
+
+            {/* right: subtitle */}
+            <p
               style={{
-                fontFamily: "var(--font-editorial, serif)",
-                fontWeight: 300,
-                fontSize: "clamp(52px, 9vw, 120px)",
-                color: "#1e1e1a",
-                margin: 0,
-                lineHeight: 0.88,
-                letterSpacing: "-0.03em",
-                transform: `translateY(${-scrollY * 0.08}px)`,
-                transition: "transform 0.05s linear",
-              }}
-            >
-              About
-              <br />
-              House of Bliss
-            </h1>
-          </div>
-
-          {/* right: subtitle */}
-          <p
-            style={{
-              fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: "clamp(14px, 1.4vw, 17px)",
-              lineHeight: 1.75,
-              color: "#3a3a35",
-              margin: 0,
-              maxWidth: 440,
-            }}
-          >
-            If I'm thirdwheeling you on one of the most important days of your
-            lives, you'd probably like to know who I am and why I do what I do.
-          </p>
-        </div>
-      </div>
-
-      {/* ── INTRO: two images + text block ── */}
-      <section
-        style={{
-          padding: "80px 7%",
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "0 60px",
-          alignItems: "start",
-        }}
-      >
-        {/* Left col: stacked images */}
-        <div
-          style={{
-            display: "",
-            gridTemplateColumns: "1.4fr 1fr",
-            gap: 16,
-            alignItems: "end",
-          }}
-        >
-          <ParallaxImg
-            src="/about/about1.png"
-            alt="photographer with camera"
-            height={480}
-            speed={0.055}
-          />
-        
-        </div>
-
-        {/* Right col: text */}
-        <div style={{ paddingTop: 40 }}>
-          <h2
-            style={{
-              fontFamily: "var(--font-editorial, serif)",
-              fontWeight: 300,
-              fontSize: "clamp(26px, 3vw, 42px)",
-              color: "#1e1e1a",
-              margin: "0 0 28px",
-              letterSpacing: "-0.02em",
-              lineHeight: 1.15,
-            }}
-          >
-            Where Love Finds Its Most Beautiful Frame
-          </h2>
-          <div
-            style={{
-              fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
-              lineHeight: 1.85,
-              color: "#3a3a35",
-            }}
-          >
-            <p style={{ margin: "0 0 12px" }}>
-              Here in House of Bliss, we believe that all love stories should be
-              told truthfully, emotionally, and artistically.
-            </p>
-
-            <p style={{ margin: "0 0 12px" }}>
-              As one of the most trusted names in wedding storytelling, we take
-              great pride in being able to offer the best wedding photography in
-              Bangalore so we can continue to make your once-in-a-lifetime
-              moments into treasures that last a lifetime.
-            </p>
-
-            <p style={{ margin: "0 0 12px" }}>
-              By combining the often unnoticed elements of candid emotion,
-              cinematic images, and mind-blowing drone videos, we offer not just
-              wedding coverage but a heartfelt experience.
-            </p>
-
-            <p style={{ margin: 0 }}>
-              That provides a pathway to relive your happiest moments forever.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <Divider />
-
-      <ScrollStorySection
-        tag="Who we are"
-        lines={[
-          "House of Bliss is a community of photographers, filmmakers, editors, and dreamers who understand",
-          "that weddings are so much more than just events they are love stories ready to be told.",
-          "We launched with a mission to shape wedding photography, and since then, we have documented hundreds of weddings throughout Bangalore,",
-          "and far beyond. We approach each wedding with new eyes, new hearts, and the same passionate quality.From a quiet moment of a gazing at each other, ",
-          "we will capture it all – honestly, beautifully, and meaningfully.",
-          "",
-        ]}
-        accentColor="#3b4237"
-      />
-
-      {/* ── PERSON OF OPPOSITES ── */}
-      <section
-        style={{
-          padding: "80px 7%",
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "0 60px",
-          alignItems: "center",
-        }}
-      >
-        {/* left: text */}
-        <div>
-          <h2
-            style={{
-              fontFamily: "var(--font-editorial, serif)",
-              fontWeight: 300,
-              fontSize: "clamp(26px, 3vw, 42px)",
-              color: "#1e1e1a",
-              margin: "0 0 24px",
-              letterSpacing: "-0.02em",
-              lineHeight: 1.15,
-            }}
-          >
-            Our Promise : Emotions First, Always
-          </h2>
-          <p
-            style={{
-              fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
-              lineHeight: 1.85,
-              color: "#3a3a35",
-              margin: 0,
-            }}
-          >
-            We don’t just take photos. We document love, laughter, joy, chaos,
-            tears, and everything in between. What makes us the go-to team for
-            couples looking for the best wedding photo session is our focus on
-            natural storytelling. We don’t stage; we observe. We don’t direct;
-            we follow your rhythm. And we never lose sight of what matters most:
-            your story.{" "}
-          </p>
-
-          {/* pull quote */}
-          <blockquote
-            style={{
-              margin: "40px 0 0",
-              padding: "0 0 0 24px",
-              borderLeft: "1px solid rgba(30,30,26,0.2)",
-              fontFamily: "var(--font-editorial, serif)",
-              fontWeight: 300,
-              fontSize: "clamp(16px, 1.8vw, 22px)",
-              lineHeight: 1.5,
-              color: "#1e1e1a",
-              letterSpacing: "-0.01em",
-              fontStyle: "italic",
-            }}
-          >
-            "Some people never go crazy. What truly horrible lives they must
-            live."
-            <cite
-              style={{
-                display: "block",
-                marginTop: 12,
                 fontFamily: "var(--font-neue-light, sans-serif)",
-                fontSize: 11,
-                letterSpacing: "0.1em",
-                color: "rgba(30,30,26,0.45)",
-                textTransform: "uppercase",
-                fontStyle: "normal",
-              }}
-            >
-              — Charles Bukowski
-            </cite>
-          </blockquote>
-        </div>
-
-        {/* right: single image */}
-        <ParallaxImg
-          src="/about/about2.png"
-          alt="kaat in landscape"
-          height={520}
-          speed={0.06}
-        />
-      </section>
-
-      <Divider />
-
-      
-    <ScrollStorySection
-  tag="What we offer"
-  accentColor="#7a6a52"
-  intro="From the pre-wedding excitement to the final Vidai moment, House of Bliss offers end-to-end coverage tailored to your journey:"
-  bullets={[
-    { title: "Pre-Wedding & Couple Photoshoots", desc: "Beautifully planned sessions that reflect your personalities and love story in every frame." },
-    { title: "Candid Wedding Photography",        desc: "Authentic, emotional, and spontaneous moments captured discreetly and gracefully." },
-    { title: "Cinematic Wedding Films",           desc: "High-quality storytelling with cinematic editing, music, and mood—crafted to move you every time you watch." },
-    { title: "Drone Videography",                 desc: "Breathtaking aerial shots that add a grand, unforgettable perspective to your wedding film." },
-    { title: "Complete Event Coverage",           desc: "From Haldi to Mehendi to Sangeet to Reception—our lens captures it all with artistic precision." },
-  ]}
-  closing="No matter how big or intimate your wedding is, our team brings the same passion and professionalism to every celebration."
-/>
-      {/* ── ADVENTUROUS YES-WOMAN ── */}
-      <section
-        style={{
-          padding: "80px 7%",
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "0 80px",
-          alignItems: "start",
-        }}
-      >
-        {/* left: image */}
-        <ParallaxImg
-          src="/about/about3.png"
-          alt="surf couple"
-          height={500}
-          speed={0.05}
-        />
-
-        {/* right: text */}
-        <div style={{ paddingTop: 20 }}>
-          <h2
-            style={{
-              fontFamily: "var(--font-editorial, serif)",
-              fontWeight: 300,
-              fontSize: "clamp(26px, 3vw, 42px)",
-              color: "#1e1e1a",
-              margin: "0 0 24px",
-              letterSpacing: "-0.02em",
-              lineHeight: 1.15,
-            }}
-          >
-            Why We're Known for the Best Wedding Photography in Bangalore
-          </h2>
-          <p
-            style={{
-              fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
-              lineHeight: 1.85,
-              color: "#3a3a35",
-              margin: "0 0 20px",
-            }}
-          >
-            House of Bliss has become a name synonymous with quality, emotion,
-            and creativity in the Bangalore wedding scene. Here’s why couples
-            trust us:
-          </p>
-          <p
-            style={{
-              fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
-              lineHeight: 1.85,
-              color: "#3a3a35",
-              margin: 0,
-            }}
-          >
-            <li>A personalized approach to every wedding </li>
-            <li>Friendly, professional crew that feels like family</li>
-            <li>Seamless coordination with planners and venues</li>
-            <li>Quick turnaround with meticulous post-production</li>
-            <li>Packages tailored for every need-from minimal to majestic</li>
-          </p>
-
-          {/* current location pill */}
-          <div
-            style={{
-              marginTop: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 10,
-              padding: "10px 18px",
-              border: "1px solid rgba(30,30,26,0.18)",
-            }}
-          >
-            <span
-              style={{
-                width: 6,
-                height: 6,
-                borderRadius: "50%",
-                background: "#3b4237",
-                boxShadow: "0 0 0 3px rgba(59,66,55,0.2)",
-                flexShrink: 0,
-              }}
-            />
-            <span
-              style={{
-                fontFamily: "var(--font-neue-regular, sans-serif)",
-                fontSize: 11,
-                letterSpacing: "0.1em",
+                fontSize: "clamp(16px, 2vw, 20px)",
+                lineHeight: 1.75,
                 color: "#3a3a35",
+                margin: 0,
+                maxWidth: 440,
               }}
             >
-              We understand Bangalore weddings-from vibrant South Indian
-              traditions to contemporary cross-cultural fusions. Our local
-              experience, combined with global aesthetics, helps us deliver the
-              best wedding photography in Bangalore with style and soul.
-            </span>
+              If I'm thirdwheeling you on one of the most important days of your
+              lives, you'd probably like to know who I am and why I do what I do.
+            </p>
           </div>
         </div>
-      </section>
 
-      <Divider />
-
-       <ScrollStorySection
-        tag="Aerial Views That Make Your Moments Soar"
-        lines={[
-          "Our drone videography service is a signature element of the House of Bliss experience. From capturing sweeping views of your venue to ",
-          "dynamic shots of the baraat, mandap, or bridal entry-our drone footage brings cinematic flair to your wedding story.",
-          "Licensed pilots, strict safety protocols, and skilled editors ensure your aerial visuals are nothing short of spectacular.",
-       
-        ]}
-        accentColor="#3b4237"
-      />
-
-      {/* ── TRAVEL ── */}
-      <section style={{ padding: "80px 7%" }}>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "0 60px",
-            alignItems: "start",
-            marginBottom: 48,
-          }}
-        >
+        {/* ── INTRO: image + text block ── */}
+        <section className="about-intro-section">
+          {/* Left col: image */}
           <div>
+            <ParallaxImg
+              src="/about/about1.png"
+              alt="photographer with camera"
+              height={480}
+              speed={0.055}
+            />
+          </div>
+
+          {/* Right col: text */}
+          <div className="intro-text" style={{ paddingTop: 40 }}>
             <h2
               style={{
                 fontFamily: "var(--font-editorial, serif)",
                 fontWeight: 300,
-                fontSize: "clamp(26px, 3vw, 42px)",
+                fontSize: "clamp(24px, 3vw, 42px)",
                 color: "#1e1e1a",
-                margin: 0,
+                margin: "0 0 28px",
                 letterSpacing: "-0.02em",
                 lineHeight: 1.15,
               }}
             >
-              Your Love Story, Immortalized
+              Where Love Finds Its Most Beautiful Frame
             </h2>
+            <div
+              style={{
+                fontFamily: "var(--font-neue-light, sans-serif)",
+                fontSize: 17,
+                lineHeight: 1.85,
+                color: "#3a3a35",
+              }}
+            >
+              <p style={{ margin: "0 0 12px" }}>
+                Here in House of Bliss, we believe that all love stories should be
+                told truthfully, emotionally, and artistically.
+              </p>
+              <p style={{ margin: "0 0 12px" }}>
+                As one of the most trusted names in wedding storytelling, we take
+                great pride in being able to offer the best wedding photography in
+                Bangalore so we can continue to make your once-in-a-lifetime
+                moments into treasures that last a lifetime.
+              </p>
+              <p style={{ margin: "0 0 12px" }}>
+                By combining the often unnoticed elements of candid emotion,
+                cinematic images, and mind-blowing drone videos, we offer not just
+                wedding coverage but a heartfelt experience.
+              </p>
+              <p style={{ margin: 0 }}>
+                That provides a pathway to relive your happiest moments forever.
+              </p>
+            </div>
           </div>
-          <p
-            style={{
-              fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
-              lineHeight: 1.85,
-              color: "#3a3a35",
-              margin: 0,
-              paddingTop: 8,
-            }}
-          >
-            At House of Bliss, our goal is simple: to create imagery that makes
-            your heart skip a beat, even decades from now. If you’re searching
-            for the best wedding photosession, planning your dream wedding in
-            Bangalore, or looking to elevate your celebration with drone
-            videography- we would be honoured to tell your story, frame by
-            frame. Because your love deserves more than pictures.
-          </p>
-        </div>
+        </section>
 
-        {/* travel images row */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1.6fr 1fr 1.2fr",
-            gap: 16,
-            alignItems: "end",
-          }}
-        >
-          <ParallaxImg
-            src="/about/about4.png"
-            alt="destination wedding"
-            height={380}
-            speed={0.06}
-          />
-          <ParallaxImg
-            src="/about/about2.png"
-            alt="travel"
-            height={260}
-            speed={0.04}
-          />
-          <ParallaxImg
-            src="/about/about3.png"
-            alt="mountains"
-            height={310}
-            speed={0.07}
-          />
-        </div>
+        <Divider />
 
-        {/* <div style={{ marginTop: 36 }}>
-          <a
-            href="#"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 10,
-              fontFamily: "var(--font-neue-regular, sans-serif)",
-              fontSize: 12,
-              letterSpacing: "0.08em",
-              color: "#1e1e1a",
-              textDecoration: "none",
-              borderBottom: "1px solid rgba(30,30,26,0.3)",
-              paddingBottom: 3,
-              transition: "border-color 0.2s",
-            }}
-            onMouseEnter={(e) =>
-              ((e.currentTarget as HTMLElement).style.borderColor = "#1e1e1a")
-            }
-            onMouseLeave={(e) =>
-              ((e.currentTarget as HTMLElement).style.borderColor =
-                "rgba(30,30,26,0.3)")
-            }
-          >
-            My travel schedule →
-          </a>
-        </div> */}
-      </section>
+        <ScrollStorySection
+          tag="Who we are"
+          lines={[
+            "House of Bliss is a community of photographers, filmmakers, editors, and dreamers who understand",
+            "that weddings are so much more than just events they are love stories ready to be told.",
+            "We launched with a mission to shape wedding photography, and since then, we have documented hundreds of weddings throughout Bangalore,",
+            "and far beyond. We approach each wedding with new eyes, new hearts, and the same passionate quality.From a quiet moment of a gazing at each other, ",
+            "we will capture it all – honestly, beautifully, and meaningfully.",
+            "",
+          ]}
+          accentColor="#3b4237"
+        />
 
-      <Divider />
-    </div>
+        {/* ── PROMISE ── */}
+        <section className="about-promise-section">
+          {/* left: text */}
+          <div className="promise-text">
+            <h2
+              style={{
+                fontFamily: "var(--font-editorial, serif)",
+                fontWeight: 300,
+                fontSize: "clamp(24px, 3vw, 42px)",
+                color: "#1e1e1a",
+                margin: "0 0 24px",
+                letterSpacing: "-0.02em",
+                lineHeight: 1.15,
+              }}
+            >
+              Our Promise : Emotions First, Always
+            </h2>
+            <p
+              style={{
+                fontFamily: "var(--font-neue-light, sans-serif)",
+                fontSize: 17,
+                lineHeight: 1.85,
+                color: "#3a3a35",
+                margin: 0,
+              }}
+            >
+              We don't just take photos. We document love, laughter, joy, chaos,
+              tears, and everything in between. What makes us the go-to team for
+              couples looking for the best wedding photo session is our focus on
+              natural storytelling. We don't stage; we observe. We don't direct;
+              we follow your rhythm. And we never lose sight of what matters most:
+              your story.
+            </p>
+          </div>
+
+          {/* right: image */}
+          <div className="promise-img">
+            <ParallaxImg
+              src="/about/about2.png"
+              alt="kaat in landscape"
+              height={520}
+              speed={0.06}
+            />
+          </div>
+        </section>
+
+        <Divider />
+
+        <ScrollStorySection
+          tag="What we offer"
+          accentColor="#7a6a52"
+          intro="From the pre-wedding excitement to the final Vidai moment, House of Bliss offers end-to-end coverage tailored to your journey:"
+          bullets={[
+            { title: "Pre-Wedding & Couple Photoshoots", desc: "Beautifully planned sessions that reflect your personalities and love story in every frame." },
+            { title: "Candid Wedding Photography",        desc: "Authentic, emotional, and spontaneous moments captured discreetly and gracefully." },
+            { title: "Cinematic Wedding Films",           desc: "High-quality storytelling with cinematic editing, music, and mood—crafted to move you every time you watch." },
+            { title: "Drone Videography",                 desc: "Breathtaking aerial shots that add a grand, unforgettable perspective to your wedding film." },
+            { title: "Complete Event Coverage",           desc: "From Haldi to Mehendi to Sangeet to Reception—our lens captures it all with artistic precision." },
+          ]}
+          closing="No matter how big or intimate your wedding is, our team brings the same passion and professionalism to every celebration."
+        />
+
+        {/* ── BANGALORE ── */}
+        <section className="about-bangalore-section">
+          {/* left: image */}
+          <div className="bangalore-img">
+            <ParallaxImg
+              src="/about/about3.png"
+              alt="surf couple"
+              height={500}
+              speed={0.05}
+            />
+          </div>
+
+          {/* right: text */}
+          <div className="bangalore-text" style={{ paddingTop: 20 }}>
+            <h2
+              style={{
+                fontFamily: "var(--font-editorial, serif)",
+                fontWeight: 300,
+                fontSize: "clamp(24px, 3vw, 42px)",
+                color: "#1e1e1a",
+                margin: "0 0 24px",
+                letterSpacing: "-0.02em",
+                lineHeight: 1.15,
+              }}
+            >
+              Why We're Known for the Best Wedding Photography in Bangalore
+            </h2>
+            <p
+              style={{
+                fontFamily: "var(--font-neue-light, sans-serif)",
+                fontSize: 18,
+                lineHeight: 1.85,
+                color: "#3a3a35",
+                margin: "0 0 20px",
+              }}
+            >
+              House of Bliss has become a name synonymous with quality, emotion,
+              and creativity in the Bangalore wedding scene. Here's why couples
+              trust us:
+            </p>
+            <p
+              style={{
+                fontFamily: "var(--font-neue-light, sans-serif)",
+                fontSize: 18,
+                lineHeight: 1.85,
+                color: "#3a3a35",
+                margin: 0,
+              }}
+            >
+              <li>A personalized approach to every wedding</li>
+              <li>Friendly, professional crew that feels like family</li>
+              <li>Seamless coordination with planners and venues</li>
+              <li>Quick turnaround with meticulous post-production</li>
+              <li>Packages tailored for every need-from minimal to majestic</li>
+            </p>
+
+            <div
+              style={{
+                marginTop: 36,
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 10,
+                padding: "10px 18px",
+                border: "1px solid rgba(30,30,26,0.18)",
+              }}
+            >
+              <span
+                style={{
+                  width: 6,
+                  height: 6,
+                  borderRadius: "50%",
+                  background: "#3b4237",
+                  boxShadow: "0 0 0 3px rgba(59,66,55,0.2)",
+                  flexShrink: 0,
+                }}
+              />
+              <span
+                style={{
+                  fontFamily: "var(--font-neue-regular, sans-serif)",
+                  fontSize: 11,
+                  letterSpacing: "0.1em",
+                  color: "#3a3a35",
+                }}
+              >
+                We understand Bangalore weddings-from vibrant South Indian
+                traditions to contemporary cross-cultural fusions. Our local
+                experience, combined with global aesthetics, helps us deliver the
+                best wedding photography in Bangalore with style and soul.
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <Divider />
+
+        <ScrollStorySection
+          tag="Aerial Views That Make Your Moments Soar"
+          lines={[
+            "Our drone videography service is a signature element of the House of Bliss experience. From capturing sweeping views of your venue to ",
+            "dynamic shots of the baraat, mandap, or bridal entry-our drone footage brings cinematic flair to your wedding story.",
+            "Licensed pilots, strict safety protocols, and skilled editors ensure your aerial visuals are nothing short of spectacular.",
+          ]}
+          accentColor="#3b4237"
+        />
+
+        {/* ── TRAVEL ── */}
+        <section className="about-travel-section" style={{ padding: "80px 7%" }}>
+          <div className="about-travel-header">
+            <div>
+              <h2
+                style={{
+                  fontFamily: "var(--font-editorial, serif)",
+                  fontWeight: 300,
+                  fontSize: "clamp(24px, 3vw, 42px)",
+                  color: "#1e1e1a",
+                  margin: 0,
+                  letterSpacing: "-0.02em",
+                  lineHeight: 1.15,
+                }}
+              >
+                Your Love Story, Immortalized
+              </h2>
+            </div>
+            <p
+              style={{
+                fontFamily: "var(--font-neue-light, sans-serif)",
+                fontSize: 18,
+                lineHeight: 1.85,
+                color: "#3a3a35",
+                margin: 0,
+                paddingTop: 8,
+              }}
+            >
+              At House of Bliss, our goal is simple: to create imagery that makes
+              your heart skip a beat, even decades from now. If you're searching
+              for the best wedding photosession, planning your dream wedding in
+              Bangalore, or looking to elevate your celebration with drone
+              videography- we would be honoured to tell your story, frame by
+              frame. Because your love deserves more than pictures.
+            </p>
+          </div>
+
+          {/* travel images row — on mobile only the first image shows */}
+          <div className="about-travel-images">
+            <ParallaxImg
+              src="/about/about4.png"
+              alt="destination wedding"
+              height={380}
+              speed={0.06}
+            />
+            <div className="travel-img-hide-mobile">
+              <ParallaxImg
+                src="/about/about2.png"
+                alt="travel"
+                height={260}
+                speed={0.04}
+              />
+            </div>
+            <div className="travel-img-hide-mobile">
+              <ParallaxImg
+                src="/about/about3.png"
+                alt="mountains"
+                height={310}
+                speed={0.07}
+              />
+            </div>
+          </div>
+        </section>
+
+        <Divider />
+      </div>
     </>
   );
 }
 
 export default page;
-
-{
-  /* ── MANIFESTO ── */
-}
-// <section style={{ padding: "80px 0 0" }}>
-//   {/* header */}
-//   <div style={{ padding: "0 7% 48px" }}>
-//     <p
-//       style={{
-//         margin: "0 0 12px",
-//         fontFamily: "var(--font-neue-light, sans-serif)",
-//         fontSize: 10,
-//         letterSpacing: "0.2em",
-//         textTransform: "uppercase",
-//         color: "rgba(30,30,26,0.4)",
-//       }}
-//     >
-//       Carpe DM manifesto
-//     </p>
-//     <h2
-//       style={{
-//         fontFamily: "var(--font-editorial, serif)",
-//         fontWeight: 300,
-//         fontSize: "clamp(28px, 4vw, 56px)",
-//         color: "#1e1e1a",
-//         margin: 0,
-//         letterSpacing: "-0.02em",
-//         lineHeight: 1.1,
-//       }}
-//     >
-//       10 rules to live by
-//     </h2>
-//   </div>
-
-//   {/* full-bleed carousel */}
-//   <ManifestoCarousel />
-
-//   {/* rules list below */}
-//   <div style={{ padding: "0 7%", marginTop: 60, marginBottom: 80 }}>
-//     <div
-//       style={{
-//         display: "grid",
-//         gridTemplateColumns: "repeat(2, 1fr)",
-//         gap: "0 60px",
-//       }}
-//     >
-//       {MANIFESTO.map((item) => (
-//         <div
-//           key={item.n}
-//           style={{
-//             display: "flex",
-//             gap: 20,
-//             alignItems: "baseline",
-//             padding: "18px 0",
-//             borderBottom: "1px solid rgba(30,30,26,0.1)",
-//           }}
-//         >
-//           <span
-//             style={{
-//               fontFamily: "var(--font-neue-light, monospace)",
-//               fontSize: 10,
-//               letterSpacing: "0.1em",
-//               color: "rgba(30,30,26,0.35)",
-//               flexShrink: 0,
-//               width: 24,
-//             }}
-//           >
-//             {item.n}
-//           </span>
-//           <p
-//             style={{
-//               margin: 0,
-//               fontFamily: "var(--font-editorial, serif)",
-//               fontWeight: 300,
-//               fontSize: "clamp(14px, 1.4vw, 18px)",
-//               color: "#1e1e1a",
-//               lineHeight: 1.4,
-//               letterSpacing: "-0.005em",
-//             }}
-//           >
-//             {item.rule}
-//           </p>
-//         </div>
-//       ))}
-//     </div>
-//   </div>
-// </section>
