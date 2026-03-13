@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import ScrollStorySection from "../components/Scrollstorysection";
+import Navbar from "../components/navbar";
 
 // ── Scroll hook ───────────────────────────────────────────────────────────────
 function useScrollY() {
@@ -342,6 +343,8 @@ function page() {
   const scrollY = useScrollY();
 
   return (
+    <>
+    <Navbar theme="dark"/>
     <div
       style={{ background: "#fefee8", minHeight: "100vh", overflowX: "hidden" }}
     >
@@ -811,6 +814,7 @@ function page() {
 
       <Divider />
     </div>
+    </>
   );
 }
 

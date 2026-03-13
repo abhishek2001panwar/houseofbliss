@@ -2,8 +2,30 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
-const overlayBg = "#fdf9dc";
-const menuLinkColor = "#5a5a4c";
+// ─── Usage examples ───────────────────────────────────────────────────────────
+// Dark page (default):   <Navbar />
+// Light page:            <Navbar theme="dark" />
+// Any custom color:      <Navbar color="#41453D" />
+// ─────────────────────────────────────────────────────────────────────────────
+
+export type NavbarTheme = "light" | "dark";
+
+interface NavbarProps {
+  /** "light" = cream/white text (default, for dark backgrounds)
+   *  "dark"  = dark text (for light/white backgrounds) */
+  theme?: NavbarTheme;
+  /** Override with any exact hex/rgb color. Takes priority over `theme`. */
+  color?: string;
+}
+
+// Resolve the nav-bar ink color from props
+function resolveColor(theme: NavbarTheme, color?: string): string {
+  if (color) return color;
+  return theme === "dark" ? "#41453D" : "#fdf9dc";
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+
 const menuLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
@@ -12,120 +34,371 @@ const menuLinks = [
   { name: "Say hi", href: "/contact" },
 ];
 
-function Navbar() {
-  const [open, setOpen] = useState(false);
+const services = [
+  { name: "Cinematic Wedding Photography", href: "/service1" },
+  { name: "Pre Wedding Photography", href: "/service2" },
+  { name: "Wedding Photgraphy", href: "/service3" },
+  { name: "Best Wedding Photography", href: "/service4" },
+  { name: "Post Wedding shoot", href: "/service5" },
+  { name: "Engagement Photographers", href: "/service6" },
+  { name: "Candid Wedding Photography", href: "/service7" },
+  { name: "Affordable Wedding Photographers", href: "/service8" },
+  { name: "Best Wedding Photographer", href: "/service9" },
+  { name: "Top Wedding Photographers", href: "/service10" },
+];
+
+const servicesRow1 = services.slice(0, 5);
+const servicesRow2 = services.slice(5, 10);
+
+// ─── Desktop services overlay — always dark glass, color-agnostic ─────────────
+function DesktopServiceLink({
+  service, idx, visible, onClose,
+}: {
+  service: { name: string; href: string };
+  idx: number;
+  visible: boolean;
+  onClose: () => void;
+}) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <Link
+      href={service.href}
+      onClick={onClose}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="flex items-center justify-between py-5 px-6"
+      style={{
+        minWidth: 0, gap: "12px",
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(14px)",
+        transitionDelay: visible ? `${idx * 40}ms` : "0ms",
+        borderBottom: `1px solid rgba(253,249,220,${hovered ? "0.28" : "0.07"})`,
+        borderTop: `1px solid rgba(253,249,220,${hovered ? "0.28" : "0"})`,
+        background: hovered ? "rgba(253,249,220,0.04)" : "transparent",
+        transition: "opacity 0.5s, transform 0.5s, border-color 0.25s, background 0.25s",
+      }}
+    >
+      <span className="font-editorial whitespace-nowrap truncate"
+        style={{ fontSize: "1rem", letterSpacing: "0.02em", transition: "color 0.25s",
+          color: hovered ? "#fdf9dc" : "rgba(253,249,220,0.5)" }}>
+        {service.name}
+      </span>
+      <span className="flex-shrink-0"
+        style={{ opacity: hovered ? 1 : 0, transform: hovered ? "translateX(0)" : "translateX(-6px)",
+          transition: "opacity 0.25s, transform 0.25s" }}>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+          stroke="rgba(253,249,220,0.65)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
+      </span>
+    </Link>
+  );
+}
+
+function ServicesOverlay({ open, onClose }: { open: boolean; onClose: () => void }) {
+  return (
+    <>
+      <div className="fixed inset-0 z-40"
+        style={{ pointerEvents: open ? "auto" : "none", opacity: open ? 1 : 0,
+          background: "rgba(0,0,0,0.52)", transition: "opacity 0.4s",
+          backdropFilter: open ? "blur(3px)" : "none", WebkitBackdropFilter: open ? "blur(3px)" : "none" }}
+        onClick={onClose} />
+      <div className="fixed top-0 left-0 w-full z-50"
+        style={{ opacity: open ? 1 : 0, transform: open ? "translateY(0)" : "translateY(-18px)",
+          pointerEvents: open ? "auto" : "none", background: "rgba(11,12,9,0.92)",
+          backdropFilter: "blur(28px) saturate(1.2)", WebkitBackdropFilter: "blur(28px) saturate(1.2)",
+          borderBottom: "1px solid rgba(253,249,220,0.07)", paddingTop: "88px", paddingBottom: "40px",
+          transition: "opacity 0.45s cubic-bezier(0.4,0,0.2,1), transform 0.45s cubic-bezier(0.4,0,0.2,1)" }}>
+        <div className="max-w-7xl mx-auto px-4 md:px-20">
+          <div className="flex items-center gap-4 mb-6"
+            style={{ opacity: open ? 1 : 0, transition: "opacity 0.5s", transitionDelay: open ? "60ms" : "0ms" }}>
+            <span className="font-neue-light uppercase tracking-[0.35em] text-[10px] flex-shrink-0"
+              style={{ color: "rgba(253,249,220,0.28)" }}>Our Services</span>
+            <div className="h-px flex-1" style={{ background: "rgba(253,249,220,0.07)" }} />
+            <button onClick={onClose}
+              className="flex-shrink-0 font-neue-light text-[10px] uppercase tracking-[0.3em] hover:opacity-100 transition-opacity duration-200"
+              style={{ color: "rgba(253,249,220,0.28)" }}>Close ✕</button>
+          </div>
+          <div className="grid grid-cols-5">
+            {servicesRow1.map((s, i) => (
+              <DesktopServiceLink key={s.href} service={s} idx={i} visible={open} onClose={onClose} />
+            ))}
+          </div>
+          <div className="h-px w-full" style={{ background: "rgba(253,249,220,0.04)" }} />
+          <div className="grid grid-cols-5">
+            {servicesRow2.map((s, i) => (
+              <DesktopServiceLink key={s.href} service={s} idx={i + 5} visible={open} onClose={onClose} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ─── Mobile services popover ──────────────────────────────────────────────────
+function MobileServicesPopover({
+  open, onClose, onServiceClick,
+}: {
+  open: boolean;
+  onClose: () => void;
+  onServiceClick: () => void;
+}) {
+  return (
+    <div
+      className="absolute inset-0 z-10 flex flex-col"
+      style={{
+        background: "rgba(11,12,9,0.99)",
+        transform: open ? "translateX(0)" : "translateX(100%)",
+        transition: "transform 0.45s cubic-bezier(0.76,0,0.24,1)",
+        pointerEvents: open ? "auto" : "none",
+      }}
+    >
+      <div className="flex items-center justify-between px-6 pt-7 pb-5"
+        style={{ borderBottom: "1px solid rgba(253,249,220,0.08)" }}>
+        <span className="font-neue-light uppercase tracking-[0.3em] text-[10px]"
+          style={{ color: "rgba(253,249,220,0.3)" }}>Services</span>
+        <button onClick={onClose}
+          className="flex items-center gap-2 font-neue-light text-[11px] uppercase tracking-[0.25em]"
+          style={{ color: "rgba(253,249,220,0.35)" }}>
+          <svg width="8" height="12" viewBox="0 0 8 14" fill="none"
+            stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="7 1 1 7 7 13" />
+          </svg>
+          Back
+        </button>
+      </div>
+      <div className="flex-1 overflow-y-auto py-2">
+        {services.map((s) => (
+          <Link key={s.href} href={s.href} onClick={onServiceClick}
+            className="group flex items-center justify-between px-6 py-4"
+            style={{ borderBottom: "1px solid rgba(253,249,220,0.06)" }}>
+            <span className="font-editorial transition-colors duration-200 group-hover:text-[#fdf9dc]"
+              style={{ fontSize: "1.1rem", color: "rgba(253,249,220,0.6)", letterSpacing: "0.02em" }}>
+              {s.name}
+            </span>
+            <svg className="opacity-0 group-hover:opacity-50 transition-opacity duration-200 flex-shrink-0"
+              width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="#fdf9dc" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ─── Full-page menu overlay — always dark glass, color-agnostic ───────────────
+function MenuOverlay({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const [servicesPopoverOpen, setServicesPopoverOpen] = useState(false);
+  useEffect(() => { if (!open) setServicesPopoverOpen(false); }, [open]);
+
+  return (
+    <div className="fixed top-0 left-0 w-full h-full z-[60] overflow-hidden"
+      style={{ pointerEvents: open ? "auto" : "none" }}>
+      <div className="absolute inset-0 flex flex-col"
+        style={{ background: "rgba(11,12,9,0.97)", backdropFilter: "blur(24px)",
+          WebkitBackdropFilter: "blur(24px)", opacity: open ? 1 : 0,
+          transform: open ? "translateY(0)" : "translateY(-100%)",
+          transition: "transform 0.65s cubic-bezier(0.76,0,0.24,1), opacity 0.5s" }}>
+
+        {/* Top bar */}
+        <div className="flex-shrink-0 flex items-center justify-between px-6 md:px-20 pt-7 pb-6"
+          style={{ borderBottom: "1px solid rgba(253,249,220,0.07)" }}>
+          <Link href="/" onClick={onClose}>
+            <span className="font-editorial text-[1.1rem] md:text-[1.5rem] text-[#fdf9dc] tracking-tight select-none">
+              HOUSE OF BLISS
+            </span>
+          </Link>
+          <button onClick={onClose} aria-label="Close menu"
+            className="flex items-center gap-2 font-neue-light text-[11px] uppercase tracking-[0.3em] hover:opacity-100 transition-opacity duration-200"
+            style={{ color: "rgba(253,249,220,0.4)" }}>
+            Close
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Center */}
+        <div className="flex-1 flex items-center justify-center px-6 md:px-20">
+
+          {/* Desktop: centered horizontal row */}
+          <div className="hidden md:flex items-center gap-16">
+            {menuLinks.map((link, idx) => (
+              <div key={link.href}
+                style={{ opacity: open ? 1 : 0, transform: open ? "translateY(0)" : "translateY(20px)",
+                  transition: "opacity 0.6s, transform 0.6s", transitionDelay: open ? `${0.08 + idx * 0.07}s` : "0s" }}>
+                <Link href={link.href} onClick={onClose} className="group flex flex-col items-center gap-1 focus:outline-none">
+                  <span className="font-editorial transition-colors duration-200 group-hover:text-[#fdf9dc]"
+                    style={{ fontSize: "clamp(1.4rem, 2.5vw, 2.2rem)", color: "rgba(253,249,220,0.75)", letterSpacing: "-0.01em" }}>
+                    {link.name}
+                  </span>
+                  <span className="block h-px w-0 group-hover:w-full bg-[#fdf9dc] opacity-40 transition-all duration-300" />
+                </Link>
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile: vertical list + Services */}
+          <div className="flex md:hidden flex-col w-full">
+            {menuLinks.map((link, idx) => (
+              <div key={link.href}
+                style={{ opacity: open ? 1 : 0, transform: open ? "translateY(0)" : "translateY(20px)",
+                  transition: "opacity 0.6s, transform 0.6s", transitionDelay: open ? `${0.08 + idx * 0.07}s` : "0s",
+                  borderBottom: "1px solid rgba(253,249,220,0.07)" }}>
+                <Link href={link.href} onClick={onClose} className="group flex items-center justify-between py-4 w-full">
+                  <span className="font-editorial transition-colors duration-200"
+                    style={{ fontSize: "clamp(1.5rem, 7vw, 2.2rem)", color: "rgba(253,249,220,0.85)", letterSpacing: "-0.01em" }}>
+                    {link.name}
+                  </span>
+                  <svg className="opacity-0 group-hover:opacity-50 transition-opacity duration-200 flex-shrink-0"
+                    width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="#fdf9dc" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </Link>
+              </div>
+            ))}
+            <div style={{ opacity: open ? 1 : 0, transform: open ? "translateY(0)" : "translateY(20px)",
+              transition: "opacity 0.6s, transform 0.6s", transitionDelay: open ? `${0.08 + menuLinks.length * 0.07}s` : "0s",
+              borderBottom: "1px solid rgba(253,249,220,0.07)" }}>
+              <button onClick={() => setServicesPopoverOpen(true)}
+                className="flex items-center justify-between py-4 w-full focus:outline-none group">
+                <span className="font-editorial"
+                  style={{ fontSize: "clamp(1.5rem, 7vw, 2.2rem)", color: "rgba(253,249,220,0.85)", letterSpacing: "-0.01em" }}>
+                  Services
+                </span>
+                <svg className="flex-shrink-0 opacity-40 group-hover:opacity-70 transition-opacity duration-200"
+                  width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="#fdf9dc" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div className="flex-shrink-0 px-6 md:px-20 py-5 flex items-center justify-between"
+          style={{ borderTop: "1px solid rgba(253,249,220,0.07)", opacity: open ? 1 : 0,
+            transition: "opacity 0.6s", transitionDelay: open ? "0.5s" : "0s" }}>
+          <span className="font-neue-light text-[10px] uppercase tracking-[0.3em]"
+            style={{ color: "rgba(253,249,220,0.2)" }}>House of Bliss © 2025</span>
+          <a href="mailto:info@houseofbliss.co.in"
+            className="font-neue-light text-[10px] uppercase tracking-[0.25em] hover:opacity-80 transition-opacity duration-200"
+            style={{ color: "rgba(253,249,220,0.22)" }}>
+            info@houseofbliss.co.in
+          </a>
+        </div>
+      </div>
+
+      <MobileServicesPopover
+        open={servicesPopoverOpen}
+        onClose={() => setServicesPopoverOpen(false)}
+        onServiceClick={onClose}
+      />
+    </div>
+  );
+}
+
+// ─── Navbar ───────────────────────────────────────────────────────────────────
+function Navbar({ theme = "light", color }: NavbarProps) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
 
+  // The single ink color for all navbar elements (links, brand, MENU button)
+  const ink = resolveColor(theme, color);
+
+  // When scrolled, always use a subtle dark blur bg regardless of theme
+  // so text stays readable over any page content
+  const scrolledBg = theme === "dark"
+    ? "rgba(255,255,255,0.7)"   // light frosted glass for light pages
+    : "rgba(0,0,0,0.25)";       // dark frosted glass for dark pages
+
+  const scrolledShadow = theme === "dark"
+    ? "0 1px 0 0 rgba(0,0,0,0.08)"
+    : "0 1px 0 0 rgba(255,255,255,0.06)";
+
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      // Add blur bg after scrolling 20px
-      setScrolled(currentScrollY > 20);
-
-      // Close menu if user scrolls down
-      if (currentScrollY > lastScrollY && currentScrollY > 20) {
-        setOpen(false);
-      }
-
-      setLastScrollY(currentScrollY);
+      const y = window.scrollY;
+      setScrolled(y > 20);
+      if (y > lastScrollY && y > 60) { setMenuOpen(false); setServicesOpen(false); }
+      setLastScrollY(y);
     };
-
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") { setServicesOpen(false); setMenuOpen(false); }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
   return (
     <>
       <nav
-        className="fixed top-0 left-0 w-full flex items-center justify-between py-8 md:py-6 px-4 md:px-20 z-50 transition-all duration-300"
+        className="fixed top-0 left-0 w-full flex items-center justify-between py-6 px-4 md:px-20 z-50 transition-all duration-300"
         style={{
           backdropFilter: scrolled ? "blur(16px) saturate(1.4)" : "none",
           WebkitBackdropFilter: scrolled ? "blur(16px) saturate(1.4)" : "none",
-          backgroundColor: scrolled ? "rgba(0, 0, 0, 0.25)" : "transparent",
-          boxShadow: scrolled ? "0 1px 0 0 rgba(255,255,255,0.08)" : "none",
+          backgroundColor: scrolled ? scrolledBg : "transparent",
+          boxShadow: scrolled ? scrolledShadow : "none",
         }}
       >
-        {/* Left: 2 links inside a bordered box */}
-        <div
-          className="hidden md:flex gap-6 "
-          style={{
-            padding: "6px 16px",
-          }}
-        >
-          <a
-            className="font-neue-light text-[18px] hover:underline transition text-[#fdf9dc]"
-            href="/portfolio"
-          >
-            Portfolio
-          </a>
-          <a
-            className="font-neue-light text-[18px] hover:underline transition text-[#fdf9dc]"
-            href="/about"
-          >
-            About
-          </a>
+        {/* Left: desktop links — all use `ink` color */}
+        <div className="hidden md:flex gap-5 items-center">
+          <a className="uppercase font-neue-light text-[15px] hover:underline transition"
+            style={{ color: ink }} href="/portfolio">Portfolio</a>
+          <a className="uppercase font-neue-light text-[15px] hover:underline transition"
+            style={{ color: ink }} href="/about">About</a>
+
+          <button onClick={() => setServicesOpen((p) => !p)} aria-expanded={servicesOpen}
+            className="flex items-center gap-1.5 focus:outline-none group">
+            <span className="uppercase font-neue-light text-[15px] group-hover:underline transition-all duration-200"
+              style={{ color: ink }}>
+              Services
+            </span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+              stroke={ink} strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"
+              style={{ transition: "transform 0.35s cubic-bezier(0.4,0,0.2,1)",
+                transform: servicesOpen ? "rotate(180deg)" : "rotate(0deg)",
+                opacity: servicesOpen ? 1 : 0.6 }}>
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
         </div>
 
-        {/* Center: Brand — absolutely centered so it's always in the middle */}
-        
-          <div className="absolute left-1/2 -translate-x-1/2">
-          <Link href={"/"}>
-            <span className="font-editorial text-[1.3rem] md:text-[2rem] text-white tracking-tight select-none whitespace-nowrap">
+        {/* Center brand */}
+        <div className="absolute left-1/2 -translate-x-1/2">
+          <Link href="/">
+            <span className="font-editorial text-[1.3rem] md:text-[2rem] tracking-tight select-none whitespace-nowrap"
+              style={{ color: ink }}>
               HOUSE OF BLISS
             </span>
-             </Link>
-          </div>
-       
+          </Link>
+        </div>
 
-        {/* Right: Menu button */}
+        {/* Right: MENU */}
         <button
-          className="font-neue-light text-[16px] md:text-[18px] text-[#fdf9dc] bg-transparent border-none outline-none cursor-pointer ml-auto"
-          onClick={() => setOpen(true)}
+          className="font-neue-light text-[16px] md:text-[15px] bg-transparent border-none outline-none cursor-pointer ml-auto"
+          style={{ color: ink }}
+          onClick={() => setMenuOpen(true)}
         >
           MENU
         </button>
       </nav>
 
-      {/* Full-page overlay menu */}
-      <div
-        className={`fixed top-0 left-0 w-full h-full z-[60] flex flex-col items-center bg-[#fdf9dc] transition-transform duration-700 ${open ? "translate-y-0" : "translate-y-full"}`}
-        style={{
-          fontFamily: "var(--font-editorial)",
-          pointerEvents: open ? "auto" : "none",
-        }}
-      >
-        <button
-          className="absolute top-8 right-8 text-[2rem] text-[#5a5a4c] bg-transparent border-none cursor-pointer font-neue-light"
-          onClick={() => setOpen(false)}
-          aria-label="Close menu"
-        >
-          &#10005;
-        </button>
-        <div className="mt-24 flex flex-col items-center gap-8 w-full">
-          {menuLinks.map((link, idx) => (
-            <div
-              key={link.href}
-              className="transition-all duration-700"
-              style={{
-                transitionDelay: `${0.1 + idx * 0.1}s`,
-                opacity: open ? 1 : 0,
-                transform: open ? "translateY(0)" : "translateY(100px)",
-              }}
-            >
-              <Link
-                href={`${link.href}`}
-                className="font-editorial text-[clamp(2rem,6vw,4rem)] hover:underline transition duration-200"
-                style={{ color: menuLinkColor }}
-                onClick={() => setOpen(false)}
-              >
-                {link.name}
-              </Link>
-            </div>
-          ))}
-        </div>
-      </div>
+      <ServicesOverlay open={servicesOpen} onClose={() => setServicesOpen(false)} />
+      <MenuOverlay open={menuOpen} onClose={() => setMenuOpen(false)} />
     </>
   );
 }

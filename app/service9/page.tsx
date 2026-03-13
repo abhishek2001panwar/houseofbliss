@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import ScrollStorySection from "../components/Scrollstorysection";
+import Navbar from "../components/navbar";
 
 // ── Responsive hook ───────────────────────────────────────────────────────────
 function useIsMobile(breakpoint = 768) {
@@ -412,6 +413,8 @@ function page() {
   const sectionPadding = isMobile ? "48px 5%" : "80px 7%";
 
   return (
+    <>
+    <Navbar theme="dark" />
     <div
       style={{ background: "#fefee8", minHeight: "100vh", overflowX: "hidden" }}
     >
@@ -974,6 +977,7 @@ Contact us to set up a consultation or learn more about the wedding photography 
         </div>
       </section>
     </div>
+    </>
   );
 }
 

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Button from "../components/button";
+import Navbar from "../components/navbar";
 
 const Contact = () => {
   const [isPlanner, setIsPlanner] = useState(false);
@@ -10,6 +11,7 @@ const Contact = () => {
 
   return (
     <>
+    <Navbar theme="light"/>
       <section className="bg-[#41453D] pt-32">
         <div className="max-w-8xl mx-auto px-7 ">
           <div className="flex flex-col md:flex-row items-start justify-center pt-3">

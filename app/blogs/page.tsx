@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 import { BLOGS } from "@/lib/data";
+import Navbar from "../components/navbar";
 
 
 // ── Parallax hook (disabled on mobile for perf) ──────────────────────────────
@@ -301,6 +302,7 @@ export default function OurBlogs() {
         };
 
   return (
+    <>   <Navbar theme="light" />
     <section
       style={{
         background: "#3b4237",
@@ -389,5 +391,6 @@ export default function OurBlogs() {
         </div>
       </div>
     </section>
+    </>
   );
 }

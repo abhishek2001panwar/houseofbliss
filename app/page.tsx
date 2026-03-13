@@ -13,7 +13,7 @@ import Testimonial from "./components/testimonial";
 export default function Home() {
   return (
     <>
-     
+     <Navbar  />
       <Hero />
       <About />
       <Gallery />

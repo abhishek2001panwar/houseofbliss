@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Navbar from "../components/navbar";
 
 // ─── Video data (10 films) ────────────────────────────────────────────────────
 const VIDEOS = [
@@ -849,6 +850,7 @@ export default function StoriesPage() {
   }
 
   return (
+    <><Navbar  theme="dark" />
     <div 
     className="pt-32"
       style={{ background: "#fefee8", minHeight: "100vh", overflowX: "hidden" }}
@@ -1053,5 +1055,6 @@ export default function StoriesPage() {
 
       <div style={{ height: "10vh" }} />
     </div>
+    </>
   );
 }
