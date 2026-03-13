@@ -1,12 +1,15 @@
 import { BLOGS } from "@/lib/data";
 import Image from "next/image";
 
-export default async function Page({ params }) {
+type PageProps = {
+  params: Promise<{
+    id: string;
+  }>;
+};
 
-  const resolvedParams = await params;
-    const { id } = await params;
-
-  const blog = BLOGS.find((b) => b.id === Number(resolvedParams.id));
+export default async function Page({ params }: PageProps) {
+  const { id } = await params;
+  const blog = BLOGS.find((b) => b.id === Number(id));
 
   if (!blog) {
     return <div className="p-10">Blog not found</div>;
@@ -15,13 +18,11 @@ export default async function Page({ params }) {
   return (
     <div className="max-w-4xl mx-auto px-6 py-20">
 
-      <h1 className="text-4xl font-light font-editorial mb-6">
+      <h1 className="text-5xl md:text-6xl font-editorial mb-10">
         {blog.title}
       </h1>
 
-      <p className="text-gray-500 mb-10 font-">
-        {blog.desc}
-      </p>
+      
 
       <Image
         src={blog.img}
@@ -33,7 +34,7 @@ export default async function Page({ params }) {
 
       <div
         className="prose max-w-none"
-        dangerouslySetInnerHTML={{ __html: blog.content }}
+        dangerouslySetInnerHTML={{ __html: blog.content ?? "" }}
       />
 
     </div>
