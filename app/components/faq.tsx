@@ -59,49 +59,87 @@ function useInViewOnce(threshold = 0.15) {
 }
 
 function FAQRow({ faq, idx }: { faq: { question: string; answer: string }; idx: number }) {
-  const { ref, inView } = useInViewOnce(0.2);
+  const { ref, inView } = useInViewOnce(0.1);
+  // FIX: accordion open state for mobile
+  const [open, setOpen] = useState(false);
 
   return (
     <div
       ref={ref}
-      className="group relative flex flex-row items-start py-8 md:py-10 px-3 transition-all duration-700"
+      className="transition-all duration-700"
       style={{
         opacity: inView ? 1 : 0,
         transform: inView ? 'translateY(0)' : 'translateY(32px)',
         transitionDelay: `${Math.min(idx * 60, 400)}ms`,
       }}
     >
-      {/* Hover line accent */}
-      <div
-        className="absolute left-0 top-0 h-px bg-[#fdf9dc]/60 transition-all duration-500 ease-out"
-        style={{ width: '0%' }}
-      />
-      <div
-        className="absolute left-0 top-0 h-px bg-[#fdf9dc]/20 w-full"
-      />
-      {/* Hover fill */}
-      <div className="absolute inset-0 bg-[#fdf9dc]/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-sm" />
+      {/* Top border */}
+      <div className="h-px bg-[#fdf9dc]/20 w-full" />
 
-      {/* Number */}
-      <div className="w-12 flex-shrink-0 pt-1">
-        <span className="font-neue-light text-[#fdf9dc]/30 text-sm tracking-widest">
+      {/* ── MOBILE: accordion layout ───────────────────────── */}
+      <button
+        className="md:hidden w-full text-left py-5 px-1 flex items-start gap-3 group focus:outline-none"
+        onClick={() => setOpen(!open)}
+        aria-expanded={open}
+      >
+        {/* Number */}
+        <span className="font-neue-light text-[#fdf9dc]/30 text-xs tracking-widest pt-1 flex-shrink-0 w-7">
           {String(idx + 1).padStart(2, '0')}
         </span>
+        {/* Question */}
+        <span className="flex-1 font-editorial text-[#fdf9dc] text-[1.1rem] leading-snug pr-2">
+          {faq.question}
+        </span>
+        {/* Chevron */}
+        <span
+          className="flex-shrink-0 mt-1 transition-transform duration-300 text-[#fdf9dc]/50"
+          style={{ transform: open ? 'rotate(180deg)' : 'rotate(0deg)' }}
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </span>
+      </button>
+
+      {/* Mobile answer panel */}
+      <div
+        className="md:hidden overflow-hidden transition-all duration-500 ease-in-out"
+        style={{
+          maxHeight: open ? '400px' : '0px',
+          opacity: open ? 1 : 0,
+        }}
+      >
+        <p className="font-neue-light text-[#fdf9dc]/65 text-[0.95rem] leading-relaxed pb-5 pl-10 pr-2">
+          {faq.answer}
+        </p>
       </div>
 
-      {/* Question */}
-      <div className="w-[45%] pr-12 text-left font-editorial text-[1.35rem] md:text-[1.6rem] text-[#fdf9dc] leading-snug">
-        {faq.question}
-      </div>
+      {/* ── DESKTOP: original side-by-side row layout ───────── */}
+      <div className="hidden md:flex group relative flex-row items-start py-10 px-3">
+        {/* Hover fill */}
+        <div className="absolute inset-0 bg-[#fdf9dc]/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-sm" />
 
-      {/* Divider dot */}
-      <div className="flex-shrink-0 w-4 pt-2 flex items-start justify-center">
-        <span className="w-1 h-1 rounded-full bg-[#fdf9dc]/25 mt-2 group-hover:bg-[#fdf9dc]/60 transition-colors duration-300" />
-      </div>
+        {/* Number */}
+        <div className="w-12 flex-shrink-0 pt-1">
+          <span className="font-neue-light text-[#fdf9dc]/30 text-sm tracking-widest">
+            {String(idx + 1).padStart(2, '0')}
+          </span>
+        </div>
 
-      {/* Answer */}
-      <div className="flex-1 text-left font-neue-light text-[1rem] md:text-[1.05rem] text-[#fdf9dc]/65 leading-relaxed group-hover:text-[#fdf9dc]/85 transition-colors duration-300">
-        {faq.answer}
+        {/* Question */}
+        <div className="w-[45%] pr-12 text-left font-editorial text-[1.35rem] md:text-[1.6rem] text-[#fdf9dc] leading-snug">
+          {faq.question}
+        </div>
+
+        {/* Divider dot */}
+        <div className="flex-shrink-0 w-4 pt-2 flex items-start justify-center">
+          <span className="w-1 h-1 rounded-full bg-[#fdf9dc]/25 mt-2 group-hover:bg-[#fdf9dc]/60 transition-colors duration-300" />
+        </div>
+
+        {/* Answer */}
+        <div className="flex-1 text-left font-neue-light text-[1rem] md:text-[1.05rem] text-[#fdf9dc]/65 leading-relaxed group-hover:text-[#fdf9dc]/85 transition-colors duration-300">
+          {faq.answer}
+        </div>
       </div>
     </div>
   );
@@ -111,7 +149,7 @@ function FAQ() {
   const { ref: headingRef, inView: headingIn } = useInViewOnce(0.3);
 
   return (
-    <section className="w-full py-20 md:py-28 px-4 md:px-20 bg-[#41453D] relative overflow-hidden">
+    <section className="w-full py-16 md:py-28 px-4 md:px-20 bg-[#41453D] relative overflow-hidden">
 
       {/* Subtle background texture */}
       <div
@@ -124,30 +162,31 @@ function FAQ() {
 
       <div className="max-w-7xl mx-auto relative z-10">
 
-        {/* Header row */}
+        {/* Header */}
         <div
           ref={headingRef}
-          className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4 transition-all duration-700"
+          className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-16 gap-2 md:gap-4 transition-all duration-700"
           style={{
             opacity: headingIn ? 1 : 0,
             transform: headingIn ? 'translateY(0)' : 'translateY(24px)',
           }}
         >
-          <h2 className="font-editorial text-[3rem] md:text-[4.5rem] text-[#fdf9dc] leading-none">
+          {/* FIX: smaller heading on mobile */}
+          <h2 className="font-editorial text-[2.4rem] sm:text-[3rem] md:text-[4.5rem] text-[#fdf9dc] leading-none">
             FAQ
           </h2>
-          <p className="font-neue-light text-[#fdf9dc]/40 text-sm tracking-[0.2em] uppercase md:pb-3">
+          <p className="font-neue-light text-[#fdf9dc]/40 text-xs sm:text-sm tracking-[0.2em] uppercase md:pb-3">
             Frequently Asked Questions
           </p>
         </div>
 
-        {/* FAQ rows */}
+        {/* FAQ list */}
         <div>
           {faqs.map((faq, idx) => (
             <FAQRow key={idx} faq={faq} idx={idx} />
           ))}
           {/* Final bottom border */}
-          <div className="h-px bg-[#fdf9dc]/20 w-full mt-0" />
+          <div className="h-px bg-[#fdf9dc]/20 w-full" />
         </div>
 
       </div>

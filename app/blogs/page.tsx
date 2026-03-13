@@ -1,252 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
-const BLOGS = [
-  {
-    id: 1,
-    title:
-      "Why Wedding Photography is the Only Thing That Grows More Valuable with Time",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img1.png",
-  },
-  {
-    id: 2,
-    title:
-      "What Is Cinematic Wedding Photography and Why Every Couple Needs It",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img2.png",
-  },
-  {
-    id: 3,
-    title: "What the Mirrors Remember",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img3.png",
-  },
-  {
-    id: 4,
-    title: "The Weight of Vermillion",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img4.png",
-  },
-  {
-    id: 5,
-    title: "The Frame That Stopped Time",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img5.png",
-  },
-  {
-    id: 6,
-    title: "How to Choose the Perfect Wedding Photographer in Bengaluru",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img6.png",
-  },
-  {
-    id: 7,
-    title: "The First Taste of Marriage",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img7.png",
-  },
-  {
-    id: 8,
-    title: "The Color of Forever",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img8.png",
-  },
-  {
-    id: 9,
-    title: "Behind the Veil",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img9.png",
-  },
-  {
-    id: 10,
-    title: "What Gods Remember",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img10.png",
-  },
-  {
-    id: 11,
-    title: "Where light learns to fall",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img11.png",
-  },
-  {
-    id: 12,
-    title:
-      "Cinematic Wedding Photography Trends in 2025 You’ll Fall in Love With",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img12.png",
-  },
-  {
-    id: 13,
-    title:
-      "Modern vs Traditional What Couples Want from Wedding Photography in Bengaluru Today",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img13.png",
-  },
-  {
-    id: 14,
-    title: "The Shoulder That Chose You",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img14.png",
-  },
-  {
-    id: 15,
-    title: "The Choreography of Unscripted Love",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img15.png",
-  },
-  {
-    id: 16,
-    title: "When Hands Find Home",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img16.png",
-  },
-  {
-    id: 17,
-    title: "The Circle of Blessings",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img17.png",
-  },
-  {
-    id: 18,
-    title: "The Photographer’s Favorite Frame",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img18.png",
-  },
-  {
-    id: 19,
-    title: "The Threshold Moment",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img19.png",
-  },
-  {
-    id: 20,
-    title: "Before the World Watches",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img20.png",
-  },
-  {
-    id: 21,
-    title: "When Brothers Become Witnesses",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img21.png",
-  },
-  {
-    id: 22,
-    title: "The Architecture of Affection",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img22.png",
-  },
-  {
-    id: 23,
-    title: "When Gold Dust Becomes Poetry",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img23.png",
-  },
-  {
-    id: 24,
-    title: "In Her Eyes, His Tomorrow",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img24.png",
-  },
-  {
-    id: 25,
-    title: "The Poetry of Tradition",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img25.png",
-  },
-  {
-    id: 26,
-    title: "The Ultimate Guide to Cinematic Wedding Photography in Bengaluru",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img26.png",
-  },
-  {
-    id: 27,
-    title:
-      "Why House of Bliss Is a Trusted Name for Wedding Photography in Bengaluru",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img27.png",
-  },
-  {
-    id: 28,
-    title: "Between Breaths",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img28.png",
-  },
-  {
-    id: 29,
-    title: "The Silence Between Vows",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img29.png",
-  },
-  {
-    id: 30,
-    title: "Witness to Wonder",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img30.png",
-  },
-  {
-    id: 31,
-    title: "When Laughter Writes the Story",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img31.png",
-  },
-  {
-    id: 32,
-    title: "The Perfect Adjustment",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img32.png",
-  },
-  {
-    id: 33,
-    title:
-      "Capture the Opening Moments of Forever with the Best Engagement Photographer in Bengaluru",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img33.png",
-  },
-  {
-    id: 34,
-    title: "Top 5 Mistakes Couples Make When Planning Wedding Photography",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img34.png",
-  },
-  {
-    id: 35,
-    title:
-      "Why Cinematic Wedding Photography Works Beautifully for Intimate Weddings",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img35.png",
-  },
-  {
-    id: 36,
-    title: "Best Wedding Photographer Portfolio: What Makes Them Stand Out",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img36.png",
-  },
-  {
-    id: 37,
-    title:
-      "Capture the Perfect Aura with Affordable Wedding Photographers in Bangalore",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img37.png",
-  },
-  {
-    id: 38,
-    title:
-      "Top Wedding Photographer in Bengaluru - Who Delivers Stunning Photos",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img38.jpg",
-  },
-  {
-    id: 39,
-    title: "Affordable Wedding Photography Without Compromising Quality",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img39.jpg",
-  },
-];
+import { BLOGS } from "@/lib/data";
+
 
 // ── Parallax hook (disabled on mobile for perf) ──────────────────────────────
 function useCardParallax(speed: number, enabled: boolean) {
@@ -376,8 +134,8 @@ function BlogCard({
         >
           {item.desc}
         </p> */}
-        <a
-          href="#"
+        <Link
+          href={`/blogs/${item.id}`}
           style={{
             display: "inline-block",
             fontFamily: "var(--font-neue-regular, sans-serif)",
@@ -402,7 +160,7 @@ function BlogCard({
           }}
         >
           More info
-        </a>
+        </Link>
       </div>
     </div>
   );
