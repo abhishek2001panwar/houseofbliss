@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Link from 'next/link';
 function Footer() {
   return (
     <footer className="bg-[#fdf9dc] w-full border-t pt-8 pb-4 px-4 md:px-12">
@@ -9,13 +10,13 @@ function Footer() {
           <span className="font-editorial text-[2rem] md:text-[2.5rem] text-[#5a5a4c] mb-2">house of bliss</span>
           <div className="flex flex-row gap-8 md:gap-12">
             <div className="flex flex-col gap-1 md:gap-2 font-editorial text-[#5a5a4c] text-[1rem] md:text-[1.3rem]">
-              <a href="#stories">Stories</a>
-              <a href="#pricing">Pricing</a>
-              <a href="#sayhi">Say hi</a>
+              <Link href="/stories">Portfolio</Link>
+              <Link href="/pricing">Blogs</Link>
+              <Link href="/contact">Say hi</Link>
             </div>
             <div className="flex flex-col gap-1 md:gap-2 font-editorial text-[#5a5a4c] text-[1rem] md:text-[1.3rem]">
-              <a href="#about">About</a>
-              <a href="#photographers">For photographers</a>
+              <Link href="/about">About</Link>
+              <Link href="/contact">Contact</Link>
             </div>
           </div>
         </div>

@@ -674,17 +674,8 @@ function page() {
                 border: "1px solid rgba(30,30,26,0.18)",
               }}
             >
-              <span
-                style={{
-                  width: 6,
-                  height: 6,
-                  borderRadius: "50%",
-                  background: "#3b4237",
-                  boxShadow: "0 0 0 3px rgba(59,66,55,0.2)",
-                  flexShrink: 0,
-                }}
-              />
-              <span
+             
+              <p
                 style={{
                   fontFamily: "var(--font-neue-regular, sans-serif)",
                   fontSize: 11,
@@ -696,7 +687,7 @@ function page() {
                 traditions to contemporary cross-cultural fusions. Our local
                 experience, combined with global aesthetics, helps us deliver the
                 best wedding photography in Bangalore with style and soul.
-              </span>
+              </p>
             </div>
           </div>
         </section>

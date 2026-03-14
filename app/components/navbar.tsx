@@ -286,7 +286,7 @@ function MenuOverlay({ open, onClose }: { open: boolean; onClose: () => void }) 
           style={{ borderTop: "1px solid rgba(253,249,220,0.07)", opacity: open ? 1 : 0,
             transition: "opacity 0.6s", transitionDelay: open ? "0.5s" : "0s" }}>
           <span className="font-neue-light text-[10px] uppercase tracking-[0.3em]"
-            style={{ color: "rgba(253,249,220,0.2)" }}>House of Bliss © 2025</span>
+            style={{ color: "rgba(253,249,220,0.2)" }}>House of Bliss © 2026</span>
           <a href="mailto:info@houseofbliss.co.in"
             className="font-neue-light text-[10px] uppercase tracking-[0.25em] hover:opacity-80 transition-opacity duration-200"
             style={{ color: "rgba(253,249,220,0.22)" }}>
