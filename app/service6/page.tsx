@@ -168,7 +168,7 @@ const MANIFESTO = [
   },
   {
     n: "03",
-    rule: "Love is love — all love is welcome here.",
+    rule: "Love is love - all love is welcome here.",
     img: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1200&q=80",
   },
   {
@@ -183,7 +183,7 @@ const MANIFESTO = [
   },
   {
     n: "06",
-    rule: "Respect nature — respect others — respect yourself.",
+    rule: "Respect nature - respect others - respect yourself.",
     img: "https://images.unsplash.com/photo-1548142813-c348350df52b?w=1200&q=80",
   },
   {

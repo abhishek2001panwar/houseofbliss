@@ -141,7 +141,7 @@ function ParallaxImg({
             paddingTop: "clamp(12px, 1.5vw, 22px)",
             fontFamily: "var(--font-editorial, serif)",
             fontWeight: 200,
-            fontSize: "clamp(15px, 2vw, 30px)",
+            fontSize: 17,
             lineHeight: 1.2,
             letterSpacing: "-0.01em",
             color: "#1e1e1a",
@@ -168,7 +168,7 @@ const MANIFESTO = [
   },
   {
     n: "03",
-    rule: "Love is love — all love is welcome here.",
+    rule: "Love is love - all love is welcome here.",
     img: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1200&q=80",
   },
   {
@@ -183,7 +183,7 @@ const MANIFESTO = [
   },
   {
     n: "06",
-    rule: "Respect nature — respect others — respect yourself.",
+    rule: "Respect nature - respect others - respect yourself.",
     img: "https://images.unsplash.com/photo-1548142813-c348350df52b?w=1200&q=80",
   },
   {
@@ -477,7 +477,7 @@ function page() {
           }}
         ></div>
 
-        {/* Service images — 1 col on mobile, 3-col asymmetric on desktop */}
+        {/* Service images - 1 col on mobile, 3-col asymmetric on desktop */}
         <div
           style={{
             display: "grid",
@@ -487,7 +487,7 @@ function page() {
           }}
         >
           <ParallaxImg
-            src="/about/about4.png"
+            src="/serv3/img1.png"
             alt="destination wedding"
             height={380}
             speed={0.06}
@@ -495,7 +495,7 @@ function page() {
             description=""
           />
           <ParallaxImg
-            src="/about/about2.png"
+            src="/serv3/img2.jpg"
             alt="travel"
             height={270}
             speed={0.04}
@@ -503,7 +503,7 @@ function page() {
             description=""
           />
           <ParallaxImg
-            src="/about/about3.png"
+            src="/serv3/img3.webp"
             alt="mountains"
             height={310}
             speed={0.07}
@@ -525,7 +525,7 @@ function page() {
       >
         {/* Left col: image */}
         <ParallaxImg
-          src="/about/about1.png"
+          src="/serv3/img4.png"
           alt="photographer with camera"
           height={480}
           speed={0.055}
@@ -604,6 +604,7 @@ function page() {
           ...twoColGrid,
         }}
       >
+          
         {/* On mobile, text comes first then image */}
         <div style={{ order: isMobile ? 1 : 0 }}>
           <h2
@@ -673,7 +674,7 @@ function page() {
 
         <div style={{ order: isMobile ? 0 : 1 }}>
           <ParallaxImg
-            src="/about/about2.png"
+           src="/serv3/img5.png"
             alt="kaat in landscape"
             height={520}
             speed={0.06}
@@ -866,7 +867,7 @@ function page() {
           }}
         >
           <ParallaxImg
-            src="/about/about4.png"
+            src="/serv3/post1.webp"
             alt="Post Production"
             height={380}
             speed={0.06}
@@ -874,7 +875,7 @@ function page() {
             description=" After the shoot, we carefully edit and curate the best moments, offering you digital galleries, highlight reels, and handcrafted photo albums."
           />
           <ParallaxImg
-            src="/about/about2.png"
+            src="/serv3/consult1.webp"
             alt="travel"
             height={260}
             speed={0.04}
@@ -882,7 +883,7 @@ function page() {
             description=" We start by understanding your story, vision, and wedding plans. We then suggest the best photography package based on your requirements."
           />
           <ParallaxImg
-            src="/about/about3.png"
+            src="/serv3/shoot1.jpg"
             alt="mountains"
             height={310}
             speed={0.07}
@@ -890,12 +891,12 @@ function page() {
             description=" We coordinate with your wedding planner or family to create a shoot timeline and prepare for venue visits, lighting conditions, and rituals."
           />
           <ParallaxImg
-            src="/about/about3.png"
+            src="/serv3/big1.webp"
             alt="mountains"
             height={310}
             speed={0.07}
             title="The Big Day"
-            description=" Our photographers arrive fully equipped and briefed, ready to cover every moment without being intrusive. You live your day—we capture it."
+            description=" Our photographers arrive fully equipped and briefed, ready to cover every moment without being intrusive. You live your day-we capture it."
           />
         </div>
 
@@ -939,7 +940,7 @@ function page() {
       >
         {/* image always first on mobile */}
         <ParallaxImg
-          src="/about/about3.png"
+          src="/serv3/love.jpeg"
           alt="surf couple"
           height={500}
           speed={0.05}

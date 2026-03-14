@@ -141,7 +141,7 @@ function ParallaxImg({
             paddingTop: "clamp(12px, 1.5vw, 22px)",
             fontFamily: "var(--font-editorial, serif)",
             fontWeight: 200,
-            fontSize: "clamp(15px, 2vw, 30px)",
+            fontSize: 17,
             lineHeight: 1.2,
             letterSpacing: "-0.01em",
             color: "#1e1e1a",
@@ -168,7 +168,7 @@ const MANIFESTO = [
   },
   {
     n: "03",
-    rule: "Love is love — all love is welcome here.",
+    rule: "Love is love - all love is welcome here.",
     img: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1200&q=80",
   },
   {
@@ -183,7 +183,7 @@ const MANIFESTO = [
   },
   {
     n: "06",
-    rule: "Respect nature — respect others — respect yourself.",
+    rule: "Respect nature - respect others - respect yourself.",
     img: "https://images.unsplash.com/photo-1548142813-c348350df52b?w=1200&q=80",
   },
   {
@@ -454,7 +454,7 @@ function page() {
       </div>
 
       <section style={{ padding: sectionPadding }}>
-        {/* Service images — 1 col on mobile, 3-col asymmetric on desktop */}
+        {/* Service images - 1 col on mobile, 3-col asymmetric on desktop */}
         <div
           style={{
             display: "grid",
@@ -464,7 +464,7 @@ function page() {
           }}
         >
           <ParallaxImg
-            src="/about/about4.png"
+            src="/serv2/img1.jpg"
             alt="destination wedding"
             height={380}
             speed={0.06}
@@ -472,7 +472,7 @@ function page() {
             description=""
           />
           <ParallaxImg
-            src="/about/about2.png"
+            src="/serv2/img2.jpg"
             alt="travel"
             height={270}
             speed={0.04}
@@ -480,7 +480,7 @@ function page() {
             description="From the bridal prep to the final farewell, we document each chapter of your wedding day with rich emotion, beautiful frames, and creative depth."
           />
           <ParallaxImg
-            src="/about/about3.png"
+            src="/serv2/img3.jpg"
             alt="mountains"
             height={310}
             speed={0.07}
@@ -501,7 +501,7 @@ function page() {
       >
         {/* Left col: image */}
         <ParallaxImg
-          src="/about/about1.png"
+          src="/serv2/img4.jpg"
           alt="photographer with camera"
           height={480}
           speed={0.055}
@@ -587,7 +587,7 @@ function page() {
               memorable pre wedding shoot in Bangalore.{" "}
             </p>
             <p style={{ margin: "0 0 12px" }}>
-              The city provides a rich blend of modernity and tradition—ideal
+              The city provides a rich blend of modernity and tradition-ideal
               for couples who want a diverse and dynamic photography experience.
               From the romantic avenues of Cubbon Park and the majestic
               structures at Bangalore Palace to rustic studios and contemporary
@@ -602,7 +602,7 @@ function page() {
         </div>
         {/* Left col: image */}
         <ParallaxImg
-          src="/about/about1.png"
+          src="/serv2/img5.webp"
           alt="photographer with camera"
           height={480}
           speed={0.055}
@@ -622,7 +622,7 @@ function page() {
       >
         {/* Left col: image */}
         <ParallaxImg
-          src="/about/about1.png"
+          src="/serv2/img6.webp"
           alt="photographer with camera"
           height={480}
           speed={0.055}
@@ -688,7 +688,7 @@ function page() {
       >
         {/* Left col: image */}
         <ParallaxImg
-          src="/about/about1.png"
+          src="/serv2/img7.jpg"
           alt="photographer with camera"
           height={480}
           speed={0.055}
@@ -722,7 +722,7 @@ function page() {
               A successful couple photoshoot in Bangalore requires more than just a camera and a location. 
             </p>
             <p style={{ margin: "0 0 12px" }}>
-              It requires vision, planning, and an experienced team that can guide you through the entire process. At House of Bliss, we offer end-to-end support—from concept development and styling to scheduling and execution.
+              It requires vision, planning, and an experienced team that can guide you through the entire process. At House of Bliss, we offer end-to-end support-from concept development and styling to scheduling and execution.
             </p>
             <p style={{ margin: "0 0 12px" }}>
               We help you choose the perfect attire, identify the best times for natural lighting, and plan a seamless flow so you can enjoy the experience without stress. 
@@ -763,7 +763,7 @@ function page() {
          
         </div>
 
-        {/* Service images — 1 col on mobile, 3-col asymmetric on desktop */}
+        {/* Service images - 1 col on mobile, 3-col asymmetric on desktop */}
         <div
           style={{
             display: "grid",
@@ -773,19 +773,19 @@ function page() {
           }}
         >
           <ParallaxImg
-            src="/about/about4.png"
+            src="/serv2/pop1.webp"
             alt="destination wedding"
             height={380}
             speed={0.06}
            />
           <ParallaxImg
-            src="/about/about2.png"
+            src="/serv2/pop2.webp"
             alt="travel"
             height={270}
             speed={0.04}
              />
           <ParallaxImg
-            src="/about/about3.png"
+            src="/serv2/pop3.webp"
             alt="mountains"
             height={310}
             speed={0.07}
@@ -840,7 +840,7 @@ function page() {
       >
         {/* Left col: image */}
         <ParallaxImg
-          src="/about/about1.png"
+          src="/serv2/book.jpeg"
           alt="photographer with camera"
           height={480}
           speed={0.055}
@@ -871,7 +871,7 @@ Book Your Pre-Wedding Shoot with House of Bliss
             }}
           >
             <p style={{ margin: "0 0 12px" }}>
-Your love story deserves to be remembered for a lifetime. With House of Bliss, your pre wedding shoot in Bangalore becomes more than just a photoshoot—it becomes a cherished experience filled with joy, creativity, and emotion.            </p>
+Your love story deserves to be remembered for a lifetime. With House of Bliss, your pre wedding shoot in Bangalore becomes more than just a photoshoot-it becomes a cherished experience filled with joy, creativity, and emotion.            </p>
             <p style={{ margin: "0 0 12px" }}>
 Let our team of the best pre wedding photographers in Bangalore craft your story through visuals that resonate with heart and meaning. From the initial idea to the final album, we’re with you at every step to ensure excellence, comfort, and authenticity.            </p>
             <p style={{ margin: "0 0 12px" }}>

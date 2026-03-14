@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 // ─── Usage examples ───────────────────────────────────────────────────────────
 // Dark page (default):   <Navbar />
@@ -50,7 +51,7 @@ const services = [
 const servicesRow1 = services.slice(0, 5);
 const servicesRow2 = services.slice(5, 10);
 
-// ─── Desktop services overlay — always dark glass, color-agnostic ─────────────
+// ─── Desktop services overlay - always dark glass, color-agnostic ─────────────
 function DesktopServiceLink({
   service, idx, visible, onClose,
 }: {
@@ -189,7 +190,7 @@ function MobileServicesPopover({
   );
 }
 
-// ─── Full-page menu overlay — always dark glass, color-agnostic ───────────────
+// ─── Full-page menu overlay - always dark glass, color-agnostic ───────────────
 function MenuOverlay({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [servicesPopoverOpen, setServicesPopoverOpen] = useState(false);
   useEffect(() => { if (!open) setServicesPopoverOpen(false); }, [open]);
@@ -208,7 +209,7 @@ function MenuOverlay({ open, onClose }: { open: boolean; onClose: () => void }) 
           style={{ borderBottom: "1px solid rgba(253,249,220,0.07)" }}>
           <Link href="/" onClick={onClose}>
             <span className="font-editorial text-[1.1rem] md:text-[1.5rem] text-[#fdf9dc] tracking-tight select-none">
-              HOUSE OF BLISS
+             <Image width={40} height={20} src="/logo.png" alt="House of Bliss" />
             </span>
           </Link>
           <button onClick={onClose} aria-label="Close menu"
@@ -354,12 +355,13 @@ function Navbar({ theme = "light", color }: NavbarProps) {
           boxShadow: scrolled ? scrolledShadow : "none",
         }}
       >
-        {/* Left: desktop links — all use `ink` color */}
+        {/* Left: desktop links - all use `ink` color */}
         <div className="hidden md:flex gap-5 items-center">
           <Link className="uppercase font-neue-light text-[15px] hover:underline transition"
             style={{ color: ink }} href="/portfolio">Portfolio</Link>
           <Link className="uppercase font-neue-light text-[15px] hover:underline transition"
             style={{ color: ink }} href="/about">About</Link>
+            
 
           <button onClick={() => setServicesOpen((p) => !p)} aria-expanded={servicesOpen}
             className="flex items-center gap-1.5 focus:outline-none group">
@@ -382,19 +384,22 @@ function Navbar({ theme = "light", color }: NavbarProps) {
           <Link href="/">
             <span className="font-editorial text-[1.3rem] md:text-[2rem] tracking-tight select-none whitespace-nowrap"
               style={{ color: ink }}>
-              HOUSE OF BLISS
+             <Image width={70} height={20} src="/logo.png" alt="House of Bliss" />
             </span>
           </Link>
         </div>
 
         {/* Right: MENU */}
-        <button
-          className="font-neue-light text-[16px] md:text-[15px] bg-transparent border-none outline-none cursor-pointer ml-auto"
-          style={{ color: ink }}
-          onClick={() => setMenuOpen(true)}
-        >
-          MENU
-        </button>
+    <button
+  className="relative overflow-hidden font-neue-light text-[16px] md:text-[15px] ml-auto group h-[20px]"
+  style={{ color: ink }}
+  onClick={() => setMenuOpen(true)}
+>
+  <span className="flex flex-col transition-transform duration-300 ease-out group-hover:-translate-y-1/2">
+    <span>MENU</span>
+    <span>MENU</span>
+  </span>
+</button>
       </nav>
 
       <ServicesOverlay open={servicesOpen} onClose={() => setServicesOpen(false)} />

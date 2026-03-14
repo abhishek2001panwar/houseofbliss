@@ -141,7 +141,7 @@ function ParallaxImg({
             paddingTop: "clamp(12px, 1.5vw, 22px)",
             fontFamily: "var(--font-editorial, serif)",
             fontWeight: 200,
-            fontSize: "clamp(15px, 2vw, 30px)",
+            fontSize: 17,
             lineHeight: 1.2,
             letterSpacing: "-0.01em",
             color: "#1e1e1a",
@@ -168,7 +168,7 @@ const MANIFESTO = [
   },
   {
     n: "03",
-    rule: "Love is love — all love is welcome here.",
+    rule: "Love is love - all love is welcome here.",
     img: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1200&q=80",
   },
   {
@@ -183,7 +183,7 @@ const MANIFESTO = [
   },
   {
     n: "06",
-    rule: "Respect nature — respect others — respect yourself.",
+    rule: "Respect nature - respect others - respect yourself.",
     img: "https://images.unsplash.com/photo-1548142813-c348350df52b?w=1200&q=80",
   },
   {
@@ -477,7 +477,7 @@ function page() {
       >
         {/* Left col: image */}
         <ParallaxImg
-          src="/about/about1.png"
+          src="/serv1/img1.webp"
           alt="photographer with camera"
           height={480}
           speed={0.055}
@@ -587,7 +587,7 @@ function page() {
             Cinematic wedding photography is a new and immersive visual
             storytelling style. It blends wedding photography and a cinematic
             feel by focusing on movement, emotion, composition, and
-            mood—bringing a movie quality to your wedding day. At House of
+            mood-bringing a movie quality to your wedding day. At House of
             Bliss, we provide a cinematic wedding photoshoot experience made
             just for you, your personality, preferences, and your love story.
             Slow-motion captures, natural light, framed moments, and
@@ -597,7 +597,7 @@ function page() {
 
         <div style={{ order: isMobile ? 0 : 1 }}>
           <ParallaxImg
-            src="/about/about2.png"
+            src="/serv1/img2.webp"
             alt="kaat in landscape"
             height={520}
             speed={0.06}
@@ -619,7 +619,7 @@ function page() {
       >
         {/* image always first on mobile */}
         <ParallaxImg
-          src="/about/about3.png"
+          src="/serv1/img3.webp"
           alt="surf couple"
           height={500}
           speed={0.05}
@@ -656,9 +656,77 @@ function page() {
             their wedding day:
           </p>
         </div>
+        
       </section>
 
-      <Divider />
+     
+
+       <section style={{ padding: sectionPadding }}>
+       
+
+        {/* Service images - 1 col on mobile, 3-col asymmetric on desktop */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: isMobile ? "1fr" : "1.6fr 1fr 1.2fr",
+            gap: isMobile ? 24 : 16,
+            alignItems: isMobile ? "stretch" : "end",
+          }}
+        >
+          <ParallaxImg
+            src="/serv1/why1.png"
+            alt="destination wedding"
+            height={380}
+            speed={0.06}
+            title="Story-Driven Visuals"
+            description="Based on cinematic wedding storytelling, every frame is connected - together, they tell a powerful, emotional, beautiful story that is uniquely yours."
+          />
+          <ParallaxImg
+            src="/serv1/why2.webp"
+            alt="travel"
+            height={270}
+            speed={0.04}
+            title="Luxury Wedding Aesthetics"
+            description="We create luxury cinematic wedding photography in Bengaluru, where every detail-from your designer lehenga to the glowing sunset-looks extraordinarily beautiful and sophisticated"
+          />
+          <ParallaxImg
+            src="/serv1/why3.webp"
+            alt="mountains"
+            height={310}
+            speed={0.07}
+            title="Experienced Team"
+            description="Our directors, editors, and artistic visionaries have been making wedding films and photographing fashion for years! Everyone on our team is committed to artistic precision, emotional depth, and your big day."
+          />
+          
+        
+           <ParallaxImg
+            src="/serv1/why4.webp"
+            alt="travel"
+            height={270}
+            speed={0.04}
+            title="Available Wherever Your Story Unfolds"
+            description="Though we have a place to call home, our work knows no boundaries. Whether it's a cozy celebration or a grand destination wedding, we're ready to travel and capture your moments-anywhere your love takes us."
+          />
+
+           <ParallaxImg
+            src="/serv1/why5.png"
+            alt="travel"
+            height={270}
+            speed={0.04}
+            title="Custom-Tailored Shoots"
+            description="No two weddings are the same. We talk with every couple to learn about their vision, personal style, and preferences to create a cinematic wedding photoshoot that is 100% original"
+          />
+          <ParallaxImg
+            src="/serv1/why6.png"
+            alt="mountains"
+            height={310}
+            speed={0.07}
+            title="Based in Bengaluru, Shoots Anywhere"
+            description="Our home base is in the heart of Bengaluru, but we travel domestically and internationally to shoot destination weddings, cultural events, and love stories."
+          />
+          
+        </div>
+      </section>
 
       {/* ── SERVICES ── */}
       <section style={{ padding: sectionPadding }}>
@@ -701,7 +769,7 @@ function page() {
           </p>
         </div>
 
-        {/* Service images — 1 col on mobile, 3-col asymmetric on desktop */}
+        {/* Service images - 1 col on mobile, 3-col asymmetric on desktop */}
         <div
           style={{
             display: "grid",
@@ -711,7 +779,7 @@ function page() {
           }}
         >
           <ParallaxImg
-            src="/about/about4.png"
+            src="/serv1/sig1.jpg"
             alt="destination wedding"
             height={380}
             speed={0.06}
@@ -719,7 +787,7 @@ function page() {
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
           />
           <ParallaxImg
-            src="/about/about2.png"
+            src="/serv1/sig2.png"
             alt="travel"
             height={270}
             speed={0.04}
@@ -727,7 +795,7 @@ function page() {
             description="From the bridal prep to the final farewell, we document each chapter of your wedding day with rich emotion, beautiful frames, and creative depth."
           />
           <ParallaxImg
-            src="/about/about3.png"
+            src="/serv1/sig3.webp"
             alt="mountains"
             height={310}
             speed={0.07}
@@ -735,12 +803,12 @@ function page() {
             description="Short, breathtaking highlights crafted to share on social media or relive the essence of your day in under 5 minutes. A true blend of film editing and wedding documentation."
           />
           <ParallaxImg
-            src="/about/about2.png"
+            src="/serv1/sig4.png"
             alt="travel"
             height={270}
             speed={0.04}
             title="Luxury Album Design & Delivery"
-            description="Our cinematic photography is not just digital. We offer beautifully crafted photo albums that feel like premium art books—because your memories deserve to be held, not just scrolled."
+            description="Our cinematic photography is not just digital. We offer beautifully crafted photo albums that feel like premium art books-because your memories deserve to be held, not just scrolled."
           />
         </div>
       </section>

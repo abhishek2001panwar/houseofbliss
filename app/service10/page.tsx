@@ -168,7 +168,7 @@ const MANIFESTO = [
   },
   {
     n: "03",
-    rule: "Love is love — all love is welcome here.",
+    rule: "Love is love - all love is welcome here.",
     img: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1200&q=80",
   },
   {
@@ -183,7 +183,7 @@ const MANIFESTO = [
   },
   {
     n: "06",
-    rule: "Respect nature — respect others — respect yourself.",
+    rule: "Respect nature - respect others - respect yourself.",
     img: "https://images.unsplash.com/photo-1548142813-c348350df52b?w=1200&q=80",
   },
   {
@@ -485,7 +485,7 @@ function page() {
       >
         {/* Left col: image */}
         <ParallaxImg
-          src="/about/about1.png"
+          src="/serv10/img1.png"
           alt="photographer with camera"
           height={480}
           speed={0.055}
@@ -536,8 +536,8 @@ function page() {
 
       <blockquote
         style={{
-          margin: "40px 0 0",
-          padding: "24px",
+          margin: "40px 0 10",
+          padding: "34px",
           borderLeft: "1px solid rgba(30,30,26,0.2)",
           fontFamily: "var(--font-editorial, serif)",
           fontWeight: 300,
@@ -569,6 +569,8 @@ function page() {
           to every shoot.
         </cite>
       </blockquote>
+
+    
 
       <ScrollStorySection
         tag=""
@@ -637,6 +639,12 @@ function page() {
           ...twoColGrid,
         }}
       >
+        <ParallaxImg
+          src="/serv10/img2.jpg"
+          alt="photographer with camera"
+          height={480}
+          speed={0.055}
+        />
         {/* Right col: text */}
         <div style={{ paddingTop: isMobile ? 0 : 40 }}>
           <h2
@@ -757,9 +765,9 @@ function page() {
             <p style={{ margin: "0 0 12px" }}>
               “House of Bliss captured our wedding in the most stunning and
               dreamy way. Every photo tells a story, and we couldn’t be
-              happier.” <br/> — Radhika & Arjun <br/> “The team was genuinely nice,
+              happier.” <br/> - Radhika & Arjun <br/> “The team was genuinely nice,
               professional, and so talented. They completely put us at ease, and
-              the results we got were stunning.” <br/> — Neha & Vikram{" "}
+              the results we got were stunning.” <br/> - Neha & Vikram{" "}
             </p>
           </div>
         </div>

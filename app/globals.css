@@ -1,57 +1,59 @@
 @import "tailwindcss";
 
+body{
+	overflow: auto;
+}
+
 /* Font Face Setup */
 @font-face {
-	font-family: 'PPEditorialOld-Ultralight';
-	src: url('/fonts/PPEditorialOld-Ultralight.ttf') format('truetype');
-	font-weight: 300;
-	font-style: normal;
+  font-family: "PPEditorialOld-Ultralight";
+  src: url("/fonts/PPEditorialOld-Ultralight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: 'PPNeueMontreal-Light';
-	src: url('/fonts/PPNeueMontreal-Light.ttf') format('truetype');
-	font-weight: 300;
-	font-style: normal;
+  font-family: "PPNeueMontreal-Light";
+  src: url("/fonts/PPNeueMontreal-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: 'PPNeueMontreal-Regular';
-	src: url('/fonts/PPNeueMontreal-Regular.ttf') format('truetype');
-	font-weight: 400;
-	font-style: normal;
+  font-family: "PPNeueMontreal-Regular";
+  src: url("/fonts/PPNeueMontreal-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: 'PPNeueMontreal-Medium';
-	src: url('/fonts/PPNeueMontreal-Medium.ttf') format('truetype');
-	font-weight: 500;
-	font-style: normal;
+  font-family: "PPNeueMontreal-Medium";
+  src: url("/fonts/PPNeueMontreal-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
 }
 
 :root {
-	--font-editorial: 'PPEditorialOld-Ultralight', sans-serif;
-	--font-neue-light: 'PPNeueMontreal-Light', sans-serif;
-	--font-neue-regular: 'PPNeueMontreal-Regular', sans-serif;
-	--font-neue-medium: 'PPNeueMontreal-Medium', sans-serif;
+  --font-editorial: "PPEditorialOld-Ultralight", sans-serif;
+  --font-neue-light: "PPNeueMontreal-Light", sans-serif;
+  --font-neue-regular: "PPNeueMontreal-Regular", sans-serif;
+  --font-neue-medium: "PPNeueMontreal-Medium", sans-serif;
 }
 
 @keyframes hero-fade {
-	0% {
-		opacity: 0;
-		transform: translateY(48px);
-	}
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
+  0% {
+    opacity: 0;
+    transform: translateY(48px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-hero-fade {
-	animation: hero-fade 1s cubic-bezier(0.77,0,0.175,1) forwards;
+  animation: hero-fade 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
 }
-
-
 
 .font-editorial {
   font-family: var(--font-editorial);
@@ -83,10 +85,19 @@
 html {
   scroll-behavior: smooth;
 }
- @keyframes am-up {
-          from { opacity: 0; transform: translateY(28px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-        .am-in .am-title { animation: am-up 1s cubic-bezier(.22,.68,0,1.1) 0.1s both; }
-        .am-in .am-body  { animation: am-up 1s cubic-bezier(.22,.68,0,1.1) 0.35s both; }
-    
+@keyframes am-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.am-in .am-title {
+  animation: am-up 1s cubic-bezier(0.22, 0.68, 0, 1.1) 0.1s both;
+}
+.am-in .am-body {
+  animation: am-up 1s cubic-bezier(0.22, 0.68, 0, 1.1) 0.35s both;
+}

@@ -60,9 +60,9 @@ function AnimatedLine({
   const color = p < 0.6 ? accentColor : textColor;
 
   return (
-    // outer ref used only for scroll position tracking — no overflow hidden here
+    // outer ref used only for scroll position tracking - no overflow hidden here
     <div ref={ref} style={{ lineHeight: 1.3, marginBottom: "0.18em" }}>
-      {/* clip wrapper — hides the line until it slides up */}
+      {/* clip wrapper - hides the line until it slides up */}
       <div style={{ overflow: "hidden" }}>
         <span
           style={{
@@ -307,13 +307,13 @@ export default function ScrollStorySection({
 /*
 ── USAGE ────────────────────────────────────────────────────────────────────
 
-// Plain lines — slide up from bottom, colour changes on entry:
+// Plain lines - slide up from bottom, colour changes on entry:
 <ScrollStorySection
   tag="Who we are"
   lines={[
     "House of Bliss is a community of photographers,",
     "filmmakers, editors, and dreamers who understand",
-    "that weddings are so much more than just events —",
+    "that weddings are so much more than just events -",
     "they are love stories ready to be told.",
   ]}
   accentColor="#3b4237"
@@ -328,9 +328,9 @@ export default function ScrollStorySection({
   bullets={[
     { title: "Pre-Wedding & Couple Photoshoots", desc: "Beautifully planned sessions that reflect your personalities and love story in every frame." },
     { title: "Candid Wedding Photography",        desc: "Authentic, emotional, and spontaneous moments captured discreetly and gracefully." },
-    { title: "Cinematic Wedding Films",           desc: "High-quality storytelling with cinematic editing, music, and mood—crafted to move you every time you watch." },
+    { title: "Cinematic Wedding Films",           desc: "High-quality storytelling with cinematic editing, music, and mood-crafted to move you every time you watch." },
     { title: "Drone Videography",                 desc: "Breathtaking aerial shots that add a grand, unforgettable perspective to your wedding film." },
-    { title: "Complete Event Coverage",           desc: "From Haldi to Mehendi to Sangeet to Reception—our lens captures it all with artistic precision." },
+    { title: "Complete Event Coverage",           desc: "From Haldi to Mehendi to Sangeet to Reception-our lens captures it all with artistic precision." },
   ]}
   closing="No matter how big or intimate your wedding is, our team brings the same passion and professionalism to every celebration."
 />

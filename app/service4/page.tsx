@@ -141,7 +141,7 @@ function ParallaxImg({
             paddingTop: "clamp(12px, 1.5vw, 22px)",
             fontFamily: "var(--font-editorial, serif)",
             fontWeight: 200,
-            fontSize: "clamp(15px, 2vw, 30px)",
+            fontSize: 18,
             lineHeight: 1.2,
             letterSpacing: "-0.01em",
             color: "#1e1e1a",
@@ -168,7 +168,7 @@ const MANIFESTO = [
   },
   {
     n: "03",
-    rule: "Love is love — all love is welcome here.",
+    rule: "Love is love - all love is welcome here.",
     img: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1200&q=80",
   },
   {
@@ -183,7 +183,7 @@ const MANIFESTO = [
   },
   {
     n: "06",
-    rule: "Respect nature — respect others — respect yourself.",
+    rule: "Respect nature - respect others - respect yourself.",
     img: "https://images.unsplash.com/photo-1548142813-c348350df52b?w=1200&q=80",
   },
   {
@@ -489,7 +489,7 @@ function page() {
       >
         {/* Left col: image */}
         <ParallaxImg
-          src="/about/about1.png"
+          src="/serv4/img1.jpg"
           alt="photographer with camera"
           height={480}
           speed={0.055}

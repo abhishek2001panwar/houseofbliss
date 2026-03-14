@@ -2,108 +2,266 @@
 import React, { useRef, useEffect, useState } from 'react'
 
 const About2 = () => {
-  const sectionRef = useRef(null);
-  const [inView, setInView] = useState(false);
-  const [imgScale, setImgScale] = useState(0.75);
-  const [imgRadius, setImgRadius] = useState(40);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [inView,     setInView]     = useState(false);
+  const [imgScale,   setImgScale]   = useState(0.82);
+  const [imgRadius,  setImgRadius]  = useState(32);
+  const [textReady,  setTextReady]  = useState(false);
 
   useEffect(() => {
-    const handleScrollResize = () => {
+    const handleScroll = () => {
       if (!sectionRef.current) return;
-      const rect = (sectionRef.current as HTMLElement).getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        setInView(true);
-        const progress = Math.min(Math.max((window.innerHeight - rect.top) / (window.innerHeight * 0.8), 0), 1);
-        // Scale from 0.75 → 1
-        setImgScale(0.75 + 0.25 * progress);
-        // Border radius from 40px → 0px as it fills
-        setImgRadius(40 * (1 - progress));
+      const rect = sectionRef.current.getBoundingClientRect();
+      const visible = rect.top < window.innerHeight && rect.bottom > 0;
+
+      if (visible) {
+        if (!inView) {
+          setInView(true);
+          // slight delay so text animates after video starts scaling
+          setTimeout(() => setTextReady(true), 300);
+        }
+        const progress = Math.min(
+          Math.max((window.innerHeight - rect.top) / (window.innerHeight * 0.75), 0),
+          1
+        );
+        setImgScale(0.82 + 0.18 * progress);
+        setImgRadius(32 * (1 - progress));
       } else {
         setInView(false);
-        setImgScale(0.75);
-        setImgRadius(40);
+        setTextReady(false);
+        setImgScale(0.82);
+        setImgRadius(32);
       }
     };
-    window.addEventListener('scroll', handleScrollResize, { passive: true });
-    window.addEventListener('resize', handleScrollResize);
-    handleScrollResize();
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll);
+    handleScroll();
     return () => {
-      window.removeEventListener('scroll', handleScrollResize);
-      window.removeEventListener('resize', handleScrollResize);
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
     };
-  }, []);
+  }, [inView]);
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative w-full h-screen bg-[#F4F1E5] overflow-hidden flex items-end justify-start "
-    >
-      {/* Fullscreen Image — no overlay, scales to full */}
-      <div className="absolute inset-0 w-full h-full flex items-center justify-center">
-        <video
-          src="https://houseofbliss.co.in/wp-content/uploads/2025/05/Untitled-design-2.mp4"
-          className="object-cover transition-all duration-500 ease-out"
+    <>
+      <style>{`
+        @keyframes hob-line-in {
+          from { transform: scaleX(0); opacity: 0; }
+          to   { transform: scaleX(1); opacity: 1; }
+        }
+        @keyframes hob-fade-up {
+          from { opacity: 0; transform: translateY(22px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes hob-tag-spread {
+          from { opacity: 0; letter-spacing: 0.5em; }
+          to   { opacity: 1; letter-spacing: 0.22em; }
+        }
+        .about2-tag  { animation: hob-tag-spread  0.9s cubic-bezier(0.16,1,0.3,1) both; }
+        .about2-h2   { animation: hob-fade-up     0.9s cubic-bezier(0.16,1,0.3,1) 0.14s both; }
+        .about2-body { animation: hob-fade-up     0.9s cubic-bezier(0.16,1,0.3,1) 0.26s both; }
+        .about2-rule { 
+          transform-origin: left;
+          animation: hob-line-in  0.8s cubic-bezier(0.16,1,0.3,1) 0.38s both;
+        }
+        .about2-stat { animation: hob-fade-up 0.9s cubic-bezier(0.16,1,0.3,1) both; }
+      `}</style>
+
+      <section
+        ref={sectionRef}
+        style={{
+          position: 'relative',
+          width: '100%',
+          /* full viewport height on md+, auto on mobile so text isn't crushed */
+          minHeight: 'min(100vh, 700px)',
+          background: '#F4F1E5',
+          overflow: 'hidden',
+          display: 'flex',
+          alignItems: 'flex-end',
+          justifyContent: 'flex-start',
+        }}
+      >
+        {/* ── Video - scale + border-radius reveal ── */}
+        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <video
+            src="https://houseofbliss.co.in/wp-content/uploads/2025/05/Untitled-design-2.mp4"
+            loop autoPlay muted playsInline
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              transform: `scale(${imgScale})`,
+              borderRadius: `${imgRadius}px`,
+              willChange: 'transform, border-radius',
+              transition: 'transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94), border-radius 0.45s ease',
+              display: 'block',
+            }}
+          />
+        </div>
+
+        {/* ── Gradient vignette (scales with video) ── */}
+        <div
           style={{
-            width: '100%',
-            height: '100%',
+            position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1,
             transform: `scale(${imgScale})`,
             borderRadius: `${imgRadius}px`,
-            willChange: 'transform, border-radius',
+            transition: 'transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94), border-radius 0.45s ease',
+            background: `
+              linear-gradient(to top,  rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.22) 38%, transparent 55%),
+              linear-gradient(to right, rgba(0,0,0,0.45) 0%, transparent 55%)
+            `,
           }}
-          loop
-          autoPlay
-          muted
-          controls={false}
         />
-      </div>
 
-      {/* Bottom gradient — only for text legibility, no color overlay */}
-      <div
-        className="absolute inset-0 pointer-events-none z-10"
-        style={{
-          background: 'linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.18) 40%, transparent 50%)',
-          borderRadius: `${imgRadius}px`,
-          transform: `scale(${imgScale})`,
-          transition: 'all 0.5s ease-out',
-        }}
-      />
+        {/* ── Corner accent (top-right) ── */}
+        <div style={{
+          position: 'absolute', top: 28, right: 28, zIndex: 5,
+          width: 22, height: 22,
+          borderTop:   '1.5px solid rgba(253,249,220,0.35)',
+          borderRight: '1.5px solid rgba(253,249,220,0.35)',
+          opacity: textReady ? 1 : 0,
+          transition: 'opacity 0.6s ease 0.7s',
+        }} />
+        <div style={{
+          position: 'absolute', bottom: 28, left: 28, zIndex: 5,
+          width: 22, height: 22,
+          borderBottom: '1.5px solid rgba(253,249,220,0.35)',
+          borderLeft:   '1.5px solid rgba(253,249,220,0.35)',
+          opacity: textReady ? 1 : 0,
+          transition: 'opacity 0.6s ease 0.7s',
+        }} />
 
-      {/* Text — bottom left */}
-      <div className="relative z-20 flex flex-col items-start justify-end px-8 md:px-20 pb-14 md:pb-20 max-w-2xl">
-        {/* Eyebrow label */}
-      
-
-        <h2
-          className={`font-editorial text-[#fdf9dc] text-3xl sm:text-4xl md:text-5xl leading-tight mb-4 transition-all duration-700 ${
-            inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}
-          style={{ transitionDelay: '0.15s' }}
+        {/* ── Text block - bottom left ── */}
+        <div
+          style={{
+            position: 'relative',
+            zIndex: 10,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+            justifyContent: 'flex-end',
+            /* responsive padding */
+            padding: 'clamp(20px, 5vw, 80px) clamp(20px, 5vw, 80px) clamp(28px, 6vh, 72px)',
+            maxWidth: 'min(640px, 90vw)',
+          }}
         >
-          Where Your Love Story<br />Takes Center Stage.
-        </h2>
+          {/* Tag */}
+          {textReady && (
+            <p
+              className="about2-tag"
+              style={{
+                fontFamily: 'var(--font-neue-light, sans-serif)',
+                fontSize: 'clamp(8px, 1.8vw, 10px)',
+                letterSpacing: '0.22em',
+                textTransform: 'uppercase',
+                color: 'rgba(253,249,220,0.5)',
+                margin: '0 0 14px',
+              }}
+            >
+              Our Story
+            </p>
+          )}
 
-        <p
-          className={`font-neue-light text-[#fdf9dc]/80 text-sm md:text-base mb-8 max-w-sm leading-relaxed transition-all duration-700 ${
-            inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}
-          style={{ transitionDelay: '0.28s' }}
-        >
-          We believe every couple has a unique tale waiting to be told with artistry and emotion.
-        </p>
+          {/* Heading */}
+          {textReady && (
+            <h2
+              className="about2-h2"
+              style={{
+                fontFamily: 'var(--font-editorial, Georgia, serif)',
+                fontSize: 'clamp(24px, 4.5vw, 58px)',
+                fontWeight: 300,
+                color: '#fdf9dc',
+                margin: '0 0 16px',
+                lineHeight: 1.1,
+                letterSpacing: '-0.02em',
+              }}
+            >
+              Where Your Love Story<br />Takes Centre Stage.
+            </h2>
+          )}
 
-        {/* <a
-          href="#"
-          className={`group inline-flex items-center gap-3 font-neue-medium text-[#fdf9dc] text-sm tracking-wide border border-[#fdf9dc]/40 px-6 py-3  backdrop-blur-sm bg-white/10 hover:bg-white/20 hover:border-[#fdf9dc]/70 transition-all duration-300 ${
-            inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}
-          style={{ transitionDelay: '0.42s' }}
-        >
-          Learn More
-          <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
-        </a> */}
-      </div>
-    </section>
-  )
-}
+          {/* Rule */}
+          {textReady && (
+            <div
+              className="about2-rule"
+              style={{
+                height: 1,
+                width: 'clamp(32px, 5vw, 60px)',
+                background: 'rgba(253,249,220,0.3)',
+                marginBottom: 16,
+              }}
+            />
+          )}
 
-export default About2
+          {/* Body */}
+          {textReady && (
+            <p
+              className="about2-body"
+              style={{
+                fontFamily: 'var(--font-neue-light, sans-serif)',
+                fontSize: 'clamp(13px, 1.8vw, 16px)',
+                lineHeight: 1.82,
+                color: 'rgba(253,249,220,0.72)',
+                margin: '0 0 clamp(20px, 3.5vh, 36px)',
+                maxWidth: 400,
+              }}
+            >
+              We believe every couple has a unique tale waiting to be told
+              with artistry, intention, and deep emotion.
+            </p>
+          )}
+
+          {/* Stats row */}
+          {textReady && (
+            <div style={{ display: 'flex', gap: 'clamp(20px, 4vw, 44px)', alignItems: 'flex-start' }}>
+              {[
+                { num: '500+', label: 'Weddings' },
+                { num: '8+',   label: 'Years' },
+                { num: '12',   label: 'Cities' },
+              ].map((stat, i) => (
+                <div
+                  key={stat.label}
+                  className="about2-stat"
+                  style={{ animationDelay: `${0.38 + i * 0.1}s` }}
+                >
+                  <p style={{
+                    margin: 0,
+                    fontFamily: 'var(--font-editorial, Georgia, serif)',
+                    fontSize: 'clamp(20px, 3.5vw, 34px)',
+                    fontWeight: 300,
+                    color: '#fdf9dc',
+                    lineHeight: 1,
+                    letterSpacing: '-0.02em',
+                  }}>
+                    {stat.num}
+                  </p>
+                  <p style={{
+                    margin: '5px 0 0',
+                    fontFamily: 'var(--font-neue-light, sans-serif)',
+                    fontSize: 'clamp(8px, 1.5vw, 10px)',
+                    letterSpacing: '0.2em',
+                    textTransform: 'uppercase',
+                    color: 'rgba(253,249,220,0.42)',
+                  }}>
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* ── Grain overlay ── */}
+        <div style={{
+          position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 2,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+          opacity: 0.032,
+          backgroundSize: '140px 140px',
+        }} />
+      </section>
+    </>
+  );
+};
+
+export default About2;

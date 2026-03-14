@@ -7,7 +7,7 @@ export const BLOGS = [
     img: "/blog/img1.png",
     content: `
    <blockquote class="text-xl italic text-center my-12 leading-relaxed">
-  “Weddings pass in a blur—but the right photograph lets you relive every emotion.
+  “Weddings pass in a blur-but the right photograph lets you relive every emotion.
   At House of Bliss, we’re not just preserving images. We’re preserving feelings.”
 </blockquote>
 
@@ -16,14 +16,14 @@ export const BLOGS = [
 </p>
 
 <p class="mb-6 leading-relaxed">
-  You won’t even realize how fast it all goes by—the laughter, the vows, the stolen
+  You won’t even realize how fast it all goes by-the laughter, the vows, the stolen
   glances, and the warm tears. In the rush of rituals, dancing, and celebration,
   the little moments quietly slip away. But they’re not lost. Not if they’re
   captured right.
 </p>
 
 <p class="mb-6 leading-relaxed">
-  At <strong>House of Bliss</strong>, we don’t just click photos—we preserve
+  At <strong>House of Bliss</strong>, we don’t just click photos-we preserve
   emotions. We believe your wedding isn’t just an event; it’s a story. A love
   story. A family’s legacy. A new beginning. And every time you open your album
   or scroll through your gallery, it should feel like stepping back into that
@@ -33,7 +33,7 @@ export const BLOGS = [
 <p class="mb-6 leading-relaxed">
   Years from now, when the noise fades and life has moved on, your wedding
   photographs will still speak. They’ll whisper the vows again. They’ll echo the
-  laughter. They’ll carry the same magic—and more.
+  laughter. They’ll carry the same magic-and more.
 </p>
 
 <p class="text-lg font-medium mt-10">
@@ -104,7 +104,7 @@ Lighting plays a pivotal role in cinematic photography. Soft, natural light, gol
 </h3>
 
 <p class="text-lg mb-6">
-Cinematic photographers use dynamic angles, such as aerial shots, close-ups, or wide-angle frames, to add depth and drama. These techniques make ordinary moments—like the couple’s first dance—feel extraordinary.
+Cinematic photographers use dynamic angles, such as aerial shots, close-ups, or wide-angle frames, to add depth and drama. These techniques make ordinary moments-like the couple’s first dance-feel extraordinary.
 </p>
 
 <h3 class="font-editorial text-2xl md:text-3xl font-bold mt-8 mb-3">
@@ -120,7 +120,7 @@ Why Every Couple Needs Cinematic Wedding Photography
 </h2>
 
 <p class="text-lg mb-6">
-Choosing cinematic wedding photography in Bengaluru is more than just a trend—it’s a way to preserve your wedding day in a way that feels authentic and unforgettable. Here’s why every couple should consider this style:
+Choosing cinematic wedding photography in Bengaluru is more than just a trend-it’s a way to preserve your wedding day in a way that feels authentic and unforgettable. Here’s why every couple should consider this style:
 </p>
 
 <h3 class="font-editorial text-2xl md:text-3xl font-bold mt-8 mb-3">
@@ -160,7 +160,7 @@ Bengaluru’s wedding venues, from heritage palaces to modern resorts, provide a
 </h3>
 
 <p class="text-lg mb-8">
-Your wedding photos aren’t just for you—they’re a legacy for future generations. Cinematic photography creates a visual heirloom that your children and grandchildren will treasure. With House of Bliss, you’re investing in memories that will inspire awe for years to come.
+Your wedding photos aren’t just for you-they’re a legacy for future generations. Cinematic photography creates a visual heirloom that your children and grandchildren will treasure. With House of Bliss, you’re investing in memories that will inspire awe for years to come.
 </p>
 
 <h2 class="font-editorial text-4xl md:text-5xl font-bold mt-12 mb-6">
@@ -223,7 +223,7 @@ Conclusion
 </h2>
 
 <p class="text-lg">
-Cinematic wedding photography in Bengaluru is more than just a photography style—it’s a way to transform your wedding day into a timeless love story. With its focus on storytelling, dramatic visuals, and emotional depth, this approach ensures your memories are captured in a way that feels magical. For couples seeking the best wedding photography, House of Bliss is the ultimate choice. Their expertise, personalized approach, and passion for cinematic storytelling make them a trusted name in wedding photography in Bengaluru.
+Cinematic wedding photography in Bengaluru is more than just a photography style-it’s a way to transform your wedding day into a timeless love story. With its focus on storytelling, dramatic visuals, and emotional depth, this approach ensures your memories are captured in a way that feels magical. For couples seeking the best wedding photography, House of Bliss is the ultimate choice. Their expertise, personalized approach, and passion for cinematic storytelling make them a trusted name in wedding photography in Bengaluru.
 </p>
 
 </article>
@@ -247,7 +247,7 @@ Niharika & Steven
 </h2>
 
 <p class="text-lg mb-6">
-It’s barely dawn in Bengaluru, and the world’s best photographers are already capturing magic. But in this quiet hotel room, I’m mesmerized by something far more profound than perfect lighting—I’m watching what mirrors remember.
+It’s barely dawn in Bengaluru, and the world’s best photographers are already capturing magic. But in this quiet hotel room, I’m mesmerized by something far more profound than perfect lighting-I’m watching what mirrors remember.
 </p>
 
 <p class="text-lg mb-6">
@@ -263,11 +263,11 @@ Across town, Steven stares into his bathroom mirror, adjusting his bowtie for th
 </p>
 
 <p class="text-lg mb-6">
-These mirrors become repositories of our most vulnerable moments—the ones that make India’s best photographers pause and forget to breathe.
+These mirrors become repositories of our most vulnerable moments-the ones that make India’s best photographers pause and forget to breathe.
 </p>
 
 <p class="text-lg mb-6">
-At House of Bliss, we’ve learned that most wedding photographers might capture the ceremony, but we hunt for what mirrors see: the weight of promises yet to be made, the transformation happening in real-time. Because mirrors don’t lie—they hold the truth of becoming someone’s forever.
+At House of Bliss, we’ve learned that most wedding photographers might capture the ceremony, but we hunt for what mirrors see: the weight of promises yet to be made, the transformation happening in real-time. Because mirrors don’t lie-they hold the truth of becoming someone’s forever.
 </p>
 
 <p class="text-lg mb-6">
@@ -276,7 +276,7 @@ Professional photographers in Bengaluru understand ceremonies, but we understand
 
 <div class="mt-12 text-center">
 <p class="text-xl font-semibold mb-4">
-Looking for a team that captures your love just the way it is—raw, real, and timeless? Let’s talk.
+Looking for a team that captures your love just the way it is-raw, real, and timeless? Let’s talk.
 </p>
 
 <a href="/contact" class="inline-block px-8 py-3 bg-[#41453D] text-[#fdf9dc] font-semibold tracking-wide hover:opacity-90 transition">
@@ -310,11 +310,11 @@ Not just the crimson powder being gently applied to her hairline in the sacred f
 </p>
 
 <p class="text-lg mb-6">
-The sindoor traces a thin red line between who she was and who she’s becoming. Her smile breaks through like sunrise—pure, unguarded, transformative. The world’s best photographers might focus on the vermillion’s vibrant color, but we see the weight—the beautiful responsibility of carrying someone’s heart as carefully as they carry yours.
+The sindoor traces a thin red line between who she was and who she’s becoming. Her smile breaks through like sunrise-pure, unguarded, transformative. The world’s best photographers might focus on the vermillion’s vibrant color, but we see the weight-the beautiful responsibility of carrying someone’s heart as carefully as they carry yours.
 </p>
 
 <p class="text-lg mb-6">
-Her mother-in-law’s gentle hands tremble slightly as she completes the ancient gesture. Three generations of women understanding this moment’s gravity, bound by red threads of tradition and unspoken promises. This is why we became India’s best photographers—not for perfect lighting, but for witnessing the second when blessing becomes identity.
+Her mother-in-law’s gentle hands tremble slightly as she completes the ancient gesture. Three generations of women understanding this moment’s gravity, bound by red threads of tradition and unspoken promises. This is why we became India’s best photographers-not for perfect lighting, but for witnessing the second when blessing becomes identity.
 </p>
 
 <p class="text-lg mb-6">
@@ -340,7 +340,7 @@ Because some marks last lifetimes.
 
 
 <p class="text-lg mb-6">
-It’s that time in Bengaluru, and I’m crouched behind my camera when something extraordinary happens—time decides to pause.
+It’s that time in Bengaluru, and I’m crouched behind my camera when something extraordinary happens-time decides to pause.
 </p>
 
 <p class="text-lg mb-6">
@@ -348,7 +348,7 @@ We’ve been documenting weddings across India for years now, and as professiona
 </p>
 
 <p class="text-lg mb-6">
-I’m adjusting my lens when I catch it—that fraction of a second when a father’s composure completely dissolves. Not the gentle tears we expect, but something rawer.
+I’m adjusting my lens when I catch it-that fraction of a second when a father’s composure completely dissolves. Not the gentle tears we expect, but something rawer.
 </p>
 
 <p class="text-lg mb-6">
@@ -356,7 +356,7 @@ His daughter is mid-ritual, completely absorbed in becoming someone’s wife, wh
 </p>
 
 <p class="text-lg mb-6">
-This is what we live for at House of Bliss. While the best wedding photographers might capture the ceremony’s surface, we hunt for these fractures in time—the moments when storytelling transcends photography. When authentic human experience refuses to be contained by any frame, no matter how perfect.
+This is what we live for at House of Bliss. While the best wedding photographers might capture the ceremony’s surface, we hunt for these fractures in time-the moments when storytelling transcends photography. When authentic human experience refuses to be contained by any frame, no matter how perfect.
 </p>
 
 <p class="text-lg">
@@ -375,7 +375,7 @@ Some images choose us. This one chose to stop time entirely.
 
 
 <p class="mb-6">
-Your wedding day is a whirlwind of love, joy, and moments you’ll want to relive forever. In Bengaluru, where vibrant traditions meet modern flair, finding a photographer who can capture every smile, tear, and dance move feels like a big task. But don’t worry—I’m here to help you find the wedding photography pro who’ll make your memories sparkle.
+Your wedding day is a whirlwind of love, joy, and moments you’ll want to relive forever. In Bengaluru, where vibrant traditions meet modern flair, finding a photographer who can capture every smile, tear, and dance move feels like a big task. But don’t worry-I’m here to help you find the wedding photography pro who’ll make your memories sparkle.
 </p>
 
 <p class="mb-10">
@@ -385,7 +385,7 @@ Let’s walk through how to choose the best wedding photography in Bangalore tha
 <h2 class="text-3xl font-editorial mt-12 mb-6">Why Wedding Photography Is a Big Deal</h2>
 
 <p class="mb-6">
-Your wedding photos aren’t just pictures—they’re time capsules of your love story. From the glow of the mangalsutra moment to the sneaky grins during the jaimala, a great photographer freezes those fleeting seconds.
+Your wedding photos aren’t just pictures-they’re time capsules of your love story. From the glow of the mangalsutra moment to the sneaky grins during the jaimala, a great photographer freezes those fleeting seconds.
 </p>
 
 <p class="mb-6">
@@ -508,7 +508,7 @@ Choose a photographer who understands your vision and captures your love story a
 
 
 <p class="text-lg mb-6">
-Sweetness has a sound—it’s the nervous giggle that escapes when your husband of exactly three minutes lifts his palm to your lips to feed you a bit of jaggery, almost a ritual to ensure that the marriage will remain as sweet and bountiful as the jaggery.
+Sweetness has a sound-it’s the nervous giggle that escapes when your husband of exactly three minutes lifts his palm to your lips to feed you a bit of jaggery, almost a ritual to ensure that the marriage will remain as sweet and bountiful as the jaggery.
 </p>
 
 <p class="text-lg mb-6">
@@ -524,7 +524,7 @@ It’s not about the perfect angle; it’s about understanding that marriage beg
 </p>
 
 <p class="text-lg mb-6">
-Just minutes earlier, their hands had been bound with sacred thread, witnessed by fire and family. The top wedding photographers in the area would have captured that solemnity beautifully. But here, in this quiet corner where newlyweds feed each other their first meal as one, something more intimate unfolds—the realization that forever tastes of cardamom and confidence.
+Just minutes earlier, their hands had been bound with sacred thread, witnessed by fire and family. The top wedding photographers in the area would have captured that solemnity beautifully. But here, in this quiet corner where newlyweds feed each other their first meal as one, something more intimate unfolds-the realization that forever tastes of cardamom and confidence.
 </p>
 
 <p class="text-lg mb-6">
@@ -532,7 +532,7 @@ House of Bliss exists for moments like these, when tradition dissolves into tend
 </p>
 
 <p class="text-lg">
-This is why we chase the unscripted moments, the beautifully imperfect interactions. Because the best wedding photography isn’t measured in hours or prints—it’s measured in how perfectly it captures the exact second when sweetness becomes memory, and when strangers become storytellers of their own forever.
+This is why we chase the unscripted moments, the beautifully imperfect interactions. Because the best wedding photography isn’t measured in hours or prints-it’s measured in how perfectly it captures the exact second when sweetness becomes memory, and when strangers become storytellers of their own forever.
 </p>
 
 </article>
@@ -548,7 +548,7 @@ This is why we chase the unscripted moments, the beautifully imperfect interacti
 
 
 <p class="text-lg mb-6">
-There’s something ancient about turmeric that even the wedding photographers in India struggle to capture—the way it transforms everything it touches, including the hearts holding it.
+There’s something ancient about turmeric that even the wedding photographers in India struggle to capture-the way it transforms everything it touches, including the hearts holding it.
 </p>
 
 <p class="text-lg mb-6">
@@ -560,7 +560,7 @@ When the first handful flew through the air, chaos erupted. Vinayak’s white ku
 </p>
 
 <p class="text-lg mb-6">
-At House of Bliss, we’ve learned to anticipate these moments—when the first handful flies through the air and chaos erupts. Laughter becomes contagious, spreading from grandmother to toddler, from serious uncles to shy aunts. Even India’s well-known photographers know to step back during these bursts of authentic joy because the most beautiful shots happen when families forget they’re being photographed.
+At House of Bliss, we’ve learned to anticipate these moments-when the first handful flies through the air and chaos erupts. Laughter becomes contagious, spreading from grandmother to toddler, from serious uncles to shy aunts. Even India’s well-known photographers know to step back during these bursts of authentic joy because the most beautiful shots happen when families forget they’re being photographed.
 </p>
 
 <p class="text-lg mb-6">
@@ -587,11 +587,11 @@ This is why we believe most wedding photographers might capture events, but we c
 
 
 <p class="text-lg mb-6">
-The red veil holds more than fabric—it holds centuries of whispered prayers. When the world’s best photographers talk about bridal portraits, they see composition. We see the last moments of solitude before forever begins. Behind this crimson curtain, she breathes in her old life one final time.
+The red veil holds more than fabric-it holds centuries of whispered prayers. When the world’s best photographers talk about bridal portraits, they see composition. We see the last moments of solitude before forever begins. Behind this crimson curtain, she breathes in her old life one final time.
 </p>
 
 <p class="text-lg mb-6">
-There’s something sacred about these stolen seconds. While top wedding photographers in India rush between ceremonial shots, we pause for the poetry of preparation. The dupatta cascades like liquid fire, each sequin catching light like captured stars. This isn’t just about being a photographer—it’s about understanding that transformation happens in silence.
+There’s something sacred about these stolen seconds. While top wedding photographers in India rush between ceremonial shots, we pause for the poetry of preparation. The dupatta cascades like liquid fire, each sequin catching light like captured stars. This isn’t just about being a photographer-it’s about understanding that transformation happens in silence.
 </p>
 
 <p class="text-lg mb-6">
@@ -603,11 +603,11 @@ Later, when she steps into that golden embrace with her beloved, the world will 
 </p>
 
 <p class="text-lg mb-6">
-At House of Bliss, we’ve learned that these are the frames that separate wedding photographers from storytellers—the ones who recognize that some of life’s most profound moments happen when we think no one is watching.
+At House of Bliss, we’ve learned that these are the frames that separate wedding photographers from storytellers-the ones who recognize that some of life’s most profound moments happen when we think no one is watching.
 </p>
 
 <p class="text-lg">
-This is why House of Bliss exists—to honor the sacred spaces between heartbeats, to capture the poetry that lives in preparation and transformation. Because behind every veil lies a universe of becoming, and we’re here to witness it with reverence.
+This is why House of Bliss exists-to honor the sacred spaces between heartbeats, to capture the poetry that lives in preparation and transformation. Because behind every veil lies a universe of becoming, and we’re here to witness it with reverence.
 </p>
 
 </article>`
@@ -626,7 +626,7 @@ Some moments exist in the space between prayer and answer, where even the world�
 </p>
 
 <p class="text-lg mb-6">
-Nishanth’s eyes closed as she lifted the sacred flame, while Thagnatha whispered mantras created a rhythm only the divine could hear. This wasn’t just another ceremony for the photographers to capture—this was the conversation between souls and the eternal, witnessed by red roses and sacred fire.
+Nishanth’s eyes closed as she lifted the sacred flame, while Thagnatha whispered mantras created a rhythm only the divine could hear. This wasn’t just another ceremony for the photographers to capture-this was the conversation between souls and the eternal, witnessed by red roses and sacred fire.
 </p>
 
 <p class="text-lg mb-6">
@@ -634,11 +634,11 @@ The golden plate trembled slightly in her decorated hands, each offering placed 
 </p>
 
 <p class="text-lg mb-6">
-At House of Bliss, we understand that the top wedding photographers know when to witness. These aren’t just wedding photography packages—these are glimpses into the sacred architecture of commitment. The way Thagnatha’s smile caught the firelight, the reverent tilt of Nishanth’s head—these details matter because they’re writing their love story in a language older than words.
+At House of Bliss, we understand that the top wedding photographers know when to witness. These aren’t just wedding photography packages-these are glimpses into the sacred architecture of commitment. The way Thagnatha’s smile caught the firelight, the reverent tilt of Nishanth’s head-these details matter because they’re writing their love story in a language older than words.
 </p>
 
 <p class="text-lg">
-This is why we’re among the most famous wedding photographers in Bengaluru—we recognize that some moments are too holy for anything but truth. When couples choose us, they’re choosing photographers who understand that gods remember authenticity, and so do we.
+This is why we’re among the most famous wedding photographers in Bengaluru-we recognize that some moments are too holy for anything but truth. When couples choose us, they’re choosing photographers who understand that gods remember authenticity, and so do we.
 </p>
 
 </article>`
@@ -651,15 +651,15 @@ This is why we’re among the most famous wedding photographers in Bengaluru—w
     content:`<article class="max-w-3xl mx-auto text-[#41453D] leading-relaxed">
 
 <p class="text-lg mb-6">
-Light doesn’t stumble—it chooses. And in that deliberate descent, the best wedding photographers discover something extraordinary: shadows aren’t obstacles to overcome, but stages waiting for their stars.
+Light doesn’t stumble-it chooses. And in that deliberate descent, the best wedding photographers discover something extraordinary: shadows aren’t obstacles to overcome, but stages waiting for their stars.
 </p>
 
 <p class="text-lg mb-6">
-Namitha stood perfectly still as golden rays carved through the temple’s ancient pillars, each beam selecting exactly where to kiss her silk saree. This wasn’t luck—this was light learning to fall with purpose. The top wedding photographers in India understand this sacred choreography, but few can anticipate where luminescence will choose to land next.
+Namitha stood perfectly still as golden rays carved through the temple’s ancient pillars, each beam selecting exactly where to kiss her silk saree. This wasn’t luck-this was light learning to fall with purpose. The top wedding photographers in India understand this sacred choreography, but few can anticipate where luminescence will choose to land next.
 </p>
 
 <p class="text-lg mb-6">
-Watch how shadows cradle a groom’s nervous smile, how darkness becomes the velvet backdrop for intricate mehndi patterns. The finest professional photographers don’t fight the absence of light—they court it, seduce it, make it their collaborator in crafting visual poetry.
+Watch how shadows cradle a groom’s nervous smile, how darkness becomes the velvet backdrop for intricate mehndi patterns. The finest professional photographers don’t fight the absence of light-they court it, seduce it, make it their collaborator in crafting visual poetry.
 </p>
 
 <p class="text-lg mb-6">
@@ -667,7 +667,7 @@ Vamashi’s profile emerged from darkness like a sculpture finding its form, sha
 </p>
 
 <p class="text-lg mb-6">
-These aren’t just photographs—they’re conversations between illumination and void, each frame a testament to how we, at House of Bliss, create luxury through understanding rather than equipment.
+These aren’t just photographs-they’re conversations between illumination and void, each frame a testament to how we, at House of Bliss, create luxury through understanding rather than equipment.
 </p>
 
 <p class="text-lg">
@@ -689,7 +689,7 @@ Cinematic Wedding Photography Trends in 2025 You’ll Fall in Love With
 </h1>
 
 <p class="text-lg mb-6">
-The world of wedding photography is evolving — fast. In 2025, cinematic wedding photography is no longer just about slow-motion shots or dreamy music; it’s a whole vibe. Think art-meets-love-story, with a sprinkle of Bollywood flair and a whole lot of real emotion.
+The world of wedding photography is evolving - fast. In 2025, cinematic wedding photography is no longer just about slow-motion shots or dreamy music; it’s a whole vibe. Think art-meets-love-story, with a sprinkle of Bollywood flair and a whole lot of real emotion.
 </p>
 
 <p class="text-lg mb-6">
@@ -713,7 +713,7 @@ These are not just highlights. They create a narrative that stitches together yo
 </h2>
 
 <p class="text-lg mb-6">
-Say goodbye to overly saturated filters. This year it’s all about soft, natural tones that mimic classic film—warm skin tones, soft shadows, and subtle contrast that feel timeless rather than trendy.
+Say goodbye to overly saturated filters. This year it’s all about soft, natural tones that mimic classic film-warm skin tones, soft shadows, and subtle contrast that feel timeless rather than trendy.
 </p>
 
 <p class="text-lg mb-6">
@@ -725,7 +725,7 @@ This approach enhances emotion in photos, keeps albums visually consistent, and 
 </h2>
 
 <p class="text-lg mb-6">
-Drone shots have been around for a while, but 2025 is all about using them intentionally. Photographers now plan scenes where drones don’t just show scale—they add drama and cinematic storytelling.
+Drone shots have been around for a while, but 2025 is all about using them intentionally. Photographers now plan scenes where drones don’t just show scale-they add drama and cinematic storytelling.
 </p>
 
 <p class="text-lg mb-6">
@@ -745,7 +745,7 @@ Dramatic lighting, structured poses, and aesthetic locations transform portraits
 </p>
 
 <h2 class="text-2xl mt-10 mb-4">
-Final Thoughts: A Movie Worth Watching — Again and Again
+Final Thoughts: A Movie Worth Watching - Again and Again
 </h2>
 
 <p class="text-lg mb-6">
@@ -779,7 +779,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
 
   <p class="font-neue-regular text-lg text-[#5a5a4c] leading-relaxed mb-14">
     Whether couples prefer a traditional photography style or a modern artistic approach,
-    one thing is clear — wedding photography today is about capturing the entire story of the day,
+    one thing is clear - wedding photography today is about capturing the entire story of the day,
     not just documenting the events.
   </p>
 
@@ -911,7 +911,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
 </ul>
 
 <p class="font-neue-regular text-lg text-[#5a5a4c] leading-relaxed mb-14">
-  All these fall under modern wedding photography in Bangalore — and couples love the fresh,
+  All these fall under modern wedding photography in Bangalore - and couples love the fresh,
   personalized feel.
 </p>
 
@@ -937,7 +937,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
 
 <p class="font-neue-regular text-lg text-[#5a5a4c] leading-relaxed mb-14">
   Once you answer these, meet with photographers, see their portfolios, and don’t hesitate
-  to ask for sample edits and full wedding albums — not just Instagram reels. This helps you
+  to ask for sample edits and full wedding albums - not just Instagram reels. This helps you
   assess whether they can deliver on both traditional and modern expectations.
 </p>
 
@@ -950,7 +950,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
 <p class="font-neue-regular text-lg text-[#5a5a4c] leading-relaxed mb-8">
   At the end of the day, wedding photography isn’t just about clicking pictures.
   It’s about preserving emotion, telling stories, and creating something you’ll
-  return to — years down the line.
+  return to - years down the line.
 </p>
 
 <p class="font-neue-regular text-lg text-[#5a5a4c] leading-relaxed mb-8">
@@ -961,7 +961,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
 
 <p class="font-neue-medium text-lg text-[#1e1e1a] leading-relaxed">
   Looking for the top wedding photography in Bengaluru? Start by choosing someone who
-  understands your journey — from customs to chemistry, from rituals to raw moments.
+  understands your journey - from customs to chemistry, from rituals to raw moments.
 </p>
 
 </section>
@@ -985,7 +985,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
   <!-- Paragraph -->
   <p class="font-neue-regular text-lg leading-relaxed text-[#5a5a4c] mb-10">
     In the chaos of a Bengaluru wedding, where hundreds of guests celebrate and cameras flash endlessly,
-    there’s one moment that stops everything—when she instinctively leans into his shoulder. Not because
+    there’s one moment that stops everything-when she instinctively leans into his shoulder. Not because
     anyone asked her to, but because that’s where she belongs.
   </p>
 
@@ -1002,7 +1002,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
   <p class="font-neue-regular text-lg leading-relaxed text-[#5a5a4c] mb-10">
     Watch how her breathing matches his. Notice how his hand finds her back without conscious thought.
     This is what separates us from normal wedding photographers and makes us
-    <span class="font-neue-medium text-[#1e1e1a]">India’s top photographer</span>—recognizing that true
+    <span class="font-neue-medium text-[#1e1e1a]">India’s top photographer</span>-recognizing that true
     intimacy can’t be directed, only witnessed.
   </p>
 
@@ -1016,7 +1016,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
 
   <p class="font-neue-regular text-lg leading-relaxed text-[#5a5a4c]">
     This is why we’re counted among the
-    <span class="font-neue-medium text-[#1e1e1a]">top wedding photographers near me</span>—not because we
+    <span class="font-neue-medium text-[#1e1e1a]">top wedding photographers near me</span>-not because we
     stage perfect moments, but because we honor the real ones. When you’re searching for
     <span class="font-neue-medium text-[#1e1e1a]">top rated wedding photographers</span>, remember this:
     the best <span class="font-neue-medium text-[#1e1e1a]">wedding photography packages</span> aren’t just
@@ -1043,7 +1043,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
     conversations about “perfect moments,” this spin was never choreographed. Yet here she is,
     lehenga caught in mid-flight, and I’m watching love become motion. At
     <span class="font-neue-medium text-[#1e1e1a]">House of Bliss</span>,
-    we live for these unscripted seconds—when couples forget the world exists and simply feel.
+    we live for these unscripted seconds-when couples forget the world exists and simply feel.
   </p>
 
   <!-- Paragraph 2 -->
@@ -1051,7 +1051,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
     The great <span class="font-neue-medium text-[#1e1e1a]">wedding photographers</span>
     will tell you about timing, about anticipating the shot. But what they don’t mention is
     this: the most breathtaking moments happen when couples forget they’re being photographed.
-    When he takes her hand and she instinctively spins—not for the camera, not for the guests,
+    When he takes her hand and she instinctively spins-not for the camera, not for the guests,
     but because joy demands movement.
   </p>
 
@@ -1071,7 +1071,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
     These are the moments that separate
     <span class="font-neue-medium text-[#1e1e1a]">professional photographers</span>
     from storytellers. At <span class="font-neue-medium text-[#1e1e1a]">House of Bliss</span>,
-    we understand that the most beautiful choreography happens when no one’s watching—
+    we understand that the most beautiful choreography happens when no one’s watching-
     when love writes its own dance steps.
   </p>
 
@@ -1079,7 +1079,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
   <p class="font-neue-regular text-lg leading-relaxed text-[#5a5a4c] mb-10">
     In the confetti-filled darkness, as petals rain down like blessings, she twirls again.
     This time slower, savoring the weight of the moment. The
-    <span class="font-neue-medium text-[#1e1e1a]">best photographers</span> understand this truth—
+    <span class="font-neue-medium text-[#1e1e1a]">best photographers</span> understand this truth-
     love isn’t performed, it’s felt.
   </p>
 
@@ -1105,7 +1105,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
   <!-- Paragraph -->
   <p class="font-neue-regular text-lg leading-relaxed text-[#5a5a4c] mb-10">
     Her hennaed fingers curve around his arm like they’ve always belonged there.
-    It’s instinct, really—the way we reach for our person when the world feels
+    It’s instinct, really-the way we reach for our person when the world feels
     too vast or too uncertain.
   </p>
 
@@ -1119,7 +1119,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
 
   <p class="font-neue-regular text-lg leading-relaxed text-[#5a5a4c] mb-10">
     Photographers understand that some gestures exist in the space between
-    heartbeats—too quick for planning, too essential for pretense. Her fingers
+    heartbeats-too quick for planning, too essential for pretense. Her fingers
     don’t just hold his arm; they claim it. They say,
     <span class="font-neue-medium text-[#1e1e1a]">
       “This is where I steady myself now. This is my new equilibrium.”
@@ -1134,7 +1134,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed text-[#5a5a4c] mb-10">
-    The way she leans into his strength, the way his arm becomes her compass—
+    The way she leans into his strength, the way his arm becomes her compass-
     these aren’t wedding photos. These are the first pages of a story where
     two people learn to navigate the world as one.
   </p>
@@ -1179,7 +1179,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
   <p class="font-neue-regular text-lg leading-relaxed text-[#5a5a4c] mb-10">
     In the quiet moments between rituals, I find myself mesmerized by the guardians of tradition.
     Not the perfectly posed figures that grace magazine covers, but the weathered souls who have
-    counted decades of love stories—the elders who know how to bless.
+    counted decades of love stories-the elders who know how to bless.
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed text-[#5a5a4c] mb-10">
@@ -1195,7 +1195,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
     Each elder’s touch carried the wisdom of their own wedding day, their own struggles,
     their own victories. This is what separates the
     <span class="font-neue-medium text-[#1e1e1a]">top wedding photographers in India</span>
-    from the rest—understanding that the most powerful shots aren’t always of the bride and groom,
+    from the rest-understanding that the most powerful shots aren’t always of the bride and groom,
     but of the hands that shaped them.
   </p>
 
@@ -1203,7 +1203,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
     At <span class="font-neue-medium text-[#1e1e1a]">House of Bliss</span>, we’ve learned that
     photographers don’t just capture ceremonies; they preserve the lineage of love.
     When the bride’s mother adjusted her granddaughter’s sari with the tenderness that had sewn
-    countless prayers into fabric, we weren’t just documenting a moment—we were witnessing
+    countless prayers into fabric, we weren’t just documenting a moment-we were witnessing
     the handover of dreams.
   </p>
 
@@ -1213,7 +1213,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
     <span class="font-neue-medium text-[#1e1e1a]">Professional photographers in Bengaluru</span>
     understand technical excellence, but at
     <span class="font-neue-medium text-[#1e1e1a]">House of Bliss</span>,
-    we understand that the most precious frames capture the guardians of happiness—the voices
+    we understand that the most precious frames capture the guardians of happiness-the voices
     that bless, and the hearts that receive those blessings with reverence.
   </p>
 
@@ -1244,7 +1244,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
 
   <p class="font-neue-regular text-lg leading-relaxed text-[#5a5a4c] mb-10">
     But here’s what the <span class="font-neue-medium text-[#1e1e1a]">top photographers</span>
-    have discovered—the magic happens in the millisecond between poses. When the blonde friend
+    have discovered-the magic happens in the millisecond between poses. When the blonde friend
     from college leans into her Indian roommate’s sari, when the guy who flew in from London
     finally gets the joke everyone’s been laughing about, when cultural barriers dissolve into
     pure, unfiltered friendship.
@@ -1260,7 +1260,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
     The mandap stands witness to more than vows; it holds the constellation of friendships
     that brought two souls together.
     <span class="font-neue-medium text-[#1e1e1a]">Professional photographers</span>
-    know that behind every couple’s love story lies a network of chosen family—friends
+    know that behind every couple’s love story lies a network of chosen family-friends
     who become siblings, strangers who become soulmates.
   </p>
 
@@ -1273,7 +1273,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
   <p class="font-neue-regular text-lg leading-relaxed text-[#5a5a4c] mb-10">
     At <span class="font-neue-medium text-[#1e1e1a]">House of Bliss</span>, we’ve learned
     that the <span class="font-neue-medium text-[#1e1e1a]">best wedding photography packages</span>
-    don’t just capture events—they capture ecosystems.
+    don’t just capture events-they capture ecosystems.
   </p>
 
   <!-- Closing -->
@@ -1301,7 +1301,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
   <p class="font-neue-regular text-lg leading-relaxed text-[#5a5a4c] mb-10">
     There exists a moment between engagement and marriage where promises hover
     like light caught between cupped palms. Here, in the cathedral of their
-    hands, two souls create something sacred from the ordinary—a private
+    hands, two souls create something sacred from the ordinary-a private
     universe where gold bands float weightless, suspended between yesterday’s
     dream and tomorrow’s vow.
   </p>
@@ -1313,7 +1313,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed text-[#5a5a4c] mb-10">
-    In their silhouettes, we witness the architecture of devotion—how two
+    In their silhouettes, we witness the architecture of devotion-how two
     people become the frame for something larger than themselves.
   </p>
 
@@ -1335,7 +1335,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
     Their hands form a temple. Light becomes prayer. And somewhere between
     shadow and illumination, we at
     <span class="font-neue-medium text-[#1e1e1a]">House of Bliss</span>
-    discover what luxury truly means—not in elaborate setups, but in the
+    discover what luxury truly means-not in elaborate setups, but in the
     quiet reverence of two hearts creating sanctuary.
   </p>
 
@@ -1361,7 +1361,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
     In the heart of pre-wedding preparations, before the world watches and celebrates,
     exists a sacred space where only mothers are allowed. The bride sits cross-legged,
     eyes closed, surrendering to hands that know her better than her own reflection.
-    Each jasmine bud placed with archaeological precision—this is how traditions survive,
+    Each jasmine bud placed with archaeological precision-this is how traditions survive,
     one gentle touch at a time.
   </p>
 
@@ -1380,7 +1380,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
     performs her own sacred duty. Her son, dressed in cream and gold,
     sits patiently as she adjusts his turban with military precision.
     The <span class="font-neue-medium text-[#1e1e1a]">top rated wedding photographers</span>
-    might capture the final result, but we’re interested in the process—the
+    might capture the final result, but we’re interested in the process-the
     gentle corrections, the satisfied nods, the moment when preparation
     becomes a blessing.
   </p>
@@ -1416,7 +1416,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
   <!-- Paragraph -->
   <p class="font-neue-regular text-lg leading-relaxed text-[#5a5a4c] mb-10">
     Golden hour has a way of turning ordinary moments into declarations. 
-    He looks at his sister—really looks—and sees the girl who once challenged 
+    He looks at his sister-really looks-and sees the girl who once challenged 
     him to eating contests now glowing like captured sunlight in silver and blush. 
     The transformation stops his breath, but her laugh brings him back to earth.
   </p>
@@ -1433,7 +1433,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed text-[#5a5a4c] mb-10">
-    Brothers don’t prepare for this feeling—watching your sister become someone’s 
+    Brothers don’t prepare for this feeling-watching your sister become someone’s 
     forever while still being the person who knows all her quirks. The 
     <span class="font-neue-medium text-[#1e1e1a]">best wedding photographers</span> 
     understand this complexity, but 
@@ -1491,7 +1491,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
   <!-- Paragraph 3 -->
   <p class="font-neue-regular text-lg leading-relaxed text-[#5a5a4c] mb-10">
     This is our obsession at 
-    <span class="font-neue-medium text-[#1e1e1a]">House of Bliss</span>—these
+    <span class="font-neue-medium text-[#1e1e1a]">House of Bliss</span>-these
     fragments of eternity disguised as ordinary seconds. While other
     <span class="font-neue-medium text-[#1e1e1a]">
       professional photographers in Bengaluru
@@ -1499,7 +1499,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
     focus on perfect compositions, we hunt for perfect emotions.
     It’s what separates the
     <span class="font-neue-medium text-[#1e1e1a]">best photographers</span>
-    from those who simply click shutters—the kind of moments that make
+    from those who simply click shutters-the kind of moments that make
     strangers tear up when they glimpse them in albums years later.
   </p>
 
@@ -1507,7 +1507,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
   <p class="font-neue-regular text-lg leading-relaxed text-[#5a5a4c] mb-10">
     Her world narrows to the sound of his heartbeat, the warmth of his arms,
     the safety of being completely known. He holds her like she’s made of
-    starlight and steel—precious and powerful. Together, they create their
+    starlight and steel-precious and powerful. Together, they create their
     own gravity, their own weather, their own time zone.
   </p>
 
@@ -1519,14 +1519,14 @@ From traditional rituals to modern romance, today’s photographers balance stor
     <span class="font-neue-medium text-[#1e1e1a]">
       best wedding photography packages
     </span>
-    can’t contain moments like these—they spill over, demanding to be felt
+    can’t contain moments like these-they spill over, demanding to be felt
     rather than simply seen.
   </p>
 
   <!-- Closing -->
   <p class="font-neue-medium text-xl leading-relaxed text-[#1e1e1a]">
     This is why couples searching for the best wedding photographers find us
-    through the stories we create—not just the services we offer.
+    through the stories we create-not just the services we offer.
   </p>
 
 </section>`
@@ -1542,7 +1542,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
   <!-- Paragraph 1 -->
   <p class="font-neue-regular text-lg leading-relaxed text-[#5a5a4c] mb-10">
     There’s something alchemical about marigold petals that the world’s best
-    photographers have always understood—they don’t just fall, they dance.
+    photographers have always understood-they don’t just fall, they dance.
     They transform ordinary moments into liquid gold, turning breath into
     celebration, silence into song.
   </p>
@@ -1558,7 +1558,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
   <!-- Paragraph 3 -->
   <p class="font-neue-regular text-lg leading-relaxed text-[#5a5a4c] mb-10">
     This is what we live for at
-    <span class="font-neue-medium text-[#1e1e1a]">House of Bliss</span>—
+    <span class="font-neue-medium text-[#1e1e1a]">House of Bliss</span>-
     these unguarded seconds when souls recognize each other completely.
     Not the rehearsed smiles or perfectly arranged poses, but this raw,
     authentic connection that makes even
@@ -1580,7 +1580,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
   <p class="font-neue-regular text-lg leading-relaxed text-[#5a5a4c] mb-10">
     Among
     <span class="font-neue-medium text-[#1e1e1a]">India’s top photographers</span>,
-    we’ve learned that the most powerful images aren’t captured—they’re felt
+    we’ve learned that the most powerful images aren’t captured-they’re felt
     first, then frozen in time.
   </p>
 
@@ -1605,7 +1605,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
   <p class="font-neue-regular text-lg leading-relaxed text-[#5a5a4c] mb-10">
     Ask any photographer about their most challenging shot, and they’ll tell you
     it’s capturing love in motion. But sometimes, love stands perfectly still.
-    Sometimes, it looks exactly like this — a bride’s gaze that holds an entire
+    Sometimes, it looks exactly like this - a bride’s gaze that holds an entire
     future in its depths.
   </p>
 
@@ -1617,7 +1617,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
     <span class="font-neue-medium text-[#1e1e1a]">
       famous wedding photographers in Bengaluru
     </span>
-    — understanding that the most expensive lens means nothing without the
+    - understanding that the most expensive lens means nothing without the
     ability to recognize these sacred moments.
   </p>
 
@@ -1625,7 +1625,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
   <p class="font-neue-regular text-lg leading-relaxed text-[#5a5a4c] mb-10">
     The interplay of light and shadow creates a natural frame, drawing us into
     her world. We see beyond the embroidered lehenga and delicate jewelry to
-    something more profound — the quiet transformation from individual to
+    something more profound - the quiet transformation from individual to
     beloved. At
     <span class="font-neue-medium text-[#1e1e1a]">House of Bliss</span>,
     we’ve learned that the
@@ -1655,7 +1655,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
       top professional photographers near me
     </span>,
     we distinguish ourselves by recognizing that every wedding is really a
-    story about seeing — the way she sees him, the way he sees her, and the
+    story about seeing - the way she sees him, the way he sees her, and the
     way we see them seeing each other.
   </p>
 
@@ -1698,7 +1698,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
     <span class="font-neue-medium text-[#1e1e1a]">
       India’s best photographers
     </span>
-    from mere documentarians — recognizing that wedding ceremonies
+    from mere documentarians - recognizing that wedding ceremonies
     aren’t performances to be captured, but sacred conversations to be honored.
   </p>
 
@@ -1724,7 +1724,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
     <span class="font-neue-medium text-[#1e1e1a]">
       top rated wedding photographers
     </span>
-    from others — the ability to find the universal in the specific,
+    from others - the ability to find the universal in the specific,
     the timeless in the temporal. When we capture moments like these,
     we’re not just creating images; we’re preserving the poetry of becoming.
   </p>
@@ -1782,7 +1782,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
   </p>
 
   <p class="font-neue-regular text-lg mb-8">
-    The final result feels like a movie starring you — complete with
+    The final result feels like a movie starring you - complete with
     beautiful visuals, music, emotional highlights, and carefully
     edited storytelling moments.
   </p>
@@ -1819,32 +1819,32 @@ From traditional rituals to modern romance, today’s photographers balance stor
   <ul class="font-neue-regular text-lg list-disc pl-6 space-y-3 mb-12">
 
     <li>
-      <span class="font-neue-medium">Pre-Wedding Cinematic Films</span> —
+      <span class="font-neue-medium">Pre-Wedding Cinematic Films</span> -
       Short films based on themes or sentimental locations.
     </li>
 
     <li>
-      <span class="font-neue-medium">Full Wedding Day Coverage</span> —
+      <span class="font-neue-medium">Full Wedding Day Coverage</span> -
       Multiple camera teams capturing rituals and candid emotions.
     </li>
 
     <li>
-      <span class="font-neue-medium">Drone Footage</span> —
+      <span class="font-neue-medium">Drone Footage</span> -
       Stunning aerial views of the venue, baraat, and bridal entry.
     </li>
 
     <li>
-      <span class="font-neue-medium">Highlight Reel</span> —
+      <span class="font-neue-medium">Highlight Reel</span> -
       A 3-7 minute cinematic summary with music and emotional moments.
     </li>
 
     <li>
-      <span class="font-neue-medium">Documentary Film</span> —
+      <span class="font-neue-medium">Documentary Film</span> -
       A 30-60 minute full wedding film showing the entire celebration.
     </li>
 
     <li>
-      <span class="font-neue-medium">High Resolution Photo Album</span> —
+      <span class="font-neue-medium">High Resolution Photo Album</span> -
       Elegant coffee-table albums with beautifully retouched images.
     </li>
 
@@ -1860,7 +1860,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
     House of Bliss stands apart from other cinematic wedding photographers
     in Bengaluru through soulful storytelling and luxurious cinematic
     experiences. Our approach focuses on authenticity, emotion,
-    and aesthetics — capturing your love story as a beautiful film.
+    and aesthetics - capturing your love story as a beautiful film.
   </p>
 
   <ul class="font-neue-regular text-lg list-disc pl-6 space-y-3 mb-12">
@@ -1880,29 +1880,29 @@ From traditional rituals to modern romance, today’s photographers balance stor
   <ul class="font-neue-regular text-lg list-disc pl-6 space-y-4 mb-12">
 
     <li>
-      <span class="font-neue-medium">Portfolio & Style</span> —
+      <span class="font-neue-medium">Portfolio & Style</span> -
       Check multiple weddings they have covered. Look for storytelling,
       emotion, and editing quality.
     </li>
 
     <li>
-      <span class="font-neue-medium">Experience with Diverse Weddings</span> —
+      <span class="font-neue-medium">Experience with Diverse Weddings</span> -
       Bengaluru hosts weddings from many cultures, so adaptability is key.
     </li>
 
     <li>
-      <span class="font-neue-medium">Team Size & Equipment</span> —
+      <span class="font-neue-medium">Team Size & Equipment</span> -
       Cinematic shoots require strong teams, drones, lenses, stabilizers,
       and professional lighting setups.
     </li>
 
     <li>
-      <span class="font-neue-medium">Editing Turnaround Time</span> —
+      <span class="font-neue-medium">Editing Turnaround Time</span> -
       Ask about delivery timelines for photos and films.
     </li>
 
     <li>
-      <span class="font-neue-medium">Client Reviews</span> —
+      <span class="font-neue-medium">Client Reviews</span> -
       Look for testimonials regarding professionalism and creativity.
     </li>
 
@@ -1938,7 +1938,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
   </h3>
 
   <p class="font-neue-regular text-lg mb-8">
-    Your wedding becomes a narrative — capturing emotions, traditions,
+    Your wedding becomes a narrative - capturing emotions, traditions,
     and unforgettable moments rather than just a sequence of events.
   </p>
 
@@ -1956,7 +1956,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
   </h3>
 
   <p class="font-neue-regular text-lg mb-12">
-    Genuine reactions — a tear, a smile, a laugh — create timeless
+    Genuine reactions - a tear, a smile, a laugh - create timeless
     wedding memories that feel authentic.
   </p>
 
@@ -2115,7 +2115,7 @@ Whether you’re planning an extravagant palace wedding, cool in a garden, or mo
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed mb-10">
-    Whether it’s a joyful Mehendi, a vibrant Sangeet, or an emotional Vidaai, we tell the complete story — beautifully and honestly.
+    Whether it’s a joyful Mehendi, a vibrant Sangeet, or an emotional Vidaai, we tell the complete story - beautifully and honestly.
   </p>
 
 
@@ -2125,11 +2125,11 @@ Whether you’re planning an extravagant palace wedding, cool in a garden, or mo
   </h2>
 
   <div class="space-y-6 font-neue-regular text-lg mb-10">
-    <p><strong>Initial Consultation</strong> — We understand your wedding theme, story, and vision.</p>
-    <p><strong>Customized Proposal</strong> — Packages tailored to your events and locations.</p>
-    <p><strong>Pre-Wedding Planning</strong> — Venue recce, lighting plans, and mood boards.</p>
-    <p><strong>Execution Day</strong> — Dedicated teams capturing every detail of your ceremony.</p>
-    <p><strong>Editing and Delivery</strong> — Cinematic films, social media clips, and curated photo albums.</p>
+    <p><strong>Initial Consultation</strong> - We understand your wedding theme, story, and vision.</p>
+    <p><strong>Customized Proposal</strong> - Packages tailored to your events and locations.</p>
+    <p><strong>Pre-Wedding Planning</strong> - Venue recce, lighting plans, and mood boards.</p>
+    <p><strong>Execution Day</strong> - Dedicated teams capturing every detail of your ceremony.</p>
+    <p><strong>Editing and Delivery</strong> - Cinematic films, social media clips, and curated photo albums.</p>
   </div>
 
 
@@ -2139,7 +2139,7 @@ Whether you’re planning an extravagant palace wedding, cool in a garden, or mo
   </h2>
 
   <p class="font-neue-regular text-lg leading-relaxed mb-6">
-    When you engage someone to document your wedding day, you are placing your memories in their hands. It’s not just about talent — it’s about empathy, creativity, and professionalism.
+    When you engage someone to document your wedding day, you are placing your memories in their hands. It’s not just about talent - it’s about empathy, creativity, and professionalism.
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed">
@@ -2157,7 +2157,7 @@ Whether you’re planning an extravagant palace wedding, cool in a garden, or mo
 
 
   <p class="font-neue-regular text-lg leading-relaxed mb-6">
-    In the space between one breath and the next, transformation happens. Not the kind that makeup artists create, but the deeper alchemy that turns a woman into a bride. The camera lens witnesses this sacred pause—when gold catches light like captured starfire, when silk whispers against skin, when eyes hold the weight of generations and the lightness of new beginnings.
+    In the space between one breath and the next, transformation happens. Not the kind that makeup artists create, but the deeper alchemy that turns a woman into a bride. The camera lens witnesses this sacred pause-when gold catches light like captured starfire, when silk whispers against skin, when eyes hold the weight of generations and the lightness of new beginnings.
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed mb-6">
@@ -2165,7 +2165,7 @@ Whether you’re planning an extravagant palace wedding, cool in a garden, or mo
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed mb-6">
-    Professional photographers in Bengaluru understand that bridal portraits aren’t posed—they’re revealed. In this frame, tradition doesn’t constrain; it elevates. The intricate necklace cascades like liquid sunshine, each piece of temple jewelry carrying whispered prayers from mothers and grandmothers. Her smile holds secrets—not the practiced one for relatives, but the private joy that blooms when she realizes she’s exactly where she belongs.
+    Professional photographers in Bengaluru understand that bridal portraits aren’t posed-they’re revealed. In this frame, tradition doesn’t constrain; it elevates. The intricate necklace cascades like liquid sunshine, each piece of temple jewelry carrying whispered prayers from mothers and grandmothers. Her smile holds secrets-not the practiced one for relatives, but the private joy that blooms when she realizes she’s exactly where she belongs.
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed mb-6">
@@ -2173,11 +2173,11 @@ Whether you’re planning an extravagant palace wedding, cool in a garden, or mo
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed mb-6">
-    The famous wedding photographers often miss this—the quiet revolution happening in a bride’s heart as she sees her reflection transformed. But we recognize that the real magic isn’t in the gold or silk. It’s in capturing the moment she stops becoming and simply is. When her breath steadies, her shoulders drop, and she looks into our lens with the certainty that this version of herself is worth celebrating.
+    The famous wedding photographers often miss this-the quiet revolution happening in a bride’s heart as she sees her reflection transformed. But we recognize that the real magic isn’t in the gold or silk. It’s in capturing the moment she stops becoming and simply is. When her breath steadies, her shoulders drop, and she looks into our lens with the certainty that this version of herself is worth celebrating.
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed">
-    This is why couples seek us out through the <strong>best wedding photography packages</strong>—not for perfect poses, but for authentic translations of their most profound moments. Because between breaths, love becomes visible.
+    This is why couples seek us out through the <strong>best wedding photography packages</strong>-not for perfect poses, but for authentic translations of their most profound moments. Because between breaths, love becomes visible.
   </p>
 
 </section>`
@@ -2192,11 +2192,11 @@ Whether you’re planning an extravagant palace wedding, cool in a garden, or mo
  
 
   <p class="font-neue-regular text-lg leading-relaxed mb-6">
-    In the space where words haven’t yet been spoken, everything is already understood. Her downcast eyes hold entire conversations, her gentle smile writes promises that cameras translate into forever. This is the moment that separates amateur documentation from the artistry of the best photographers—finding the profound in the pause before proclamation.
+    In the space where words haven’t yet been spoken, everything is already understood. Her downcast eyes hold entire conversations, her gentle smile writes promises that cameras translate into forever. This is the moment that separates amateur documentation from the artistry of the best photographers-finding the profound in the pause before proclamation.
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed mb-6">
-    The jasmine garland cascades like fallen stars, each bloom a witness to the sacred anticipation building in her heart. Rose petals nestle against white flowers, creating a tapestry that speaks louder than any vow could. Professional photographers in Bengaluru know that these pre-ceremony seconds contain the purest emotion—unguarded, unscripted, utterly authentic.
+    The jasmine garland cascades like fallen stars, each bloom a witness to the sacred anticipation building in her heart. Rose petals nestle against white flowers, creating a tapestry that speaks louder than any vow could. Professional photographers in Bengaluru know that these pre-ceremony seconds contain the purest emotion-unguarded, unscripted, utterly authentic.
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed mb-6">
@@ -2204,11 +2204,11 @@ Whether you’re planning an extravagant palace wedding, cool in a garden, or mo
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed mb-6">
-    At <strong>House of Bliss</strong>, we’ve learned to recognize this exact expression—the quiet gathering of courage that happens just before two lives become one story. We don’t direct these moments; we simply witness them with the patience they deserve.
+    At <strong>House of Bliss</strong>, we’ve learned to recognize this exact expression-the quiet gathering of courage that happens just before two lives become one story. We don’t direct these moments; we simply witness them with the patience they deserve.
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed mb-6">
-    The <strong>best wedding photographers near me</strong> understand that ceremony isn’t just ritual—it’s transformation made visible. In this frame, tradition doesn’t constrain her; it elevates her into something luminous. The weight of garlands becomes the lightness of love accepted, the downward gaze becomes an upward reaching of the spirit.
+    The <strong>best wedding photographers near me</strong> understand that ceremony isn’t just ritual-it’s transformation made visible. In this frame, tradition doesn’t constrain her; it elevates her into something luminous. The weight of garlands becomes the lightness of love accepted, the downward gaze becomes an upward reaching of the spirit.
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed mb-6">
@@ -2216,7 +2216,7 @@ Whether you’re planning an extravagant palace wedding, cool in a garden, or mo
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed">
-    Because sometimes the most important conversations happen without a single word being spoken. And the <strong>affordable wedding photographers near me</strong> who truly understand their craft know that these wordless exchanges are worth their weight in gold—or in this case, in jasmine and rose petals that crown a bride ready to step into her forever.
+    Because sometimes the most important conversations happen without a single word being spoken. And the <strong>affordable wedding photographers near me</strong> who truly understand their craft know that these wordless exchanges are worth their weight in gold-or in this case, in jasmine and rose petals that crown a bride ready to step into her forever.
   </p>
 
 </section>`
@@ -2231,27 +2231,27 @@ Whether you’re planning an extravagant palace wedding, cool in a garden, or mo
   
 
   <p class="font-neue-regular text-lg leading-relaxed mb-6">
-    Some people are born to be audiences to extraordinary things. He carries that expression—the one saved for shooting stars, for perfect storms, for when everyday life suddenly turns electric. She spins, and he transforms into someone discovering color for the first time. This distinction defines what makes the <strong>top wedding photographers in India</strong> invaluable—we don’t just freeze action, we preserve the invisible threads that connect two souls mid-celebration.
+    Some people are born to be audiences to extraordinary things. He carries that expression-the one saved for shooting stars, for perfect storms, for when everyday life suddenly turns electric. She spins, and he transforms into someone discovering color for the first time. This distinction defines what makes the <strong>top wedding photographers in India</strong> invaluable-we don’t just freeze action, we preserve the invisible threads that connect two souls mid-celebration.
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed mb-6">
-    Her lehenga blooms outward like scattered rose petals, each panel dancing with wind and sunlight. Coral fabric lifts and falls, following rules known only to joy itself. Yet his face tells the real story—that expression of someone watching their entire world expand in real time. The <strong>best wedding photographers near me</strong> have learned this truth: the most compelling couple images happen when one person becomes completely mesmerized by another’s unfiltered happiness.
+    Her lehenga blooms outward like scattered rose petals, each panel dancing with wind and sunlight. Coral fabric lifts and falls, following rules known only to joy itself. Yet his face tells the real story-that expression of someone watching their entire world expand in real time. The <strong>best wedding photographers near me</strong> have learned this truth: the most compelling couple images happen when one person becomes completely mesmerized by another’s unfiltered happiness.
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed mb-6">
-    <strong>House of Bliss</strong> has built its reputation on recognizing these exact exchanges—when self-consciousness dissolves and pure spirit takes center stage, when someone forgets about looking perfect and chooses feeling alive instead. She’s not performing for lenses or crowds; she’s celebrating for the person whose attention feels like sunshine. We never orchestrate these moments; we hunt for the spillover of authentic emotion.
+    <strong>House of Bliss</strong> has built its reputation on recognizing these exact exchanges-when self-consciousness dissolves and pure spirit takes center stage, when someone forgets about looking perfect and chooses feeling alive instead. She’s not performing for lenses or crowds; she’s celebrating for the person whose attention feels like sunshine. We never orchestrate these moments; we hunt for the spillover of authentic emotion.
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed mb-6">
-    Professional photographers in Bengaluru discover that love reveals itself through contrasts—in how he creates space for her to flourish, in how her radiance illuminates while his steady presence anchors. This visual vocabulary takes years to master: translating the dialogue between energy and calm, between abandon and devotion.
+    Professional photographers in Bengaluru discover that love reveals itself through contrasts-in how he creates space for her to flourish, in how her radiance illuminates while his steady presence anchors. This visual vocabulary takes years to master: translating the dialogue between energy and calm, between abandon and devotion.
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed mb-6">
-    The latticed backdrop provides clean lines, but their organic chemistry creates the real geometry. She channels pure movement; he embodies quiet awe. <strong>House of Bliss</strong> thrives on couples who understand that partnership isn’t about mirroring each other—it’s about creating the kind of safe space where someone feels brave enough to twirl under endless sky.
+    The latticed backdrop provides clean lines, but their organic chemistry creates the real geometry. She channels pure movement; he embodies quiet awe. <strong>House of Bliss</strong> thrives on couples who understand that partnership isn’t about mirroring each other-it’s about creating the kind of safe space where someone feels brave enough to twirl under endless sky.
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed">
-    Because the most breathtaking frames emerge when someone becomes so enchanted by their person that everything else—including our cameras—simply vanishes. Famous wedding photographers who’ve mastered their craft understand that documenting this species of wonder, this raw and unprotected fascination, justifies every shutter click we make.
+    Because the most breathtaking frames emerge when someone becomes so enchanted by their person that everything else-including our cameras-simply vanishes. Famous wedding photographers who’ve mastered their craft understand that documenting this species of wonder, this raw and unprotected fascination, justifies every shutter click we make.
   </p>
 
 </section>`
@@ -2299,7 +2299,7 @@ Whether you’re planning an extravagant palace wedding, cool in a garden, or mo
   
 
   <p class="font-neue-regular text-lg leading-relaxed mb-6">
-    Golden lights blur into halos as he kneels beside her, fingers carefully arranging the silk pleats of her sari with the precision that only the world’s best photographers dream of capturing. This isn’t posed perfection—it’s pure instinct.
+    Golden lights blur into halos as he kneels beside her, fingers carefully arranging the silk pleats of her sari with the precision that only the world’s best photographers dream of capturing. This isn’t posed perfection-it’s pure instinct.
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed mb-6">
@@ -2307,7 +2307,7 @@ Whether you’re planning an extravagant palace wedding, cool in a garden, or mo
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed mb-6">
-    There’s something profound about watching a groom adjust his bride’s attire—the kind of intimate gesture that transforms ordinary moments into cinematic poetry. His modern suit contrasts beautifully against her classical elegance, creating visual harmony that speaks to souls rather than eyes.
+    There’s something profound about watching a groom adjust his bride’s attire-the kind of intimate gesture that transforms ordinary moments into cinematic poetry. His modern suit contrasts beautifully against her classical elegance, creating visual harmony that speaks to souls rather than eyes.
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed mb-6">
@@ -2315,7 +2315,7 @@ Whether you’re planning an extravagant palace wedding, cool in a garden, or mo
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed">
-    This is where <strong>House of Bliss</strong> finds its calling—in the whispered spaces between grand gestures, where love reveals its truest nature. We understand that being among the best photographers means recognizing that devotion often wears work clothes, that romance lives in gentle hands smoothing silk with the same reverence reserved for prayer. These unscripted acts of service, captured through our <strong>best wedding photography packages</strong>, become the frames couples treasure most—not because they’re perfect, but because they’re profoundly, beautifully real.
+    This is where <strong>House of Bliss</strong> finds its calling-in the whispered spaces between grand gestures, where love reveals its truest nature. We understand that being among the best photographers means recognizing that devotion often wears work clothes, that romance lives in gentle hands smoothing silk with the same reverence reserved for prayer. These unscripted acts of service, captured through our <strong>best wedding photography packages</strong>, become the frames couples treasure most-not because they’re perfect, but because they’re profoundly, beautifully real.
   </p>
 
 </section>`
@@ -2359,7 +2359,7 @@ This is why couples choose to invest in engagement photos:
 </ul>
 
 <p class="font-neue-regular text-lg leading-relaxed mb-10">
-Your engagement shoot is more than just photographs—it’s a chance to celebrate everything you’ve built together.
+Your engagement shoot is more than just photographs-it’s a chance to celebrate everything you’ve built together.
 </p>
 
 
@@ -2369,7 +2369,7 @@ What Makes House of Bliss Different
 </h2>
 
 <p class="font-neue-regular text-lg leading-relaxed mb-6">
-Our talented engagement photographers in Bengaluru know how to blend art, emotion, and storytelling into a beautiful visual experience. Your engagement shoot should represent who you are—not just what you wear or where you go.
+Our talented engagement photographers in Bengaluru know how to blend art, emotion, and storytelling into a beautiful visual experience. Your engagement shoot should represent who you are-not just what you wear or where you go.
 </p>
 
 <ul class="list-disc pl-6 font-neue-regular text-lg space-y-2 mb-10">
@@ -2463,11 +2463,11 @@ Now booking engagement shoots for <strong>2025–26</strong>. Based in Bengaluru
     content:`<section class="max-w-5xl mx-auto px-6 py-20 text-[#1e1e1a]">
 
   <p class="font-neue-regular text-lg leading-relaxed mb-6">
-    Cinematic wedding photography has emerged as an attractive option for couples in recent years. It offers more than just still images — it creates an emotional, cinematic experience. This trend has grown especially popular with intimate weddings, where every moment, glance, and detail matters.
+    Cinematic wedding photography has emerged as an attractive option for couples in recent years. It offers more than just still images - it creates an emotional, cinematic experience. This trend has grown especially popular with intimate weddings, where every moment, glance, and detail matters.
   </p>
 
   <p class="font-neue-regular text-lg leading-relaxed mb-10">
-    Let’s explore why choosing a cinematic photographer for your wedding photoshoot style — including your pre-wedding photography — can elevate your memories into a timeless piece of art.
+    Let’s explore why choosing a cinematic photographer for your wedding photoshoot style - including your pre-wedding photography - can elevate your memories into a timeless piece of art.
   </p>
 
 
@@ -2477,7 +2477,7 @@ Now booking engagement shoots for <strong>2025–26</strong>. Based in Bengaluru
   </h2>
 
   <p class="font-neue-regular text-lg leading-relaxed mb-10">
-    Cinematic wedding photography blends traditional photography techniques with the storytelling style of filmmaking. Instead of stiff poses, the focus is on narrative — capturing emotions, light, and composition in a way that transforms your wedding day into a story that feels like a scene from a film.
+    Cinematic wedding photography blends traditional photography techniques with the storytelling style of filmmaking. Instead of stiff poses, the focus is on narrative - capturing emotions, light, and composition in a way that transforms your wedding day into a story that feels like a scene from a film.
   </p>
 
 
@@ -2525,7 +2525,7 @@ Now booking engagement shoots for <strong>2025–26</strong>. Based in Bengaluru
   </h3>
 
   <p class="font-neue-regular text-lg leading-relaxed mb-10">
-    Cinematic photography captures movement and genuine emotion — walking hand in hand, laughing together, or dancing in soft light. These dynamic moments bring life to your photographs and make them feel authentic and timeless.
+    Cinematic photography captures movement and genuine emotion - walking hand in hand, laughing together, or dancing in soft light. These dynamic moments bring life to your photographs and make them feel authentic and timeless.
   </p>
 
 
@@ -2881,7 +2881,7 @@ Unlike a generic studio, House of Bliss combines artistry and professionalism. T
 </p>
 
 <p class="font-neue-regular text-lg leading-relaxed mb-10">
-Clients rave about how House of Bliss makes them feel comfortable in front of the camera—an essential quality for any wedding photographer. In addition the quality and turn-around-time of their post-processing is second to none, allowing you to relive your memories in a high-quality and polished way for a lifetime.
+Clients rave about how House of Bliss makes them feel comfortable in front of the camera-an essential quality for any wedding photographer. In addition the quality and turn-around-time of their post-processing is second to none, allowing you to relive your memories in a high-quality and polished way for a lifetime.
 </p>
 
 <h2 class="font-neue-medium text-3xl mb-6">

@@ -13,7 +13,7 @@ function Hero() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setOffset(window.scrollY * 0.3); // Adjust multiplier for effect strength
+      setOffset(window.scrollY * 0.9); // Adjust multiplier for effect strength
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);

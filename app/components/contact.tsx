@@ -64,7 +64,7 @@ const Contact = () => {
         {/* Form */}
         <form className="bg-transparent text-[#fdf9dc] w-full max-w-3xl mx-auto font-neue-light text-left">
 
-          {/* FIX: First/last name — stacked on mobile, side-by-side on sm+ */}
+          {/* FIX: First/last name - stacked on mobile, side-by-side on sm+ */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-6">
             <div className="flex-1 flex flex-col">
               <label className="mb-2 text-sm font-neue-medium">
@@ -110,7 +110,7 @@ const Contact = () => {
             />
           </div>
 
-          {/* Privacy checkbox — FIX: larger tap target on mobile */}
+          {/* Privacy checkbox - FIX: larger tap target on mobile */}
           <div className="mb-6 flex items-start gap-3">
             <input
               type="checkbox"

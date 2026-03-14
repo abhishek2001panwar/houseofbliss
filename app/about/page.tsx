@@ -91,7 +91,7 @@ const MANIFESTO = [
   },
   {
     n: "03",
-    rule: "Love is love — all love is welcome here.",
+    rule: "Love is love - all love is welcome here.",
     img: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1200&q=80",
   },
   {
@@ -106,7 +106,7 @@ const MANIFESTO = [
   },
   {
     n: "06",
-    rule: "Respect nature — respect others — respect yourself.",
+    rule: "Respect nature - respect others - respect yourself.",
     img: "https://images.unsplash.com/photo-1548142813-c348350df52b?w=1200&q=80",
   },
   {
@@ -601,9 +601,9 @@ function page() {
           bullets={[
             { title: "Pre-Wedding & Couple Photoshoots", desc: "Beautifully planned sessions that reflect your personalities and love story in every frame." },
             { title: "Candid Wedding Photography",        desc: "Authentic, emotional, and spontaneous moments captured discreetly and gracefully." },
-            { title: "Cinematic Wedding Films",           desc: "High-quality storytelling with cinematic editing, music, and mood—crafted to move you every time you watch." },
+            { title: "Cinematic Wedding Films",           desc: "High-quality storytelling with cinematic editing, music, and mood-crafted to move you every time you watch." },
             { title: "Drone Videography",                 desc: "Breathtaking aerial shots that add a grand, unforgettable perspective to your wedding film." },
-            { title: "Complete Event Coverage",           desc: "From Haldi to Mehendi to Sangeet to Reception—our lens captures it all with artistic precision." },
+            { title: "Complete Event Coverage",           desc: "From Haldi to Mehendi to Sangeet to Reception-our lens captures it all with artistic precision." },
           ]}
           closing="No matter how big or intimate your wedding is, our team brings the same passion and professionalism to every celebration."
         />
@@ -741,7 +741,7 @@ function page() {
             </p>
           </div>
 
-          {/* travel images row — on mobile only the first image shows */}
+          {/* travel images row - on mobile only the first image shows */}
           <div className="about-travel-images">
             <ParallaxImg
               src="/about/about4.png"

@@ -59,7 +59,7 @@ export function About() {
               </span>
               {/* Content */}
               <div className="flex flex-col gap-3">
-                {/* FIX 4: Responsive heading size — starts small, grows at larger breakpoints */}
+                {/* FIX 4: Responsive heading size - starts small, grows at larger breakpoints */}
                 <h3 className="font-editorial text-[#fdf9dc] text-[1.4rem] sm:text-[1.8rem] md:text-[2.2rem] lg:text-[2.6rem] leading-tight">
                   {service.title}
                 </h3>
@@ -79,7 +79,7 @@ export function About() {
 
       </div>
 
-      {/* FIX 5: Wave SVG — use viewBox that matches the path coordinates (1440 wide),
+      {/* FIX 5: Wave SVG - use viewBox that matches the path coordinates (1440 wide),
           width="100%" ensures it scales to any container without clipping */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
         <svg

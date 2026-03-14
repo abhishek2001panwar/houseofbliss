@@ -9,7 +9,7 @@ const VIDEOS = [
     id: "v1",
     coords: ["46°52′N", "11°01′E"],
     location: "Hochgurgl, Austria",
-    title: "Deep inside the glacier — an adventurous elopement in Austria",
+    title: "Deep inside the glacier - an adventurous elopement in Austria",
     src: "https://houseofbliss.co.in/wp-content/uploads/2025/11/Video-2.mp4",
     poster: "",
   },
@@ -17,7 +17,7 @@ const VIDEOS = [
     id: "v2",
     coords: ["46°28′N", "11°39′E"],
     location: "South Tyrol, Italy",
-    title: "Volcano wedding — an intimate ceremony at dawn",
+    title: "Volcano wedding - an intimate ceremony at dawn",
     src: "https://houseofbliss.co.in/wp-content/uploads/2025/11/Video-14.mp4",
     poster: "",
   },
@@ -25,7 +25,7 @@ const VIDEOS = [
     id: "v3",
     coords: ["62°7′N", "7°26′W"],
     location: "Faroe Islands",
-    title: "Wind, rain, and vows — a Faroe Islands elopement",
+    title: "Wind, rain, and vows - a Faroe Islands elopement",
     src: "https://houseofbliss.co.in/wp-content/uploads/2025/11/Video-1.mp4",
     poster: "",
   },
@@ -33,7 +33,7 @@ const VIDEOS = [
     id: "v4",
     coords: ["51°21′N", "4°49′E"],
     location: "Antwerp, Belgium",
-    title: "Candlelit chapel — Nick & Jeroen in Antwerp",
+    title: "Candlelit chapel - Nick & Jeroen in Antwerp",
     src: "https://houseofbliss.co.in/wp-content/uploads/2025/11/Video-3.mp4",
     poster: "",
   },
@@ -41,7 +41,7 @@ const VIDEOS = [
     id: "v5",
     coords: ["47°17′N", "12°9′E"],
     location: "Austrian Alps",
-    title: "A snowboard elopement — Jens & Margot",
+    title: "A snowboard elopement - Jens & Margot",
     src: "https://houseofbliss.co.in/wp-content/uploads/2025/11/Video-5.mp4",
     poster: "",
   },
@@ -49,7 +49,7 @@ const VIDEOS = [
     id: "v6",
     coords: ["56°13′N", "4°51′W"],
     location: "Loch Lomond, Scotland",
-    title: "Scottish highland ceremony — Barbara & Stoffel",
+    title: "Scottish highland ceremony - Barbara & Stoffel",
     src: "https://houseofbliss.co.in/wp-content/uploads/2025/11/Video-8.mp4",
     poster: "",
   },
@@ -57,7 +57,7 @@ const VIDEOS = [
     id: "v7",
     coords: ["46°49′N", "9°17′E"],
     location: "Graubünden, Switzerland",
-    title: "Alpine micro-wedding — Manou & Andries",
+    title: "Alpine micro-wedding - Manou & Andries",
     src: "https://houseofbliss.co.in/wp-content/uploads/2025/11/Video-4.mp4",
     poster: "",
   },
@@ -65,7 +65,7 @@ const VIDEOS = [
     id: "v8",
     coords: ["38°41′N", "7°40′W"],
     location: "Alentejo, Portugal",
-    title: "Golden hour dinner — Tinneke & Steven in Portugal",
+    title: "Golden hour dinner - Tinneke & Steven in Portugal",
     src: "https://houseofbliss.co.in/wp-content/uploads/2025/11/Video-15.mp4",
     poster: "",
   },
@@ -73,7 +73,7 @@ const VIDEOS = [
     id: "v9",
     coords: ["50°55′N", "1°42′E"],
     location: "Cap Blanc-Nez, France",
-    title: "Warehouse love — Brecht & Lisa engagement",
+    title: "Warehouse love - Brecht & Lisa engagement",
     src: "https://houseofbliss.co.in/wp-content/uploads/2025/11/Video-11.mp4",
     poster: "",
   },
@@ -81,7 +81,7 @@ const VIDEOS = [
     id: "v10",
     coords: ["46°33′N", "11°42′E"],
     location: "Dolomiti, Italy",
-    title: "Helicopter elopement — high above the Dolomites",
+    title: "Helicopter elopement - high above the Dolomites",
     src: "https://houseofbliss.co.in/wp-content/uploads/2025/11/Video-10.mp4",
     poster: "",
   },
@@ -89,35 +89,35 @@ const VIDEOS = [
 
 // ─── Image data ───────────────────────────────────────────────────────────────
 const STORIES = [
-  { id: 1,  coords: ["46°52′N", "11°01′E"], location: "Hochgurgl, Austria",       title: "Deep inside the glacier — an adventurous elopement in Austria",           img: "/portfolio/img1.jpg" },
-  { id: 2,  coords: ["46°28′N", "11°39′E"], location: "",                          title: "The cost of a wedding vs an elopement — what you need to know",           img: "/portfolio/vert1.jpg" },
+  { id: 1,  coords: ["46°52′N", "11°01′E"], location: "Hochgurgl, Austria",       title: "Deep inside the glacier - an adventurous elopement in Austria",           img: "/portfolio/img1.jpg" },
+  { id: 2,  coords: ["46°28′N", "11°39′E"], location: "",                          title: "The cost of a wedding vs an elopement - what you need to know",           img: "/portfolio/vert1.jpg" },
   { id: 3,  coords: ["51°21′N", "4°49′E"],  location: "Antwerp, Belgium",          title: "Why I no longer photograph church weddings",                              img: "/portfolio/img3.jpg" },
   { id: 4,  coords: ["62°7′N",  "7°26′W"],  location: "Faroe Islands",             title: "What is an elopement? (And why you might want one)",                      img: "/portfolio/vert2.jpg" },
-  { id: 5,  coords: ["47°17′N", "12°9′E"],  location: "Austrian Alps",             title: "How to tell your family you're eloping — without the drama",              img: "/portfolio/img5.jpg" },
+  { id: 5,  coords: ["47°17′N", "12°9′E"],  location: "Austrian Alps",             title: "How to tell your family you're eloping - without the drama",              img: "/portfolio/img5.jpg" },
   { id: 6,  coords: ["56°13′N", "4°51′W"],  location: "Scotland",                  title: "10 tips for your wedding day no one else will tell you",                  img: "/portfolio/vert3.jpg" },
   { id: 7,  coords: ["46°49′N", "9°17′E"],  location: "Graubünden, Switzerland",   title: "10 epic & adventurous places to elope in Europe",                        img: "/portfolio/img7.jpg" },
   { id: 8,  coords: ["38°41′N", "7°40′W"],  location: "Alentejo, Portugal",        title: "6 reasons to have a destination wedding",                                img: "/portfolio/vert4.jpeg" },
   { id: 9,  coords: ["50°55′N", "1°42′E"],  location: "Cap Blanc-Nez, France",     title: "Why an engagement shoot is always a good idea",                          img: "/portfolio/img9.jpg" },
   { id: 10, coords: ["46°33′N", "11°42′E"], location: "Dolomiti, Italy",           title: "Intimate helicopter elopement in the Italian Dolomites",                 img: "/portfolio/vert5.jpg" },
-  { id: 11, coords: ["39°9′N",  "9°23′E"],  location: "Sardegna, Italy",           title: "Sardinia Wedding Weekend — when the wedding planner gets married",        img: "/portfolio/img11.jpg" },
+  { id: 11, coords: ["39°9′N",  "9°23′E"],  location: "Sardegna, Italy",           title: "Sardinia Wedding Weekend - when the wedding planner gets married",        img: "/portfolio/img11.jpg" },
   { id: 12, coords: ["47°22′N", "8°33′E"],  location: "Zürich, Switzerland",       title: "From city hall to alpine adventure: Zürich civil wedding",               img: "/portfolio/vert6.jpeg" },
-  { id: 13, coords: ["39°9′N",  "9°23′E"],  location: "Sardegna, Italy",           title: "Sardinia Wedding Weekend — when the wedding planner gets married",        img: "/portfolio/img12.jpg" },
+  { id: 13, coords: ["39°9′N",  "9°23′E"],  location: "Sardegna, Italy",           title: "Sardinia Wedding Weekend - when the wedding planner gets married",        img: "/portfolio/img12.jpg" },
   { id: 14, coords: ["47°22′N", "8°33′E"],  location: "Zürich, Switzerland",       title: "From city hall to alpine adventure: Zürich civil wedding",               img: "/portfolio/vert7.jpeg" },
-  { id: 15, coords: ["39°9′N",  "9°23′E"],  location: "Sardegna, Italy",           title: "Sardinia Wedding Weekend — when the wedding planner gets married",        img: "/portfolio/img13.jpg" },
+  { id: 15, coords: ["39°9′N",  "9°23′E"],  location: "Sardegna, Italy",           title: "Sardinia Wedding Weekend - when the wedding planner gets married",        img: "/portfolio/img13.jpg" },
   { id: 16, coords: ["47°22′N", "8°33′E"],  location: "Zürich, Switzerland",       title: "From city hall to alpine adventure: Zürich civil wedding",               img: "/portfolio/vert8.jpg" },
-  { id: 17, coords: ["39°9′N",  "9°23′E"],  location: "Sardegna, Italy",           title: "Sardinia Wedding Weekend — when the wedding planner gets married",        img: "/portfolio/img14.jpg" },
+  { id: 17, coords: ["39°9′N",  "9°23′E"],  location: "Sardegna, Italy",           title: "Sardinia Wedding Weekend - when the wedding planner gets married",        img: "/portfolio/img14.jpg" },
   { id: 18, coords: ["47°22′N", "8°33′E"],  location: "Zürich, Switzerland",       title: "From city hall to alpine adventure: Zürich civil wedding",               img: "/portfolio/vert9.jpeg" },
-  { id: 19, coords: ["39°9′N",  "9°23′E"],  location: "Sardegna, Italy",           title: "Sardinia Wedding Weekend — when the wedding planner gets married",        img: "/portfolio/img15.jpg" },
+  { id: 19, coords: ["39°9′N",  "9°23′E"],  location: "Sardegna, Italy",           title: "Sardinia Wedding Weekend - when the wedding planner gets married",        img: "/portfolio/img15.jpg" },
   { id: 20, coords: ["47°22′N", "8°33′E"],  location: "Zürich, Switzerland",       title: "From city hall to alpine adventure: Zürich civil wedding",               img: "/portfolio/vert10.jpeg" },
-  { id: 21, coords: ["39°9′N",  "9°23′E"],  location: "Sardegna, Italy",           title: "Sardinia Wedding Weekend — when the wedding planner gets married",        img: "/portfolio/img16.jpeg" },
+  { id: 21, coords: ["39°9′N",  "9°23′E"],  location: "Sardegna, Italy",           title: "Sardinia Wedding Weekend - when the wedding planner gets married",        img: "/portfolio/img16.jpeg" },
   { id: 22, coords: ["47°22′N", "8°33′E"],  location: "Zürich, Switzerland",       title: "From city hall to alpine adventure: Zürich civil wedding",               img: "/portfolio/vert11.jpg" },
-  { id: 23, coords: ["39°9′N",  "9°23′E"],  location: "Sardegna, Italy",           title: "Sardinia Wedding Weekend — when the wedding planner gets married",        img: "/portfolio/img17.jpg" },
+  { id: 23, coords: ["39°9′N",  "9°23′E"],  location: "Sardegna, Italy",           title: "Sardinia Wedding Weekend - when the wedding planner gets married",        img: "/portfolio/img17.jpg" },
   { id: 24, coords: ["47°22′N", "8°33′E"],  location: "Zürich, Switzerland",       title: "From city hall to alpine adventure: Zürich civil wedding",               img: "/portfolio/vert12.jpg" },
-  { id: 25, coords: ["39°9′N",  "9°23′E"],  location: "Sardegna, Italy",           title: "Sardinia Wedding Weekend — when the wedding planner gets married",        img: "/portfolio/img18.jpg" },
+  { id: 25, coords: ["39°9′N",  "9°23′E"],  location: "Sardegna, Italy",           title: "Sardinia Wedding Weekend - when the wedding planner gets married",        img: "/portfolio/img18.jpg" },
   { id: 26, coords: ["47°22′N", "8°33′E"],  location: "Zürich, Switzerland",       title: "From city hall to alpine adventure: Zürich civil wedding",               img: "/portfolio/vert13.jpg" },
-  { id: 27, coords: ["39°9′N",  "9°23′E"],  location: "Sardegna, Italy",           title: "Sardinia Wedding Weekend — when the wedding planner gets married",        img: "/portfolio/img19.jpg" },
+  { id: 27, coords: ["39°9′N",  "9°23′E"],  location: "Sardegna, Italy",           title: "Sardinia Wedding Weekend - when the wedding planner gets married",        img: "/portfolio/img19.jpg" },
   { id: 28, coords: ["47°22′N", "8°33′E"],  location: "Zürich, Switzerland",       title: "From city hall to alpine adventure: Zürich civil wedding",               img: "/portfolio/vert14.jpg" },
-  { id: 29, coords: ["39°9′N",  "9°23′E"],  location: "Sardegna, Italy",           title: "Sardinia Wedding Weekend — when the wedding planner gets married",        img: "/portfolio/img20.jpg" },
+  { id: 29, coords: ["39°9′N",  "9°23′E"],  location: "Sardegna, Italy",           title: "Sardinia Wedding Weekend - when the wedding planner gets married",        img: "/portfolio/img20.jpg" },
   { id: 30, coords: ["47°22′N", "8°33′E"],  location: "Zürich, Switzerland",       title: "From city hall to alpine adventure: Zürich civil wedding",               img: "/portfolio/vert14.jpg" },
 ];
 
@@ -349,7 +349,7 @@ export default function StoriesPage() {
             margin-bottom: 32px;
           }
 
-          /* Last portrait card fix — remove any stray margin */
+          /* Last portrait card fix - remove any stray margin */
           .portrait-left-card {
             margin-bottom: 0 !important;
           }
@@ -404,7 +404,7 @@ export default function StoriesPage() {
                     textTransform: "capitalize",
                   }}
                 >
-                  {f === "all" ? "— Any —" : f.charAt(0).toUpperCase() + f.slice(1)}
+                  {f === "all" ? "- Any -" : f.charAt(0).toUpperCase() + f.slice(1)}
                 </button>
               ))}
             </div>
@@ -439,7 +439,7 @@ export default function StoriesPage() {
         </div>
 
         {/* ── Images section divider ── */}
-        <SectionDivider label="photographs — stories in still light" />
+        <SectionDivider label="photographs - stories in still light" />
 
         {/* ── Image rows ── */}
         <div style={{ padding: "0 7%" }}>

@@ -168,7 +168,7 @@ const MANIFESTO = [
   },
   {
     n: "03",
-    rule: "Love is love — all love is welcome here.",
+    rule: "Love is love - all love is welcome here.",
     img: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1200&q=80",
   },
   {
@@ -183,7 +183,7 @@ const MANIFESTO = [
   },
   {
     n: "06",
-    rule: "Respect nature — respect others — respect yourself.",
+    rule: "Respect nature - respect others - respect yourself.",
     img: "https://images.unsplash.com/photo-1548142813-c348350df52b?w=1200&q=80",
   },
   {
@@ -547,7 +547,7 @@ function page() {
           },
           {
             title: "Candid photography",
-            desc: "We specialize in candid photography Bangalore couples love—photography that is natural, spontaneous, and full of emotion.",
+            desc: "We specialize in candid photography Bangalore couples love-photography that is natural, spontaneous, and full of emotion.",
           },
           {
             title: "Customizable packages",
@@ -601,14 +601,14 @@ function page() {
             <p style={{ margin: "0 0 12px" }}>
               “House of Bliss not just captured our wedding in pictures – they
               captured our hearts. Each picture is a work of art, capturing
-              emotion and artful detail.”<br/> — Aditi & Karan, Bengaluru <br/>“Their
+              emotion and artful detail.”<br/> - Aditi & Karan, Bengaluru <br/>“Their
               candids out of Bangalore are simply exceptional. Most of the time
               we forgot we had cameras & photographers capturing our big day,
-              yet all happened so beautifully & authentically.” <br/> — Sneha &
+              yet all happened so beautifully & authentically.” <br/> - Sneha &
               Raghav, Bangalore <br/> “We were amazed in every way, from pre-wedding
               photography sessions to the final photo book the House of Bliss
               delivered for us – thank you so much. Professional and uniquely
-              creative people, yet also so warm and engaging.” <br/> — Meera & Arjun
+              creative people, yet also so warm and engaging.” <br/> - Meera & Arjun
               Bengaluru
             </p>
           </div>

@@ -168,7 +168,7 @@ const MANIFESTO = [
   },
   {
     n: "03",
-    rule: "Love is love — all love is welcome here.",
+    rule: "Love is love - all love is welcome here.",
     img: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1200&q=80",
   },
   {
@@ -183,7 +183,7 @@ const MANIFESTO = [
   },
   {
     n: "06",
-    rule: "Respect nature — respect others — respect yourself.",
+    rule: "Respect nature - respect others - respect yourself.",
     img: "https://images.unsplash.com/photo-1548142813-c348350df52b?w=1200&q=80",
   },
   {
@@ -450,7 +450,7 @@ function page() {
                 transition: "transform 0.05s linear",
               }}
             >
-              Candid Wedding Photography — Bengaluru
+              Candid Wedding Photography - Bengaluru
             </h1>
           </div>
 
@@ -502,7 +502,7 @@ function page() {
               lineHeight: 1.15,
             }}
           >
-            Capture real love — not curated moments
+            Capture real love - not curated moments
           </h2>
           <div
             style={{
@@ -519,7 +519,7 @@ function page() {
             </p>
             <p style={{ margin: "0 0 12px" }}>
               Our candid wedding photography in Bengaluru, focuses on these
-              unscripted beats — the real emotion, the small look, the raw
+              unscripted beats - the real emotion, the small look, the raw
               smile; all of which create a photo-story that represents you.
             </p>
             <p style={{ margin: "0 0 12px" }}>
@@ -535,7 +535,7 @@ function page() {
         tag="What is candid photography?
 "
         accentColor="#7a6a52"
-        intro="Candid photography is minimum posing, and maximum presence. Instead of directing each shot, our candid photographers act like guests with cameras: attentive, patient and ready to catch a moment when it happens; the end result is wedding photos that feel intimate, natural and cinematic; bridal laughter, the groom’s unfiltered smile, kids running through the mandap — captured with absolute authenticity."
+        intro="Candid photography is minimum posing, and maximum presence. Instead of directing each shot, our candid photographers act like guests with cameras: attentive, patient and ready to catch a moment when it happens; the end result is wedding photos that feel intimate, natural and cinematic; bridal laughter, the groom’s unfiltered smile, kids running through the mandap - captured with absolute authenticity."
         bullets={[
           {
             title: "Full day wedding coverage",

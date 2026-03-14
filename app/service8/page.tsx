@@ -168,7 +168,7 @@ const MANIFESTO = [
   },
   {
     n: "03",
-    rule: "Love is love — all love is welcome here.",
+    rule: "Love is love - all love is welcome here.",
     img: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1200&q=80",
   },
   {
@@ -183,7 +183,7 @@ const MANIFESTO = [
   },
   {
     n: "06",
-    rule: "Respect nature — respect others — respect yourself.",
+    rule: "Respect nature - respect others - respect yourself.",
     img: "https://images.unsplash.com/photo-1548142813-c348350df52b?w=1200&q=80",
   },
   {
@@ -487,7 +487,7 @@ function page() {
       >
         {/* Left col: image */}
         <ParallaxImg
-          src="/about/about1.png"
+          src="/serv8/img1.jpg"
           alt="photographer with camera"
           height={480}
           speed={0.055}
@@ -521,7 +521,7 @@ function page() {
              Your wedding day is a celebration of your love and a day that you likely only experience once in your lifetime.
             </p>
             <p style={{ margin: "0 0 12px" }}>
-               From the nerves of your pre wedding shoot to meaningful vows to the wild dance floor—every moment is one to remember. 
+               From the nerves of your pre wedding shoot to meaningful vows to the wild dance floor-every moment is one to remember. 
             </p>
             <p style={{ margin: "0 0 12px" }}>
              A professional photography service in Bangalore delivers more than images, they deliver your love story through lasting photographs.
@@ -553,7 +553,7 @@ function page() {
           },
           
         ]}
-        closing="So whether you are having a traditional South Indian wedding, a modern wedding, or some combination of the two—there are affordable wedding photography options in Bangalore within any budget."
+        closing="So whether you are having a traditional South Indian wedding, a modern wedding, or some combination of the two-there are affordable wedding photography options in Bangalore within any budget."
       />
 
        <ScrollStorySection
@@ -687,7 +687,7 @@ The pre-wedding shoot cost in Bangalore generally starts from around ₹25,000 �
         }}
       >
         <ParallaxImg
-          src="/about/about1.png"
+          src="/serv8/img2.jpg"
           alt="photographer with camera"
           height={480}
           speed={0.055}

@@ -38,7 +38,7 @@ const Gallery = () => {
     return () => window.removeEventListener('resize', update);
   }, []);
 
-  // Scroll animations (fade + parallax — only for desktop, simple fade for others)
+  // Scroll animations (fade + parallax - only for desktop, simple fade for others)
   useEffect(() => {
     const handleScroll = () => {
       itemsRef.current.forEach((el, idx) => {
