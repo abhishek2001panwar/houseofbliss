@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react';
+import { supabase } from '../../lib/supabaseClient';
 
 function Cta() {
   const [email, setEmail] = useState('');
@@ -10,10 +11,18 @@ function Cta() {
     e.preventDefault();
     if (!email) return;
     setLoading(true);
-    await new Promise(r => setTimeout(r, 1200));
+    try {
+      const { error } = await supabase.from('insigts').insert([{ email }]);
+      if (error) {
+        setStatus('error');
+      } else {
+        setStatus('success');
+        setEmail('');
+      }
+    } catch (err) {
+      setStatus('error');
+    }
     setLoading(false);
-    setStatus('success');
-    setEmail('');
   };
 
   return (
@@ -42,7 +51,7 @@ function Cta() {
           <p className="font-neue-medium text-[#5a5a4c] text-sm tracking-widest uppercase">We'll be in touch</p>
           <button
             onClick={() => setStatus('idle')}
-            className="font-neue-light text-[#a89f72] text-xs tracking-widest underline underline-offset-4 mt-1 hover:text-[#5a5a4c] transition-colors"
+            className="font-neue-medium text-[#a89f72] text-xs tracking-widest underline underline-offset-4 mt-1 hover:text-[#5a5a4c] transition-colors"
           >
             Send another
           </button>
