@@ -96,7 +96,7 @@ const Contact = () => {
           </div>
           <div className="mb-6 flex flex-col">
             <label className="mb-2 text-sm font-neue-medium">
-              Tell me everything! Or at least what's relevant to my photography
+              Tell us everything! Or at least what's relevant to our
               service.
             </label>
             <textarea className="bg-transparent border-b border-[#fdf9dc] text-[#fdf9dc] py-2 px-3 focus:outline-none min-h-[120px] font-neue-light" />

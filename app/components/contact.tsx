@@ -101,7 +101,7 @@ const Contact = () => {
 
           <div className="mb-6 flex flex-col">
             <label className="mb-2 text-sm font-neue-medium leading-snug">
-              Tell me everything! Or at least what's relevant to my photography
+              Tell us everything! Or at least what's relevant to our 
               service.
             </label>
             <textarea
