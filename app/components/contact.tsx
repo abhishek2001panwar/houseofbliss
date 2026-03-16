@@ -261,7 +261,7 @@ const Contact = () => {
             className="
               w-full py-4 flex items-center justify-center gap-2
               bg-[#fdf9dc] text-[#41453D]
-              font-neue-regular text-sm tracking-widest uppercase
+              font-neue-regular text-sm tracking-widest 
               transition-all duration-300
               hover:bg-[#f0eccc] active:scale-[0.99]
               disabled:opacity-50 disabled:cursor-not-allowed
