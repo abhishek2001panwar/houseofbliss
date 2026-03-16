@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Button from "./button";
 import { supabase } from "@/lib/supabaseClient";
 
 /* ── Success popup ── */
@@ -9,9 +8,7 @@ function SuccessPopup({ onDone }: { onDone: () => void }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // fade in
     const t1 = setTimeout(() => setVisible(true), 50);
-    // fade out after 3s
     const t2 = setTimeout(() => {
       setVisible(false);
       setTimeout(onDone, 600);
@@ -35,25 +32,30 @@ function SuccessPopup({ onDone }: { onDone: () => void }) {
           boxShadow: "0 8px 48px rgba(0,0,0,0.18)",
         }}
       >
-        {/* animated check circle */}
         <div className="relative w-16 h-16 flex items-center justify-center">
           <svg className="absolute inset-0 w-16 h-16" viewBox="0 0 64 64">
-            <circle
-              cx="32" cy="32" r="28"
-              fill="none" stroke="rgba(253,249,220,0.25)" strokeWidth="1.5"
-            />
+            <circle cx="32" cy="32" r="28" fill="none" stroke="rgba(253,249,220,0.25)" strokeWidth="1.5" />
             <circle
               cx="32" cy="32" r="28"
               fill="none" stroke="#fdf9dc" strokeWidth="1.5"
               strokeDasharray="176" strokeDashoffset={visible ? 0 : 176}
               strokeLinecap="round"
-              style={{ transition: "stroke-dashoffset 0.9s cubic-bezier(0.22,0.68,0,1.1) 0.1s", transform: "rotate(-90deg)", transformOrigin: "center" }}
+              style={{
+                transition: "stroke-dashoffset 0.9s cubic-bezier(0.22,0.68,0,1.1) 0.1s",
+                transform: "rotate(-90deg)",
+                transformOrigin: "center",
+              }}
             />
           </svg>
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-            style={{ opacity: visible ? 1 : 0, transform: visible ? "scale(1)" : "scale(0.5)", transition: "all 0.4s cubic-bezier(0.22,0.68,0,1.1) 0.7s" }}
+          <svg
+            width="22" height="22" viewBox="0 0 22 22" fill="none"
+            style={{
+              opacity: visible ? 1 : 0,
+              transform: visible ? "scale(1)" : "scale(0.5)",
+              transition: "all 0.4s cubic-bezier(0.22,0.68,0,1.1) 0.7s",
+            }}
           >
-            <path d="M4 11.5L9 16.5L18 6" stroke="#fdf9dc" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M4 11.5L9 16.5L18 6" stroke="#fdf9dc" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
 
@@ -64,7 +66,6 @@ function SuccessPopup({ onDone }: { onDone: () => void }) {
           </p>
         </div>
 
-        {/* shrinking progress bar */}
         <div className="w-full h-px bg-[#fdf9dc]/10 rounded-full overflow-hidden mt-2">
           <div
             className="h-full bg-[#fdf9dc]/40 rounded-full"
@@ -83,8 +84,8 @@ function SuccessPopup({ onDone }: { onDone: () => void }) {
 function Spinner() {
   return (
     <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none">
-      <circle className="opacity-20" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-      <path className="opacity-80" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/>
+      <circle className="opacity-20" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+      <path className="opacity-80" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
     </svg>
   );
 }
@@ -103,30 +104,50 @@ const Contact = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  // ✅ KEY FIX: explicit e.preventDefault() + e.stopPropagation() at the very top
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    e.stopPropagation();
+
     setError("");
-    if (!agreed) { setError("You must agree to the privacy policy."); return; }
+
+    if (!agreed) {
+      setError("You must agree to the privacy policy.");
+      return;
+    }
+
     setLoading(true);
-    const { error } = await supabase.from("contact").insert([form]);
-    setLoading(false);
-    if (error) {
-      setError("Submission failed. Please try again.");
-    } else {
-      setForm({ first_name: "", last_name: "", email: "", subject: "", message: "" });
-      setAgreed(false);
-      setShowPopup(true);
+
+    try {
+      const { error: sbError } = await supabase.from("contact").insert([{
+        first_name: form.first_name,
+        last_name: form.last_name,
+        email: form.email,
+        subject: form.subject,
+        message: form.message,
+      }]);
+
+      if (sbError) {
+        setError("Submission failed. Please try again.");
+      } else {
+        setForm({ first_name: "", last_name: "", email: "", subject: "", message: "" });
+        setAgreed(false);
+        setShowPopup(true);
+      }
+    } catch (err) {
+      console.error("Contact form error:", err);
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
-  // shared input class — kills browser autofill white bg
   const inputCls = `
     w-full bg-transparent border-b border-[#fdf9dc]/60 text-[#fdf9dc]
     py-3 px-1 focus:outline-none focus:border-[#fdf9dc]
     font-neue-light placeholder:text-[#fdf9dc]/30
     transition-colors duration-200
     [color-scheme:dark]
-    autofill:shadow-[inset_0_0_0px_1000px_#41453D]
     [-webkit-text-fill-color:#fdf9dc]
     [&:-webkit-autofill]:shadow-[inset_0_0_0_1000px_#41453D]
     [&:-webkit-autofill]:[-webkit-text-fill-color:#fdf9dc]
@@ -180,9 +201,11 @@ const Contact = () => {
           </p>
         </div>
 
+        {/* ✅ onSubmit on the <form> tag, NOT on the button */}
         <form
-          className="bg-transparent text-[#fdf9dc] w-full max-w-3xl mx-auto font-neue-light text-left"
           onSubmit={handleSubmit}
+          noValidate={false}
+          className="bg-transparent text-[#fdf9dc] w-full max-w-3xl mx-auto font-neue-light text-left"
         >
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-6">
             <div className="flex-1 flex flex-col">
@@ -231,14 +254,21 @@ const Contact = () => {
             and Terms of Service apply.
           </div>
 
-          <Button
-            variant="filled"
-            className="w-full py-3 flex items-center justify-center gap-2"
+          {/* ✅ Native <button type="submit"> — no custom Button component to misfire */}
+          <button
             type="submit"
             disabled={loading}
+            className="
+              w-full py-4 flex items-center justify-center gap-2
+              bg-[#fdf9dc] text-[#41453D]
+              font-neue-regular text-sm tracking-widest uppercase
+              transition-all duration-300
+              hover:bg-[#f0eccc] active:scale-[0.99]
+              disabled:opacity-50 disabled:cursor-not-allowed
+            "
           >
             {loading ? <><Spinner /> Sending...</> : "Send"}
-          </Button>
+          </button>
 
           {error && (
             <div className="mt-4 text-red-400 text-center font-neue-light text-sm">{error}</div>
