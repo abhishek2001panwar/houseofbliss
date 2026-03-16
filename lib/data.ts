@@ -51,9 +51,6 @@ export const BLOGS = [
     content: `
     <article class="max-w-4xl mx-auto text-[#41453D] leading-relaxed">
 
-<h1 class="font-editorial text-5xl md:text-6xl font-bold mb-10">
-What Is Cinematic Wedding Photography and Why Every Couple Needs It
-</h1>
 
 <p class="text-lg mb-6">
 A wedding is a single-day event filled with the emotions and moments that become lasting memories, all to be beautifully captured on camera. Cinematic wedding photography has become an increasingly popular choice for couples in recent years, as they want their love story told in a way that reflects a movie. So, what is cinematic wedding photography, and why is it a must-have for every couple? In this blog, we will explain what makes cinematic wedding photography special, its unique benefits, and why House of Bliss, a leading wedding photographer in Bengaluru, will help capture your vision.
@@ -238,9 +235,6 @@ Cinematic wedding photography in Bengaluru is more than just a photography style
     content: `
     <article class="max-w-3xl mx-auto text-[#41453D] leading-relaxed">
 
-<h1 class="font-editorial text-5xl md:text-6xl font-bold mb-10">
-What the Mirrors Remember
-</h1>
 
 <h2 class="font-editorial text-2xl md:text-3xl font-bold mb-8">
 Niharika & Steven
