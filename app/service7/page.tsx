@@ -507,7 +507,7 @@ function page() {
           <div
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
+              fontSize: 17,
               lineHeight: 1.85,
               color: "#3a3a35",
             }}
@@ -598,9 +598,9 @@ function page() {
       </blockquote> */}
 
       <ScrollStorySection
-        tag=""
+        tag="Why you should contact our candid photographers"
         accentColor="#7a6a52"
-        intro="Why you should contact our candid photographers"
+        intro=""
         bullets={[
           {
             title: "Unobtrusive and observant",
@@ -623,9 +623,9 @@ function page() {
       />
 
       <ScrollStorySection
-        tag=""
+        tag="The process – reliable, professional, relaxed"
         accentColor="#7a6a52"
-        intro="The process – reliable, professional, relaxed"
+        intro=""
         bullets={[
           {
             title: "Consultation",
@@ -756,7 +756,7 @@ function page() {
           <div
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
+              fontSize: 17,
               lineHeight: 1.85,
               color: "#3a3a35",
             }}
@@ -805,7 +805,7 @@ function page() {
           <div
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
+              fontSize: 17,
               lineHeight: 1.85,
               color: "#3a3a35",
             }}

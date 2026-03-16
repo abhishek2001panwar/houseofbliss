@@ -10,7 +10,7 @@ const VIDEOS = [
     coords: ["46°52′N", "11°01′E"],
     location: "Hochgurgl, Austria",
     title: "Deep inside the glacier - an adventurous elopement in Austria",
-    src: "https://houseofbliss.co.in/wp-content/uploads/2025/11/Video-2.mp4",
+    src: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773634860/vid1_1_wfvsmn.mp4",
     poster: "",
   },
   {
@@ -18,7 +18,7 @@ const VIDEOS = [
     coords: ["46°28′N", "11°39′E"],
     location: "South Tyrol, Italy",
     title: "Volcano wedding - an intimate ceremony at dawn",
-    src: "https://houseofbliss.co.in/wp-content/uploads/2025/11/Video-14.mp4",
+    src: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773634431/vid2_y5rih8.mp4",
     poster: "",
   },
   {
@@ -26,7 +26,7 @@ const VIDEOS = [
     coords: ["62°7′N", "7°26′W"],
     location: "Faroe Islands",
     title: "Wind, rain, and vows - a Faroe Islands elopement",
-    src: "https://houseofbliss.co.in/wp-content/uploads/2025/11/Video-1.mp4",
+    src: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773634434/vid3_rsub5b.mp4",
     poster: "",
   },
   {
@@ -34,7 +34,7 @@ const VIDEOS = [
     coords: ["51°21′N", "4°49′E"],
     location: "Antwerp, Belgium",
     title: "Candlelit chapel - Nick & Jeroen in Antwerp",
-    src: "https://houseofbliss.co.in/wp-content/uploads/2025/11/Video-3.mp4",
+    src: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773634854/vid4_1_y8vlhe.mp4",
     poster: "",
   },
   {
@@ -42,7 +42,7 @@ const VIDEOS = [
     coords: ["47°17′N", "12°9′E"],
     location: "Austrian Alps",
     title: "A snowboard elopement - Jens & Margot",
-    src: "https://houseofbliss.co.in/wp-content/uploads/2025/11/Video-5.mp4",
+    src: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773634457/vid5_rb5lqz.mp4",
     poster: "",
   },
   {
@@ -50,7 +50,7 @@ const VIDEOS = [
     coords: ["56°13′N", "4°51′W"],
     location: "Loch Lomond, Scotland",
     title: "Scottish highland ceremony - Barbara & Stoffel",
-    src: "https://houseofbliss.co.in/wp-content/uploads/2025/11/Video-8.mp4",
+    src: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773634432/vid6_azxq5q.mp4",
     poster: "",
   },
   {
@@ -58,7 +58,7 @@ const VIDEOS = [
     coords: ["46°49′N", "9°17′E"],
     location: "Graubünden, Switzerland",
     title: "Alpine micro-wedding - Manou & Andries",
-    src: "https://houseofbliss.co.in/wp-content/uploads/2025/11/Video-4.mp4",
+    src: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773634440/vid7_sdki7f.mp4",
     poster: "",
   },
   {
@@ -66,7 +66,7 @@ const VIDEOS = [
     coords: ["38°41′N", "7°40′W"],
     location: "Alentejo, Portugal",
     title: "Golden hour dinner - Tinneke & Steven in Portugal",
-    src: "https://houseofbliss.co.in/wp-content/uploads/2025/11/Video-15.mp4",
+    src: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773634835/vid8_1_j4ukst.mp4",
     poster: "",
   },
   {
@@ -74,7 +74,7 @@ const VIDEOS = [
     coords: ["50°55′N", "1°42′E"],
     location: "Cap Blanc-Nez, France",
     title: "Warehouse love - Brecht & Lisa engagement",
-    src: "https://houseofbliss.co.in/wp-content/uploads/2025/11/Video-11.mp4",
+    src: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773634437/vid9_inkvye.mp4",
     poster: "",
   },
   {
@@ -82,7 +82,7 @@ const VIDEOS = [
     coords: ["46°33′N", "11°42′E"],
     location: "Dolomiti, Italy",
     title: "Helicopter elopement - high above the Dolomites",
-    src: "https://houseofbliss.co.in/wp-content/uploads/2025/11/Video-10.mp4",
+    src: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773634419/vid10_hpf6e3.mp4",
     poster: "",
   },
 ];

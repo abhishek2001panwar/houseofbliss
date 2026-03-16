@@ -410,7 +410,7 @@ function page() {
     ? { gridTemplateColumns: "1fr" }
     : { gridTemplateColumns: "1fr 1fr" };
 
-  const sectionPadding = isMobile ? "48px 5%" : "80px 7%";
+  const sectionPadding = isMobile ? "28px 5%" : "40px 7%";
 
   return (
     <>
@@ -573,9 +573,9 @@ function page() {
     
 
       <ScrollStorySection
-        tag=""
+        tag="We are different because of"
         accentColor="#7a6a52"
-        intro="We are different because of"
+        intro=""
         bullets={[
           {
             title: "Candid storytelling",

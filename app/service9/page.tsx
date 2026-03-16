@@ -410,7 +410,7 @@ function page() {
     ? { gridTemplateColumns: "1fr" }
     : { gridTemplateColumns: "1fr 1fr" };
 
-  const sectionPadding = isMobile ? "48px 5%" : "80px 7%";
+  const sectionPadding = isMobile ? "28px 5%" : "30px 7%";
 
   return (
     <>
@@ -439,7 +439,7 @@ function page() {
               style={{
                 fontFamily: "var(--font-editorial, serif)",
                 fontWeight: 200,
-                fontSize: isMobile ? "clamp(38px, 10vw, 56px)" : 35,
+                fontSize: isMobile ? 20 : 35,
                 color: "#1e1e1a",
                 margin: 0,
                 lineHeight: 1.3,
@@ -516,7 +516,7 @@ function page() {
           <div
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
+              fontSize: 17,
               lineHeight: 1.85,
               color: "#3a3a35",
             }}
@@ -536,10 +536,9 @@ function page() {
       </section>
 
       <ScrollStorySection
-        tag=""
+        tag="Here’s why couples in Bengaluru and elsewhere choose us"
         accentColor="#7a6a52"
-        intro="Here’s why couples in Bengaluru and elsewhere choose us:
-"
+        intro=""
         bullets={[
           {
             title: "Experience",
@@ -713,7 +712,7 @@ Contact us to set up a consultation or learn more about the wedding photography 
           <div
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
+              fontSize: 17,
               lineHeight: 1.85,
               color: "#3a3a35",
             }}
@@ -769,7 +768,7 @@ Contact us to set up a consultation or learn more about the wedding photography 
           <div
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
+              fontSize: 17,
               lineHeight: 1.85,
               color: "#3a3a35",
             }}
@@ -826,7 +825,7 @@ Contact us to set up a consultation or learn more about the wedding photography 
           <div
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
+              fontSize: 17,
               lineHeight: 1.85,
               color: "#3a3a35",
             }}
@@ -960,7 +959,7 @@ Contact us to set up a consultation or learn more about the wedding photography 
           <div
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
+              fontSize: 17,
               lineHeight: 1.85,
               color: "#3a3a35",
             }}

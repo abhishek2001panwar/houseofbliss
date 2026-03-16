@@ -10,14 +10,13 @@ function Footer() {
           <span className="font-editorial text-[2rem] md:text-[2.5rem] text-[#5a5a4c] mb-2">house of bliss</span>
           <div className="flex flex-row gap-8 md:gap-12">
             <div className="flex flex-col gap-1 md:gap-2 font-editorial text-[#5a5a4c] text-[1rem] md:text-[1.3rem]">
-              <Link href="/stories">Portfolio</Link>
-              <Link href="/pricing">Blogs</Link>
-              <Link href="/contact">Say hi</Link>
+              <Link href="/portfolio">Portfolio</Link>
+              <Link href="/blogs">Blogs</Link>
+             
             </div>
             <div className="flex flex-col gap-1 md:gap-2 font-editorial text-[#5a5a4c] text-[1rem] md:text-[1.3rem]">
               <Link href="/about">About</Link>
-              <Link href="/contact">Contact</Link>
-            </div>
+ <Link href="/contact">Say hi</Link>            </div>
           </div>
         </div>
         {/* Center: Instagram button */}

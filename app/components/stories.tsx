@@ -6,14 +6,14 @@ import Link from "next/link";
 const storiesData = [
   {
     video:
-      "https://houseofbliss.co.in/wp-content/uploads/2025/05/Untitled-design-3.mp4",
+      "https://res.cloudinary.com/degf7s9yn/video/upload/v1773635426/story1_zcczqb.mp4",
     title: "A Tender Memory of Blossoming Love",
     location: "46°33'N 11°42'N",
     des: "Vikas and Kavya wedding took place in a brightly decorated hall filled with marigolds and mango leaves. As the nadaswaram played softly, they stood facing each other, nervous smiles on their faces. When the moment came to exchange garlands, Meena shyly lifted hers, and Arjun bent slightly to make it easier. Laughter echoed as their cousins teased them. With the garlands around their necks and eyes full of promise, they stepped towards the sacred fire, beginning their life together surrounded by family and joy.",
   },
   {
     video:
-      "https://houseofbliss.co.in/wp-content/uploads/2025/05/Untitled-design-2.mp4",
+      "https://res.cloudinary.com/degf7s9yn/video/upload/v1773635429/story2_leupwl.mp4",
     title: "An Everlasting Memory of Sacred Love",
     location: "Zürich, Switzerland",
     des: "Amit and Komal sat before the crackling homam, dressed in traditional silk attire. As the priest chanted the final mantras, Rohan tied the thaali around Anjali's neck with steady hands, his fingers trembling slightly with emotion. Their eyes met briefly - a mix of happiness, relief, and deep connection. Their families clapped softly while elders blessed them with turmeric and rice, sealing the moment with warmth. Simple yet beautiful, it was a day that marked the start of their journey as one.",
@@ -21,9 +21,9 @@ const storiesData = [
 ];
 
 const moreVideos = [
-  "https://houseofbliss.co.in/wp-content/uploads/2025/05/Untitled-design-4.mp4",
-  "https://houseofbliss.co.in/wp-content/uploads/2025/05/Untitled-design-6.mp4",
-  "https://houseofbliss.co.in/wp-content/uploads/2025/05/Untitled-design-5.mp4",
+  "https://res.cloudinary.com/degf7s9yn/video/upload/v1773635427/story3_vfg06j.mp4",
+  "https://res.cloudinary.com/degf7s9yn/video/upload/v1773635425/story4_a8cxgn.mp4",
+  "https://res.cloudinary.com/degf7s9yn/video/upload/v1773635464/story5_u0nhkd.mp4",
 ];
 
 const storyBoxes = [

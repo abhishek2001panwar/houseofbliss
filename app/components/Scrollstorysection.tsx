@@ -176,13 +176,14 @@ export default function ScrollStorySection({
         <div
           style={{
             fontFamily: "var(--font-neue-light)",
-            fontWeight: 200,
+            fontWeight: 100,
             // ← smaller than before, clearly body-ish size not heading
-            fontSize: 20,
-            letterSpacing: "-0.01em",
+            fontSize: 18,
+            letterSpacing: "-0.001em",
             // ← wide paragraph width
             maxWidth: "min(960px, 96%)",
             color: textColor,
+            opacity: 0.7,
             
           }}
         >

@@ -85,7 +85,7 @@ const About2 = () => {
         {/* ── Video - scale + border-radius reveal ── */}
         <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <video
-            src="https://houseofbliss.co.in/wp-content/uploads/2025/05/Untitled-design-2.mp4"
+            src="https://res.cloudinary.com/degf7s9yn/video/upload/v1773635234/Untitled-design-2_pzmmgs.mp4"
             loop autoPlay muted playsInline
             style={{
               width: '100%',
@@ -213,7 +213,7 @@ const About2 = () => {
           )}
 
           {/* Stats row */}
-          {textReady && (
+          {/* {textReady && (
             <div style={{ display: 'flex', gap: 'clamp(20px, 4vw, 44px)', alignItems: 'flex-start' }}>
               {[
                 { num: '500+', label: 'Weddings' },
@@ -249,7 +249,7 @@ const About2 = () => {
                 </div>
               ))}
             </div>
-          )}
+          )} */}
         </div>
 
         {/* ── Grain overlay ── */}

@@ -32,8 +32,7 @@ const Contact = () => {
                 form below and I will get back to you within 3–4 days.
                 <br />
                 <br />
-                Feel like technology has failed upon us? Send me an e-mail
-                through{" "}
+              
                 <a
                   href="mailto:info@houseofbliss.co.in"
                   className="underline break-all"

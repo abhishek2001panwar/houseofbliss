@@ -880,6 +880,8 @@ Contact us today to book your couple photoshoot in Bangalore and begin your jour
           </div>
         </div>
       </section>
+
+      <FAQ/>
     
     </div>
       </>
@@ -887,3 +889,207 @@ Contact us today to book your couple photoshoot in Bangalore and begin your jour
 }
 
 export default page;
+
+const faqs = [
+  {
+    question: "What is unique about your pre wedding shoot Bangalore offering?",
+    answer:
+      "Our pre wedding shoot Bangalore captures couples with elegance, emotion, and artistic storytelling, completely authentic and uniquely yours.",
+  },
+  {
+    question: "Luctus nec ullam corper mattis pulvinar?",
+    answer:
+      "We deliver the best pre wedding photography in Bangalore through personalized planning, visual aesthetics, and emotional authenticity.",
+  },
+  {
+    question: "What makes your pre wedding shoot in Bangalore feel special?",
+    answer:
+      "Each pre wedding shoot in Bangalore reflects your personality, curated with dreamy backdrops, heartfelt direction, and premium visuals.",
+  },
+  {
+    question: "Which locations do you recommend for pre wedding shoot Bangalore?",
+    answer:
+      "We scout vibrant gardens, heritage sites, urban cafes, and palaces for your perfect pre wedding shoot in Bangalore.",
+  },
+  {
+    question: "How personalized is your pre wedding shoot in Bangalore experience?",
+    answer:
+      "Our pre wedding shoot in Bangalore includes concept planning, wardrobe styling, and tailored direction to reflect your unique story.",
+  },
+  {
+    question: "What’s included in your best pre wedding photography in Bangalore packages?",
+    answer:
+      "The best pre wedding photography in Bangalore packages include a professional photographer, pre-shoot consultation, high-resolution edited photos, and optional cinematic video add-ons.",
+  },
+  {
+    question: "How do you plan a seamless pre wedding shoot in Bangalore?",
+    answer:
+      "We guide concept development, lighting, wardrobe, and timing for a stress-free, unforgettable pre wedding shoot in Bangalore.",
+  },
+  {
+    question: "Are your pre wedding shoot Bangalore packages flexible?",
+    answer:
+      "Yes, our pre wedding shoot Bangalore packages range from half-day sessions to two-day multi-theme shoots with transparent pricing.",
+  },
+  {
+    question: "Do you offer the best pre wedding photography in Bangalore for diverse themes?",
+    answer:
+      "Absolutely! Whether nature, heritage, studio, or cozy cafe themes, we’re known for the best pre wedding photography in Bangalore.",
+  },
+  {
+    question: "How do you ensure your pre wedding shoot in Bangalore tells a story?",
+    answer:
+      "We ensure storytelling for your pre wedding shoot in Bangalore through candid, editorial-style direction using high-end gear and editing that captures your authentic love story.",
+  },
+];
+
+function useInViewOnce(threshold = 0.15) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setInView(true); },
+      { threshold }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+  return { ref, inView };
+}
+
+function FAQRow({ faq, idx }: { faq: { question: string; answer: string }; idx: number }) {
+  const { ref, inView } = useInViewOnce(0.1);
+  // FIX: accordion open state for mobile
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div
+      ref={ref}
+      className="transition-all duration-700"
+      style={{
+        opacity: inView ? 1 : 0,
+        transform: inView ? 'translateY(0)' : 'translateY(32px)',
+        transitionDelay: `${Math.min(idx * 60, 400)}ms`,
+      }}
+    >
+      {/* Top border */}
+      <div className="h-px bg-[#fdf9dc]/20 w-full" />
+
+      {/* ── MOBILE: accordion layout ───────────────────────── */}
+      <button
+        className="md:hidden w-full text-left py-5 px-1 flex items-start gap-3 group focus:outline-none"
+        onClick={() => setOpen(!open)}
+        aria-expanded={open}
+      >
+        {/* Number */}
+        <span className="font-neue-light text-[#fdf9dc]/30 text-xs tracking-widest pt-1 flex-shrink-0 w-7">
+          {String(idx + 1).padStart(2, '0')}
+        </span>
+        {/* Question */}
+        <span className="flex-1 font-editorial text-[#fdf9dc] text-[1.1rem] leading-snug pr-2">
+          {faq.question}
+        </span>
+        {/* Chevron */}
+        <span
+          className="flex-shrink-0 mt-1 transition-transform duration-300 text-[#fdf9dc]/50"
+          style={{ transform: open ? 'rotate(180deg)' : 'rotate(0deg)' }}
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </span>
+      </button>
+
+      {/* Mobile answer panel */}
+      <div
+        className="md:hidden overflow-hidden transition-all duration-500 ease-in-out"
+        style={{
+          maxHeight: open ? '400px' : '0px',
+          opacity: open ? 1 : 0,
+        }}
+      >
+        <p className="font-neue-light text-[#fdf9dc]/65 text-[0.95rem] leading-relaxed pb-5 pl-10 pr-2">
+          {faq.answer}
+        </p>
+      </div>
+
+      {/* ── DESKTOP: original side-by-side row layout ───────── */}
+      <div className="hidden md:flex group relative flex-row items-start py-10 px-3">
+        {/* Hover fill */}
+        <div className="absolute inset-0 bg-[#fdf9dc]/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-sm" />
+
+        {/* Number */}
+        <div className="w-12 flex-shrink-0 pt-1">
+          <span className="font-neue-light text-[#fdf9dc]/30 text-sm tracking-widest">
+            {String(idx + 1).padStart(2, '0')}
+          </span>
+        </div>
+
+        {/* Question */}
+        <div className="w-[45%] pr-12 text-left font-editorial text-[1.35rem] md:text-[1.6rem] text-[#fdf9dc] leading-snug">
+          {faq.question}
+        </div>
+
+        {/* Divider dot */}
+        <div className="flex-shrink-0 w-4 pt-2 flex items-start justify-center">
+          <span className="w-1 h-1 rounded-full bg-[#fdf9dc]/25 mt-2 group-hover:bg-[#fdf9dc]/60 transition-colors duration-300" />
+        </div>
+
+        {/* Answer */}
+        <div className="flex-1 text-left font-neue-light text-[1rem] md:text-[1.05rem] text-[#fdf9dc]/65 leading-relaxed group-hover:text-[#fdf9dc]/85 transition-colors duration-300">
+          {faq.answer}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FAQ() {
+  const { ref: headingRef, inView: headingIn } = useInViewOnce(0.3);
+
+  return (
+    <section className="w-full py-16 md:py-28 px-4 md:px-20 bg-[#41453D] relative overflow-hidden">
+
+      {/* Subtle background texture */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.025]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E")`,
+          backgroundSize: '200px 200px',
+        }}
+      />
+
+      <div className="max-w-7xl mx-auto relative z-10">
+
+        {/* Header */}
+        <div
+          ref={headingRef}
+          className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-16 gap-2 md:gap-4 transition-all duration-700"
+          style={{
+            opacity: headingIn ? 1 : 0,
+            transform: headingIn ? 'translateY(0)' : 'translateY(24px)',
+          }}
+        >
+          {/* FIX: smaller heading on mobile */}
+          <h2 className="font-editorial text-[2.4rem] sm:text-[3rem] md:text-[4.5rem] text-[#fdf9dc] leading-none">
+            FAQ
+          </h2>
+          <p className="font-neue-light text-[#fdf9dc]/40 text-xs sm:text-sm tracking-[0.2em] uppercase md:pb-3">
+            Frequently Asked Questions
+          </p>
+        </div>
+
+        {/* FAQ list */}
+        <div>
+          {faqs.map((faq, idx) => (
+            <FAQRow key={idx} faq={faq} idx={idx} />
+          ))}
+          {/* Final bottom border */}
+          <div className="h-px bg-[#fdf9dc]/20 w-full" />
+        </div>
+
+      </div>
+    </section>
+  );
+}
+

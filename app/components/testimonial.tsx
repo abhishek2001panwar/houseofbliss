@@ -1,7 +1,7 @@
 'use client'
 import React, { useRef, useEffect, useState, useCallback } from 'react'
 
-const scaleVideo = "https://houseofbliss.co.in/wp-content/uploads/2025/06/HOB-PROMO-reel.mp4";
+const scaleVideo = "https://res.cloudinary.com/degf7s9yn/video/upload/v1773635588/test_1_muzg2h.mp4";
 
 // ── Icons ─────────────────────────────────────────────────────────────────────
 const PlayIcon = () => (

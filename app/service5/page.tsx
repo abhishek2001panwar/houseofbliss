@@ -510,7 +510,7 @@ function page() {
           <div
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
+              fontSize: 17,
               lineHeight: 1.85,
               color: "#3a3a35",
             }}
@@ -626,7 +626,7 @@ function page() {
           <div
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
+              fontSize: 17,
               lineHeight: 1.85,
               color: "#3a3a35",
             }}
@@ -688,7 +688,7 @@ function page() {
 
       <div
         style={{
-          padding: isMobile ? "120px 5% 0" : "190px 7% 0",
+          padding: isMobile ? "120px 5% 0" : "150px 4% 0",
           borderBottom: "1px solid rgba(30,30,26,0.1)",
         }}
       >
@@ -713,7 +713,7 @@ function page() {
                 margin: 0,
                 lineHeight: 1.2,
                 letterSpacing: "-0.03em",
-                transform: `translateY(${-scrollY * 0.08}px)`,
+               
                 transition: "transform 0.05s linear",
                 alignContent: "end"
               }}
@@ -725,7 +725,7 @@ function page() {
           <p
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: "clamp(14px, 1.4vw, 17px)",
+              fontSize: 17,
               lineHeight: 1.75,
               color: "#3a3a35",
               margin: 0,

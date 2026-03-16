@@ -513,7 +513,7 @@ function page() {
           <div
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
+              fontSize: 17,
               lineHeight: 1.85,
               color: "#3a3a35",
             }}

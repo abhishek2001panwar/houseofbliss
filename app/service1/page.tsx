@@ -825,9 +825,209 @@ function page() {
         ]}
         accentColor="#3b4237"
       />
+
+        <Divider />
+
+        <FAQ/>
     </div>
     </>
   );
 }
 
 export default page;
+
+
+
+const faqs = [
+  {
+    question: "What is cinematic wedding photography in Bengaluru at House of Bliss?",
+    answer: "House of Bliss captures cinematic wedding photography in Bengaluru by artfully freezing tears, laughter, and love in filmic, emotive frames.",
+  },
+  {
+    question: "How does a cinematic wedding photoshoot in Bangalore feel?",
+    answer: "A cinematic wedding photoshoot in Bangalore by House of Bliss feels like starring in your own heartfelt, visually poetic love story.",
+  },
+  {
+    question: "Why choose cinematic photography in wedding coverage?",
+    answer: "Cinematic photography in wedding coverage creates timeless, emotional visuals that turn your special day into a moving, artistic narrative.",
+  },
+  {
+    question: "Who provides cinematic wedding photography in Bengaluru?",
+    answer: "House of Bliss specializes in cinematic wedding photography in Bengaluru, blending storytelling flair with the craft of cinematic visuals.",
+  },
+  {
+    question: "What makes a cinematic wedding photoshoot in Bangalore unique?",
+    answer: "Their cinematic wedding photoshoots in Bangalore capture real vows and silent emotions, elevating ordinary moments into cinematic masterpieces.",
+  },
+  {
+    question: "What elements define cinematic photography in wedding storytelling?",
+    answer: "Cinematic photography in wedding storytelling uses light, motion, and composition to weave your wedding day into an emotional, dramatic film.",
+  },
+  {
+    question: "Is your cinematic wedding photoshoot in Bangalore customizable?",
+    answer: "Yes! House of Bliss customizes your cinematic wedding photoshoot in Bangalore to reflect your emotion, setting, and visual storytelling desires.",
+  },
+  {
+    question: "Can cinematic wedding photography in Bengaluru capture candid moments?",
+    answer: "Absolutely! Cinematic wedding photography in Bengaluru from House of Bliss thrives on authentic laughs, unposed glances, and emotional spontaneity.",
+  },
+  {
+    question: "What mood does cinematic wedding photography create?",
+    answer: "Cinematic wedding photography creates a deeply emotional, dreamlike mood perfect for couples seeking expressive wedding memories in Bangalore.",
+  },
+  {
+    question: "How does House of Bliss deliver cinematic photography in wedding events?",
+    answer: "House of Bliss delivers cinematic photography in wedding events by narrating emotion through masterful framing, timing, and cinematic vision.",
+  },
+];
+
+function useInViewOnce(threshold = 0.15) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setInView(true); },
+      { threshold }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+  return { ref, inView };
+}
+
+function FAQRow({ faq, idx }: { faq: { question: string; answer: string }; idx: number }) {
+  const { ref, inView } = useInViewOnce(0.1);
+  // FIX: accordion open state for mobile
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div
+      ref={ref}
+      className="transition-all duration-700"
+      style={{
+        opacity: inView ? 1 : 0,
+        transform: inView ? 'translateY(0)' : 'translateY(32px)',
+        transitionDelay: `${Math.min(idx * 60, 400)}ms`,
+      }}
+    >
+      {/* Top border */}
+      <div className="h-px bg-[#fdf9dc]/20 w-full" />
+
+      {/* ── MOBILE: accordion layout ───────────────────────── */}
+      <button
+        className="md:hidden w-full text-left py-5 px-1 flex items-start gap-3 group focus:outline-none"
+        onClick={() => setOpen(!open)}
+        aria-expanded={open}
+      >
+        {/* Number */}
+        <span className="font-neue-light text-[#fdf9dc]/30 text-xs tracking-widest pt-1 flex-shrink-0 w-7">
+          {String(idx + 1).padStart(2, '0')}
+        </span>
+        {/* Question */}
+        <span className="flex-1 font-editorial text-[#fdf9dc] text-[1.1rem] leading-snug pr-2">
+          {faq.question}
+        </span>
+        {/* Chevron */}
+        <span
+          className="flex-shrink-0 mt-1 transition-transform duration-300 text-[#fdf9dc]/50"
+          style={{ transform: open ? 'rotate(180deg)' : 'rotate(0deg)' }}
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </span>
+      </button>
+
+      {/* Mobile answer panel */}
+      <div
+        className="md:hidden overflow-hidden transition-all duration-500 ease-in-out"
+        style={{
+          maxHeight: open ? '400px' : '0px',
+          opacity: open ? 1 : 0,
+        }}
+      >
+        <p className="font-neue-light text-[#fdf9dc]/65 text-[0.95rem] leading-relaxed pb-5 pl-10 pr-2">
+          {faq.answer}
+        </p>
+      </div>
+
+      {/* ── DESKTOP: original side-by-side row layout ───────── */}
+      <div className="hidden md:flex group relative flex-row items-start py-10 px-3">
+        {/* Hover fill */}
+        <div className="absolute inset-0 bg-[#fdf9dc]/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-sm" />
+
+        {/* Number */}
+        <div className="w-12 flex-shrink-0 pt-1">
+          <span className="font-neue-light text-[#fdf9dc]/30 text-sm tracking-widest">
+            {String(idx + 1).padStart(2, '0')}
+          </span>
+        </div>
+
+        {/* Question */}
+        <div className="w-[45%] pr-12 text-left font-editorial text-[1.35rem] md:text-[1.6rem] text-[#fdf9dc] leading-snug">
+          {faq.question}
+        </div>
+
+        {/* Divider dot */}
+        <div className="flex-shrink-0 w-4 pt-2 flex items-start justify-center">
+          <span className="w-1 h-1 rounded-full bg-[#fdf9dc]/25 mt-2 group-hover:bg-[#fdf9dc]/60 transition-colors duration-300" />
+        </div>
+
+        {/* Answer */}
+        <div className="flex-1 text-left font-neue-light text-[1rem] md:text-[1.05rem] text-[#fdf9dc]/65 leading-relaxed group-hover:text-[#fdf9dc]/85 transition-colors duration-300">
+          {faq.answer}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FAQ() {
+  const { ref: headingRef, inView: headingIn } = useInViewOnce(0.3);
+
+  return (
+    <section className="w-full py-16 md:py-28 px-4 md:px-20 bg-[#41453D] relative overflow-hidden">
+
+      {/* Subtle background texture */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.025]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E")`,
+          backgroundSize: '200px 200px',
+        }}
+      />
+
+      <div className="max-w-7xl mx-auto relative z-10">
+
+        {/* Header */}
+        <div
+          ref={headingRef}
+          className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-16 gap-2 md:gap-4 transition-all duration-700"
+          style={{
+            opacity: headingIn ? 1 : 0,
+            transform: headingIn ? 'translateY(0)' : 'translateY(24px)',
+          }}
+        >
+          {/* FIX: smaller heading on mobile */}
+          <h2 className="font-editorial text-[2.4rem] sm:text-[3rem] md:text-[4.5rem] text-[#fdf9dc] leading-none">
+            FAQ
+          </h2>
+          <p className="font-neue-light text-[#fdf9dc]/40 text-xs sm:text-sm tracking-[0.2em] uppercase md:pb-3">
+            Frequently Asked Questions
+          </p>
+        </div>
+
+        {/* FAQ list */}
+        <div>
+          {faqs.map((faq, idx) => (
+            <FAQRow key={idx} faq={faq} idx={idx} />
+          ))}
+          {/* Final bottom border */}
+          <div className="h-px bg-[#fdf9dc]/20 w-full" />
+        </div>
+
+      </div>
+    </section>
+  );
+}
+

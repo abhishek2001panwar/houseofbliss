@@ -487,7 +487,7 @@ function page() {
           </div>
 
           {/* Right col: text */}
-          <div className="intro-text" style={{ paddingTop: 40 }}>
+          <div className="intro-text" style={{ paddingTop: 20 }}>
             <h2
               style={{
                 fontFamily: "var(--font-editorial, serif)",
@@ -556,7 +556,7 @@ function page() {
                 fontWeight: 300,
                 fontSize: "clamp(24px, 3vw, 42px)",
                 color: "#1e1e1a",
-                margin: "0 0 24px",
+                margin: "0 0 20px",
                 letterSpacing: "-0.02em",
                 lineHeight: 1.15,
               }}
@@ -621,14 +621,14 @@ function page() {
           </div>
 
           {/* right: text */}
-          <div className="bangalore-text" style={{ paddingTop: 20 }}>
+          <div className="bangalore-text" style={{ paddingTop: 10 }}>
             <h2
               style={{
                 fontFamily: "var(--font-editorial, serif)",
                 fontWeight: 300,
                 fontSize: "clamp(24px, 3vw, 42px)",
                 color: "#1e1e1a",
-                margin: "0 0 24px",
+                margin: "0 0 20px",
                 letterSpacing: "-0.02em",
                 lineHeight: 1.15,
               }}

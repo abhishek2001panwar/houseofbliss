@@ -10,6 +10,7 @@ import Hero from "./components/hero";
 import Navbar from "./components/navbar";
 import Stories from "./components/stories";
 import Testimonial from "./components/testimonial";
+import Magical from './components/magical'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
      <Navbar  />
       <Hero />
       <About />
+      <Magical/>
       <Gallery />
       <AuraMemorySection  />
       <About2 />

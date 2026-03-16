@@ -512,7 +512,7 @@ function page() {
           <div
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
+              fontSize: 17,
               lineHeight: 1.85,
               color: "#3a3a35",
             }}
@@ -540,9 +540,9 @@ function page() {
       </section>
 
       <ScrollStorySection
-        tag=""
+        tag="What is the value of hiring a professional wedding engagement photographer?"
         accentColor="#7a6a52"
-        intro="What is the value of hiring a professional wedding engagement photographer?"
+        intro=""
         bullets={[
           {
             title: "A unique story",
@@ -601,9 +601,9 @@ function page() {
       </blockquote>
 
       <ScrollStorySection
-        tag=""
+        tag="What makes us different"
         accentColor="#7a6a52"
-        intro="What makes us different:"
+        intro=""
         bullets={[
           {
             title:
@@ -668,9 +668,9 @@ function page() {
       </blockquote>
 
       <ScrollStorySection
-        tag=""
+        tag="Some of our favourite places for engagement pictures in Bengaluru"
         accentColor="#7a6a52"
-        intro="Some of our favourite places for engagement pictures in Bengaluru:"
+        intro=""
         bullets={[
           {
             title: "Cubbon Park",
@@ -735,7 +735,7 @@ function page() {
           <div
             style={{
               fontFamily: "var(--font-neue-light, sans-serif)",
-              fontSize: 13.5,
+              fontSize: 17,
               lineHeight: 1.85,
               color: "#3a3a35",
             }}
@@ -754,9 +754,9 @@ function page() {
       </section>
 
       <ScrollStorySection
-        tag=""
+        tag="Our engagement photography package will consist of"
         accentColor="#7a6a52"
-        intro="Our engagement photography package will consist of:"
+        intro=""
         bullets={[
           {
             title: "More than one outfit change",
