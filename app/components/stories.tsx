@@ -481,7 +481,8 @@ const Stories = () => {
         <svg viewBox="0 0 1140 130" className="w-full h-[120px]" preserveAspectRatio="none">
           <path
             d="M0,120 C200,160 350,40 520,80 C700,120 900,30 1100,70 C1250,100 1350,70 1440,90 L1440,180 L0,180 Z"
-            fill="#41453D"
+            fill="#F4F1E5"
+            
           />
         </svg>
       </div>

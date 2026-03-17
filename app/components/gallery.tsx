@@ -16,17 +16,17 @@ const SLOT = 520; // px per row — wide enough that even tall images + offsets 
 
 const images = [
   //  src               coords                left    width  topOffset
-  { src: "/blog/img1.png",  coords: "46°52'N 11°01'E", left: "4%",  width: 320, topOff:   0 },
-  { src: "/blog/img2.png",  coords: "46°28'N 11°39'E", left: "37%", width: 390, topOff:  60 },
-  { src: "/blog/img3.png",  coords: "48°12'N 16°22'E", left: "65%", width: 290, topOff:  20 },  // was -20 → fixed
-  { src: "/blog/img4.png",  coords: "51°21'N 4°49'E",  left: "13%", width: 300, topOff:  30 },
-  { src: "/blog/img5.png",  coords: "62°7'N 7°26'W",   left: "56%", width: 330, topOff:   0 },
-  { src: "/blog/img6.png",  coords: "43°46'N 11°15'E", left: "27%", width: 370, topOff:  50 },
-  { src: "/blog/img7.png",  coords: "47°33'N 12°10'E", left: "5%",  width: 295, topOff:  10 },
-  { src: "/blog/img8.png",  coords: "38°42'N 27°08'E", left: "61%", width: 295, topOff:  40 },
-  { src: "/blog/img9.png",  coords: "45°26'N 12°20'E", left: "23%", width: 350, topOff:  20 },
-  { src: "/blog/img10.png", coords: "50°51'N 4°21'E",  left: "59%", width: 305, topOff:   0 },
-  { src: "/blog/img11.png", coords: "41°54'N 12°29'E", left: "11%", width: 285, topOff:  30 },
+  { src: "/gallery/img1.png",  coords: "46°52'N 11°01'E", left: "4%",  width: 320, topOff:   0 },
+  { src: "/gallery/img2.png",  coords: "46°28'N 11°39'E", left: "37%", width: 390, topOff:  60 },
+  { src: "/gallery/img3.png",  coords: "48°12'N 16°22'E", left: "65%", width: 290, topOff:  20 },  // was -20 → fixed
+  { src: "/gallery/img4.png",  coords: "51°21'N 4°49'E",  left: "13%", width: 300, topOff:  30 },
+  { src: "/gallery/img5.png",  coords: "62°7'N 7°26'W",   left: "56%", width: 330, topOff:   0 },
+  { src: "/gallery/img6.png",  coords: "43°46'N 11°15'E", left: "27%", width: 370, topOff:  50 },
+  { src: "/gallery/image.png",  coords: "47°33'N 12°10'E", left: "5%",  width: 310, topOff:  10 },
+  // { src: "/gallery/img8.png",  coords: "38°42'N 27°08'E", left: "61%", width: 295, topOff:  40 },
+  // { src: "/gallery/img9.png",  coords: "45°26'N 12°20'E", left: "23%", width: 350, topOff:  20 },
+  // { src: "/gallery/img10.png", coords: "50°51'N 4°21'E",  left: "59%", width: 305, topOff:   0 },
+  // { src: "/gallery/img11.png", coords: "41°54'N 12°29'E", left: "11%", width: 285, topOff:  30 },
 ];
 
 // aspect ratio h/w  (portrait-ish)

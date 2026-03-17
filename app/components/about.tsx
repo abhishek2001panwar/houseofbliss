@@ -22,7 +22,7 @@ export function About() {
 
   return (
     // FIX 1: Replace h-screen + py-52 with auto height and responsive padding
-    <section className="relative w-full bg-[#41453D] flex items-center justify-center py-20 md:py-32 px-4 md:px-16">
+    <section className="relative w-full bg-black/90 flex items-center justify-center py-20 md:py-32 px-4 md:px-16">
       <div className="max-w-6xl w-full flex flex-col md:flex-row gap-10 md:gap-16">
 
         {/* Left: Overlapping image collage */}

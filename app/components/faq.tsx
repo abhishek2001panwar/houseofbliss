@@ -149,11 +149,11 @@ function FAQ() {
   const { ref: headingRef, inView: headingIn } = useInViewOnce(0.3);
 
   return (
-    <section className="w-full py-16 md:py-28 px-4 md:px-20 bg-[#41453D] relative overflow-hidden">
+    <section className="w-full py-16 md:py-28 px-4 md:px-20 bg-black/90 relative overflow-hidden">
 
       {/* Subtle background texture */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.025]"
+        className="absolute inset-0 pointer-events-none opacity-[0.005]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E")`,
           backgroundSize: '200px 200px',

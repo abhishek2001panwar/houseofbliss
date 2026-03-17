@@ -160,7 +160,7 @@ const Contact = () => {
       {showPopup && <SuccessPopup onDone={() => setShowPopup(false)} />}
 
       {/* Hero */}
-      <section className="bg-[#41453D]">
+      <section className="bg-black/90">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="flex flex-col md:flex-row items-start justify-center pt-8 md:pt-3 gap-6 md:gap-0">
             <div className="flex-1 flex flex-col justify-center md:pr-8">
@@ -188,7 +188,7 @@ const Contact = () => {
       </section>
 
       {/* Form section */}
-      <section className="relative w-full min-h-screen bg-[#41453D] flex flex-col items-center justify-center px-4 md:px-8 py-12 md:py-16 pb-28 md:pb-32">
+      <section className="relative w-full min-h-screen bg-black/90 flex flex-col items-center justify-center px-4 md:px-8 py-12 md:py-16 pb-28 md:pb-32">
 
         <div className="w-full max-w-2xl mx-auto mb-10 md:mb-14 text-center px-2">
           <h3 className="font-editorial text-[#fdf9dc] text-2xl sm:text-3xl md:text-4xl mb-3">

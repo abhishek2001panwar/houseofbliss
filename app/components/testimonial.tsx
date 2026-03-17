@@ -204,6 +204,7 @@ const Testimonial: React.FC = () => {
       <section
         ref={sectionRef}
         onMouseMove={isMobile ? undefined : resetHideTimer}
+        className='bg-black/90'
         style={{
           position: 'relative',
           width: '100%',
@@ -212,7 +213,7 @@ const Testimonial: React.FC = () => {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#41453D',
+          background: '',
           overflow: 'hidden',
           padding: isMobile
             ? 'clamp(40px, 8vh, 64px) 0 clamp(28px, 5vh, 48px)'

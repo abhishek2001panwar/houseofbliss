@@ -412,7 +412,7 @@ export default function StoriesPage() {
         </div>
 
         {/* ── Video rows ── */}
-        <div style={{ padding: "0 7%" }}>
+        {/* <div style={{ padding: "0 7%" }}>
           {videoPairs.map(([left, right], rowIndex) => {
             const rightPush = rightPushes[rowIndex % rightPushes.length];
             const leftSpeed = 0.018 + (rowIndex % 3) * 0.007;
@@ -436,7 +436,7 @@ export default function StoriesPage() {
               </div>
             );
           })}
-        </div>
+        </div> */}
 
         {/* ── Images section divider ── */}
         <SectionDivider label="photographs - stories in still light" />
