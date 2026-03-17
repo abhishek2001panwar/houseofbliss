@@ -258,7 +258,7 @@ function Footer() {
           {/* Col 2 — Instagram CTA */}
           <div className="hob-ig-col">
             <a
-              href="https://instagram.com/houseofbliss.co.in"
+              href="https://www.instagram.com/houseofbliss.in"
               target="_blank"
               rel="noopener noreferrer"
               className="hob-ig-btn"
