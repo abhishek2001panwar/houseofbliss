@@ -63,7 +63,7 @@ export function About() {
                 <h3 className="font-editorial text-[#fdf9dc] text-[1.4rem] sm:text-[1.8rem] md:text-[2.2rem] lg:text-[2.6rem] leading-tight">
                   {service.title}
                 </h3>
-                <p className="font-neue-light text-[#fdf9dc]/70 text-[0.9rem] md:text-[0.95rem] leading-relaxed max-w-md">
+                <p className="font-neue-light text-[#fdf9dc] text-[0.9rem] md:text-[0.95rem] leading-relaxed max-w-md">
                   {service.description}
                 </p>
                 <Link

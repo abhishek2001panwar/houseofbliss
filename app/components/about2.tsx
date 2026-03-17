@@ -85,7 +85,7 @@ const About2 = () => {
         {/* ── Video - scale + border-radius reveal ── */}
         <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <video
-            src="https://res.cloudinary.com/degf7s9yn/video/upload/v1773635234/Untitled-design-2_pzmmgs.mp4"
+            src="https://res.cloudinary.com/degf7s9yn/video/upload/v1773634431/vid2_y5rih8.mp4"
             loop autoPlay muted playsInline
             style={{
               width: '100%',
