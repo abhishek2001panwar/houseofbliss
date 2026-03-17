@@ -280,7 +280,7 @@ function Footer() {
               Above Royal Enfield Showroom,<br />
               HAL 2nd Stage, Doopanahalli,<br />
               Indiranagar, Bengaluru,<br />
-              Karnataka — 560038
+              Karnataka - 560038
             </p>
           </div>
 
