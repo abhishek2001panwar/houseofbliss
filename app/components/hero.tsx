@@ -26,7 +26,7 @@ function Hero() {
         <Image
           height={1000}
           width={1200}
-          src="/cover.JPEG"
+          src="/cover.webp"
           alt="Hero background"
           priority={true}
           sizes="100vw"

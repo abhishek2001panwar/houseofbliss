@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { ArrowUpRight } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { Button } from "./button"
@@ -41,7 +41,7 @@ What we love creating together:
 <br/>● Decor that honors tradition while embracing your personal style`,
     year: "2023",
     location: "When Your Dreams Breathe",
-    image: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773894618/f_auto,q_auto/D_S_WEDDING_TEASER_1_1_ipnrf7.mp4",
+    image: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773894618/D_S_WEDDING_TEASER_1_1_ipnrf7.mp4",
   },
 
  
@@ -49,6 +49,7 @@ What we love creating together:
 
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
   const [hovered, setHovered] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
   const router = useRouter()
 
   return (
@@ -63,14 +64,15 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       <div className="overflow-hidden">
        {project.image ? (
     <video
+      ref={videoRef}
       src={project.image}
       className={`w-full aspect-[4/3] object-cover transition-all duration-[800ms] ease-out ${
         hovered ? "scale-[1.04]" : "scale-100"
       }`}
       muted
-      autoPlay
       playsInline
       loop
+      autoPlay
       preload="metadata"
     />
   ) : null}

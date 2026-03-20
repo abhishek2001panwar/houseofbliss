@@ -1,17 +1,19 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Image optimization
+  // Image optimization - prioritize modern formats
   images: {
-    formats: ["image/webp", "image/avif"],
+    formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {
         protocol: "https",
         hostname: "res.cloudinary.com",
       },
     ],
-    // Optimize local images
-    minimumCacheTTL: 60 * 24, // 1 day
+    minimumCacheTTL: 60 * 60 * 24 * 7, // 1 week cache
+    dangerouslyAllowSVG: true,
+    deviceSizes: [320, 420, 640, 768, 1024, 1280, 1536],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
 
   // Compression and performance

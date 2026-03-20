@@ -50,15 +50,19 @@ export function About() {
         {/* ── MOBILE: both images stacked above body copy ── */}
         <div className="md:hidden w-full flex gap-3 px-6 mb-8 mt-8">
           <div className="w-1/2 h-[220px] overflow-hidden">
-            <Image width={1200} height={1200} src="/about2.png"
+            <Image width={600} height={600} src="/about2.png"
               alt="House of Bliss"
+              loading="lazy"
+              sizes="(max-width: 768px) 50vw, 25vw"
               className="w-full h-full object-cover grayscale"
               style={{ objectPosition: 'center top' }}
             />
           </div>
           <div className="w-1/2 h-[220px] overflow-hidden">
-            <Image width={1200} height={1200} src="/about3.png"
+            <Image width={600} height={600} src="/about3.png"
               alt="House of Bliss"
+              loading="lazy"
+              sizes="(max-width: 768px) 50vw, 25vw"
               className="w-full h-full object-cover grayscale"
               style={{ objectPosition: 'center 20%' }}
             />
@@ -68,8 +72,10 @@ export function About() {
         {/* ── DESKTOP: left image offset DOWN ── */}
         <div className="hidden md:block w-[25%] flex-shrink-0" style={{ paddingTop: '80px' }}>
           <div className="w-full overflow-hidden" style={{ height: '520px' }}>
-            <Image width={1200} height={1200} src="/about2.png"
+            <Image width={600} height={600} src="/about2.png"
               alt="House of Bliss"
+              loading="lazy"
+              sizes="(max-width: 768px) 50vw, 25vw"
               className="w-full h-full object-cover grayscale"
               style={{ objectPosition: 'center top' }}
             />
