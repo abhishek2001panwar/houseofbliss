@@ -26,11 +26,11 @@ function Hero() {
         <Image
         height={1000}
         width={1200}
-          src="/cover.jpeg"
+          src="/cover.JPEG"
           alt="Hero background"
           fetchPriority="high"   
           loading="eager"       
-          onLoad={() => setLoaded(true)} 
+onLoadingComplete={() => setLoaded(true)}
           className="w-full h-full object-cover"
           style={{
             objectPosition: "left center",
