@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-import Button from './button';
 import Link from 'next/link';
+import { Button } from './button';
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  LAYOUT

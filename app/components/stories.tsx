@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useState, useEffect, useCallback } from "react";
-import Button from "./button";
+import {Button} from "./button";
 import Link from "next/link";
 
 const storiesData = [
