@@ -144,7 +144,7 @@ const cards: WeddingCard[] = [
     location: "Delhi",
     index: "07",
     gallery: [
-      "/couple7/img1.png",
+      
       "/couple7/img2.png",
       "/couple7/img3.png",
       "/couple7/img4.png",
@@ -155,6 +155,7 @@ const cards: WeddingCard[] = [
       "/couple7/img9.png",
       "/couple7/img10.png",
       "/couple7/img11.png",
+      "/couple7/img1.png",
     ],
   },
 ];

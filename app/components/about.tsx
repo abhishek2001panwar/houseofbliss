@@ -27,17 +27,17 @@ export function About() {
     <section className="relative w-full bg-[#F4F1E5] overflow-hidden">
 
       {/* ── HEADLINE BAND ─────────────────────────────────────────── */}
-      <div className="relative pt-20 md:pt-10 px-6 md:px-16 text-center">
+      <div className="relative pt-10 md:pt-10 px-6 md:px-16 text-center">
         <h2
           className="font-editorial text-[#41453D] leading-[0.95] uppercase"
-          style={{ fontSize: 'clamp(2.6rem, 8vw, 4rem)', letterSpacing: '-0.01em' }}
+          style={{ fontSize: 'clamp(1.4rem, 5.5vw, 4rem)', letterSpacing: '-0.01em' }}
         >
           Classic Moment's
         </h2>
         <div className="flex items-baseline justify-center gap-3 md:gap-5 mt-1">
           <span
             className="font-editorial text-[#41453D] uppercase"
-            style={{ fontSize: 'clamp(2.6rem, 8vw, 4rem)', letterSpacing: '-0.01em' }}
+            style={{ fontSize: 'clamp(1.4rem, 5.5vw, 4rem)', letterSpacing: '-0.01em' }}
           >
             Captured With Edge
           </span>

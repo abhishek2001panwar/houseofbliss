@@ -9,7 +9,15 @@ const easeInOutQuart = (t: number) =>
 
 export default function AuraMemorySection() {
   const sectionRef  = useRef<HTMLDivElement>(null);
-  const [progress, setProgress] = useState(0); // 0 → 1 as section scrolls into view
+  const [progress, setProgress] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => {
@@ -30,29 +38,23 @@ export default function AuraMemorySection() {
   const easedMain  = easeOutExpo(progress);
   const easedBg    = easeInOutQuart(progress);
 
-  // Background: warm cream → near-black (#41453D tone)
   const bgL   = Math.round(244 - easedBg * 233);
   const bgG   = Math.round(241 - easedBg * 230);
   const bgB   = Math.round(229 - easedBg * 218);
   const bgColor = `rgb(${bgL},${bgG},${bgB})`;
 
-  // Text reveal starts at progress > 0.25
   const textP  = Math.max(0, Math.min(1, (progress - 0.25) / 0.75));
   const textPE = easeOutExpo(textP);
 
-  // ── Infinity symbol paths ─────────────────────────────────────────────────
-  // SVG infinity "∞" drawn as two bezier loops, animated stroke-dashoffset
   const DASH_LEN = 900;
   const infP  = Math.max(0, Math.min(1, (progress - 0.05) / 0.7));
   const infPE = easeOutExpo(infP);
   const strokeDash   = DASH_LEN;
   const strokeOffset = DASH_LEN * (1 - infPE);
 
-  // Scale / opacity for the infinity symbol
   const infScale   = 0.6 + 0.4 * infPE;
   const infOpacity = infP;
 
-  // Word-by-word stagger for heading
   const words = ["AURA", "+", "MEMORY"];
 
   return (
@@ -96,10 +98,48 @@ export default function AuraMemorySection() {
         .aura-stat {
           animation: hob-stat-in 0.9s cubic-bezier(0.16,1,0.3,1) both;
         }
+
+        /* ── Mobile-specific fixes ── */
+        @media (max-width: 767px) {
+          .aura-section {
+            min-height: 100svh !important;
+            padding: 64px 24px !important;
+          }
+          .aura-infinity-wrap {
+            width: 88vw !important;
+            top: 50% !important;
+          }
+          .aura-heading {
+            font-size: clamp(28px, 11vw, 44px) !important;
+            letter-spacing: 0.06em !important;
+            gap: 0 0.2em !important;
+            margin-bottom: 14px !important;
+          }
+          .aura-body-text {
+            font-size: 14px !important;
+            line-height: 1.75 !important;
+            max-width: 90vw !important;
+            margin-bottom: 32px !important;
+            padding: 0 4px !important;
+          }
+          .aura-rule-line {
+            width: 36px !important;
+            margin-bottom: 18px !important;
+          }
+          .aura-corner {
+            width: 14px !important;
+            height: 14px !important;
+          }
+          .aura-corner-tl { top: 16px !important; left: 16px !important; }
+          .aura-corner-tr { top: 16px !important; right: 16px !important; }
+          .aura-corner-bl { bottom: 16px !important; left: 16px !important; }
+          .aura-corner-br { bottom: 16px !important; right: 16px !important; }
+        }
       `}</style>
 
       <section
         ref={sectionRef}
+        className="aura-section"
         style={{
           width: "100vw",
           marginLeft: "calc(-50vw + 50%)",
@@ -116,6 +156,7 @@ export default function AuraMemorySection() {
         }}
       >
 
+        {/* ── Video background ── */}
         <video
           style={{
             position: "absolute",
@@ -151,18 +192,20 @@ export default function AuraMemorySection() {
           opacity: easedBg * 0.04,
         }} />
 
-        {/* ── INFINITY SYMBOL - scroll-drawn SVG ── */}
-        <div style={{
-          position: "absolute",
-          zIndex: 3,
-          // center it, let it breathe
-          top: "50%", left: "50%",
-          transform: `translate(-50%, -50%) scale(${infScale})`,
-          opacity: infOpacity,
-          transition: "opacity 0.05s linear",
-          pointerEvents: "none",
-          width: "min(700px, 90vw)",
-        }}>
+        {/* ── INFINITY SYMBOL ── */}
+        <div
+          className="aura-infinity-wrap"
+          style={{
+            position: "absolute",
+            zIndex: 3,
+            top: "50%", left: "50%",
+            transform: `translate(-50%, -50%) scale(${infScale})`,
+            opacity: infOpacity,
+            transition: "opacity 0.05s linear",
+            pointerEvents: "none",
+            width: "min(700px, 90vw)",
+          }}
+        >
           <svg
             viewBox="0 0 500 200"
             fill="none"
@@ -196,7 +239,7 @@ export default function AuraMemorySection() {
               style={{ transition: "stroke-dashoffset 0.05s linear" }}
             />
 
-            {/* glowing dot that rides the path end */}
+            {/* glowing dot */}
             {infP > 0.05 && infP < 0.98 && (
               <circle r="3" fill="rgba(253,249,220,0.9)">
                 <animateMotion
@@ -222,10 +265,10 @@ export default function AuraMemorySection() {
             alignItems: "center",
           }}
         >
-        
 
-          {/* Heading - word by word */}
+          {/* Heading */}
           <h2
+            className="aura-heading"
             style={{
               fontWeight: 300,
               fontSize: "clamp(36px, 9vw, 70px)",
@@ -254,7 +297,7 @@ export default function AuraMemorySection() {
           {/* Rule */}
           {textP > 0 && (
             <div
-              className="aura-rule"
+              className="aura-rule aura-rule-line"
               style={{
                 height: 1,
                 width: "clamp(32px, 4vw, 54px)",
@@ -268,7 +311,7 @@ export default function AuraMemorySection() {
           {/* Body copy */}
           {textP > 0 && (
             <p
-              className="aura-body"
+              className="aura-body aura-body-text"
               style={{
                 fontFamily: "var(--font-neue-light, sans-serif)",
                 fontSize: "clamp(13px, 1.6vw, 17px)",
@@ -286,15 +329,15 @@ export default function AuraMemorySection() {
             </p>
           )}
 
-         
         </div>
 
         {/* ── Corner accents ── */}
         {(['tl','tr','bl','br'] as const).map(pos => {
           const isTop  = pos[0] === 't';
           const isLeft = pos[1] === 'l';
+          const cornerClass = `aura-corner aura-corner-${pos}`;
           return (
-            <div key={pos} style={{
+            <div key={pos} className={cornerClass} style={{
               position: "absolute",
               [isTop  ? 'top'    : 'bottom']: 24,
               [isLeft ? 'left'   : 'right' ]: 24,
@@ -310,7 +353,7 @@ export default function AuraMemorySection() {
           );
         })}
 
-        {/* ── Wavy bottom clip to next section ── */}
+        {/* ── Wavy bottom clip ── */}
         <div style={{
           position: "absolute",
           bottom: 0, left: 0, right: 0,
