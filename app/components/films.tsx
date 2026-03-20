@@ -41,7 +41,7 @@ What we love creating together:
 <br/>● Decor that honors tradition while embracing your personal style`,
     year: "2023",
     location: "When Your Dreams Breathe",
-    image: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773894618/D_S_WEDDING_TEASER_1_1_ipnrf7.mp4",
+    image: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773894618/f_auto,q_auto/D_S_WEDDING_TEASER_1_1_ipnrf7.mp4",
   },
 
  
@@ -67,10 +67,11 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       className={`w-full aspect-[4/3] object-cover transition-all duration-[800ms] ease-out ${
         hovered ? "scale-[1.04]" : "scale-100"
       }`}
-      autoPlay
       muted
+      autoPlay
       playsInline
       loop
+      preload="metadata"
     />
   ) : null}
       </div>

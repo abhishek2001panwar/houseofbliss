@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import { useEffect, useRef, useState } from "react";
 import ScrollStorySection from "../components/Scrollstorysection";
@@ -88,10 +89,7 @@ function ParallaxImg({
           ...aspectStyle,
         }}
       >
-        <img
-          src={src}
-          alt={alt}
-          style={{
+        <Image src={src} alt={alt} width={1200} height={1600} style={{
             position: "absolute",
             top: "-12%",
             left: 0,
@@ -100,8 +98,7 @@ function ParallaxImg({
             objectFit: "cover",
             transform: `translateY(${ty}px)`,
             willChange: "transform",
-          }}
-        />
+          }} />
 
         {hasOverlayDescription && (
           <div
@@ -222,8 +219,7 @@ function ManifestoSlide({ item }: { item: (typeof MANIFESTO)[0] }) {
         height: "100%",
       }}
     >
-      <img
-        src={item.img}
+      <Image width={1200} height={1200} src={item.img}
         alt={item.rule}
         style={{
           width: "100%",

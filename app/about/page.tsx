@@ -1,8 +1,9 @@
 "use client";
+import Image from "next/image";
 
-import { useEffect, useRef, useState } from "react";
 import ScrollStorySection from "../components/Scrollstorysection";
 import Navbar from "../components/navbar";
+import { useEffect, useRef, useState } from "react";
 
 // ── Scroll hook ───────────────────────────────────────────────────────────────
 function useScrollY() {
@@ -52,7 +53,7 @@ function ParallaxImg({ src, alt, height, speed = 0.06 }: { src: string; alt: str
 
   return (
     <div ref={ref} style={{ position: "relative", overflow: "hidden", height, width: "100%" }}>
-      <img src={src} alt={alt} style={{ position: "absolute", top: "-12%", left: 0, width: "100%", height: "124%", objectFit: "cover", transform: `translateY(${ty}px)`, willChange: "transform" }} />
+      <Image width={1200} height={1200} src={src} alt={alt} style={{ position: "absolute", top: "-12%", left: 0, width: "100%", height: "124%", objectFit: "cover", transform: `translateY(${ty}px)`, willChange: "transform" }} />
     </div>
   );
 }

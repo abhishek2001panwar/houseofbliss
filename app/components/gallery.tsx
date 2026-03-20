@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect, useRef, useState, useCallback } from 'react';
+import Image from "next/image";
 import Link from 'next/link';
 import { Button } from './button';
 
@@ -224,7 +225,7 @@ const Gallery = () => {
               className="transition-all duration-700 ease-out"
               style={{ opacity: 0, transform: 'translateY(40px)' }}>
               <div className="relative overflow-hidden shadow-[0_6px_30px_rgba(0,0,0,0.12)]">
-                <img src={img.src} alt="Gallery" className="w-full object-cover block"
+                <Image width={1200} height={1200} src={img.src} alt="Gallery" loading="lazy" sizes="100vw" className="w-full object-cover block"
                   style={{ aspectRatio: `1 / ${AR[idx % AR.length]}` }} />
                 <div className="absolute top-2 right-2 font-editorial text-[#fdf9dc] text-[10px] leading-tight text-right pointer-events-none"
                   style={{ textShadow: '0 1px 6px rgba(0,0,0,0.5)', letterSpacing: '0.05em' }}>
@@ -263,7 +264,7 @@ const Gallery = () => {
                     className="transition-all duration-700 ease-out"
                     style={{ opacity: 0, transform: 'translateY(40px)' }}>
                     <div className="relative overflow-hidden shadow-[0_6px_30px_rgba(0,0,0,0.12)]">
-                      <img src={img.src} alt="Gallery" className="w-full object-cover block"
+                      <Image width={1200} height={1200} src={img.src} alt="Gallery" loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" className="w-full object-cover block"
                         style={{ aspectRatio: `1 / ${AR[idx % AR.length]}` }} />
                       <div className="absolute top-2 right-2 font-editorial text-[#fdf9dc] text-xs leading-tight text-right pointer-events-none"
                         style={{ textShadow: '0 1px 6px rgba(0,0,0,0.5)', letterSpacing: '0.05em' }}>
@@ -375,10 +376,11 @@ const Gallery = () => {
                 }}
               >
                 {/* inner img — taller than wrapper, parallax-shifted via JS */}
-                <img
-                  ref={el => { innerImgRef.current[idx] = el; }}
+                <Image width={1200} height={1200} ref={el => { innerImgRef.current[idx] = el; }}
                   src={img.src}
                   alt="Gallery"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   draggable={false}
                   style={{
                     width: '100%',

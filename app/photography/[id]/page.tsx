@@ -1,5 +1,6 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
+import Image from "next/image";
 import { useParams } from "next/navigation";
 import { Button } from "@/app/components/button";
 import Link from "next/link";
@@ -143,8 +144,7 @@ export default function PhotographyDetailPage() {
           {/* <span className="font-neue-light text-[#41453D]/80 text-base text-center mb-6">
             {card.desc}
           </span> */}
-          <img
-            src={card.image}
+          <Image width={1600} height={1600} src={card.image}
             alt={card.title}
             className="w-full h-full object-cover"
             style={{ transform: `translateY(${offset}px)`, transition: 'transform 0.3s cubic-bezier(.4,1,.7,1)' }}
@@ -161,8 +161,7 @@ export default function PhotographyDetailPage() {
                 className="overflow-hidden  shadow-md w-full"
                 style={{ aspectRatio: "3/4" }}
               >
-                <img
-                  src={img}
+                <Image width={1600} height={1600} src={img}
                   alt={`Gallery image ${idx + 1}`}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
@@ -206,8 +205,7 @@ export default function PhotographyDetailPage() {
                   className="overflow-hidden w-20 rounded-lg opacity-60 group-hover:opacity-100 transition-opacity duration-500"
                   style={{ aspectRatio: "3/4" }}
                 >
-                  <img
-                    src={prevCard.image}
+                  <Image width={1600} height={1600} src={prevCard.image}
                     alt={prevCard.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -265,8 +263,7 @@ export default function PhotographyDetailPage() {
                   className="overflow-hidden w-20 rounded-lg opacity-60 group-hover:opacity-100 transition-opacity duration-500"
                   style={{ aspectRatio: "3/4" }}
                 >
-                  <img
-                    src={nextCard.image}
+                  <Image width={1600} height={1600} src={nextCard.image}
                     alt={nextCard.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />

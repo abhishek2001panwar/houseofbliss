@@ -2,8 +2,8 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react'
 
 const videos = [
-  "https://res.cloudinary.com/degf7s9yn/video/upload/v1773901456/f_auto,q_auto/testimonial2_afgwa4.mp4",
-  "https://res.cloudinary.com/degf7s9yn/video/upload/v1773901481/testimonial1_jsfz4e.mp4",
+  "https://res.cloudinary.com/degf7s9yn/video/upload/v1773901456/testimonial2_afgwa4.mp4",
+  "https://res.cloudinary.com/degf7s9yn/video/upload/v1773901481/f_auto,q_auto/testimonial1_jsfz4e.mp4",
 ];
 
 /* ─── Icons ─── */

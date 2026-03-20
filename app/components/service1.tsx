@@ -1,3 +1,4 @@
+import Image from "next/image";
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -58,8 +59,7 @@ function ParallaxImg({
         width: "100%",
       }}
     >
-      <img
-        src={src}
+      <Image width={1200} height={1200} src={src}
         alt={alt}
         style={{
           position: "absolute",
@@ -144,8 +144,7 @@ function ManifestoSlide({ item }: { item: (typeof MANIFESTO)[0] }) {
         height: "100%",
       }}
     >
-      <img
-        src={item.img}
+      <Image width={1200} height={1200} src={item.img}
         alt={item.rule}
         style={{
           width: "100%",

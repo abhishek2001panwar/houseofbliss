@@ -130,7 +130,7 @@ export default function AuraMemorySection() {
           loop
           playsInline
         >
-          <source src="https://res.cloudinary.com/dxxvbrgie/video/upload/v1772829968/IMG_6100_ahofvk.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dxxvbrgie/video/upload/f_auto,q_auto/v1772829968/IMG_6100_ahofvk.mp4" type="video/mp4" />
         </video>
 
         {/* ── Multi-layer dark overlay ── */}

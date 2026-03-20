@@ -24,13 +24,13 @@ function Hero() {
       {/* Background image */}
       <div className="absolute inset-0 w-full h-full">
         <Image
-        height={1000}
-        width={1200}
+          height={1000}
+          width={1200}
           src="/cover.JPEG"
           alt="Hero background"
-          fetchPriority="high"   
-          loading="eager"       
-onLoadingComplete={() => setLoaded(true)}
+          priority={true}
+          sizes="100vw"
+          onLoad={() => setLoaded(true)}
           className="w-full h-full object-cover"
           style={{
             objectPosition: "left center",

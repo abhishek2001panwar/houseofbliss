@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import { useEffect, useRef, useState } from "react";
 import Navbar from "../components/navbar";
@@ -10,7 +11,7 @@ const VIDEOS = [
     coords: ["46°52′N", "11°01′E"],
     location: "Hochgurgl, Austria",
     title: "Deep inside the glacier - an adventurous elopement in Austria",
-    src: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773634860/vid1_1_wfvsmn.mp4",
+    src: "https://res.cloudinary.com/degf7s9yn/video/upload/f_auto,q_auto/v1773634860/vid1_1_wfvsmn.mp4",
     poster: "",
   },
   {
@@ -18,7 +19,7 @@ const VIDEOS = [
     coords: ["46°28′N", "11°39′E"],
     location: "South Tyrol, Italy",
     title: "Volcano wedding - an intimate ceremony at dawn",
-    src: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773634431/vid2_y5rih8.mp4",
+    src: "https://res.cloudinary.com/degf7s9yn/video/upload/f_auto,q_auto/v1773634431/vid2_y5rih8.mp4",
     poster: "",
   },
   {
@@ -26,7 +27,7 @@ const VIDEOS = [
     coords: ["62°7′N", "7°26′W"],
     location: "Faroe Islands",
     title: "Wind, rain, and vows - a Faroe Islands elopement",
-    src: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773634434/vid3_rsub5b.mp4",
+    src: "https://res.cloudinary.com/degf7s9yn/video/upload/f_auto,q_auto/v1773634434/vid3_rsub5b.mp4",
     poster: "",
   },
   {
@@ -34,7 +35,7 @@ const VIDEOS = [
     coords: ["51°21′N", "4°49′E"],
     location: "Antwerp, Belgium",
     title: "Candlelit chapel - Nick & Jeroen in Antwerp",
-    src: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773634854/vid4_1_y8vlhe.mp4",
+    src: "https://res.cloudinary.com/degf7s9yn/video/upload/f_auto,q_auto/v1773634854/vid4_1_y8vlhe.mp4",
     poster: "",
   },
   {
@@ -42,7 +43,7 @@ const VIDEOS = [
     coords: ["47°17′N", "12°9′E"],
     location: "Austrian Alps",
     title: "A snowboard elopement - Jens & Margot",
-    src: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773634457/vid5_rb5lqz.mp4",
+    src: "https://res.cloudinary.com/degf7s9yn/video/upload/f_auto,q_auto/v1773634457/vid5_rb5lqz.mp4",
     poster: "",
   },
   {
@@ -50,7 +51,7 @@ const VIDEOS = [
     coords: ["56°13′N", "4°51′W"],
     location: "Loch Lomond, Scotland",
     title: "Scottish highland ceremony - Barbara & Stoffel",
-    src: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773634432/vid6_azxq5q.mp4",
+    src: "https://res.cloudinary.com/degf7s9yn/video/upload/f_auto,q_auto/v1773634432/vid6_azxq5q.mp4",
     poster: "",
   },
   {
@@ -58,7 +59,7 @@ const VIDEOS = [
     coords: ["46°49′N", "9°17′E"],
     location: "Graubünden, Switzerland",
     title: "Alpine micro-wedding - Manou & Andries",
-    src: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773634440/vid7_sdki7f.mp4",
+    src: "https://res.cloudinary.com/degf7s9yn/video/upload/f_auto,q_auto/v1773634440/vid7_sdki7f.mp4",
     poster: "",
   },
   {
@@ -66,7 +67,7 @@ const VIDEOS = [
     coords: ["38°41′N", "7°40′W"],
     location: "Alentejo, Portugal",
     title: "Golden hour dinner - Tinneke & Steven in Portugal",
-    src: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773634835/vid8_1_j4ukst.mp4",
+    src: "https://res.cloudinary.com/degf7s9yn/video/upload/f_auto,q_auto/v1773634835/vid8_1_j4ukst.mp4",
     poster: "",
   },
   {
@@ -74,7 +75,7 @@ const VIDEOS = [
     coords: ["50°55′N", "1°42′E"],
     location: "Cap Blanc-Nez, France",
     title: "Warehouse love - Brecht & Lisa engagement",
-    src: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773634437/vid9_inkvye.mp4",
+    src: "https://res.cloudinary.com/degf7s9yn/video/upload/f_auto,q_auto/v1773634437/vid9_inkvye.mp4",
     poster: "",
   },
   {
@@ -82,7 +83,7 @@ const VIDEOS = [
     coords: ["46°33′N", "11°42′E"],
     location: "Dolomiti, Italy",
     title: "Helicopter elopement - high above the Dolomites",
-    src: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773634419/vid10_hpf6e3.mp4",
+    src: "https://res.cloudinary.com/degf7s9yn/video/upload/f_auto,q_auto/v1773634419/vid10_hpf6e3.mp4",
     poster: "",
   },
 ];
@@ -250,8 +251,7 @@ function StoryCard({ story, large }: { story: (typeof STORIES)[0]; large: boolea
         <div style={{ position: "absolute", top: 12, right: 14, zIndex: 2, fontFamily: "var(--font-neue-light, monospace)", fontSize: 10, letterSpacing: "0.04em", color: "#fff", lineHeight: 1.5, textAlign: "right", textShadow: "0 1px 6px rgba(0,0,0,0.55)" }}>
           {story.coords.map((c, i) => <div key={i}>{''}</div>)}
         </div>
-        <img
-          src={story.img}
+        <Image width={1200} height={1200} src={story.img}
           alt={story.title}
           style={{ width: "100%", display: "block", objectFit: "cover", aspectRatio: large ? "3/2" : "2/3", transform: hovered ? "scale(1.04)" : "scale(1)", transition: "transform 0.75s cubic-bezier(.25,.46,.45,.94)" }}
         />

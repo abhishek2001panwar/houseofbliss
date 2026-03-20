@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -47,8 +48,7 @@ function BlogCard({ item }: { item: (typeof BLOGS)[0] }) {
           flexShrink: 0,
         }}
       >
-        <img
-          src={item.img}
+        <Image width={1200} height={1200} src={item.img}
           alt={item.title}
           style={{
             position: "absolute",

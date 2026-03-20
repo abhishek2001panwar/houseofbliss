@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Navbar from "../components/navbar";
 import Link from "next/link";
 import  cards  from "@/lib/couples";
@@ -107,8 +108,7 @@ export default function PhotographyPage() {
                 className="overflow-hidden w-full relative"
                 style={{ aspectRatio: "3/4" }}
               >
-                <img
-                  src={card.image}
+                <Image width={1200} height={1200} src={card.image}
                   alt={card.title}
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                 />

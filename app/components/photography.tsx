@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const cards = [
   {
@@ -117,9 +118,13 @@ export default function PhotographySection() {
               className="overflow-hidden w-full"
               style={{ aspectRatio: '3/4' }}
             >
-              <img
+              <Image
                 src={card.image}
                 alt={card.title}
+                width={400}
+                height={500}
+                loading="lazy"
+                sizes="(max-width: 768px) 50vw, 33vw"
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
             </div>

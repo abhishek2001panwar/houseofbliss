@@ -1,18 +1,17 @@
 import { About } from "./components/about";
-import About2 from "./components/about2";
-import AuraMemorySection from "./components/AuraMemorySection";
-import Contact from "./components/contact";
-import Cta from "./components/cta";
-import FAQ from "./components/faq";
-import Footer from "./components/footer";
-import Gallery from "./components/gallery";
 import Hero from "./components/hero";
 import Navbar from "./components/navbar";
-import Stories from "./components/stories";
-import Testimonial from "./components/testimonial";
-import Magical from './components/magical'
-import PhotographySection from "./components/photography";
-import { ProjectsSection} from "./components/films";
+import dynamic from "next/dynamic";
+
+// Below-the-fold components with dynamic imports (code splitting)
+const About2 = dynamic(() => import("./components/about2"));
+const AuraMemorySection = dynamic(() => import("./components/AuraMemorySection"));
+const Contact = dynamic(() => import("./components/contact"));
+const FAQ = dynamic(() => import("./components/faq"));
+const Magical = dynamic(() => import('./components/magical'));
+const PhotographySection = dynamic(() => import("./components/photography"));
+const ProjectsSection = dynamic(() => import("./components/films").then(mod => ({ default: mod.ProjectsSection })));
+const Testimonial = dynamic(() => import("./components/testimonial"));
 
 export default function Home() {
   return (
