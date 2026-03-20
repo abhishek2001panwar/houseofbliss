@@ -59,14 +59,12 @@ function SuccessPopup({ onDone }: { onDone: () => void }) {
             <path d="M4 11.5L9 16.5L18 6" stroke="#fdf9dc" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
-
         <div className="text-center">
           <p className="font-editorial text-[#fdf9dc] text-2xl mb-1">Message Sent</p>
           <p className="font-neue-light text-[#fdf9dc]/60 text-xs tracking-widest uppercase">
             We'll be in touch within 3–4 days
           </p>
         </div>
-
         <div className="w-full h-px bg-[#fdf9dc]/10 rounded-full overflow-hidden mt-2">
           <div
             className="h-full bg-[#fdf9dc]/40 rounded-full"
@@ -91,6 +89,108 @@ function Spinner() {
   );
 }
 
+/* ── Premium Input ── */
+function Field({
+  label,
+  name,
+  type = "text",
+  value,
+  onChange,
+  required,
+  textarea,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  required?: boolean;
+  textarea?: boolean;
+}) {
+  const [focused, setFocused] = useState(false);
+  const filled = value.length > 0;
+
+  const base: React.CSSProperties = {
+    width: "100%",
+    background: "transparent",
+    border: "none",
+    borderBottom: `1px solid ${focused ? "#2C2B27" : "rgba(44,43,39,0.25)"}`,
+    outline: "none",
+    padding: "10px 0 8px",
+    fontFamily: "inherit",
+    fontSize: "0.92rem",
+    lineHeight: 1.6,
+    color: "#2C2B27",
+    transition: "border-color 0.25s",
+    resize: "none",
+    /* Force autofill background to match page */
+    WebkitBoxShadow: "0 0 0 1000px #F4F1E5 inset",
+    WebkitTextFillColor: "#2C2B27",
+    caretColor: "#2C2B27",
+  };
+
+  return (
+    <div style={{ position: "relative", paddingTop: 20 }}>
+      {/* Floating label */}
+      <label
+        style={{
+          position: "absolute",
+          top: focused || filled ? 0 : 28,
+          left: 0,
+          fontSize: focused || filled ? "0.68rem" : "0.88rem",
+          letterSpacing: focused || filled ? "0.2em" : "0.04em",
+          textTransform: focused || filled ? "uppercase" : "none",
+          color: focused ? "#2C2B27" : "rgba(44,43,39,0.4)",
+          transition: "all 0.22s cubic-bezier(0.4,0,0.2,1)",
+          pointerEvents: "none",
+          fontFamily: "inherit",
+          fontWeight: 300,
+        }}
+      >
+        {label}
+      </label>
+
+      {textarea ? (
+        <textarea
+          name={name}
+          value={value}
+          onChange={onChange}
+          required={required}
+          rows={4}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
+          style={{ ...base, paddingTop: 12 }}
+        />
+      ) : (
+        <input
+          type={type}
+          name={name}
+          value={value}
+          onChange={onChange}
+          required={required}
+          autoComplete="on"
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
+          style={base}
+        />
+      )}
+
+      {/* Animated focus line */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          height: 1,
+          width: focused ? "100%" : "0%",
+          background: "#2C2B27",
+          transition: "width 0.35s cubic-bezier(0.4,0,0.2,1)",
+        }}
+      />
+    </div>
+  );
+}
+
 /* ── Main component ── */
 const Contact = () => {
   const [agreed, setAgreed] = useState(false);
@@ -105,11 +205,9 @@ const Contact = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // ✅ KEY FIX: explicit e.preventDefault() + e.stopPropagation() at the very top
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     e.stopPropagation();
-
     setError("");
 
     if (!agreed) {
@@ -118,7 +216,6 @@ const Contact = () => {
     }
 
     setLoading(true);
-
     try {
       const { error: sbError } = await supabase.from("contact").insert([{
         first_name: form.first_name,
@@ -143,147 +240,185 @@ const Contact = () => {
     }
   };
 
-  const inputCls = `
-    w-full bg-transparent border-b border-[#fdf9dc]/60 text-[#fdf9dc]
-    py-3 px-1 focus:outline-none focus:border-[#fdf9dc]
-    font-neue-light placeholder:text-[#fdf9dc]/30
-    transition-colors duration-200
-    [color-scheme:dark]
-    [-webkit-text-fill-color:#fdf9dc]
-    [&:-webkit-autofill]:shadow-[inset_0_0_0_1000px_#41453D]
-    [&:-webkit-autofill]:[-webkit-text-fill-color:#fdf9dc]
-    [&:-webkit-autofill:focus]:shadow-[inset_0_0_0_1000px_#41453D]
-    [&:-webkit-autofill:hover]:shadow-[inset_0_0_0_1000px_#41453D]
-  `;
-
   return (
     <>
-    <Navbar theme="light"/>
-      {showPopup && <SuccessPopup onDone={() => setShowPopup(false)} />}
+      {/* Global autofill override — covers Chrome/Safari yellow fill */}
+      <style>{`
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus {
+          -webkit-box-shadow: 0 0 0 1000px #F4F1E5 inset !important;
+          -webkit-text-fill-color: #2C2B27 !important;
+          caret-color: #2C2B27 !important;
+          transition: background-color 9999s ease-in-out 0s;
+        }
+      `}</style>
 
-      {/* Hero */}
-      <section className="bg-[#41453D]">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="flex flex-col md:flex-row items-start justify-center pt-8 md:pt-3 gap-6 md:gap-0">
-            <div className="flex-1 flex flex-col justify-center md:pr-8">
-              <h2 className="font-editorial text-[#fdf9dc] text-4xl sm:text-5xl md:text-6xl mb-4 md:mb-8">
-                Say hi!
+      {showPopup && <SuccessPopup onDone={() => setShowPopup(false)} />}
+<Navbar theme="dark" />
+      <section className="relative w-full bg-[#F4F1E5] overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 md:px-16 py-16 md:py-32 flex flex-col md:flex-row gap-12 md:gap-20 items-start">
+
+          {/* ── LEFT COLUMN ── */}
+          <div className="flex-1 flex flex-col gap-10">
+
+            {/* Eyebrow */}
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.35em] text-[#2C2B27]/40 mb-3">
+                Get in touch
+              </p>
+              <div className="h-px w-10 bg-[#2C2B27]/15 mb-8" />
+              <h2
+                className="font-editorial text-[#2C2B27] leading-[0.92]"
+                style={{ fontSize: "clamp(2.8rem, 6vw, 4.5rem)" }}
+              >
+                Say<br />
+                <em>hello.</em>
               </h2>
             </div>
-            <div className="flex-1 flex flex-col justify-center">
-              <div className="font-neue-light text-[#fdf9dc] text-base md:text-lg lg:text-xl mb-6 md:mb-8">
-                You've made it all the way to the contact page, congrats! If
-                you've made it this far, chances are something felt a little
-                different. Whether you're ready to book or you need a little
-                more info, I'm excited to hear what I can do for you!
-                <br /><br />
-                If you feel like creating magic together, please fill out the
-                form below and I will get back to you within 3–4 days.
-                <br /><br />
-                <a href="mailto:info@houseofbliss.co.in" className="underline break-all">
-                  info@houseofbliss.co.in
-                </a>
+
+            <p className="font-neue-light text-[#2C2B27]/65 text-[0.92rem] leading-[1.9] max-w-sm">
+              You've made it all the way to the contact page — congrats. If something felt a little different, we'd love to hear from you. Whether you're ready to book or just need a little more info, we're excited to connect.
+            </p>
+
+            <a
+              href="mailto:info@houseofbliss.co.in"
+              className="group inline-flex items-center gap-3 font-neue-light text-[11px] uppercase tracking-[0.28em] text-[#2C2B27]/50 hover:text-[#2C2B27] transition-colors duration-200 w-fit"
+            >
+              info@houseofbliss.co.in
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:translate-x-1">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+
+            {/* Map */}
+            <div
+              className="overflow-hidden"
+              style={{
+                border: "1px solid rgba(44,43,39,0.12)",
+                filter: "grayscale(1) contrast(0.9)",
+              }}
+            >
+              <iframe
+                title="House of Bliss Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019234!2d77.5946!3d12.9716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x0!2zMTLCsDU4JzE3LjgiTiA3N8KwMzUnNDMuNiJF!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+                width="100%"
+                height="280"
+                style={{ border: 0, display: "block" }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
+
+          {/* ── RIGHT COLUMN: FORM ── */}
+          <div className="flex-1 w-full">
+
+            <div className="mb-10">
+              <h3
+                className="font-editorial text-[#2C2B27] leading-[1.05] mb-3"
+                style={{ fontSize: "clamp(1.5rem, 3vw, 2.2rem)" }}
+              >
+                Let's craft your<br />
+                <em>wedding story</em> together.
+              </h3>
+              <p className="font-neue-light text-[#2C2B27]/50 text-[0.85rem] tracking-wide">
+                Ready to discuss your vision and create something extraordinary?
+              </p>
+            </div>
+
+            <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-7">
+
+              <div className="flex flex-col sm:flex-row gap-7 sm:gap-8">
+                <div className="flex-1">
+                  <Field label="First name(s)" name="first_name" value={form.first_name} onChange={handleChange} required />
+                </div>
+                <div className="flex-1">
+                  <Field label="Last name" name="last_name" value={form.last_name} onChange={handleChange} required />
+                </div>
               </div>
-            </div>
+
+              <Field label="Email address" name="email" type="email" value={form.email} onChange={handleChange} required />
+              <Field label="Subject" name="subject" value={form.subject} onChange={handleChange} required />
+              <Field label="Tell us everything — or at least what's relevant." name="message" value={form.message} onChange={handleChange} required textarea />
+
+              {/* Checkbox */}
+              <label className="flex items-start gap-3 cursor-pointer group mt-1">
+                <div
+                  onClick={() => setAgreed(a => !a)}
+                  style={{
+                    width: 18,
+                    height: 18,
+                    flexShrink: 0,
+                    marginTop: 2,
+                    border: `1px solid ${agreed ? "#2C2B27" : "rgba(44,43,39,0.3)"}`,
+                    background: agreed ? "#2C2B27" : "transparent",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    transition: "all 0.2s",
+                    cursor: "pointer",
+                  }}
+                >
+                  {agreed && (
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                      <path d="M1.5 5L4 7.5L8.5 2.5" stroke="#F4F1E5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  )}
+                </div>
+                <span className="font-neue-light text-[0.82rem] text-[#2C2B27]/55 leading-relaxed group-hover:text-[#2C2B27]/75 transition-colors">
+                  I agree with the{" "}
+                  <a href="#" className="underline underline-offset-2 text-[#2C2B27]/70 hover:text-[#2C2B27]">
+                    privacy policy
+                  </a>.
+                </span>
+              </label>
+
+              {/* reCAPTCHA note */}
+              <p className="text-[10px] font-neue-light text-[#2C2B27]/30 leading-relaxed -mt-3">
+                This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+              </p>
+
+              {/* Submit */}
+              <button
+                type="submit"
+                disabled={loading}
+                style={{
+                  width: "100%",
+                  padding: "16px 0",
+                  background: "#2C2B27",
+                  color: "#F4F1E5",
+                  border: "none",
+                  fontFamily: "inherit",
+                  fontSize: "0.72rem",
+                  letterSpacing: "0.32em",
+                  textTransform: "uppercase",
+                  cursor: loading ? "not-allowed" : "pointer",
+                  opacity: loading ? 0.55 : 1,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 8,
+                  transition: "opacity 0.2s, background 0.2s",
+                  marginTop: 4,
+                }}
+                onMouseEnter={e => { if (!loading) (e.currentTarget.style.background = "#41453D"); }}
+                onMouseLeave={e => { (e.currentTarget.style.background = "#2C2B27"); }}
+              >
+                {loading ? <><Spinner /> Sending...</> : "Send Message"}
+              </button>
+
+              {error && (
+                <p className="text-red-500 text-center font-neue-light text-xs mt-1">{error}</p>
+              )}
+            </form>
           </div>
-        </div>
-      </section>
 
-      {/* Form section */}
-      <section className="relative w-full min-h-screen bg-[#41453D] flex flex-col items-center justify-center px-4 md:px-8 py-12 md:py-16 pb-28 md:pb-32">
-
-        <div className="w-full max-w-2xl mx-auto mb-10 md:mb-14 text-center px-2">
-          <h3 className="font-editorial text-[#fdf9dc] text-2xl sm:text-3xl md:text-4xl mb-3">
-            Let's Craft Your Wedding Story Together
-          </h3>
-          <p className="font-neue-light text-[#fdf9dc] text-sm sm:text-base md:text-lg leading-relaxed">
-            Ready to discuss your vision and create something extraordinary?
-            <br className="hidden sm:block" />
-            We're excited to connect with you!
-          </p>
-        </div>
-
-        {/* ✅ onSubmit on the <form> tag, NOT on the button */}
-        <form
-          onSubmit={handleSubmit}
-          noValidate={false}
-          className="bg-transparent text-[#fdf9dc] w-full max-w-3xl mx-auto font-neue-light text-left"
-        >
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-6">
-            <div className="flex-1 flex flex-col">
-              <label className="mb-2 text-sm font-neue-medium">First name(s)</label>
-              <input type="text" name="first_name" value={form.first_name}
-                onChange={handleChange} className={inputCls} required />
-            </div>
-            <div className="flex-1 flex flex-col">
-              <label className="mb-2 text-sm font-neue-medium">Last name</label>
-              <input type="text" name="last_name" value={form.last_name}
-                onChange={handleChange} className={inputCls} required />
-            </div>
-          </div>
-
-          <div className="mb-6 flex flex-col">
-            <label className="mb-2 text-sm font-neue-medium">Your e-mail</label>
-            <input type="email" name="email" value={form.email}
-              onChange={handleChange} className={inputCls} required />
-          </div>
-
-          <div className="mb-6 flex flex-col">
-            <label className="mb-2 text-sm font-neue-medium">Subject</label>
-            <input type="text" name="subject" value={form.subject}
-              onChange={handleChange} className={inputCls} required />
-          </div>
-
-          <div className="mb-6 flex flex-col">
-            <label className="mb-2 text-sm font-neue-medium leading-snug">
-              Tell us everything! Or at least what's relevant to our service.
-            </label>
-            <textarea name="message" value={form.message} onChange={handleChange}
-              className={`${inputCls} min-h-[120px] md:min-h-[150px] resize-none`} required />
-          </div>
-
-          <div className="mb-6 flex items-start gap-3">
-            <input type="checkbox" checked={agreed} onChange={() => setAgreed(!agreed)}
-              className="accent-[#fdf9dc] w-5 h-5 mt-0.5 flex-shrink-0 cursor-pointer" />
-            <span className="font-neue-light text-sm sm:text-base leading-relaxed">
-              I agree with the{" "}
-              <a href="#" className="underline">privacy policy</a>.
-            </span>
-          </div>
-
-          <div className="mb-6 text-xs font-neue-light text-[#fdf9dc]/60 leading-relaxed">
-            This site is protected by reCAPTCHA and the Google Privacy Policy
-            and Terms of Service apply.
-          </div>
-
-          {/* ✅ Native <button type="submit"> — no custom Button component to misfire */}
-          <button
-            type="submit"
-            disabled={loading}
-            className="
-              w-full py-4 flex items-center justify-center gap-2
-              bg-[#fdf9dc] text-[#41453D]
-              font-neue-regular text-sm tracking-widest 
-              transition-all duration-300
-              hover:bg-[#f0eccc] active:scale-[0.99]
-              disabled:opacity-50 disabled:cursor-not-allowed
-            "
-          >
-            {loading ? <><Spinner /> Sending...</> : "Send"}
-          </button>
-
-          {error && (
-            <div className="mt-4 text-red-400 text-center font-neue-light text-sm">{error}</div>
-          )}
-        </form>
-
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-          <svg viewBox="0 0 1440 130" className="w-full h-[70px] sm:h-[90px] md:h-[100px]" preserveAspectRatio="none">
-            <path
-              d="M0,120 C200,160 350,40 520,80 C700,120 900,30 1100,70 C1250,100 1350,70 1440,90 L1440,180 L0,180 Z"
-              fill="#fdf9dc"
-            />
-          </svg>
         </div>
       </section>
     </>

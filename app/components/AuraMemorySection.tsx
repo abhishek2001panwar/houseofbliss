@@ -116,14 +116,22 @@ export default function AuraMemorySection() {
         }}
       >
 
-        {/* ── Background image - fades in ── */}
-        <div style={{
-          position: "absolute", inset: 0,
-          backgroundImage: "url('/aura.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: easedBg * 0.5,
-        }} />
+        <video
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            opacity: easedBg * 0.5,
+          }}
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src="https://res.cloudinary.com/dxxvbrgie/video/upload/v1772829968/IMG_6100_ahofvk.mp4" type="video/mp4" />
+        </video>
 
         {/* ── Multi-layer dark overlay ── */}
         <div style={{
@@ -207,7 +215,7 @@ export default function AuraMemorySection() {
             position: "relative",
             zIndex: 10,
             textAlign: "center",
-            maxWidth: "min(860px, 100%)",
+            maxWidth: "min(1000px, 100%)",
             width: "100%",
             display: "flex",
             flexDirection: "column",
@@ -219,9 +227,8 @@ export default function AuraMemorySection() {
           {/* Heading - word by word */}
           <h2
             style={{
-              fontFamily: "var(--font-editorial, Georgia, serif)",
               fontWeight: 300,
-              fontSize: "clamp(36px, 9vw, 108px)",
+              fontSize: "clamp(36px, 9vw, 70px)",
               color: "#fdf9dc",
               letterSpacing: "0.08em",
               lineHeight: 0.95,
@@ -250,7 +257,7 @@ export default function AuraMemorySection() {
               className="aura-rule"
               style={{
                 height: 1,
-                width: "clamp(32px, 5vw, 64px)",
+                width: "clamp(32px, 4vw, 54px)",
                 background: "rgba(253,249,220,0.3)",
                 marginBottom: "clamp(16px, 3vh, 28px)",
                 animationDelay: "0.4s",

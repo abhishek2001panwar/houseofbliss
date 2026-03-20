@@ -55,7 +55,6 @@ export default async function Page({ params }: PageProps) {
         }
 
         .bp-nav-logo {
-          font-family: var(--font-editorial);
           font-size: 1.25rem;
           letter-spacing: 0.04em;
           color: #1a1a1a;
@@ -63,7 +62,6 @@ export default async function Page({ params }: PageProps) {
         }
 
         .bp-nav-count {
-          font-family: var(--font-neue-light);
           font-size: 0.68rem;
           letter-spacing: 0.22em;
           text-transform: uppercase;
@@ -74,7 +72,6 @@ export default async function Page({ params }: PageProps) {
           display: inline-flex;
           align-items: center;
           gap: 0.5rem;
-          font-family: var(--font-neue-light);
           font-size: 0.62rem;
           letter-spacing: 0.22em;
           text-transform: uppercase;
@@ -129,7 +126,6 @@ export default async function Page({ params }: PageProps) {
         }
 
         .bp-label {
-          font-family: var(--font-neue-light);
           font-size: 0.62rem;
           letter-spacing: 0.32em;
           text-transform: uppercase;
@@ -151,7 +147,6 @@ export default async function Page({ params }: PageProps) {
         }
 
         .bp-title {
-          font-family: var(--font-editorial);
           font-size: clamp(1.9rem, 2.8vw, 3rem);
           line-height: 1.1;
           letter-spacing: -0.01em;
@@ -201,14 +196,12 @@ export default async function Page({ params }: PageProps) {
 
         /* prose */
         .bp-prose {
-          font-family: var(--font-neue-light);
           font-size: 1rem;
           line-height: 1.9;
           color: #2e2e2e;
         }
         .bp-prose p { margin-bottom: 1.6rem; }
         .bp-prose h2 {
-          font-family: var(--font-editorial);
           font-size: 1.7rem;
           font-weight: 300;
           line-height: 1.2;
@@ -216,7 +209,6 @@ export default async function Page({ params }: PageProps) {
           margin: 3rem 0 1rem;
         }
         .bp-prose h3 {
-          font-family: var(--font-editorial);
           font-size: 1.25rem;
           font-style: italic;
           color: #666;
@@ -226,14 +218,12 @@ export default async function Page({ params }: PageProps) {
           border-left: 1.5px solid #b08d57;
           padding: 0.2rem 0 0.2rem 1.5rem;
           margin: 2rem 0;
-          font-family: var(--font-editorial);
           font-size: 1.3rem;
           font-style: italic;
           color: #666;
           line-height: 1.5;
         }
         .bp-prose strong {
-          font-family: var(--font-neue-medium);
           font-weight: 500;
           color: #1a1a1a;
         }
@@ -271,7 +261,6 @@ export default async function Page({ params }: PageProps) {
         }
 
         .bp-footer-label {
-          font-family: var(--font-neue-light);
           font-size: 0.58rem;
           letter-spacing: 0.28em;
           text-transform: uppercase;
@@ -348,7 +337,6 @@ export default async function Page({ params }: PageProps) {
         }
 
         .bp-nc-dir {
-          font-family: var(--font-neue-light);
           font-size: 0.57rem;
           letter-spacing: 0.26em;
           text-transform: uppercase;
@@ -358,7 +346,6 @@ export default async function Page({ params }: PageProps) {
         }
 
         .bp-nc-title {
-          font-family: var(--font-editorial);
           font-size: 1rem;
           line-height: 1.25;
           color: #1a1a1a;
@@ -418,7 +405,6 @@ export default async function Page({ params }: PageProps) {
         .bp-back-text {
           position: relative;
           z-index: 1;
-          font-family: var(--font-neue-light);
           font-size: 0.62rem;
           letter-spacing: 0.24em;
           text-transform: uppercase;

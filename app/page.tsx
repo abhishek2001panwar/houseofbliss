@@ -11,6 +11,8 @@ import Navbar from "./components/navbar";
 import Stories from "./components/stories";
 import Testimonial from "./components/testimonial";
 import Magical from './components/magical'
+import PhotographySection from "./components/photography";
+import { ProjectsSection} from "./components/films";
 
 export default function Home() {
   return (
@@ -19,15 +21,17 @@ export default function Home() {
       <Hero />
       <About />
       <Magical/>
-      <Gallery />
+      {/* <Gallery /> */}
+      <PhotographySection />
       <AuraMemorySection  />
       <About2 />
-      <Stories />
+      <ProjectsSection/>
+      {/* <Stories /> */}
       <Testimonial />
 
       <FAQ />
       <Contact />
-      <Cta />
+      
       
     </>
   );

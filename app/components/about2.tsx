@@ -85,7 +85,7 @@ const About2 = () => {
         {/* ── Video - scale + border-radius reveal ── */}
         <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <video
-            src="https://res.cloudinary.com/degf7s9yn/video/upload/v1773634431/vid2_y5rih8.mp4"
+            src="https://res.cloudinary.com/degf7s9yn/video/upload/f_auto,q_auto/v1773634431/vid2_y5rih8.mp4"
             loop autoPlay muted playsInline
             style={{
               width: '100%',
@@ -143,7 +143,7 @@ const About2 = () => {
             justifyContent: 'flex-end',
             /* responsive padding */
             padding: 'clamp(20px, 5vw, 80px) clamp(20px, 5vw, 80px) clamp(28px, 6vh, 72px)',
-            maxWidth: 'min(640px, 90vw)',
+            maxWidth: 'min(730px, 100vw)',
           }}
         >
           {/* Tag */}
@@ -151,7 +151,6 @@ const About2 = () => {
             <p
               className="about2-tag"
               style={{
-                fontFamily: 'var(--font-neue-light, sans-serif)',
                 fontSize: 'clamp(8px, 1.8vw, 10px)',
                 letterSpacing: '0.22em',
                 textTransform: 'uppercase',
@@ -168,7 +167,6 @@ const About2 = () => {
             <h2
               className="about2-h2"
               style={{
-                fontFamily: 'var(--font-editorial, Georgia, serif)',
                 fontSize: 'clamp(24px, 4.5vw, 58px)',
                 fontWeight: 300,
                 color: '#fdf9dc',
@@ -199,7 +197,6 @@ const About2 = () => {
             <p
               className="about2-body"
               style={{
-                fontFamily: 'var(--font-neue-light, sans-serif)',
                 fontSize: 'clamp(13px, 1.8vw, 16px)',
                 lineHeight: 1.82,
                 color: 'rgba(253,249,220,0.72)',

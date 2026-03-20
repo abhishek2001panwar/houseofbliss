@@ -6,36 +6,6 @@ import { useEffect, useRef, useState } from "react";
 import { BLOGS } from "@/lib/data";
 import Navbar from "../components/navbar";
 
-
-// ── Parallax hook (disabled on mobile for perf) ──────────────────────────────
-function useCardParallax(speed: number, enabled: boolean) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [ty, setTy] = useState(0);
-
-  useEffect(() => {
-    if (!enabled) return;
-    let raf: number;
-    const update = () => {
-      if (!ref.current) return;
-      const rect = ref.current.getBoundingClientRect();
-      const center = rect.top + rect.height / 2 - window.innerHeight / 2;
-      setTy(center * speed);
-    };
-    const onScroll = () => {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(update);
-    };
-    update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      cancelAnimationFrame(raf);
-    };
-  }, [speed, enabled]);
-
-  return { ref, ty: enabled ? ty : 0 };
-}
-
 // ── Breakpoint hook ───────────────────────────────────────────────────────────
 function useBreakpoint() {
   const [bp, setBp] = useState<"mobile" | "tablet" | "desktop">("desktop");
@@ -52,35 +22,29 @@ function useBreakpoint() {
 }
 
 // ── Single card ───────────────────────────────────────────────────────────────
-function BlogCard({
-  item,
-  parallaxSpeed,
-  pushDown,
-  imgHeight,
-  parallaxEnabled,
-}: {
-  item: (typeof BLOGS)[0];
-  parallaxSpeed: number;
-  pushDown: number;
-  imgHeight: number;
-  parallaxEnabled: boolean;
-}) {
-  const { ref, ty } = useCardParallax(parallaxSpeed, parallaxEnabled);
+function BlogCard({ item }: { item: (typeof BLOGS)[0] }) {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div style={{ marginTop: parallaxEnabled ? pushDown : 0 }}>
-      {/* image */}
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        background: "#fff",
+        overflow: "hidden",
+      }}
+    >
+      {/* Image */}
       <div
-        ref={ref}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         style={{
           position: "relative",
           overflow: "hidden",
           width: "100%",
-          height: imgHeight,
+          aspectRatio: "4 / 3",
           cursor: "pointer",
+          flexShrink: 0,
         }}
       >
         <img
@@ -88,79 +52,62 @@ function BlogCard({
           alt={item.title}
           style={{
             position: "absolute",
-            top: "-12%",
-            left: 0,
+            inset: 0,
             width: "100%",
-            height: "124%",
+            height: "100%",
             objectFit: "cover",
-            transform: `translateY(${ty}px) scale(${hovered ? 1.05 : 1.0})`,
+            transform: `scale(${hovered ? 1.05 : 1.0})`,
             transition: "transform 0.9s cubic-bezier(.25,.46,.45,.94)",
             willChange: "transform",
           }}
         />
+        {/* subtle bottom fade */}
         <div
           style={{
             position: "absolute",
             inset: 0,
-            background:
-              "linear-gradient(to bottom, transparent 50%, rgba(15,22,15,0.52) 100%)",
+            background: "linear-gradient(to bottom, transparent 55%, rgba(0,0,0,0.28) 100%)",
             pointerEvents: "none",
           }}
         />
       </div>
 
-      {/* text */}
-      <div style={{ paddingTop: 18 }}>
+      {/* Text */}
+      <div style={{ padding: "18px 20px 22px", flex: 1, display: "flex", flexDirection: "column", gap: 12 }}>
         <h3
           style={{
-            margin: "0 0 8px",
-            fontFamily: "var(--font-editorial, serif)",
+            margin: 0,
             fontWeight: 300,
-            fontSize: "clamp(15px, 1.5vw, 21px)",
-            color: "#e8e2cc",
+            fontSize: "clamp(14px, 1.4vw, 19px)",
+            color: "#2C2B27",
             letterSpacing: "-0.01em",
-            lineHeight: 1.2,
+            lineHeight: 1.25,
           }}
         >
           {item.title}
         </h3>
-        {/* <p
-          style={{
-            margin: "0 0 14px",
-            fontFamily: "var(--font-neue-light, sans-serif)",
-            fontSize: 12.5,
-            lineHeight: 1.72,
-            color: "rgba(232,226,204,0.52)",
-          }}
-        >
-          {item.desc}
-        </p> */}
+
         <Link
           href={`/blogs/${item.id}`}
           style={{
-            display: "inline-block",
-            fontFamily: "var(--font-neue-regular, sans-serif)",
-            fontSize: 14,
-            letterSpacing: "0.03em",
-            color: "rgba(232,226,204,0.7)",
+            marginTop: "auto",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 6,
+            fontSize: 11,
+            letterSpacing: "0.22em",
+            textTransform: "uppercase",
+            color: "rgba(44,43,39,0.45)",
             textDecoration: "none",
-            borderBottom: "1px solid rgba(232,226,204,0.28)",
-            paddingBottom: 2,
-            transition: "color 0.2s, border-color 0.2s",
+            transition: "color 0.2s",
           }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLElement).style.color = "#e8e2cc";
-            (e.currentTarget as HTMLElement).style.borderColor =
-              "rgba(232,226,204,0.85)";
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLElement).style.color =
-              "rgba(232,226,204,0.7)";
-            (e.currentTarget as HTMLElement).style.borderColor =
-              "rgba(232,226,204,0.28)";
-          }}
+          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#2C2B27"; }}
+          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "rgba(44,43,39,0.45)"; }}
         >
-          More info
+          Read more
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
         </Link>
       </div>
     </div>
@@ -170,227 +117,96 @@ function BlogCard({
 // ── Main section ──────────────────────────────────────────────────────────────
 export default function OurBlogs() {
   const bp = useBreakpoint();
-
-  // Responsive config
-  const isDesktop = bp === "desktop";
-  const isTablet = bp === "tablet";
   const isMobile = bp === "mobile";
+  const isTablet = bp === "tablet";
 
-  // Layout config per breakpoint
-  // Desktop: 4 cols, staggered pushes, parallax ON
-  // Tablet:  2 cols, light stagger, parallax ON
-  // Mobile:  1 col, no stagger, no parallax
-
-  const desktopConfig = [
-    { push: 0, h: 360, speed: 0.055 },
-    { push: 80, h: 300, speed: 0.042 },
-    { push: 80, h: 300, speed: 0.068 },
-    { push: 150, h: 360, speed: 0.05 },
-    { push: 150, h: 360, speed: 0.058 },
-    { push: 80, h: 300, speed: 0.044 },
-    { push: 80, h: 300, speed: 0.065 },
-    { push: 0, h: 360, speed: 0.055 },
-    { push: 80, h: 300, speed: 0.042 },
-    { push: 80, h: 300, speed: 0.068 },
-    { push: 150, h: 360, speed: 0.05 },
-    { push: 150, h: 360, speed: 0.058 },
-    { push: 80, h: 300, speed: 0.044 },
-    { push: 80, h: 300, speed: 0.065 },
-    { push: 0, h: 360, speed: 0.055 },
-    { push: 80, h: 300, speed: 0.042 },
-    { push: 80, h: 300, speed: 0.068 },
-    { push: 150, h: 360, speed: 0.05 },
-    { push: 150, h: 360, speed: 0.058 },
-    { push: 80, h: 300, speed: 0.044 },
-    { push: 80, h: 300, speed: 0.065 },
-    { push: 0, h: 360, speed: 0.055 },
-    { push: 80, h: 300, speed: 0.042 },
-    { push: 80, h: 300, speed: 0.068 },
-    { push: 150, h: 360, speed: 0.05 },
-    { push: 150, h: 360, speed: 0.058 },
-    { push: 80, h: 300, speed: 0.044 },
-    { push: 80, h: 300, speed: 0.065 },
-    { push: 0, h: 360, speed: 0.055 },
-    { push: 80, h: 300, speed: 0.042 },
-    { push: 80, h: 300, speed: 0.068 },
-    { push: 150, h: 360, speed: 0.05 },
-    { push: 150, h: 360, speed: 0.058 },
-    { push: 80, h: 300, speed: 0.044 },
-    { push: 80, h: 300, speed: 0.065 },
-    { push: 0, h: 360, speed: 0.055 },
-    { push: 80, h: 300, speed: 0.042 },
-    { push: 80, h: 300, speed: 0.068 },
-    { push: 150, h: 360, speed: 0.05 },
-    { push: 150, h: 360, speed: 0.058 },
-    { push: 80, h: 300, speed: 0.044 },
-    { push: 80, h: 300, speed: 0.065 },
-
-  ];
-
-  const tabletConfig = [
-    { push: 0, h: 280, speed: 0.04 },
-    { push: 60, h: 240, speed: 0.03 },
-    { push: 60, h: 240, speed: 0.05 },
-    { push: 0, h: 280, speed: 0.035 },
-    { push: 0, h: 280, speed: 0.045 },
-    { push: 60, h: 240, speed: 0.03 },
-    { push: 60, h: 240, speed: 0.05 },
-     { push: 0, h: 280, speed: 0.04 },
-    { push: 60, h: 240, speed: 0.03 },
-    { push: 60, h: 240, speed: 0.05 },
-    { push: 0, h: 280, speed: 0.035 },
-    { push: 0, h: 280, speed: 0.045 },
-    { push: 60, h: 240, speed: 0.03 },
-    { push: 60, h: 240, speed: 0.05 },
-     { push: 0, h: 280, speed: 0.04 },
-    { push: 60, h: 240, speed: 0.03 },
-    { push: 60, h: 240, speed: 0.05 },
-    { push: 0, h: 280, speed: 0.035 },
-    { push: 0, h: 280, speed: 0.045 },
-    { push: 60, h: 240, speed: 0.03 },
-    { push: 60, h: 240, speed: 0.05 },
-     { push: 0, h: 280, speed: 0.04 },
-    { push: 60, h: 240, speed: 0.03 },
-    { push: 60, h: 240, speed: 0.05 },
-    { push: 0, h: 280, speed: 0.035 },
-    { push: 0, h: 280, speed: 0.045 },
-    { push: 60, h: 240, speed: 0.03 },
-    { push: 60, h: 240, speed: 0.05 },
-     { push: 0, h: 280, speed: 0.04 },
-    { push: 60, h: 240, speed: 0.03 },
-    { push: 60, h: 240, speed: 0.05 },
-    { push: 0, h: 280, speed: 0.035 },
-    { push: 0, h: 280, speed: 0.045 },
-    { push: 60, h: 240, speed: 0.03 },
-    { push: 60, h: 240, speed: 0.05 },
-     { push: 0, h: 280, speed: 0.04 },
-    { push: 60, h: 240, speed: 0.03 },
-    { push: 60, h: 240, speed: 0.05 },
-    { push: 0, h: 280, speed: 0.035 },
-    { push: 0, h: 280, speed: 0.045 },
-    { push: 60, h: 240, speed: 0.03 },
-    { push: 60, h: 240, speed: 0.05 },
-  ];
-
-  const mobileConfig = BLOGS.map(() => ({ push: 0, h: 220, speed: 0 }));
-
-  const config = isDesktop
-    ? desktopConfig
-    : isTablet
-      ? tabletConfig
-      : mobileConfig;
-
-  const gridStyle: React.CSSProperties = isDesktop
-    ? {
-        display: "grid",
-        gridTemplateColumns: "repeat(4, 1fr)",
-        gap: "0 26px",
-        alignItems: "start",
-      }
-    : isTablet
-      ? {
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          gap: "0 20px",
-          alignItems: "start",
-        }
-      : {
-          display: "grid",
-          gridTemplateColumns: "1fr",
-          gap: "32px 0",
-          alignItems: "start",
-        };
+  const cols = isMobile ? 1 : isTablet ? 2 : 3;
 
   return (
-    <>   <Navbar theme="light" />
-    <section
-      style={{
-        background: "#3b4237",
-        minHeight: "100vh",
-        padding: isMobile
-          ? "48px 5% 80px"
-          : isTablet
-            ? "60px 5% 100px"
-            : "60px 6% 140px",
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
-      {/* grain overlay */}
-      <svg
+    <>
+      <Navbar theme="dark" />
+      <section
         style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-          pointerEvents: "none",
-          opacity: 0.07,
-          zIndex: 0,
+          background: "#F4F1E5",
+          minHeight: "100vh",
+          padding: isMobile ? "48px 5% 80px" : isTablet ? "60px 5% 100px" : "60px 6% 120px",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
-        <filter id="grain-blogs">
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="0.75"
-            numOctaves="4"
-            stitchTiles="stitch"
-          />
-          <feColorMatrix type="saturate" values="0" />
-        </filter>
-        <rect width="100%" height="100%" filter="url(#grain-blogs)" />
-      </svg>
-
-      <div className="pt-32" style={{ position: "relative", zIndex: 1 }}>
-        {/* title + rule */}
-        <div
+        {/* grain overlay */}
+        <svg
           style={{
-            display: "flex",
-            alignItems: "flex-end",
-            gap: isMobile ? 20 : 40,
-            marginBottom: isMobile ? 40 : 72,
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            pointerEvents: "none",
+            opacity: 0.07,
+            zIndex: 0,
           }}
         >
-          <h2
-            style={{
-              fontFamily: "var(--font-editorial)",
-              fontWeight: 300,
-              fontSize: isMobile
-                ? "clamp(30px, 10vw, 42px)"
-                : "clamp(34px, 5vw, 64px)",
-              color: "#e8e2cc",
-              margin: 0,
-              lineHeight: 1.0,
-              letterSpacing: "-0.025em",
-              flexShrink: 0,
-            }}
-          >
-            Our Blogs
-          </h2>
+          <filter id="grain-blogs">
+            <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" stitchTiles="stitch" />
+            <feColorMatrix type="saturate" values="0" />
+          </filter>
+          <rect width="100%" height="100%" filter="url(#grain-blogs)" />
+        </svg>
+
+        <div className="pt-20 md:pt-28" style={{ position: "relative", zIndex: 1 }}>
+
+          {/* Header */}
           <div
             style={{
-              flex: 1,
-              height: 1,
-              background: "rgba(232,226,204,0.14)",
-              marginBottom: isMobile ? 6 : 10,
+              display: "flex",
+              alignItems: "flex-end",
+              gap: isMobile ? 20 : 40,
+              marginBottom: isMobile ? 32 : 56,
             }}
-          />
-        </div>
-
-        {/* cards */}
-        <div style={gridStyle}>
-          {BLOGS.map((item, i) => (
-            <BlogCard
-              key={item.id}
-              item={item}
-              parallaxSpeed={config[i]?.speed ?? 0.05}
-              pushDown={config[i]?.push ?? 0}
-              imgHeight={config[i]?.h ?? 280}
-              parallaxEnabled={!isMobile}
+          >
+            <h2
+              style={{
+                fontWeight: 300,
+                fontSize: isMobile ? "clamp(30px,10vw,42px)" : "clamp(34px,5vw,64px)",
+                color: "#2C2B27",
+                margin: 0,
+                lineHeight: 1.0,
+                letterSpacing: "-0.025em",
+                flexShrink: 0,
+              }}
+            >
+              Our Blogs
+            </h2>
+            <div
+              style={{
+                flex: 1,
+                height: 1,
+                background: "rgba(44,43,39,0.14)",
+                marginBottom: isMobile ? 6 : 10,
+              }}
             />
-          ))}
+          </div>
+
+          {/* White panel wrapping the grid */}
+          <div
+           
+          >
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: `repeat(${cols}, 1fr)`,
+                gap: "1px",
+                background: "rgba(44,43,39,0.08)", // gap color between cards
+              }}
+            >
+              {BLOGS.map((item) => (
+                <BlogCard key={item.id} item={item} />
+              ))}
+            </div>
+          </div>
+
         </div>
-      </div>
-    </section>
+      </section>
     </>
   );
 }

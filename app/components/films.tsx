@@ -1,0 +1,139 @@
+"use client"
+
+import { useState } from "react"
+import { ArrowUpRight } from "lucide-react"
+import { useRouter } from "next/navigation"
+import { Button } from "./button"
+
+export const projects = [
+  {
+    id:" 01",
+     coupleSlug: "nithesh-poojitha",
+    title: "Nithesh and Poojitha",
+    category: "We don't offer packages,  We create experiences just for you.  Each service flows from one core belief:  intention over expense,  meaning over magnificence.  Because honestly?  Your love story isn't like anyone else's.  Why should your wedding be? ",
+    year: "2024",
+    location: "Your Special Treatment ",
+    image: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773890779/N_P_WEDDING_TEASER_1_w2tcan.mp4",
+  },
+  {
+    id: " 02",
+      coupleSlug: "shraddha-neelgriv",
+    title: "Shraddha & Neelgriv",
+    category: "Everything Perfect Here's what sets us apart: We have our own production house. While others coordinate vendors, we create magic in-house. From concept to completion, every element flows through our skilled artisans' hands. No miscommunication. No quality compromises. No vendor conflicts. Just seamless creation where your vision transforms into reality through our complete control of the process. Because when you own the entire journey, perfection isn't just possible - it's promised.",
+    year: "2023",
+    location: "Everything Under One Roof",
+    image: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773890770/S_N_TEASER_t3melm.mp4",
+  },
+  {
+    id: " 03",
+    coupleSlug: "dheeraj-sakshi",
+    title: " Dheeraj and Sakshi",
+category: `Your vision becomes our mission. 
+From intimate mandaps that whisper your love story to grand celebrations that announce your union to the world, we design spaces where magic feels natural.
+
+<br/><br/>
+
+What we love creating together:
+
+<br/>● Royal mandap design inspired by your journey - not just beautiful, but meaningful
+<br/>● Floral arrangements that tell your story, not just fill space
+<br/>● Lighting that transforms spaces into sanctuaries where you belong
+<br/>● Decor that honors tradition while embracing your personal style`,
+    year: "2023",
+    location: "When Your Dreams Breathe",
+    image: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773894618/D_S_WEDDING_TEASER_1_1_ipnrf7.mp4",
+  },
+
+ 
+]
+
+function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
+  const [hovered, setHovered] = useState(false)
+  const router = useRouter()
+
+  return (
+    <div
+     
+      onClick={() => router.push(`/films/couple/${project.coupleSlug}`)}
+      className={`bg-[#F4F1E5] group cursor-pointer transition-all duration-700 `}
+      style={{ transitionDelay: `${(index % 2) * 150}ms` }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <div className="overflow-hidden">
+       {project.image ? (
+    <video
+      src={project.image}
+      className={`w-full aspect-[4/3] object-cover transition-all duration-[800ms] ease-out ${
+        hovered ? "scale-[1.04]" : "scale-100"
+      }`}
+      autoPlay
+      muted
+      playsInline
+      loop
+    />
+  ) : null}
+      </div>
+      <div className="p-6 md:p-8 flex items-start justify-between">
+        <div className="flex items-start gap-4">
+          <span className="text-[11px] tracking-[0.15em] text-muted-foreground/50 mt-1.5 tabular-nums">
+            {project.id}
+          </span>
+          <div>
+            <h3 className="text-lg md:text-xl font-light tracking-tight text-foreground mb-1.5">
+              {project.title}
+            </h3>
+            {/* <p className="text-[11px] tracking-[0.1em] uppercase text-muted-foreground">
+              {project.location} 
+            </p> */}
+          </div>
+        </div>
+        { 
+          project.id  && (
+             <ArrowUpRight
+          className={`h-4 w-4 text-muted-foreground/40 transition-all duration-300 mt-1.5 ${
+            hovered ? "translate-x-0.5 -translate-y-0.5 text-foreground" : ""
+          }`}
+        />
+          )
+        }
+
+       
+      </div>
+    </div>
+  )
+}
+
+export function ProjectsSection() {
+    const router = useRouter()
+
+
+  return (
+    <section id="services" className="px-6 py-28 md:px-12 lg:px-20 md:py-20 bg-[#F4F1E5]">
+      <div
+      
+        
+        className={`flex flex-col md:flex-row md:items-end justify-between mb-20 pb-6 border-b border-border transition-all duration-700`}
+      >
+        <div>
+          <p className="text-[11px] tracking-[0.3em] uppercase text-muted-foreground ">
+            films
+          </p>
+         
+        </div>
+        
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
+        {projects.map((project, index) => (
+          <ProjectCard key={project.title} project={project} index={index} />
+        ))}
+      </div>
+        <div className="flex justify-center mt-12">
+             <Button onClick={()=> router.push('/films')} variant="outline" >
+      Explore  More
+      </Button>
+        </div>
+    </section>
+  )
+}

@@ -133,8 +133,8 @@ export default function ScrollStorySection({
   return (
     <div
       style={{
-        padding: "clamp(72px, 12vh, 140px) 7%",
-        background: "#fefee8",
+        padding: "clamp(52px, 5vh, 140px) 5%",
+        background: "#F4F1E5",
       }}
     >
       {/* ── tag label ── */}
@@ -148,7 +148,7 @@ export default function ScrollStorySection({
       >
         <span
           style={{
-            fontFamily: "var(--font-editorial, serif)",
+            
             fontSize: 25,
             letterSpacing: "0.1em",
             textTransform: "uppercase",
@@ -175,7 +175,6 @@ export default function ScrollStorySection({
       {lines && (
         <div
           style={{
-            fontFamily: "var(--font-neue-light)",
             fontWeight: 100,
             // ← smaller than before, clearly body-ish size not heading
             fontSize: 18,
@@ -205,7 +204,6 @@ export default function ScrollStorySection({
             <FadeIn>
               <p
                 style={{
-                  fontFamily: "var(--font-neue-light, sans-serif)",
                   fontSize: 17,
                   lineHeight: 1.85,
                   color: textColor,
@@ -245,7 +243,6 @@ export default function ScrollStorySection({
                     <p
                       style={{
                         margin: "0 0 5px",
-                        fontFamily: "var(--font-editorial, serif)",
                         fontWeight: 300,
                         fontSize: 20,
                         color: textColor,
@@ -258,7 +255,6 @@ export default function ScrollStorySection({
                     <p
                       style={{
                         margin: 0,
-                        fontFamily: "var(--font-neue-light, sans-serif)",
                         fontSize: 17,
                         lineHeight: 1.82,
                         color: textColor,
@@ -279,7 +275,6 @@ export default function ScrollStorySection({
               <p
                 style={{
                   marginTop: "clamp(28px, 4.5vh, 48px)",
-                  fontFamily: "var(--font-neue-light, sans-serif)",
                   fontSize: 18,
                   lineHeight: 1.85,
                   color: textColor,
