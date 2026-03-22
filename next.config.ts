@@ -28,8 +28,8 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ["lucide-react"],
   },
 
-  // Turbopack configuration (Next.js 16 default)
-  turbopack: {},
+  // Disable Turbopack to use traditional SWC compiler
+  // This is a workaround for the 'nul' file issue
 };
 
 export default nextConfig;
