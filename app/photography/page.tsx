@@ -143,9 +143,9 @@ export default function PhotographyPage() {
                   </span> */}
                  
                 </div>
-               <span className="font-neue-light text-[#41453D]/55 text-xs leading-relaxed flex-1">
+               {/* <span className="font-neue-light text-[#41453D]/55 text-xs leading-relaxed flex-1">
                     Read more
-                  </span>
+                  </span> */}
               </div>
             </Link>
           ))}
