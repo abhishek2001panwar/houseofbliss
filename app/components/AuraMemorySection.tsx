@@ -171,7 +171,7 @@ export default function AuraMemorySection() {
           loop
           playsInline
         >
-          <source src="https://res.cloudinary.com/dxxvbrgie/video/upload/f_auto,q_auto/v1772829968/IMG_6100_ahofvk.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dttelbpwy/video/upload/v1774328976/portfolio_prakruthi_and_sudarshan_rdfq9o.mp4" type="video/mp4" />
         </video>
 
         {/* ── Multi-layer dark overlay ── */}
@@ -193,64 +193,7 @@ export default function AuraMemorySection() {
         }} />
 
         {/* ── INFINITY SYMBOL ── */}
-        <div
-          className="aura-infinity-wrap"
-          style={{
-            position: "absolute",
-            zIndex: 3,
-            top: "50%", left: "50%",
-            transform: `translate(-50%, -50%) scale(${infScale})`,
-            opacity: infOpacity,
-            transition: "opacity 0.05s linear",
-            pointerEvents: "none",
-            width: "min(700px, 90vw)",
-          }}
-        >
-          <svg
-            viewBox="0 0 500 200"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ width: "100%", height: "auto", display: "block" }}
-          >
-            <defs>
-              <linearGradient id="inf-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%"   stopColor="rgba(253,249,220,0.0)" />
-                <stop offset="30%"  stopColor="rgba(253,249,220,0.55)" />
-                <stop offset="70%"  stopColor="rgba(253,249,220,0.55)" />
-                <stop offset="100%" stopColor="rgba(253,249,220,0.0)" />
-              </linearGradient>
-            </defs>
-
-            {/* faint full path */}
-            <path
-              d="M250,100 C250,100 220,40 160,40 C100,40 60,70 60,100 C60,130 100,160 160,160 C220,160 250,100 250,100 C250,100 280,40 340,40 C400,40 440,70 440,100 C440,130 400,160 340,160 C280,160 250,100 250,100 Z"
-              stroke="rgba(253,249,220,0.08)"
-              strokeWidth="1"
-            />
-
-            {/* animated stroke */}
-            <path
-              d="M250,100 C250,100 220,40 160,40 C100,40 60,70 60,100 C60,130 100,160 160,160 C220,160 250,100 250,100 C250,100 280,40 340,40 C400,40 440,70 440,100 C440,130 400,160 340,160 C280,160 250,100 250,100 Z"
-              stroke="url(#inf-grad)"
-              strokeWidth="1.5"
-              strokeDasharray={strokeDash}
-              strokeDashoffset={strokeOffset}
-              strokeLinecap="round"
-              style={{ transition: "stroke-dashoffset 0.05s linear" }}
-            />
-
-            {/* glowing dot */}
-            {infP > 0.05 && infP < 0.98 && (
-              <circle r="3" fill="rgba(253,249,220,0.9)">
-                <animateMotion
-                  dur="3s"
-                  repeatCount="indefinite"
-                  path="M250,100 C250,100 220,40 160,40 C100,40 60,70 60,100 C60,130 100,160 160,160 C220,160 250,100 250,100 C250,100 280,40 340,40 C400,40 440,70 440,100 C440,130 400,160 340,160 C280,160 250,100 250,100 Z"
-                />
-              </circle>
-            )}
-          </svg>
-        </div>
+      
 
         {/* ── Content ── */}
         <div
@@ -287,7 +230,9 @@ export default function AuraMemorySection() {
               <span
                 key={word}
                 className="aura-word"
-                style={{ animationDelay: `${i * 0.12}s` }}
+                
+                style={{ animationDelay: `${i * 0.12}s` ,               fontFamily: 'var(--font-editorial, serif)',
+ }}
               >
                 {word}
               </span>
@@ -353,16 +298,7 @@ export default function AuraMemorySection() {
           );
         })}
 
-        {/* ── Wavy bottom clip ── */}
-        <div style={{
-          position: "absolute",
-          bottom: 0, left: 0, right: 0,
-          height: 100,
-          background: "#fefee8",
-          clipPath: "ellipse(55% 100% at 50% 100%)",
-          zIndex: 4,
-          opacity: progress < 0.9 ? 0 : (progress - 0.9) / 0.1,
-        }} />
+      
       </section>
     </>
   );

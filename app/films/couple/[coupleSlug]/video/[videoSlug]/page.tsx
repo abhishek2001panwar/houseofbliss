@@ -74,6 +74,20 @@ export default function VideoPlayerPage({
   const [ctrlVisible, setCtrlVisible] = useState(true);
   const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+ useEffect(() => {
+    const el = videoRef.current;
+    if (!el) return;
+
+    const seekAndPlay = () => {
+      el.currentTime = 6; // skip company watermark at start
+    };
+
+    el.addEventListener("loadedmetadata", seekAndPlay);
+    if (el.readyState >= 1) seekAndPlay();
+
+    return () => el.removeEventListener("loadedmetadata", seekAndPlay);
+  }, []);  
+
   const resetHide = useCallback(() => {
     if (hideTimer.current) clearTimeout(hideTimer.current);
     setCtrlVisible(true);
@@ -190,6 +204,7 @@ export default function VideoPlayerPage({
 
         .vp-meta { text-align: right; }
         .vp-couple-name {
+          font-family: var(--font-editorial, serif);
           font-size: clamp(1.1rem, 3.5vw, 1.9rem);
           font-weight: 300; font-style: italic;
           color: var(--ink); line-height: 1.1; margin: 0;
@@ -327,6 +342,7 @@ export default function VideoPlayerPage({
         .vp-info { text-align: center; margin-bottom: 20px; }
         @media (min-width: 640px) { .vp-info { margin-bottom: 28px; } }
         .vp-info-name {
+          font-family: var(--font-editorial, serif);
           font-size: clamp(1.2rem, 4vw, 2.2rem);
           font-weight: 300; color: var(--ink);
         }
@@ -367,6 +383,7 @@ export default function VideoPlayerPage({
         @media (min-width: 400px) { .vp-pill-label { font-size: 8px; } }
 
         .vp-pill-title {
+          font-family: var(--font-editorial, serif);
           font-size: 13px; font-weight: 300; color: var(--ink);
           white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
         }

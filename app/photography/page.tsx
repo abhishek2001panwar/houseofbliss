@@ -95,7 +95,7 @@ export default function PhotographyPage() {
 
       {/* Grid */}
       <div className="w-full px-6 md:px-16 pb-24">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-px gap-y-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-2 gap-y-10">
           {cards.map((card) => (
             <Link
               key={card.id}
@@ -132,7 +132,7 @@ export default function PhotographyPage() {
                 <div className="w-full h-px bg-[#41453D]/15 mb-3" />
 
                 {/* Title */}
-                <span className="font-editorial text-[#41453D] text-xl leading-tight tracking-tight group-hover:opacity-70 transition-opacity duration-300">
+                <span className="font-editorial font-serif text-[#41453D] text-xl leading-tight tracking-tight group-hover:opacity-70 transition-opacity duration-300">
                   {card.title}
                 </span>
 

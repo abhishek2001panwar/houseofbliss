@@ -13,7 +13,7 @@ export type WeddingCard = {
 const cards: WeddingCard[] = [
   {
     id: 1,
-    image: "/couple1/hero.png",
+    image: "/couple1/hero.webp",
     title: "Nithesh and Poojitha",
     desc: "A royal celebration of love in Udaipur.",
     date: "Oct 7, 2024",
@@ -25,13 +25,21 @@ const cards: WeddingCard[] = [
       "/couple1/img3.png",
       
       "/couple1/img5.png",
-      "/couple1/img6.png",
+      "/couple1/img20.png",
       "/couple1/img7.png",
       "/couple1/img8.png",
       "/couple1/img9.png",
       "/couple1/img10.png",
       "/couple1/img11.png",
       "/couple1/img12.png",
+      "/couple1/img13.png",
+      "/couple1/img14.png",
+      "/couple1/img15.png",
+      "/couple1/img16.png",
+      "/couple1/img17.png",
+      "/couple1/img18.png",
+      "/couple1/img19.png",
+      
     ],
   },
   {
@@ -52,6 +60,14 @@ const cards: WeddingCard[] = [
       "/couple2/img7.png",
       "/couple2/img8.png",
       "/couple2/img9.png",
+      "/couple2/img10.png",
+      "/couple2/img11.png",
+      "/couple2/img12.png",
+      "/couple2/img13.png",
+      "/couple2/img14.png",
+      "/couple2/img15.png",
+      "/couple2/img16.png",
+     
     ],
   },
   {
@@ -77,7 +93,7 @@ const cards: WeddingCard[] = [
   },
   {
     id: 4,
-    image: "/couple4/hero.png",
+    image: "/couple4/heronew.jpg",
     title: "Ani & Neha",
     desc: "A vibrant beachside wedding full of joy.",
     date: "Apr 24, 2024",
@@ -91,11 +107,14 @@ const cards: WeddingCard[] = [
       "/couple4/img5.png",
       "/couple4/img6.png",
       "/couple4/img7.png",
+      "/couple4/img8.jpg",
+      "/couple4/img9.jpg",
+      "/couple4/img10.jpg",
     ],
   },
   {
     id: 5,
-    image: "/couple5/hero.png",
+    image: "/couple5/heronew.png",
     title: "Sameeksha & Shravan",
     desc: "A colorful destination wedding in Jaipur.",
     date: "Jul 12, 2024",
@@ -113,6 +132,10 @@ const cards: WeddingCard[] = [
       "/couple5/img9.png",
       "/couple5/img10.png",
       "/couple5/img11.png",
+       "/couple5/img13.png",
+      "/couple5/img12.png",
+     
+      
     ],
   },
   {
@@ -133,6 +156,16 @@ const cards: WeddingCard[] = [
       "/couple6/img7.png",
       "/couple6/img8.png",
       "/couple6/img9.png",
+        "/couple6/img10.png",
+      "/couple6/img11.png",
+      "/couple6/img12.png",
+      "/couple6/img13.png",
+      "/couple6/img14.png",
+      "/couple6/img15.png",
+      "/couple6/img16.png",
+      "/couple6/img17.png",
+      "/couple6/img18.png",
+    
     ],
   },
   {
@@ -156,6 +189,11 @@ const cards: WeddingCard[] = [
       "/couple7/img10.png",
       "/couple7/img11.png",
       "/couple7/img1.png",
+        "/couple7/img12.png",
+      "/couple7/img13.png",
+      "/couple7/img14.png",
+      "/couple7/img15.png",
+      "/couple7/img16.png",
     ],
   },
 ];

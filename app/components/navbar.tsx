@@ -562,7 +562,7 @@ function Navbar({ theme = "light", color }: NavbarProps) {
           <Image
             width={80}
             height={24}
-            src={theme === "dark" ? "/dark.webp" : "/logo.png"}
+            src={theme === "dark" ? "/darklogo.png" : "/logo.png"}
             alt="House of Bliss"
             priority
             className=" animate-fadeIn"
@@ -570,7 +570,7 @@ function Navbar({ theme = "light", color }: NavbarProps) {
         </Link>
 
         {/* ── RIGHT: all links + Instagram + Get in Touch (desktop) · MENU (mobile) ── */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-8">
           {/* Nav links — desktop only */}
           <Link
             href="/photography"

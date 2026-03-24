@@ -675,7 +675,7 @@ At House of Bliss, we don’t just capture ceremonies; we choreograph with light
     title:
       "Cinematic Wedding Photography Trends in 2025 You’ll Fall in Love With",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img12.png",
+    img: "/blog/new1.png",
     content:`<article class="max-w-3xl mx-auto text-[#41453D] leading-relaxed">
 
 <h1 class="text-3xl mb-6">
@@ -757,7 +757,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
     title:
       "Modern vs Traditional What Couples Want from Wedding Photography in Bengaluru Today",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img13.png",
+    img: "/blog/new3.png",
     content: 
     `
     <section class="px-[7%] py-20 max-w-4xl mx-auto">
@@ -1744,7 +1744,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
     id: 26,
     title: "The Ultimate Guide to Cinematic Wedding Photography in Bengaluru",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img26.png",
+    img: "/blog/new4.png",
     content: `<section class="max-w-[900px] mx-auto px-[7%] py-10 text-[#5a5a4c] leading-relaxed">
 
 
@@ -2319,7 +2319,7 @@ Whether you’re planning an extravagant palace wedding, cool in a garden, or mo
     title:
       "Capture the Opening Moments of Forever with the Best Engagement Photographer in Bengaluru",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img33.png",
+    img: "/blog/new5.png",
     content:`<section class="max-w-4xl mx-auto px-6 py-20 text-[#1e1e1a]">
 
 

@@ -85,7 +85,7 @@ const About2 = () => {
         {/* ── Video - scale + border-radius reveal ── */}
         <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <video
-            src="https://res.cloudinary.com/degf7s9yn/video/upload/f_auto,q_auto/v1773893160/S_S_RECEPTION_TEASER_zsf5kg.mp4"
+            src="https://res.cloudinary.com/dttelbpwy/video/upload/v1774297145/HOB_mix_2_trleqi.mp4"
             loop autoPlay muted playsInline
             style={{
               width: '100%',
@@ -167,6 +167,8 @@ const About2 = () => {
             <h2
               className="about2-h2"
               style={{
+                              fontFamily: 'var(--font-editorial, serif)',
+
                 fontSize: 'clamp(24px, 4.5vw, 58px)',
                 fontWeight: 300,
                 color: '#fdf9dc',

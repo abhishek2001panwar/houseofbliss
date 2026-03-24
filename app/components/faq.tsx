@@ -127,14 +127,12 @@ function FAQRow({ faq, idx }: { faq: { question: string; answer: string }; idx: 
         </div>
 
         {/* Question */}
-        <div className="w-[45%] pr-12 text-left  text-[1.32rem] md:text-[1.6rem] text-[#000000] leading-snug">
+        <div className="w-[45%] font-serif pr-12 text-left  text-[1.32rem] md:text-[1.6rem] text-[#000000] leading-snug">
           {faq.question}
         </div>
 
         {/* Divider dot */}
-        <div className="flex-shrink-0 w-4 pt-2 flex items-start justify-center">
-          <span className="w-1 h-1 rounded-full bg-[#000000]/25 mt-2 group-hover:bg-[#000000]/60 transition-colors duration-300" />
-        </div>
+      
 
         {/* Answer */}
         <div className="flex-1 text-left font-neue-light text-[1rem] md:text-[1.05rem] text-[#000000]/65 leading-relaxed group-hover:text-[#000000]/85 transition-colors duration-300">

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
 import films, { Couple } from "@/lib/films";
@@ -11,7 +11,22 @@ import Link from "next/link";
 function FilmCard({ couple, index }: { couple: Couple; index: number }) {
   const router = useRouter();
   const [hovered, setHovered] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const thumb = couple.videos[0].src;
+
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el) return;
+
+    const seekAndPlay = () => {
+      el.currentTime = 6; // skip company watermark at start
+    };
+
+    el.addEventListener("loadedmetadata", seekAndPlay);
+    if (el.readyState >= 1) seekAndPlay();
+
+    return () => el.removeEventListener("loadedmetadata", seekAndPlay);
+  }, []);
 
   return (
     <div
@@ -23,13 +38,14 @@ function FilmCard({ couple, index }: { couple: Couple; index: number }) {
     >
       {/* ── media ── */}
       <div className="media-wrap">
-        {/* base video — always playing, no blur ever */}
         <video
+          ref={videoRef}
           src={thumb}
           muted
           autoPlay
           playsInline
           loop
+          preload="metadata"
           style={{
             position: "absolute",
             inset: 0,
@@ -41,7 +57,7 @@ function FilmCard({ couple, index }: { couple: Couple; index: number }) {
           }}
         />
 
-        {/* dark gradient overlay — deepens on hover */}
+        {/* dark gradient overlay */}
         <div
           style={{
             position: "absolute",
@@ -54,7 +70,7 @@ function FilmCard({ couple, index }: { couple: Couple; index: number }) {
           }}
         />
 
-        {/* hover CTA — slides up from bottom */}
+        {/* hover CTA */}
         <div
           style={{
             position: "absolute",
@@ -69,23 +85,6 @@ function FilmCard({ couple, index }: { couple: Couple; index: number }) {
             zIndex: 4,
           }}
         >
-          {/* couple name inside overlay */}
-          {/* <p
-            style={{
-              margin: "0 0 14px",
-              fontFamily: "var(--font-editorial, serif)",
-              fontWeight: 300,
-              fontStyle: "italic",
-              fontSize: "clamp(1rem, 1.6vw, 1.3rem)",
-              color: "rgba(255,255,255,0.72)",
-              letterSpacing: "-0.01em",
-              lineHeight: 1.2,
-            }}
-          >
-            {couple.title}
-          </p> */}
-
-          {/* View All Films button */}
           <div
             style={{
               display: "inline-flex",
@@ -112,7 +111,7 @@ function FilmCard({ couple, index }: { couple: Couple; index: number }) {
         </div>
       </div>
 
-      {/* ── text row below card ── */}
+      {/* ── text row ── */}
       <div className="card-text">
         <h3 className="card-name">{couple.title}</h3>
         <ArrowUpRight
@@ -158,7 +157,6 @@ export default function FilmsPage() {
         }
         @media (max-width: 768px) { .films-section { padding: 60px 20px 80px; } }
 
-        /* grid */
         .films-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
@@ -167,7 +165,6 @@ export default function FilmsPage() {
         @media (max-width: 900px) { .films-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 560px) { .films-grid { grid-template-columns: 1fr; gap: 0; background: none; } }
 
-        /* card */
         .film-card {
           display: flex; flex-direction: column;
           cursor: pointer;
@@ -180,7 +177,6 @@ export default function FilmsPage() {
           to   { opacity: 1; transform: translateY(0); }
         }
 
-        /* media */
         .media-wrap {
           position: relative;
           width: 100%;
@@ -189,7 +185,6 @@ export default function FilmsPage() {
           background: #111;
         }
 
-        /* text */
         .card-text {
           display: flex; align-items: flex-start;
           justify-content: space-between;
@@ -202,7 +197,6 @@ export default function FilmsPage() {
         }
         .card-rule { height: 1px; }
 
-        /* footer */
         .films-footer { display: flex; justify-content: center; margin-top: 72px; }
         .films-footer-btn {
           font-size: 9px; letter-spacing: 0.4em;

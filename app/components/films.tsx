@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { ArrowUpRight } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { Button } from "./button"
@@ -51,6 +51,23 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
   const [hovered, setHovered] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
   const router = useRouter()
+  
+
+
+
+   useEffect(() => {
+      const el = videoRef.current;
+      if (!el) return;
+  
+      const seekAndPlay = () => {
+        el.currentTime = 6; // skip company watermark at start
+      };
+  
+      el.addEventListener("loadedmetadata", seekAndPlay);
+      if (el.readyState >= 1) seekAndPlay();
+  
+      return () => el.removeEventListener("loadedmetadata", seekAndPlay);
+    }, []);
 
   return (
     <div
@@ -83,7 +100,10 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             {project.id}
           </span>
           <div>
-            <h3 className="text-lg md:text-xl font-light tracking-tight text-foreground mb-1.5">
+            <h3 style={{
+                            fontFamily: 'var(--font-editorial, serif)',
+
+            }} className="text-lg md:text-xl font-light tracking-tight text-foreground mb-1.5">
               {project.title}
             </h3>
             {/* <p className="text-[11px] tracking-[0.1em] uppercase text-muted-foreground">

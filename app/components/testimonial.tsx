@@ -2,8 +2,8 @@
 import React, { useRef } from 'react'
 
 const videos = [
-  "https://res.cloudinary.com/degf7s9yn/video/upload/v1773901456/testimonial2_afgwa4.mp4",
-  "https://res.cloudinary.com/degf7s9yn/video/upload/v1773901481/testimonial1_jsfz4e.mp4",
+  "https://res.cloudinary.com/dttelbpwy/video/upload/v1774296551/testimonial2_afgwa4_e9rbgb.mp4",
+  "https://res.cloudinary.com/dttelbpwy/video/upload/v1774296571/testimonial1_jsfz4e_bu7yl0.mp4",
 ];
 
 /* ─── VideoPlayer ─── */
@@ -48,7 +48,7 @@ function VideoPlayer({ src, index }: { src: string; index: number }) {
 const Testimonial: React.FC = () => {
   return (
     <section
-      className="w-full bg-[#F4F1E5] px-6 md:px-12 py-20 md:py-24"
+      className="w-full bg-[#F4F1E5] px-6 md:px-12 py-4 md:py-2"
     >
       {/* Header */}
       <div className="mb-16">

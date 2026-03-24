@@ -1,6 +1,6 @@
 "use client";
 
-import React, { use, useState } from "react";
+import React, { use, useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowUpRight, ChevronLeft } from "lucide-react";
 import films, { Video } from "@/lib/films";
@@ -9,6 +9,24 @@ import films, { Video } from "@/lib/films";
 function VideoCard({ video, index, coupleSlug }: { video: Video; index: number; coupleSlug: string }) {
   const router = useRouter();
   const [hovered, setHovered] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el) return;
+
+    const seekAndPlay = () => {
+      el.currentTime = 7; // skip company intro watermark
+    };
+
+    // loadedmetadata = duration known, seeking is possible
+    el.addEventListener("loadedmetadata", seekAndPlay);
+
+    // already ready (e.g. cached)
+    if (el.readyState >= 1) seekAndPlay();
+
+    return () => el.removeEventListener("loadedmetadata", seekAndPlay);
+  }, []);
 
   return (
     <div
@@ -21,12 +39,13 @@ function VideoCard({ video, index, coupleSlug }: { video: Video; index: number; 
       {/* media */}
       <div className="vcard-media">
         <video
+          ref={videoRef}
           src={video.src}
           muted
           autoPlay
           playsInline
           loop
-          preload="auto"
+          preload="metadata"
           style={{
             position: "absolute",
             inset: 0,
@@ -39,7 +58,7 @@ function VideoCard({ video, index, coupleSlug }: { video: Video; index: number; 
           }}
         />
 
-        {/* gradient deepens on hover */}
+        {/* gradient */}
         <div
           style={{
             position: "absolute",
@@ -52,13 +71,11 @@ function VideoCard({ video, index, coupleSlug }: { video: Video; index: number; 
           }}
         />
 
-        {/* bottom hover label — slides up */}
+        {/* hover watch label */}
         <div
           style={{
             position: "absolute",
-            bottom: 0,
-            left: 0,
-            right: 0,
+            bottom: 0, left: 0, right: 0,
             padding: "18px 18px 16px",
             opacity: hovered ? 1 : 0,
             transform: hovered ? "translateY(0)" : "translateY(8px)",
@@ -69,50 +86,28 @@ function VideoCard({ video, index, coupleSlug }: { video: Video; index: number; 
             justifyContent: "space-between",
           }}
         >
-          {/* <p
-            style={{
-              margin: 0,
-              fontFamily: "var(--font-editorial, serif)",
-              fontStyle: "italic",
-              fontWeight: 300,
-              fontSize: "clamp(0.9rem, 1.4vw, 1.15rem)",
-              color: "rgba(255,255,255,0.80)",
-              letterSpacing: "-0.01em",
-            }}
-          >
-            {video.category}
-          </p> */}
           <div
             style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 5,
-              fontSize: 12,
-              letterSpacing: "0.2em",
-              textTransform: "uppercase" as const,
+              display: "flex", alignItems: "center", gap: 5,
+              fontSize: 12, letterSpacing: "0.2em", textTransform: "uppercase" as const,
               color: "rgba(255,255,255,0.50)",
               border: "1px solid rgba(255,255,255,0.50)",
               padding: "8px 16px",
               backdropFilter: "blur(6px)",
             }}
           >
-            Watch
-            <ArrowUpRight size={10} />
+            Watch <ArrowUpRight size={10} />
           </div>
         </div>
 
-        {/* index */}
+        {/* index badge */}
         <span
           style={{
-            position: "absolute",
-            top: 13,
-            left: 15,
+            position: "absolute", top: 13, left: 15,
             fontFamily: "'DM Mono', monospace",
-            fontSize: 9,
-            letterSpacing: "0.2em",
+            fontSize: 9, letterSpacing: "0.2em",
             color: "rgba(255,255,255,0.28)",
-            userSelect: "none",
-            zIndex: 3,
+            userSelect: "none", zIndex: 3,
             opacity: hovered ? 0 : 1,
             transition: "opacity 0.3s ease",
           }}
@@ -122,19 +117,10 @@ function VideoCard({ video, index, coupleSlug }: { video: Video; index: number; 
       </div>
 
       {/* text row */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "15px 10px 15px",
-        }}
-      >
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "15px 10px" }}>
         <p
           style={{
-            margin: 0,
-            fontSize: 9,
-            letterSpacing: "0.24em",
+            margin: 0, fontSize: 9, letterSpacing: "0.24em",
             textTransform: "uppercase" as const,
             color: hovered ? "rgba(44,43,39,0.65)" : "rgba(44,43,39,0.40)",
             transition: "color 0.3s",
@@ -152,14 +138,6 @@ function VideoCard({ video, index, coupleSlug }: { video: Video; index: number; 
           }}
         />
       </div>
-
-      {/* <div
-        style={{
-          height: 1,
-          background: hovered ? "rgba(44,43,39,0.14)" : "rgba(44,43,39,0.07)",
-          transition: "background 0.4s",
-        }}
-      /> */}
     </div>
   );
 }
@@ -203,7 +181,7 @@ export default function CoupleFilmsPage({ params }: { params: Promise<{ coupleSl
 
         .back-btn {
           display: flex; align-items: center; gap: 6px;
-          color: #000000; background: none; border: none;
+          color: #000; background: none; border: none;
           cursor: pointer; font-family: 'DM Mono', monospace;
           font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
           padding: 0; transition: color 0.2s;
@@ -211,23 +189,21 @@ export default function CoupleFilmsPage({ params }: { params: Promise<{ coupleSl
         .back-btn:hover { color: var(--ink); }
 
         .couple-name {
+          font-family: var(--font-editorial, serif);
           font-size: clamp(1.4rem, 3vw, 2.4rem);
           font-weight: 300; font-style: italic;
           color: var(--ink); line-height: 1.1; margin: 0; text-align: right;
         }
 
         .videos-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 1px;
-          padding: 0 48px;
+          display: grid; grid-template-columns: repeat(2, 1fr);
+          gap: 1px; padding: 0 48px;
         }
-        @media (max-width: 768px) { .videos-grid { grid-template-columns: 1fr; padding: 0 20px; background: none; gap: 24px 0; } }
+        @media (max-width: 768px) { .videos-grid { grid-template-columns: 1fr; padding: 0 20px; gap: 24px 0; } }
 
         .vcard {
-          display: flex; flex-direction: column;
-          cursor: pointer; opacity: 0;
-          background: var(--cream);
+          display: flex; flex-direction: column; cursor: pointer;
+          opacity: 0; background: var(--cream);
           animation: fadeUp 0.6s ease forwards;
         }
         @keyframes fadeUp {
@@ -235,13 +211,8 @@ export default function CoupleFilmsPage({ params }: { params: Promise<{ coupleSl
           to   { opacity: 1; transform: translateY(0); }
         }
 
-        .vcard-media {
-          position: relative; width: 100%;
-          aspect-ratio: 16 / 9;
-          overflow: hidden; background: #111;
-        }
+        .vcard-media { position: relative; width: 100%; aspect-ratio: 16/9; overflow: hidden; background: #111; }
 
-        /* footer */
         .couple-footer { padding: 48px 48px 0; }
         @media (max-width: 640px) { .couple-footer { padding: 36px 20px 0; } }
         .footer-rule { height: 1px; background: linear-gradient(90deg, transparent, var(--ink-15), transparent); margin-bottom: 28px; }
@@ -259,13 +230,11 @@ export default function CoupleFilmsPage({ params }: { params: Promise<{ coupleSl
         .nav-pill:disabled { opacity: 0.18; cursor: not-allowed; pointer-events: none; }
 
         .nav-eyebrow { font-size: 7px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-35); margin-bottom: 2px; }
-        .nav-title { font-size: 14px; font-style: italic; font-weight: 300; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .nav-title { font-family: var(--font-editorial, serif); font-size: 14px; font-style: italic; font-weight: 300; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .footer-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--ink-15); flex-shrink: 0; }
       `}</style>
 
       <div className="couple-page">
-
-        {/* top bar */}
         <div className="top-bar">
           <button className="back-btn" onClick={() => router.push("/films")}>
             <ChevronLeft size={12} /> All Couples
@@ -273,14 +242,12 @@ export default function CoupleFilmsPage({ params }: { params: Promise<{ coupleSl
           <h1 className="couple-name">{couple.title}</h1>
         </div>
 
-        {/* grid */}
         <div className="videos-grid">
           {couple.videos.map((video, idx) => (
             <VideoCard key={video.slug} video={video} index={idx} coupleSlug={coupleSlug} />
           ))}
         </div>
 
-        {/* prev / next */}
         <div className="couple-footer">
           <div className="footer-rule" />
           <div className="footer-nav">
@@ -312,7 +279,6 @@ export default function CoupleFilmsPage({ params }: { params: Promise<{ coupleSl
             </button>
           </div>
         </div>
-
       </div>
     </>
   );

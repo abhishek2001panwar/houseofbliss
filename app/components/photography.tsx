@@ -5,7 +5,7 @@ import Image from "next/image";
 const cards = [
   {
     id: 1,
-    image: "/couple1/hero.png",
+    image: "/couple1/hero.webp",
     title: "Nithesh and Poojitha",
     desc: "A royal celebration of love in Udaipur.",
     date: "Oct 7, 2024",
@@ -49,7 +49,7 @@ const cards = [
  
   {
     id: 4,
-    image: "/couple4/hero.png",
+    image: "/couple4/heronew.jpg",
     title: "Ani & Neha",
     desc: "A vibrant beachside wedding full of joy.",
     date: "Apr 24, 2024",
@@ -132,8 +132,9 @@ export default function PhotographySection() {
             {/* Text below image */}
             <div className="flex flex-col gap-0.5 px-0.5">
               <span
-                className="font-editorial text-[#41453D] leading-tight group-hover:opacity-70 transition-opacity duration-200"
-                style={{ fontSize: 'clamp(0.85rem, 1.8vw, 1.1rem)', letterSpacing: '-0.01em' }}
+                className=" text-[#41453D] leading-tight group-hover:opacity-70 transition-opacity duration-200"
+                style={{ fontSize: 'clamp(0.85rem, 1.8vw, 1.1rem)', letterSpacing: '-0.01em',              fontFamily: 'var(--font-editorial, serif)',
+ }}
               >
                 {card.title}
               </span>
