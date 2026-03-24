@@ -51,12 +51,12 @@ const films: Couple[] = [
       },
       {
         slug: "nithesh-poojitha-6",
-        category: "Sangeet Highlights",
+        category: "Wedding Hightlights",
         src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774294967/Nitish_Poojitha_Wedding_Highlights_V.2_1_doo98u_tacse3.mp4",
       },
       {
         slug: "nithesh-poojitha-7",
-        category: "Wedding Hightlights",
+        category: "Sangeet Highlights",
         src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774294967/d1a6df1b-bd65-4f61-867f-0dfd841c1902_jngbyq_v8gbfn.mp4",
       },
     ],
@@ -69,12 +69,12 @@ const films: Couple[] = [
     videos: [
       {
         slug: "prakruthi-sudarshan-1",
-        category: "Film Teaser",
+        category: "Wedding Teaser",
         src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774295776/PRAKRUTHI_SUDARSHAN_2_1_tbzgwy_adwslh.webm",
       },
       {
         slug: "prakruthi-sudarshan-2",
-        category: "Film Teaser",
+        category: "wedding highlights",
         src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774295783/PRAKRUTHI_SUDARSHAN_3_1_1_1_tfim5k_amist3.webm",
       },
     ],
@@ -102,12 +102,12 @@ const films: Couple[] = [
       },
       {
         slug: "sameeksha-shravan-4",
-        category: "Film Teaser",
+        category: "Mehndi highlights",
         src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774295891/SAMEEKSHA_S_M_S_TEASER_ig5yr5_c2vmeb.webm",
       },
       {
         slug: "sameeksha-shravan-5",
-        category: "Save The Date",
+        category: "Pre-wedding Shoot",
         src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774295883/SAMEEKSHA_SHRAVAN_SAVE_THE_DATE_hssstd_qdeqyd.webm",
       },
       {
@@ -151,7 +151,7 @@ const films: Couple[] = [
       },
       {
         slug: "shraddha-neelgriv-3",
-        category: "Film Teaser",
+        category: "Wedding highlights",
         src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774296192/S_N_TEASER_1_tzeytd_ngxol6.webm",
       },
     ],
@@ -169,12 +169,12 @@ const films: Couple[] = [
       },
       {
         slug: "dheeraj-sakshi-2",
-        category: "Save The Date",
+        category: "Pre-Wedding highlights",
         src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774332589/S_D_SAVE_THE_DATE_REEL_-_sznuem_f9e5d2.webm",
       },
       {
         slug: "dheeraj-sakshi-3",
-        category: "Film Teaser",
+        category: "Wedding highlights",
         src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774332594/SHAKSHI_REEL_TEASER_1_pqclys_pvo5hf.webm",
       },
       {
@@ -184,7 +184,7 @@ const films: Couple[] = [
       },
         {
         slug: "dheeraj-sakshi-5",
-        category: "Haldi Sangeet Teaser",
+        category: "Haldi & Sangeet highlights",
         src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774332654/e3d818c8-7bad-41ab-b89b-7805f1bce796_vhxe5g_a7rtfp.mp4",
       },
         {
@@ -194,12 +194,12 @@ const films: Couple[] = [
       },
         {
         slug: "dheeraj-sakshi-7",
-        category: "Reception Teaser",
+        category: "Reception higlights",
         src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774332636/0659a570-24c3-4315-892d-ef840a45a29c_figclx_gm31o7.mp4",
       },
        {
         slug: "dheeraj-sakshi-8",
-        category: "Pre-Wedding Highlights",
+        category: "Mehndi Highlights",
         src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774332645/8c87b673-c68a-4fbf-8484-bd2ef54fcf2b_pfw6jh_xdheot.mp4",
       },
     ],
@@ -212,7 +212,7 @@ const films: Couple[] = [
     videos: [
       {
         slug: "nitin-rachana-1",
-        category: "Film Teaser",
+        category: "Wedding highlights",
         src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774332929/NITIN_RACHANA_SAVE_THE_DATE-_fcyfmo_yhbdrn.webm",
       },
       // {
@@ -230,22 +230,22 @@ const films: Couple[] = [
     videos: [
       {
         slug: "vidhya-pavan-1",
-        category: "Film Teaser",
+        category: "Haldi highlights",
         src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774333019/HALDI_TEASER_teaser_m4hqdx_rdcpx3.webm",
       },
       {
         slug: "vidhya-pavan-2",
-        category: "Film Teaser",
+        category: "Mehndi Highlights",
         src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774333025/MEHNDI_TEASER_yh0rg1_aawizy.webm",
       },
       {
         slug: "vidhya-pavan-3",
-        category: "Film Teaser",
+        category: "Wedding highlights",
         src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774333037/PAVAN_VIDYA_COMBINE_REEL_jll8rz_mrmvcg.webm",
       },
       {
         slug: "vidhya-pavan-4",
-        category: "Couple Singles",
+        category: "",
         src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774333105/Couple_Singles_V.2_1_nedf5n_fzue19.mp4",
       },
     ],

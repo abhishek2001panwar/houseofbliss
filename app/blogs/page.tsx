@@ -48,7 +48,7 @@ function BlogCard({ item }: { item: (typeof BLOGS)[0] }) {
           flexShrink: 0,
         }}
       >
-        <Image width={1200} height={1200} src={item.img}
+        <Image width={1200} height={1300} src={item.img}
           alt={item.title}
           style={{
             position: "absolute",
@@ -82,6 +82,7 @@ function BlogCard({ item }: { item: (typeof BLOGS)[0] }) {
             color: "#2C2B27",
             letterSpacing: "-0.01em",
             lineHeight: 1.25,
+            fontFamily: "var(--font-editorial, serif)",
           }}
         >
           {item.title}
@@ -172,6 +173,7 @@ export default function OurBlogs() {
                 margin: 0,
                 lineHeight: 1.0,
                 letterSpacing: "-0.025em",
+                fontFamily: "var(--font-editorial, serif)",
                 flexShrink: 0,
               }}
             >

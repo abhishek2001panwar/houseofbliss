@@ -11,22 +11,31 @@ function VideoCard({ video, index, coupleSlug }: { video: Video; index: number; 
   const [hovered, setHovered] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  useEffect(() => {
-    const el = videoRef.current;
-    if (!el) return;
+ useEffect(() => {
+  const el = videoRef.current;
+  if (!el) return;
 
-    const seekAndPlay = () => {
-      el.currentTime = 7; // skip company intro watermark
-    };
+  // Skip company watermark at start
+  const seekAndPlay = () => {
+    el.currentTime = 9;
+  };
 
-    // loadedmetadata = duration known, seeking is possible
-    el.addEventListener("loadedmetadata", seekAndPlay);
+  // Loop back to 6s before the last 9 seconds (skips end card too)
+  const handleTimeUpdate = () => {
+    if (el.duration && el.currentTime >= el.duration - 9) {
+      el.currentTime = 9;
+    }
+  };
 
-    // already ready (e.g. cached)
-    if (el.readyState >= 1) seekAndPlay();
+  el.addEventListener("loadedmetadata", seekAndPlay);
+  el.addEventListener("timeupdate", handleTimeUpdate);
+  if (el.readyState >= 1) seekAndPlay();
 
-    return () => el.removeEventListener("loadedmetadata", seekAndPlay);
-  }, []);
+  return () => {
+    el.removeEventListener("loadedmetadata", seekAndPlay);
+    el.removeEventListener("timeupdate", handleTimeUpdate);
+  };
+}, []);
 
   return (
     <div
@@ -44,7 +53,7 @@ function VideoCard({ video, index, coupleSlug }: { video: Video; index: number; 
           muted
           autoPlay
           playsInline
-          loop
+        
           preload="metadata"
           style={{
             position: "absolute",

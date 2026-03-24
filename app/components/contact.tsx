@@ -327,7 +327,7 @@ const Contact = () => {
 
               <Field label="Email address" name="email" type="email" value={form.email} onChange={handleChange} required />
               <Field label="Subject" name="subject" value={form.subject} onChange={handleChange} required />
-              <Field label="Tell us everything — or at least what's relevant." name="message" value={form.message} onChange={handleChange} required textarea />
+              <Field label="Tell us everything - or at least what's relevant." name="message" value={form.message} onChange={handleChange} required textarea />
 
               {/* Checkbox */}
               <label className="flex items-start gap-3 cursor-pointer group mt-1">

@@ -25,7 +25,7 @@ const middleImages = [
 ]
 
 // Row 2 landscape video (replaces TextCard at col 3)
-const middleVideo = "https://res.cloudinary.com/dttelbpwy/video/upload/f_auto,q_auto/v1774296194/S_N_WEDDING_TEASER_wee1jv_jjpjpm.webm"
+const middleVideo = "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774332593/D_S_WEDDING_TEASER_1_1_ipnrf7_fe2izr.webm"
 
 // Row 3 — unchanged
 const bottomImages = [
@@ -37,7 +37,7 @@ const bottomImages = [
 ]
 
 // ── Intersection hook ─────────────────────────────────────────────────────────
-function useReveal(threshold = 0.05) {
+function useReveal(threshold = 0.07) {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
   useEffect(() => {
@@ -86,6 +86,31 @@ function GridVideo({ src, delay = 0, stretch = false }: { src: string; delay?: n
   useEffect(() => {
     if (visible && videoRef.current) videoRef.current.play().catch(() => {})
   }, [visible])
+ useEffect(() => {
+  const el = videoRef.current;
+  if (!el) return;
+
+  // Skip company watermark at start
+  const seekAndPlay = () => {
+    el.currentTime = 9;
+  };
+
+  // Loop back to 6s before the last 6 seconds (skips end card too)
+  const handleTimeUpdate = () => {
+    if (el.duration && el.currentTime >= el.duration - 9) {
+      el.currentTime = 9;
+    }
+  };
+
+  el.addEventListener("loadedmetadata", seekAndPlay);
+  el.addEventListener("timeupdate", handleTimeUpdate);
+  if (el.readyState >= 1) seekAndPlay();
+
+  return () => {
+    el.removeEventListener("loadedmetadata", seekAndPlay);
+    el.removeEventListener("timeupdate", handleTimeUpdate);
+  };
+}, []);
 
   return (
     <div
@@ -103,7 +128,7 @@ function GridVideo({ src, delay = 0, stretch = false }: { src: string; delay?: n
         transition: `clip-path 0.9s cubic-bezier(0.76,0,0.24,1) ${delay}ms`,
         willChange: 'clip-path',
       }}>
-        <video ref={videoRef} src={src} muted loop playsInline preload="metadata" style={{
+        <video ref={videoRef} src={src} muted  playsInline preload="metadata" style={{
           width: '100%', height: '100%', objectFit: 'cover', display: 'block',
           transform: visible ? 'scale(1)' : 'scale(1.08)',
           transition: `transform 1.4s cubic-bezier(0.76,0,0.3,4) ${delay}ms`,

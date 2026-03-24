@@ -438,7 +438,7 @@ export default async function Page({ params }: PageProps) {
         <nav className="bp-nav">
           <Link href="/" className="bp-nav-logo"></Link>
           <div style={{ display: "flex", alignItems: "center", gap: "1.25rem" }}>
-            <Link href="/blogs" className="bp-nav-back">
+            <Link href="/blogs" className="bp-nav-back font-serif">
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
                 <path d="M6.5 1.5L2.5 5L6.5 8.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -452,7 +452,7 @@ export default async function Page({ params }: PageProps) {
           {/* ── LEFT: sticky title + image ── */}
           <aside className="bp-left am-in">
             <span className="bp-label am-title">Feature Article</span>
-            <h1 className="bp-title am-title">{blog.title}</h1>
+            <h1 className="bp-title am-title font-serif">{blog.title}</h1>
             <div className="bp-image-wrap am-body">
               <Image
                 src={blog.img}
@@ -482,7 +482,6 @@ export default async function Page({ params }: PageProps) {
             </div>
 
             <footer className="bp-footer">
-              <p className="bp-footer-label">Continue Reading</p>
 
               <div className="bp-nav-cards">
                 {prevBlog && (
@@ -494,7 +493,7 @@ export default async function Page({ params }: PageProps) {
                     </div>
                     <div className="bp-nc-body">
                       <div className="bp-nc-dir">Previous</div>
-                      <div className="bp-nc-title">{prevBlog.title}</div>
+                      <div className="bp-nc-title font-serif">{prevBlog.title}</div>
                     </div>
                   </Link>
                 )}
@@ -502,7 +501,7 @@ export default async function Page({ params }: PageProps) {
                   <Link href={`/blogs/${nextBlog.id}`} className="bp-nav-card bp-next">
                     <div className="bp-nc-body">
                       <div className="bp-nc-dir">Next</div>
-                      <div className="bp-nc-title">{nextBlog.title}</div>
+                      <div className="bp-nc-title font-serif">{nextBlog.title}</div>
                     </div>
                     <div className="bp-nc-icon">
                       <svg width="12" height="12" viewBox="0 0 12 12" fill="none">

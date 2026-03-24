@@ -193,7 +193,7 @@ const cards: WeddingCard[] = [
       "/couple7/img13.png",
       "/couple7/img14.png",
       "/couple7/img15.png",
-      "/couple7/img16.png",
+      
     ],
   },
 ];

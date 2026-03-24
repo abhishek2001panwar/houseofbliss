@@ -54,20 +54,31 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
   
 
 
+ useEffect(() => {
+  const el = videoRef.current;
+  if (!el) return;
 
-   useEffect(() => {
-      const el = videoRef.current;
-      if (!el) return;
-  
-      const seekAndPlay = () => {
-        el.currentTime = 6; // skip company watermark at start
-      };
-  
-      el.addEventListener("loadedmetadata", seekAndPlay);
-      if (el.readyState >= 1) seekAndPlay();
-  
-      return () => el.removeEventListener("loadedmetadata", seekAndPlay);
-    }, []);
+  // Skip company watermark at start
+  const seekAndPlay = () => {
+    el.currentTime = 9;
+  };
+
+  // Loop back to 6s before the last 6 seconds (skips end card too)
+  const handleTimeUpdate = () => {
+    if (el.duration && el.currentTime >= el.duration - 9) {
+      el.currentTime = 9;
+    }
+  };
+
+  el.addEventListener("loadedmetadata", seekAndPlay);
+  el.addEventListener("timeupdate", handleTimeUpdate);
+  if (el.readyState >= 1) seekAndPlay();
+
+  return () => {
+    el.removeEventListener("loadedmetadata", seekAndPlay);
+    el.removeEventListener("timeupdate", handleTimeUpdate);
+  };
+}, []);
 
   return (
     <div
@@ -88,17 +99,15 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       }`}
       muted
       playsInline
-      loop
+      
       autoPlay
       preload="metadata"
     />
   ) : null}
       </div>
-      <div className="p-6 md:p-8 flex items-start justify-between">
+      <div className="flex items-start justify-between pt-5 pb-5">
         <div className="flex items-start gap-4">
-          <span className="text-[11px] tracking-[0.15em] text-muted-foreground/50 mt-1.5 tabular-nums">
-            {project.id}
-          </span>
+         
           <div>
             <h3 style={{
                             fontFamily: 'var(--font-editorial, serif)',
@@ -132,7 +141,7 @@ export function ProjectsSection() {
 
 
   return (
-    <section id="services" className="px-6 py-28 md:px-12 lg:px-20 md:py-20 bg-[#F4F1E5]">
+    <section id="services" className="px-6 py-28 md:px-12 lg:px-20 md:py-10 bg-[#F4F1E5]">
       <div
       
         
@@ -147,12 +156,12 @@ export function ProjectsSection() {
         
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 bg-border">
         {projects.map((project, index) => (
           <ProjectCard key={project.title} project={project} index={index} />
         ))}
       </div>
-        <div className="flex justify-center mt-12">
+        <div className="flex justify-center mt-4">
              <Button onClick={()=> router.push('/films')} variant="outline" >
       Explore  More
       </Button>

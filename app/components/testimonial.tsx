@@ -51,7 +51,7 @@ const Testimonial: React.FC = () => {
       className="w-full bg-[#F4F1E5] px-6 md:px-12 py-4 md:py-2"
     >
       {/* Header */}
-      <div className="mb-16">
+      <div className="mb-3">
         <p className="text-[10px] md:text-[11px] uppercase tracking-[0.35em] text-black mb-3">
           What our clients say
         </p>
@@ -62,10 +62,10 @@ const Testimonial: React.FC = () => {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 280px))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 280px))',
           gap: '24px',
           justifyContent: 'center',
-          maxWidth: '800px',
+          maxWidth: '1000px',
           margin: '0 auto',
         }}
       >

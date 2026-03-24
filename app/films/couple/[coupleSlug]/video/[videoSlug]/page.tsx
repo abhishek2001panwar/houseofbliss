@@ -74,19 +74,31 @@ export default function VideoPlayerPage({
   const [ctrlVisible, setCtrlVisible] = useState(true);
   const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
- useEffect(() => {
-    const el = videoRef.current;
-    if (!el) return;
-
-    const seekAndPlay = () => {
-      el.currentTime = 6; // skip company watermark at start
-    };
-
-    el.addEventListener("loadedmetadata", seekAndPlay);
-    if (el.readyState >= 1) seekAndPlay();
-
-    return () => el.removeEventListener("loadedmetadata", seekAndPlay);
-  }, []);  
+  useEffect(() => {
+   const el = videoRef.current;
+   if (!el) return;
+ 
+   // Skip company watermark at start
+   const seekAndPlay = () => {
+     el.currentTime = 6;
+   };
+ 
+   // Loop back to 6s before the last 6 seconds (skips end card too)
+   const handleTimeUpdate = () => {
+     if (el.duration && el.currentTime >= el.duration - 6) {
+       el.currentTime = 6;
+     }
+   };
+ 
+   el.addEventListener("loadedmetadata", seekAndPlay);
+   el.addEventListener("timeupdate", handleTimeUpdate);
+   if (el.readyState >= 1) seekAndPlay();
+ 
+   return () => {
+     el.removeEventListener("loadedmetadata", seekAndPlay);
+     el.removeEventListener("timeupdate", handleTimeUpdate);
+   };
+ }, []); 
 
   const resetHide = useCallback(() => {
     if (hideTimer.current) clearTimeout(hideTimer.current);
@@ -411,19 +423,19 @@ export default function VideoPlayerPage({
 
         {/* video */}
         <div ref={wrapRef} className="vp-wrap" onClick={() => { setPlaying(p => !p); resetHide(); }}>
-          <video key={videoSlug} ref={videoRef} src={video.src} autoPlay playsInline loop className="vp-video" />
+          <video key={videoSlug} ref={videoRef} src={video.src} autoPlay playsInline  className="vp-video" />
           <div className="vp-vig-top" />
           <div className="vp-vig-bottom" />
 
           <div className={`vp-controls ${ctrlVisible ? "vp-on" : "vp-off"}`} onClick={e => e.stopPropagation()}>
-            <div className="vp-scrub" onClick={seekTo}>
+            {/* <div className="vp-scrub" onClick={seekTo}>
               <div className="vp-fill" style={{ width: `${progress}%` }} />
               <div className="vp-thumb" style={{ left: `${progress}%` }} />
-            </div>
+            </div> */}
             <div className="vp-row">
-              <div className="vp-time mono">
+              {/* <div className="vp-time mono">
                 {fmtTime(currentTime)}<span className="vp-sep">/</span>{fmtTime(duration)}
-              </div>
+              </div> */}
               <div className="vp-btns">
                 <button className="vp-btn" onClick={() => { setMuted(m => !m); resetHide(); }}>
                   {muted ? <MuteIcon /> : <UnmuteIcon />}

@@ -147,7 +147,7 @@ function FAQ() {
   const { ref: headingRef, inView: headingIn } = useInViewOnce(0.3);
 
   return (
-    <section className="w-full py-16 md:py-28 px-4 md:px-20 bg-[#F4F1E5] relative overflow-hidden">
+    <section className="w-full py-16 md:py-16 px-4 md:px-20 bg-[#F4F1E5] relative overflow-hidden">
 
       {/* Subtle background texture */}
       <div

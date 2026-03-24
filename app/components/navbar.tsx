@@ -561,7 +561,7 @@ function Navbar({ theme = "light", color }: NavbarProps) {
         <Link className="flex-shrink-0" href="/">
           <Image
             width={80}
-            height={24}
+            height={30}
             src={theme === "dark" ? "/darklogo.png" : "/logo.png"}
             alt="House of Bliss"
             priority
@@ -570,32 +570,32 @@ function Navbar({ theme = "light", color }: NavbarProps) {
         </Link>
 
         {/* ── RIGHT: all links + Instagram + Get in Touch (desktop) · MENU (mobile) ── */}
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-10">
           {/* Nav links — desktop only */}
           <Link
             href="/photography"
-            className="hidden md:inline font-neue-light text-[12px] capitalise tracking-[0.12em] hover:opacity-60 transition-opacity duration-200"
+            className="hidden md:inline font-serif text-[13px] capitalise tracking-[0.12em] hover:opacity-60 transition-opacity duration-200"
             style={{ color: ink }}
           >
             Photography
           </Link>
           <Link
             href="/films"
-            className="hidden md:inline font-neue-light text-[12px] capitalise tracking-[0.12em] hover:opacity-60 transition-opacity duration-200"
+            className="hidden md:inline font-serif text-[13px] capitalise tracking-[0.12em] hover:opacity-60 transition-opacity duration-200"
             style={{ color: ink }}
           >
             Films
           </Link>
           <Link
             href="/about"
-            className="hidden md:inline font-neue-light text-[12px] capitalise tracking-[0.12em] hover:opacity-60 transition-opacity duration-200"
+            className="hidden md:inline font-serif text-[13px] capitalise tracking-[0.12em] hover:opacity-60 transition-opacity duration-200"
             style={{ color: ink }}
           >
             About
           </Link>
           <Link
             href="/blogs"
-            className="hidden md:inline font-neue-light text-[12px] capitalise tracking-[0.12em] hover:opacity-60 transition-opacity duration-200"
+            className="hidden md:inline font-serif text-[13px] capitalise tracking-[0.12em] hover:opacity-60 transition-opacity duration-200"
             style={{ color: ink }}
           >
             Blogs

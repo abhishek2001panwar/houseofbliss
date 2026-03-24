@@ -14,19 +14,31 @@ function FilmCard({ couple, index }: { couple: Couple; index: number }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const thumb = couple.videos[0].src;
 
-  useEffect(() => {
-    const el = videoRef.current;
-    if (!el) return;
+ useEffect(() => {
+  const el = videoRef.current;
+  if (!el) return;
 
-    const seekAndPlay = () => {
-      el.currentTime = 6; // skip company watermark at start
-    };
+  // Skip company watermark at start
+  const seekAndPlay = () => {
+    el.currentTime = 9;
+  };
 
-    el.addEventListener("loadedmetadata", seekAndPlay);
-    if (el.readyState >= 1) seekAndPlay();
+  // Loop back to 6s before the last 6 seconds (skips end card too)
+  const handleTimeUpdate = () => {
+    if (el.duration && el.currentTime >= el.duration - 9) {
+      el.currentTime = 9;
+    }
+  };
 
-    return () => el.removeEventListener("loadedmetadata", seekAndPlay);
-  }, []);
+  el.addEventListener("loadedmetadata", seekAndPlay);
+  el.addEventListener("timeupdate", handleTimeUpdate);
+  if (el.readyState >= 1) seekAndPlay();
+
+  return () => {
+    el.removeEventListener("loadedmetadata", seekAndPlay);
+    el.removeEventListener("timeupdate", handleTimeUpdate);
+  };
+}, []);
 
   return (
     <div
@@ -44,7 +56,7 @@ function FilmCard({ couple, index }: { couple: Couple; index: number }) {
           muted
           autoPlay
           playsInline
-          loop
+         
           preload="metadata"
           style={{
             position: "absolute",
@@ -113,7 +125,7 @@ function FilmCard({ couple, index }: { couple: Couple; index: number }) {
 
       {/* ── text row ── */}
       <div className="card-text">
-        <h3 className="card-name">{couple.title}</h3>
+        <h3 className="card-name font-serif">{couple.title}</h3>
         <ArrowUpRight
           size={14}
           style={{
@@ -160,7 +172,7 @@ export default function FilmsPage() {
         .films-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 1px;
+          gap: 4px;
         }
         @media (max-width: 900px) { .films-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 560px) { .films-grid { grid-template-columns: 1fr; gap: 0; background: none; } }
@@ -171,6 +183,7 @@ export default function FilmsPage() {
           opacity: 0;
           background: var(--cream);
           animation: fadeUp 0.65s ease forwards;
+          border-radius: 4px;
         }
         @keyframes fadeUp {
           from { opacity: 0; transform: translateY(16px); }

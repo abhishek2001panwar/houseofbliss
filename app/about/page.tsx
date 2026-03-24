@@ -438,7 +438,7 @@ export default function AboutPage() {
             CLOSING — two columns
         ══════════════════════════════════════════════════════════════ */}
         <section className="section-p" style={{ padding: "98px 4%" }}>
-          <div className="grid-closing" style={{ gap: "0 48px" }}>
+          <div className="grid-closing" style={{ gap: "0 20px" }}>
 
             {/* Left */}
             <Reveal>
@@ -454,7 +454,7 @@ export default function AboutPage() {
                 </div>
                 {/* ── FIXED: explicit height 400px matching the right column image ── */}
                 <div style={{ height: 430 }}>
-                  <ParallaxImg src="/landabout.png" alt="wedding" height={400} speed={0.01} />
+                  <video autoPlay muted loop src="https://res.cloudinary.com/dxcoo0eza/video/upload/v1774333105/Couple_Singles_V.2_1_nedf5n_fzue19.mp4" height={400} />
                 </div>
               </div>
             </Reveal>

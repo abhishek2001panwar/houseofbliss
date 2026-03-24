@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 
 const NAV_LINKS = [
@@ -56,11 +57,11 @@ export default function Footer() {
 
         .footer-nav-link {
           position: relative;
-          color: var(--muted);
+          color: #000000;
           font-family: 'Jost', sans-serif;
           font-size: 0.72rem;
           letter-spacing: 0.22em;
-          text-transform: uppercase;
+          text-transform: capitalize;
           text-decoration: none;
           transition: color 0.3s ease;
         }
@@ -100,6 +101,8 @@ export default function Footer() {
           letter-spacing: 0.03em;
           position: relative;
           transition: color 0.3s ease;
+                    font-family: 'Jost', sans-serif;
+
         }
         .footer-email::after {
           content: '';
@@ -141,6 +144,8 @@ export default function Footer() {
           color: #b09a7e;
         }
         .footer-address {
+                  font-family: 'Jost', sans-serif;
+
           font-size: 1.05rem;
           color: #3d3328;
           line-height: 1.8;
@@ -160,7 +165,7 @@ export default function Footer() {
               <circle cx="16" cy="16" r="3" fill="#c8a96e" opacity="0.6"/>
             </svg>
             <p className="footer-quote max-w-xl">
-              "A home is not just a place — it is a feeling, a story, a state of bliss."
+              "A home is not just Link place — it is Link feeling, Link story, Link state of bliss."
             </p>
             <div className="flex items-center gap-3 mt-1">
               <div className="h-px w-12 bg-[#c8a96e] opacity-50" />
@@ -170,7 +175,7 @@ export default function Footer() {
           </div> */}
 
           {/* ── MAIN 3-COL ── */}
-          <div className="flex flex-col md:flex-row items-start md:items-stretch gap-12 md:gap-0">
+          <div className="flex flex-col md:flex-row items-start md:items-stretch gap-10 md:gap-0">
 
             {/* LEFT */}
             <div className="footer-section flex-1 flex flex-col items-start gap-6 pr-0 md:pr-12">
@@ -183,13 +188,13 @@ export default function Footer() {
               />
              
               <div className="flex gap-3">
-                <a href="https://www.instagram.com/houseofbliss.in" target="_blank" rel="noopener" aria-label="Instagram" className="footer-social">
+                <Link href="https://www.instagram.com/houseofbliss.in" target="_blank" rel="noopener" aria-label="Instagram" className="footer-social">
                   <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.4" viewBox="0 0 24 24">
                     <rect x="3" y="3" width="18" height="18" rx="5"/>
                     <circle cx="12" cy="12" r="4"/>
                     <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
                   </svg>
-                </a>
+                </Link>
                
               </div>
             </div>
@@ -201,9 +206,9 @@ export default function Footer() {
               <span className="footer-label">Links</span>
               <nav className="flex flex-col gap-3.5 items-start md:items-center">
                 {NAV_LINKS.map((link) => (
-                  <a key={link.label} href={link.href} className="footer-nav-link">
+                  <Link key={link.label} href={link.href} className="footer-nav-link lowercase">
                     {link.label}
-                  </a>
+                  </Link>
                 ))}
               </nav>
             </div>
@@ -214,22 +219,22 @@ export default function Footer() {
             <div className="footer-section flex-1 flex flex-col items-start md:items-end gap-7 pl-0 md:pl-12">
               <div className="flex flex-col items-start md:items-end gap-2">
                 <span className="footer-label">Find Us</span>
-                <address className="footer-address not-italic mt-1" style={{ textAlign: "inherit" }}>
+                <address className="footer-address font-serif not-italic mt-1" style={{ textAlign: "inherit" }}>
                   Bengaluru , Karnataka-560038
                 </address>
               </div>
               <div className="flex flex-col items-start md:items-end gap-2">
                 <span className="footer-label">Write to Us</span>
-                <a href="mailto:info@houseofbliss.co.in" className="footer-email mt-1">
+                <Link href="mailto:info@houseofbliss.co.in" className="footer-email mt-1 font-serif">
                   info@houseofbliss.co.in
-                </a>
+                </Link>
               </div>
             </div>
 
           </div>
 
           {/* ── BOTTOM BAR ── */}
-          <div className="mt-14 pt-6 border-t border-[#ddd3be] flex flex-col md:flex-row items-center justify-between gap-3">
+          <div className="mt-5 pt-6 border-t border-[#ddd3be] flex flex-col md:flex-row items-center justify-between gap-3">
             <p className="footer-label" style={{ letterSpacing: "0.18em" }}>
               © {new Date().getFullYear()} House of Bliss. All rights reserved.
             </p>
