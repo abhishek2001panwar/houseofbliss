@@ -14,7 +14,7 @@ const cards: WeddingCard[] = [
   {
     id: 1,
     image: "/couple1/hero.webp",
-    title: "Nithesh and Poojitha",
+    title: "Nithesh & Poojitha",
     desc: "A royal celebration of love in Udaipur.",
     date: "Oct 7, 2024",
     location: "Udaipur",
@@ -141,7 +141,7 @@ const cards: WeddingCard[] = [
   {
     id: 6,
     image: "/couple6/hero.png",
-    title: "Shraddha and Neelgriv",
+    title: "Shraddha & Neelgriv",
     desc: "A cross-cultural celebration in Goa.",
     date: "Jun 18, 2024",
     location: "Goa",
@@ -171,7 +171,7 @@ const cards: WeddingCard[] = [
   {
     id: 7,
     image: "/couple7/img1.png",
-    title: "Dheeraj and Sakshi",
+    title: "Dheeraj & Sakshi",
     desc: "A classic Indian wedding with modern flair.",
     date: "May 5, 2024",
     location: "Delhi",

@@ -58,7 +58,7 @@ export default function Footer() {
         .footer-nav-link {
           position: relative;
           color: #000000;
-          font-family: 'Jost', sans-serif;
+          font-family: 'Jost';
           font-size: 0.72rem;
           letter-spacing: 0.22em;
           text-transform: capitalize;
@@ -144,7 +144,6 @@ export default function Footer() {
           color: #b09a7e;
         }
         .footer-address {
-                  font-family: 'Jost', sans-serif;
 
           font-size: 1.05rem;
           color: #3d3328;
@@ -219,13 +218,13 @@ export default function Footer() {
             <div className="footer-section flex-1 flex flex-col items-start md:items-end gap-7 pl-0 md:pl-12">
               <div className="flex flex-col items-start md:items-end gap-2">
                 <span className="footer-label">Find Us</span>
-                <address className="footer-address font-serif not-italic mt-1" style={{ textAlign: "inherit" }}>
+                <address className="footer-address not-italic mt-1" style={{ textAlign: "inherit" ,  fontFamily: "Jost" }}>
                   Bengaluru , Karnataka-560038
                 </address>
               </div>
               <div className="flex flex-col items-start md:items-end gap-2">
                 <span className="footer-label">Write to Us</span>
-                <Link href="mailto:info@houseofbliss.co.in" className="footer-email mt-1 font-serif">
+                <Link style={{ fontFamily: "Jost"}} href="mailto:info@houseofbliss.co.in" className="footer-email mt-1 ">
                   info@houseofbliss.co.in
                 </Link>
               </div>
