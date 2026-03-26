@@ -219,7 +219,7 @@ export default function Footer() {
               <div className="flex flex-col items-start md:items-end gap-2">
                 <span className="footer-label">Find Us</span>
                 <address className="footer-address not-italic mt-1" style={{ textAlign: "inherit" ,  fontFamily: "Jost" }}>
-                  Bengaluru , Karnataka-560038
+                  Bengaluru, Karnataka
                 </address>
               </div>
               <div className="flex flex-col items-start md:items-end gap-2">

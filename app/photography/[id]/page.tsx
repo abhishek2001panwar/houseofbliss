@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import Link from "next/link";
@@ -24,24 +24,6 @@ export default function PhotographyDetailPage() {
   const currentIdx = cards.findIndex((c) => c.id === Number(id));
   const prevCard = currentIdx > 0 ? cards[currentIdx - 1] : null;
   const nextCard = currentIdx < cards.length - 1 ? cards[currentIdx + 1] : null;
-
-  // Parallax for first gallery image (hero)
-  const imgRef = useRef<HTMLDivElement>(null);
-  const [offset, setOffset] = useState(0);
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!imgRef.current) return;
-      const rect = imgRef.current.getBoundingClientRect();
-      const windowH = window.innerHeight;
-      if (rect.top < windowH && rect.bottom > 0) {
-        const percent = (windowH / 2 - (rect.top + rect.height / 2)) / windowH;
-        setOffset(percent * 40);
-      }
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Hero image is first in the gallery grid
   const allGalleryImages = [card.image, ...gridImages];
@@ -102,19 +84,20 @@ export default function PhotographyDetailPage() {
 
         {/* ── Header card — white bg, TEXT ONLY, perfectly centered ── */}
         <div
-          className="max-w-sm w-full bg-white  shadow-xl flex flex-col items-center justify-center px-6 sm:px-10"
-          style={{ minHeight: "clamp(170px, 50vw, 600px)", paddingTop: "clamp(3rem, 8vw, 6rem)", paddingBottom: "clamp(3rem, 8vw, 6rem)" }}
+          className="max-w-md w-full bg-white  shadow-xl flex flex-col items-center justify-center px-6 sm:px-10"
+          style={{ minHeight: "clamp(140px, 40vw, 600px)", paddingTop: "clamp(3rem, 8vw, 6rem)", paddingBottom: "clamp(3rem, 8vw, 6rem)" }}
         >
           {/* Couple name */}
           <div className="text-center" style={{ lineHeight: 1.05 }}>
             {titleParts.map((line, idx) => (
               <h1
                 key={idx}
-                className={`font-serif block text-[#0e0e0e] ${idx === 0 ? "name-line-1" : "name-line-2"}`}
+                className={`font-serif  block text-[#0e0e0e] ${idx === 0 ? "name-line-1" : "name-line-2"}`}
                 style={{
-                  fontSize: "clamp(1.8rem, 6vw, 3.4rem)",
+                  fontSize: "clamp(1.4rem, 4vw, 3.2rem)",
                   fontWeight: 500,
                   letterSpacing: "-0.01em",
+                  textTransform: "uppercase",
                 }}
               >
                 {line}
@@ -132,7 +115,6 @@ export default function PhotographyDetailPage() {
               row.kind === "pair" ? (
                 <React.Fragment key={ri}>
                   <div
-                    ref={ri === 0 ? imgRef : undefined}
                     className="gallery-item overflow-hidden w-full"
                     style={{ aspectRatio: "3/4" }}
                   >
@@ -141,7 +123,6 @@ export default function PhotographyDetailPage() {
                       src={row.a}
                       alt={`Gallery ${ri}a`}
                       className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                      style={ri === 0 ? { transform: `translateY(${offset}px)`, transition: "transform 0.3s cubic-bezier(.4,1,.7,1)" } : {}}
                     />
                   </div>
                   <div className="gallery-item overflow-hidden w-full" style={{ aspectRatio: "3/4" }}>
@@ -156,7 +137,6 @@ export default function PhotographyDetailPage() {
               ) : (
                 <div
                   key={ri}
-                  ref={ri === 0 ? imgRef : undefined}
                   className="gallery-item col-span-2 overflow-hidden w-full"
                   style={{ aspectRatio: "3/4" }}
                 >
@@ -165,7 +145,6 @@ export default function PhotographyDetailPage() {
                     src={row.src}
                     alt={`Gallery ${ri}`}
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                    style={ri === 0 ? { transform: `translateY(${offset}px)`, transition: "transform 0.3s cubic-bezier(.4,1,.7,1)" } : {}}
                   />
                 </div>
               )

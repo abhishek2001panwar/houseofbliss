@@ -47,21 +47,40 @@ const films: Couple[] = [
       {
         slug: "nithesh-poojitha-5",
         category: "Reception Highlights",
-        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774294946/Nitish_Poojitha_Reception_Highlights_V.2_2_zqpo0z_bmkhya.mp4",
+        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774506361/Nitish_Poojitha_Reception_Highlights_V.2_1_ljccwk.mp4",
       },
       {
         slug: "nithesh-poojitha-6",
         category: "Wedding Hightlights",
-        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774294967/Nitish_Poojitha_Wedding_Highlights_V.2_1_doo98u_tacse3.mp4",
+        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774506355/Nitish_Poojitha_Wedding_Highlights_V_1_gknrsq.mp4",
       },
       {
         slug: "nithesh-poojitha-7",
         category: "Sangeet Highlights",
-        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774294967/d1a6df1b-bd65-4f61-867f-0dfd841c1902_jngbyq_v8gbfn.mp4",
+        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774506356/Nitish_Poojitha_Sangeet_Highlights_V.2_1_ebuwn1.mp4",
       },
     ],
   },
-  {
+ 
+
+    {
+    coupleSlug: "khajukathara-preetham",
+    title: "Khajukathara & Preetham",
+    location: "Mumbai",
+      year: "2024",
+     videos: [
+      {
+        slug: "khajukathara-preetham-1",
+        category: "wedding highlights",
+        src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774496820/K_P_RECEPTION_TEASER_oqig1z.mov",
+      },
+     
+
+    ],
+   
+  },
+
+   {
     coupleSlug: "prakruthi-sudarshan",
     title: "Prakruthi & Sudarshan",
     year: "2023",

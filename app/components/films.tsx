@@ -24,8 +24,29 @@ export const projects = [
     location: "Everything Under One Roof",
     image: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773890770/S_N_TEASER_t3melm.mp4",
   },
-  {
+    {
     id: " 03",
+      coupleSlug: "khajukathara-preetham",
+    image: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774496820/K_P_RECEPTION_TEASER_oqig1z.mov",
+    title: "Khajukathara & Preetham",
+    desc: "Bollywood glamour meets tradition in Mumbai.",
+    date: "Aug 8, 2024",
+    location: "Mumbai",
+    index: "03",
+   
+  },
+    {
+    id: " 04",
+    coupleSlug: "prakruthi-sudarshan",
+    title: "Prakruthi & Sudarshan",
+    year: "2023",
+    location: "Mysore",
+    category: "We don't just capture moments, we craft cinematic love stories.  Our films are more than videos; they're emotional journeys that let you relive the magic of your wedding day, over and over again.  With a blend of artistry and storytelling, we create films that are as unique as your love story, ensuring every glance, every smile, and every tear is beautifully preserved for a lifetime.",
+    image:"https://res.cloudinary.com/dttelbpwy/video/upload/v1774295776/PRAKRUTHI_SUDARSHAN_2_1_tbzgwy_adwslh.webm",
+  },
+
+  {
+    id: " 05",
     coupleSlug: "dheeraj-sakshi",
     title: " Dheeraj and Sakshi",
 category: `Your vision becomes our mission. 
@@ -43,6 +64,8 @@ What we love creating together:
     location: "When Your Dreams Breathe",
     image: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773894618/D_S_WEDDING_TEASER_1_1_ipnrf7.mp4",
   },
+
+  
 
  
 ]

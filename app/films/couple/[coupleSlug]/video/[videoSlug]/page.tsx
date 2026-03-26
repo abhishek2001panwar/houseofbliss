@@ -80,13 +80,13 @@ export default function VideoPlayerPage({
  
    // Skip company watermark at start
    const seekAndPlay = () => {
-     el.currentTime = 6;
+     el.currentTime = 10;
    };
  
-   // Loop back to 6s before the last 6 seconds (skips end card too)
+   // Loop back to 6s before the last 10 seconds (skips end card too)
    const handleTimeUpdate = () => {
-     if (el.duration && el.currentTime >= el.duration - 6) {
-       el.currentTime = 6;
+     if (el.duration && el.currentTime >= el.duration - 10) {
+       el.currentTime = 10;
      }
    };
  

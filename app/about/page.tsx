@@ -69,7 +69,7 @@ function ParallaxImg({ src, alt, height, speed = 0.055 }: {
     <div ref={ref} style={{ position: "relative", overflow: "hidden", height, width: "100%" }}>
       <Image width={1200} height={1200} src={src} alt={alt} style={{
         position: "absolute", top: "-12%", left: 0,
-        width: "100%", height: "124%", objectFit: "cover",
+        width: "100%", height: "124%", objectFit: "contain",
         transform: `translateY(${ty}px)`, willChange: "transform",
       }} />
     </div>
@@ -136,7 +136,6 @@ const trustPoints = [
   { title: "Friendly, professional crew", desc: "Our crew feels like family by the end of the day - warm, low-key, always in the right place." },
   { title: "Seamless coordination",       desc: "We work hand-in-hand with your planners and venues so nothing is ever missed." },
   { title: "Quick, meticulous delivery",  desc: "Fast turnaround without cutting corners - your galleries are edited with obsessive attention to detail." },
-  { title: "Packages for every vision",   desc: "From minimal to majestic, we have a package perfectly tailored to your needs and budget." },
 ];
 
 // ── Page ──────────────────────────────────────────────────────────────────────
@@ -318,16 +317,13 @@ export default function AboutPage() {
                   text="House of Bliss is a community of photographers, filmmakers, editors, and dreamers who understand that weddings are so much more than just events - they are love stories ready to be told." />
                 <AnimatedWords dark baseDelay={100}
                   style={{ fontSize: 16, color: "rgba(253,246,227,0.62)" }}
-                  text=" We launched with a mission to shape wedding photography, and since then we have documented hundreds of weddings throughout Bangalore and far beyond." />
+                  text=" We launched with a mission to shape wedding photography, and since then we have documented hundreds of weddings throughout  and far beyond." />
                 <AnimatedWords dark baseDelay={180}
                   style={{ fontSize: 16, color: "rgba(253,246,227,0.62)" }}
                   text="From a quiet glance across the mandap to a euphoric dance floor moment - we capture it all, honestly, beautifully, and meaningfully." />
               </div>
 
-              {/* Image inset */}
-              <Reveal delay={100}>
-                <ParallaxImg src="/about/about2.png" alt="team at work" height={320} speed={0.05} />
-              </Reveal>
+           
             </div>
 
           </div>
@@ -340,8 +336,8 @@ export default function AboutPage() {
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 48, flexWrap: "wrap", gap: 20 }}>
             <Reveal>
               <Eyebrow>What we offer</Eyebrow>
-              <h2 className="serif" style={{ fontWeight: 400, fontSize: "clamp(24px, 2.8vw, 40px)", color: "var(--ink)", margin: 0, letterSpacing: "-0.025em", lineHeight: 1.1, maxWidth: 420 }}>
-                Every Chapter of Your Day, Beautifully Told
+              <h2 className="serif" style={{ fontWeight: 400, fontSize: "clamp(24px, 3vw, 40px)", color: "var(--ink)", margin: 0, letterSpacing: "-0.025em", lineHeight: 1.1, maxWidth: 500 }}>
+                Every Chapter of Your Day,  Beautifully Told
               </h2>
             </Reveal>
             <Reveal delay={80}>
@@ -359,11 +355,7 @@ export default function AboutPage() {
                     <span style={{ fontSize: 9, letterSpacing: "0.38em", color: "var(--ink-35)", fontFamily: "var(--font-neue-light,sans-serif)" }}>
                       {o.num}
                     </span>
-                    <div style={{ width: 20, height: 20, borderRadius: "50%", border: "1px solid var(--ink-10)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                      <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-                        <path d="M1 4h6M4 1l3 3-3 3" stroke="rgba(30,30,26,0.25)" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </div>
+                   
                   </div>
                   <div style={{ width: "100%", height: 1, background: "var(--ink-10)" }} />
                   <h3 className="serif" style={{ fontSize: "clamp(15px, 1.4vw, 17px)", fontWeight: 400, color: "var(--ink)", margin: 0, lineHeight: 1.3, letterSpacing: "-0.01em" }}>
@@ -385,7 +377,7 @@ export default function AboutPage() {
           {/* Top heading row */}
           <div className="grid-2" style={{ alignItems: "end", marginBottom: 64, gap: "0 80px" }}>
             <Reveal>
-              <Eyebrow light>Why Bangalore trusts us</Eyebrow>
+              <Eyebrow light>Why  trusts us</Eyebrow>
               <h2 className="serif" style={{ fontWeight: 400, fontSize: "clamp(28px, 3.5vw, 52px)", color: "#fdf6e3", margin: 0, letterSpacing: "-0.03em", lineHeight: 1.05 }}>
                 The City's Most<br /><em>Trusted Wedding<br />Photographers</em>
               </h2>
@@ -394,10 +386,10 @@ export default function AboutPage() {
               <div style={{ paddingBottom: 4 }}>
                 <AnimatedWords dark baseDelay={0}
                   style={{ fontSize: 15.5, color: "rgba(253,246,227,0.58)", marginBottom: 20 }}
-                  text="House of Bliss has become a name synonymous with quality, emotion, and creativity in the Bangalore wedding scene." />
+                  text="House of Bliss has become a name synonymous with quality, emotion, and creativity in the  wedding scene." />
                 <AnimatedWords dark baseDelay={120}
                   style={{ fontSize: 15.5, color: "rgba(253,246,227,0.58)" }}
-                  text="Our local experience combined with global aesthetics helps us deliver photography that carries both style and soul." />
+                  text="Our  experience combined with global aesthetics helps us deliver photography that carries both style and soul." />
               </div>
             </Reveal>
           </div>
@@ -428,7 +420,7 @@ export default function AboutPage() {
           <Reveal delay={400}>
             <div style={{ marginTop: 56, textAlign: "center" }}>
               <p className="serif" style={{ fontSize: "clamp(18px, 2.2vw, 26px)", color: "rgba(253,246,227,0.8)", margin: "0 auto 12px", lineHeight: 1.5, fontStyle: "italic", maxWidth: 600 }}>
-                "We understand Bangalore weddings - and we pour our hearts into every single one."
+                "We understand  weddings and we pour our hearts into every single one."
               </p>
             </div>
           </Reveal>
@@ -437,54 +429,65 @@ export default function AboutPage() {
         {/* ══════════════════════════════════════════════════════════════
             CLOSING — two columns
         ══════════════════════════════════════════════════════════════ */}
-        <section className="section-p" style={{ padding: "98px 4%" }}>
-          <div className="grid-closing" style={{ gap: "0 20px" }}>
+        {/* ══════════════════════════════════════════════════════════════
+    CLOSING — text row + two videos below
+══════════════════════════════════════════════════════════════ */}
+<section className="section-p" style={{ padding: "98px 4%" }}>
 
-            {/* Left */}
-            <Reveal>
-              <div style={{ display: "flex", flexDirection: "column", gap: 28, height: "100%" }}>
-                <div>
-                  <Eyebrow>Forever yours</Eyebrow>
-                  <h2 className="serif" style={{ fontWeight: 400, fontSize: "clamp(24px, 2.8vw, 40px)", color: "var(--ink)", margin: "0 0 20px", letterSpacing: "-0.025em", lineHeight: 1.1 }}>
-                    Your Love Story,<br /><em>Immortalized</em>
-                  </h2>
-                  <p style={{ fontSize: 15.5, lineHeight: 1.9, color: "var(--ink-60)", margin: 0 }}>
-                    At House of Bliss, our goal is simple: to create imagery that makes your heart skip a beat, even decades from now. Because your love deserves more than pictures - it deserves a legacy.
-                  </p>
-                </div>
-                {/* ── FIXED: explicit height 400px matching the right column image ── */}
-                <div style={{ height: 430 }}>
-                  <video autoPlay muted loop src="https://res.cloudinary.com/dxcoo0eza/video/upload/v1774333105/Couple_Singles_V.2_1_nedf5n_fzue19.mp4" height={400} />
-                </div>
-              </div>
-            </Reveal>
+  {/* Top text row — two columns */}
+  <div className="grid-closing" style={{ gap: "0 10px", marginBottom: 20 }}>
 
-            {/* Right */}
-            <Reveal delay={100}>
-              <div style={{ display: "flex", flexDirection: "column", gap: 20, height: "100%" }}>
-                <div style={{
-                  background: "var(--dark)", padding: "28px 30px",
-                  border: "1px solid rgba(30,30,26,0.12)",
-                }}>
-                  <p className="serif" style={{ fontSize: "clamp(14px, 1.4vw, 17px)", color: "#fdf6e3", margin: "0 0 14px", lineHeight: 1.65, fontStyle: "italic" }}>
-                    "We don't stage; we observe. We don't direct; we follow your rhythm."
-                  </p>
-                  <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                    <div style={{ width: 16, height: 1, background: "var(--gold)" }} />
-                    <span style={{ fontSize: 9, letterSpacing: "0.38em", textTransform: "uppercase", color: "rgba(253,246,227,0.35)" }}>
-                      House of Bliss
-                    </span>
-                  </div>
-                </div>
-                {/* ── FIXED: explicit height 400px matching the left column image ── */}
-                <div style={{ height: 400 }}>
-                  <ParallaxImg src="/landabout2.png" alt="couple" height={400} speed={0.06} />
-                </div>
-              </div>
-            </Reveal>
+    {/* Left */}
+    <Reveal>
+      <div>
+        <Eyebrow>Forever yours</Eyebrow>
+        <h2 className="serif" style={{ fontWeight: 400, fontSize: "clamp(24px, 2.8vw, 40px)", color: "var(--ink)", margin: "0 0 20px", letterSpacing: "-0.025em", lineHeight: 1.1 }}>
+          Your Love Story,<br /><em>Immortalized</em>
+        </h2>
+        <p style={{ fontSize: 15.5, lineHeight: 1.9, color: "var(--ink-60)", margin: 0 }}>
+          At House of Bliss, our goal is simple: to create imagery that makes your heart skip a beat, even decades from now. Because your love deserves more than pictures - it deserves a legacy.
+        </p>
+      </div>
+    </Reveal>
 
-          </div>
-        </section>
+    {/* Right — quote block */}
+    {/* <Reveal delay={100}>
+      <div style={{
+        background: "var(--dark)", padding: "28px 30px",
+        border: "1px solid rgba(30,30,26,0.12)", height: "100%",
+        display: "flex", flexDirection: "column", justifyContent: "center",
+      }}>
+        <p className="serif" style={{ fontSize: "clamp(14px, 1.4vw, 17px)", color: "#fdf6e3", margin: "0 0 14px", lineHeight: 1.65, fontStyle: "italic" }}>
+          "We don't stage; we observe. We don't direct; we follow your rhythm."
+        </p>
+        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+          <div style={{ width: 16, height: 1, background: "var(--gold)" }} />
+          <span style={{ fontSize: 9, letterSpacing: "0.38em", textTransform: "uppercase", color: "rgba(253,246,227,0.35)" }}>
+            House of Bliss
+          </span>
+        </div>
+      </div>
+    </Reveal> */}
+
+  </div>
+
+  {/* Two videos side by side — same row, minimal gap */}
+  <Reveal delay={80}>
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2 }}>
+      <video
+        autoPlay muted loop playsInline
+        src="https://res.cloudinary.com/dxcoo0eza/video/upload/v1774514626/PRAKRUTHI_SUDARSHAN_3_1_1_1_tfim5k_amist3_1_cxictn.webm"
+        style={{ width: "100%", height: 400, objectFit: "cover", display: "block" }}
+      />
+      <video
+        autoPlay muted loop playsInline
+        src="https://res.cloudinary.com/dxcoo0eza/video/upload/v1774504015/IMG_6272_g4wsdb.mp4"
+        style={{ width: "100%", height: 400, objectFit: "contain", display: "block" }}
+      />
+    </div>
+  </Reveal>
+
+</section>
 
       </div>
     </>

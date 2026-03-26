@@ -49,7 +49,7 @@ const cards = [
  
   {
     id: 4,
-    image: "/couple4/heronew.jpg",
+    image: "/couple4/anineha.png",
     title: "Ani & Neha",
     desc: "A vibrant beachside wedding full of joy.",
     date: "Apr 24, 2024",

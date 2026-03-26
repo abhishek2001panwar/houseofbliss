@@ -17,13 +17,13 @@ function VideoCard({ video, index, coupleSlug }: { video: Video; index: number; 
 
   // Skip company watermark at start
   const seekAndPlay = () => {
-    el.currentTime = 9;
+    el.currentTime = 15;
   };
 
-  // Loop back to 6s before the last 9 seconds (skips end card too)
+  // Loop back to 6s before the last 15 seconds (skips end card too)
   const handleTimeUpdate = () => {
-    if (el.duration && el.currentTime >= el.duration - 9) {
-      el.currentTime = 9;
+    if (el.duration && el.currentTime >= el.duration - 15) {
+      el.currentTime = 15;
     }
   };
 

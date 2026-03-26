@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from 'react'
 const topImages = {
   img1: "/mag/img1.png",
   img3: "/mag/img3.png",
-  img5: "/gallery/img13.png",
+  img5: "/couple5/img8.png",
 }
 
 // Row 1 landscape videos (replace img2 & img4)
@@ -25,14 +25,15 @@ const middleImages = [
 ]
 
 // Row 2 landscape video (replaces TextCard at col 3)
-const middleVideo = "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774332593/D_S_WEDDING_TEASER_1_1_ipnrf7_fe2izr.webm"
+const middleVideo = "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774496820/K_P_RECEPTION_TEASER_oqig1z.mov"
 
+// https://res.cloudinary.com/dxcoo0eza/video/upload/v1774332593/D_S_WEDDING_TEASER_1_1_ipnrf7_fe2izr.webm
 // Row 3 — unchanged
 const bottomImages = [
   "/gallery/img8.png",
   "/gallery/img9.png",
-  "/gallery/img10.png",
-  "/couple5/img8.png",
+  
+  
   "/gallery/img11.png",
 ]
 
@@ -195,11 +196,24 @@ export default function Magical() {
       </AnimatedRow>
 
       {/* ROW 3 — unchanged */}
-      <AnimatedRow className="hidden md:grid grid-cols-5 gap-px px-1 pb-px">
-        {bottomImages.map((src, i) => (
-          <GridImage key={`d-bot-${i}`} src={src} alt={`Wedding moment ${i + 10}`} delay={i * S} />
-        ))}
-      </AnimatedRow>
+      {/* ROW 3 — col1, col2: images | col3+4: video (2fr) | col5: image */}
+<AnimatedRow
+  className="hidden md:grid gap-px px-1 pb-px items-stretch"
+  style={{ gridTemplateColumns: '1fr 1fr 2fr 1fr' }}
+>
+  <GridImage src={bottomImages[0]} alt="Wedding moment 10" delay={0 * S} />
+  <GridImage src={bottomImages[1]} alt="Wedding moment 11" delay={1 * S} />
+  <GridVideo
+    src="https://res.cloudinary.com/dxcoo0eza/video/upload/v1774332593/D_S_WEDDING_TEASER_1_1_ipnrf7_fe2izr.webm"
+    delay={2 * S}
+    stretch
+  />
+  <GridImage src={bottomImages[2]} alt="Wedding moment 12" delay={3 * S} />
+</AnimatedRow>
+      {/* ROW 3 — unchanged */}
+
+
+
 
       {/* ════════ MOBILE (< md) ════════ */}
 
