@@ -56,7 +56,7 @@ function VideoCard({ src, delay = 0 }: VideoCardProps) {
         onClick={togglePlay}
         className="w-full cursor-pointer block"
         style={{
-          height:     'clamp(300px, 50vw, 600px)',
+          height:     'clamp(400px, 60vw, 700px)',
           objectFit:  'cover',
           objectPosition: 'center center',
           display:    'block',
@@ -170,13 +170,13 @@ function VideoCard({ src, delay = 0 }: VideoCardProps) {
 export default function VideoGrid() {
   return (
     <div className="w-full ">
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2" style={{ gap: 2 }}>
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2" style={{ gap: 6 }}>
         <VideoCard
           src="https://res.cloudinary.com/dxcoo0eza/video/upload/v1774946987/IMG_6301_lmqlyl.mp4"
           delay={0}
         />
         <VideoCard
-          src="https://res.cloudinary.com/dxcoo0eza/video/upload/v1774947211/WhatsApp_Video_2026-03-31_at_2.22.50_PM_grisje.mp4"
+          src="https://res.cloudinary.com/dxcoo0eza/video/upload/v1774948443/IMG_6303_gzcuhm.mov"
           delay={120}
         />
       </div>

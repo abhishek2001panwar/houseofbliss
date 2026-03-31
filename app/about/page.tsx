@@ -211,6 +211,23 @@ export default function AboutPage() {
           .hero-h1 { font-size: clamp(44px, 14vw, 90px) !important; }
           .section-p { padding: 52px 5% !important; }
         }
+          .video-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    width: 100%;
+  }
+  .video-row video {
+    width: 100%;
+    height: auto;
+    display: block;
+   
+  }
+  @media (max-width: 640px) {
+    .video-row {
+      grid-template-columns: 1fr;
+    }
+  }
       `}</style>
 
       <Navbar theme="dark" />
@@ -433,7 +450,7 @@ export default function AboutPage() {
         {/* ══════════════════════════════════════════════════════════════
     CLOSING — text row + two videos below
 ══════════════════════════════════════════════════════════════ */}
-<section className="section-p" style={{ padding: "98px 4%" }}>
+<section className="section-p" style={{ padding: "90px 1%" }}>
 
   {/* Top text row — two columns */}
   <div className="grid-closing" style={{ gap: "0 10px", marginBottom: 20 }}>
@@ -487,8 +504,19 @@ export default function AboutPage() {
       />
     </div>
   </Reveal> */}
-  <VideoGrid />
-
+  {/* <VideoGrid /> */}
+<Reveal delay={80}>
+  <div className="video-row">
+    <video
+      autoPlay muted loop playsInline
+      src="https://res.cloudinary.com/dxcoo0eza/video/upload/v1774946987/IMG_6301_lmqlyl.mp4"
+    />
+    <video
+      autoPlay muted loop playsInline
+      src="https://res.cloudinary.com/dxcoo0eza/video/upload/v1774948443/IMG_6303_gzcuhm.mov"
+    />
+  </div>
+</Reveal>
 </section>
 
       </div>
