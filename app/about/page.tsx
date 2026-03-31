@@ -14,6 +14,72 @@ function useScrollY() {
   }, []);
   return y;
 }
+// ── Video Card with controls ──────────────────────────────────────────────────
+function VideoCard({ src }: { src: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(true);
+  const [muted, setMuted] = useState(true);
+
+  const togglePlay = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) { v.play(); setPlaying(true); }
+    else          { v.pause(); setPlaying(false); }
+  };
+
+  const toggleMute = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = !v.muted;
+    setMuted(v.muted);
+  };
+
+  return (
+    <div className="video-wrapper">
+      <video
+        ref={videoRef}
+        autoPlay muted loop playsInline
+        src={src}
+      />
+      <div className="video-controls">
+        {/* Play / Pause */}
+        <button className="vid-btn" onClick={togglePlay} aria-label={playing ? "Pause" : "Play"}>
+          {playing ? (
+            /* Pause icon */
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" y="4" width="4" height="16" rx="1" />
+              <rect x="15" y="4" width="4" height="16" rx="1" />
+            </svg>
+          ) : (
+            /* Play icon */
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 4l14 8-14 8V4z" />
+            </svg>
+          )}
+        </button>
+
+        {/* Mute / Unmute */}
+        <button className="vid-btn" onClick={toggleMute} aria-label={muted ? "Unmute" : "Mute"}>
+          {muted ? (
+            /* Muted icon */
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+              <line x1="23" y1="9" x2="17" y2="15" stroke="#fff" strokeWidth="2" strokeLinecap="round" fill="none"/>
+              <line x1="17" y1="9" x2="23" y2="15" stroke="#fff" strokeWidth="2" strokeLinecap="round" fill="none"/>
+            </svg>
+          ) : (
+            /* Unmuted icon */
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07" stroke="#fff" strokeWidth="2" strokeLinecap="round" fill="none"/>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14" stroke="#fff" strokeWidth="2" strokeLinecap="round" fill="none"/>
+            </svg>
+          )}
+        </button>
+      </div>
+    </div>
+  );
+}
 
 // ── Intersection reveal ───────────────────────────────────────────────────────
 function useReveal(threshold = 0.1) {
@@ -211,22 +277,79 @@ export default function AboutPage() {
           .hero-h1 { font-size: clamp(44px, 14vw, 90px) !important; }
           .section-p { padding: 52px 5% !important; }
         }
-          .video-row {
+         .video-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2px;
     width: 100%;
   }
-  .video-row video {
+  @media (max-width: 640px) {
+    .video-row { grid-template-columns: 1fr; }
+  }
+  .video-wrapper {
+    position: relative;
     width: 100%;
-    height: auto;
-    display: block;
+    overflow: hidden;
    
   }
-  @media (max-width: 640px) {
-    .video-row {
-      grid-template-columns: 1fr;
-    }
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 10/9;  /* forces both to same height */
+  background: #000;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;  /* fills the box without distortion */
+}
+
+.video-controls {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.video-wrapper:hover .video-controls {
+  opacity: 1;
+  pointer-events: all;
+}
+  .vid-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.35);
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.15s ease, border-color 0.2s ease;
+    flex-shrink: 0;
+  }
+  .vid-btn:hover {
+    background: rgba(182,145,73,0.75);
+    border-color: rgba(182,145,73,0.8);
+    transform: scale(1.08);
+  }
+  .vid-btn svg {
+    width: 14px;
+    height: 14px;
+    fill: #fff;
   }
       `}</style>
 
@@ -505,16 +628,16 @@ export default function AboutPage() {
     </div>
   </Reveal> */}
   {/* <VideoGrid /> */}
+
+
 <Reveal delay={80}>
   <div className="video-row">
-    <video
-      autoPlay muted loop playsInline
-      src="https://res.cloudinary.com/dxcoo0eza/video/upload/v1774946987/IMG_6301_lmqlyl.mp4"
-    />
-    <video
-      autoPlay muted loop playsInline
-      src="https://res.cloudinary.com/dxcoo0eza/video/upload/v1774948443/IMG_6303_gzcuhm.mov"
-    />
+    {[
+      "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774951079/IMG_6305_ibxr11.mov",
+      "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774948443/IMG_6303_gzcuhm.mov"
+    ].map((src, i) => (
+      <VideoCard key={i} src={src} />
+    ))}
   </div>
 </Reveal>
 </section>
