@@ -43,12 +43,12 @@ function BlogCard({ item }: { item: (typeof BLOGS)[0] }) {
           position: "relative",
           overflow: "hidden",
           width: "100%",
-          aspectRatio: "4 / 3",
+          aspectRatio: "3 / 4",
           cursor: "pointer",
           flexShrink: 0,
         }}
       >
-        <Image width={1200} height={1300} src={item.img}
+        <Image width={1200} height={1600} src={item.img}
           alt={item.title}
           style={{
             position: "absolute",

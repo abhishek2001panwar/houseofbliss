@@ -1,3 +1,5 @@
+
+// 15 27 35
 export const BLOGS = [
   {
     id: 1,
@@ -1025,7 +1027,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
     id: 15,
     title: "The Choreography of Unscripted Love",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img15.png",
+    img: "/blog/img15.webp",
     content: 
     `<section class="px-[7%] py-24 max-w-4xl mx-auto">
 
@@ -1744,7 +1746,7 @@ From traditional rituals to modern romance, today’s photographers balance stor
     id: 26,
     title: "The Ultimate Guide to Cinematic Wedding Photography in Bengaluru",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/new4.png",
+    img: "/blog/new.png",
     content: `<section class="max-w-[900px] mx-auto px-[7%] py-10 text-[#5a5a4c] leading-relaxed">
 
 
@@ -1975,7 +1977,7 @@ Whether you’re planning an extravagant palace wedding, cool in a garden, or mo
     title:
       "Why House of Bliss Is a Trusted Name for Wedding Photography in Bengaluru",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img27.png",
+    img: "/blog/img27.webp",
     content: `<section class="max-w-4xl mx-auto px-6 py-20 text-[#1e1e1a]">
 
   <!-- Intro -->
@@ -2254,7 +2256,7 @@ Whether you’re planning an extravagant palace wedding, cool in a garden, or mo
     id: 31,
     title: "When Laughter Writes the Story",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img31.png",
+    img: "/blog/newcin.png",
     content:`<section class="max-w-4xl mx-auto px-6 py-20 text-[#1e1e1a]">
 
   <p class="font-neue-regular text-lg leading-relaxed mb-6">
@@ -2453,7 +2455,7 @@ Now booking engagement shoots for <strong>2025–26</strong>. Based in Bengaluru
     id: 34,
     title: "Top 5 Mistakes Couples Make When Planning Wedding Photography",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img34.png",
+    img: "/blog/img39.webp",
     content:`<section class="max-w-5xl mx-auto px-6 py-20 text-[#1e1e1a]">
 
   <p class="font-neue-regular text-lg leading-relaxed mb-6">
@@ -2548,7 +2550,7 @@ When choosing a cinematic photography wedding option for your intimate ceremony,
     title:
       "Why Cinematic Wedding Photography Works Beautifully for Intimate Weddings",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img35.png",
+    img: "/blog/img35.webp",
     content: `<section class="max-w-4xl mx-auto px-6 py-20 text-[#1e1e1a]">
 
   
@@ -2896,7 +2898,7 @@ Take the time to explore the House of Bliss and how they can make your wedding m
     id: 39,
     title: "Affordable Wedding Photography Without Compromising Quality",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img39.jpg",
+    img: "/blog/img34.webp",
     content: `<section class="max-w-4xl mx-auto px-6 py-20 text-[#1e1e1a]">
 
 <p class="font-neue-regular text-lg leading-relaxed mb-8">

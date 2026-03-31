@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Navbar from "../components/navbar";
 import { useEffect, useRef, useState } from "react";
+import VideoGrid from "../components/VideoGrid";
 
 // ── Scroll Y ──────────────────────────────────────────────────────────────────
 function useScrollY() {
@@ -472,20 +473,21 @@ export default function AboutPage() {
   </div>
 
   {/* Two videos side by side — same row, minimal gap */}
-  <Reveal delay={80}>
+  {/* <Reveal delay={80}>
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2 }}>
       <video
         autoPlay muted loop playsInline
         src="https://res.cloudinary.com/dxcoo0eza/video/upload/v1774514626/PRAKRUTHI_SUDARSHAN_3_1_1_1_tfim5k_amist3_1_cxictn.webm"
-        style={{ width: "100%", height: 400, objectFit: "cover", display: "block" }}
+        style={{ width: "100%", height: 600, objectFit: "cover", display: "block" }}
       />
       <video
         autoPlay muted loop playsInline
-        src="https://res.cloudinary.com/dxcoo0eza/video/upload/v1774504015/IMG_6272_g4wsdb.mp4"
-        style={{ width: "100%", height: 400, objectFit: "contain", display: "block" }}
+        src="https://res.cloudinary.com/dxcoo0eza/video/upload/v1774945798/WhatsApp_Video_2026-03-31_at_1.58.56_PM_oqgucl.mp4"
+        style={{ width: "100%", height: 600, objectFit: "cover", display: "block" }}
       />
     </div>
-  </Reveal>
+  </Reveal> */}
+  <VideoGrid />
 
 </section>
 
