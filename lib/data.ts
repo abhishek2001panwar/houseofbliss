@@ -612,7 +612,7 @@ This is why House of Bliss exists-to honor the sacred spaces between heartbeats,
     id: 10,
     title: "What Gods Remember",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    img: "/blog/img10.png",
+    img: "/blog/newone.png",
     content:`
     <article class="max-w-3xl mx-auto text-[#41453D] leading-relaxed">
 
