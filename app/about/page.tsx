@@ -633,8 +633,8 @@ export default function AboutPage() {
 <Reveal delay={80}>
   <div className="video-row">
     {[
-      "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774952050/IMG_6307_i3ftca.mp4",
-      "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774948443/IMG_6303_gzcuhm.mov"
+      "https://hsrtiles.in/wp-content/uploads/2026/04/IMG_6307_i3ftca.mp4",
+      "https://hsrtiles.in/wp-content/uploads/2026/04/IMG_6303_gzcuhm.mov"
     ].map((src, i) => (
       <VideoCard key={i} src={src} />
     ))}

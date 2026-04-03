@@ -12,8 +12,8 @@ const topImages = {
 
 // Row 1 landscape videos (replace img2 & img4)
 const topVideos = {
-  vid1: "https://res.cloudinary.com/degf7s9yn/video/upload/f_auto,q_auto/v1773890779/N_P_WEDDING_TEASER_1_w2tcan.mp4", // was img2
-  vid2: "https://res.cloudinary.com/degf7s9yn/video/upload/f_auto,q_auto/v1773893182/S_S_WED_TEASER_4K_ddkmuw.mp4", // was img4
+  vid1: "https://hsrtiles.in/wp-content/uploads/2026/04/N_P_WEDDING_TEASER_1_w2tcan-1.webm", // was img2
+  vid2: "https://hsrtiles.in/wp-content/uploads/2026/04/S_S_WED_TEASER_4K_ddkmuw-1.webm", // was img4
 }
 
 // Row 2 — original middleImages; TextCard replaced by video
@@ -25,7 +25,7 @@ const middleImages = [
 ]
 
 // Row 2 landscape video (replaces TextCard at col 3)
-const middleVideo = "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774496820/K_P_RECEPTION_TEASER_oqig1z.mov"
+const middleVideo = "https://hsrtiles.in/wp-content/uploads/2026/04/K_P_RECEPTION_TEASER_oqig1z-1.mov"
 
 // https://res.cloudinary.com/dxcoo0eza/video/upload/v1774332593/D_S_WEDDING_TEASER_1_1_ipnrf7_fe2izr.webm
 // Row 3 — unchanged
@@ -204,7 +204,7 @@ export default function Magical() {
   <GridImage src={bottomImages[0]} alt="Wedding moment 10" delay={0 * S} />
   <GridImage src={bottomImages[1]} alt="Wedding moment 11" delay={1 * S} />
   <GridVideo
-    src="https://res.cloudinary.com/dxcoo0eza/video/upload/v1774332593/D_S_WEDDING_TEASER_1_1_ipnrf7_fe2izr.webm"
+    src="https://hsrtiles.in/wp-content/uploads/2026/04/D_S_WEDDING_TEASER_1_1_ipnrf7_fe2izr.webm"
     delay={2 * S}
     stretch
   />

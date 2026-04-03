@@ -13,7 +13,7 @@ export const projects = [
     category: "We don't offer packages,  We create experiences just for you.  Each service flows from one core belief:  intention over expense,  meaning over magnificence.  Because honestly?  Your love story isn't like anyone else's.  Why should your wedding be? ",
     year: "2024",
     location: "Your Special Treatment ",
-    image: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773890779/N_P_WEDDING_TEASER_1_w2tcan.mp4",
+    image: "https://hsrtiles.in/wp-content/uploads/2026/04/N_P_WEDDING_TEASER_1_w2tcan.webm",
   },
   {
     id: " 02",
@@ -22,12 +22,12 @@ export const projects = [
     category: "Everything Perfect Here's what sets us apart: We have our own production house. While others coordinate vendors, we create magic in-house. From concept to completion, every element flows through our skilled artisans' hands. No miscommunication. No quality compromises. No vendor conflicts. Just seamless creation where your vision transforms into reality through our complete control of the process. Because when you own the entire journey, perfection isn't just possible - it's promised.",
     year: "2023",
     location: "Everything Under One Roof",
-    image: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773890770/S_N_TEASER_t3melm.mp4",
+    image: "https://hsrtiles.in/wp-content/uploads/2026/04/S_N_TEASER_1_tzeytd.webm",
   },
     {
     id: " 03",
       coupleSlug: "khajukathara-preetham",
-    image: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774496820/K_P_RECEPTION_TEASER_oqig1z.mov",
+    image: "https://hsrtiles.in/wp-content/uploads/2026/04/K_P_RECEPTION_TEASER_oqig1z.mov",
     title: "Khajukathara & Preetham",
     desc: "Bollywood glamour meets tradition in Mumbai.",
     date: "Aug 8, 2024",
@@ -42,7 +42,7 @@ export const projects = [
     year: "2023",
     location: "Mysore",
     category: "We don't just capture moments, we craft cinematic love stories.  Our films are more than videos; they're emotional journeys that let you relive the magic of your wedding day, over and over again.  With a blend of artistry and storytelling, we create films that are as unique as your love story, ensuring every glance, every smile, and every tear is beautifully preserved for a lifetime.",
-    image:"https://res.cloudinary.com/dttelbpwy/video/upload/v1774295776/PRAKRUTHI_SUDARSHAN_2_1_tbzgwy_adwslh.webm",
+    image:"https://hsrtiles.in/wp-content/uploads/2026/04/PRAKRUTHI_SUDARSHAN_2_1_tbzgwy.webm",
   },
 
   {
@@ -62,7 +62,7 @@ What we love creating together:
 <br/>● Decor that honors tradition while embracing your personal style`,
     year: "2023",
     location: "When Your Dreams Breathe",
-    image: "https://res.cloudinary.com/degf7s9yn/video/upload/v1773894618/D_S_WEDDING_TEASER_1_1_ipnrf7.mp4",
+    image: "https://hsrtiles.in/wp-content/uploads/2026/04/D_S_WEDDING_TEASER_1_1_ipnrf7.webm",
   },
 
   

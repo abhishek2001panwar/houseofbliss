@@ -27,37 +27,37 @@ const films: Couple[] = [
       {
         slug: "nithesh-poojitha-1",
         category: "Haldi Teaser",
-        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774294904/N_P_haldi_teaser_2_rbwle0_w26pne.webm",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/N_P_haldi_teaser_2_rbwle0.webm",
       },
       {
         slug: "nithesh-poojitha-2",
         category: "Sangeet Teaser",
-        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774294905/N_P_sangeet_teaser_1_rxfzuq_x0nth9.webm",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/N_P_sangeet_teaser_1_rxfzuq.webm",
       },
       {
         slug: "nithesh-poojitha-3",
         category: "Reception Teaser",
-        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774294903/N_P_RECEPTION_TEASER_1_oldjjc_kjt6kw.webm",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/N_P_RECEPTION_TEASER_1_oldjjc.webm",
       },
       {
         slug: "nithesh-poojitha-4",
         category: "Wedding Teaser",
-        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774294904/N_P_WEDDING_TEASER_1_w2tcan_hxipys.webm",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/N_P_WEDDING_TEASER_1_w2tcan.webm",
       },
       {
         slug: "nithesh-poojitha-5",
         category: "Reception Highlights",
-        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774506361/Nitish_Poojitha_Reception_Highlights_V.2_1_ljccwk.mp4",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/Nitish_Poojitha_Reception_Highlights_V.2_2_zqpo0z.mp4",
       },
       {
         slug: "nithesh-poojitha-6",
         category: "Wedding Hightlights",
-        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774506355/Nitish_Poojitha_Wedding_Highlights_V_1_gknrsq.mp4",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/Nitish_Poojitha_Wedding_Highlights_V.2_1_doo98u.mp4",
       },
       {
         slug: "nithesh-poojitha-7",
         category: "Sangeet Highlights",
-        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774506356/Nitish_Poojitha_Sangeet_Highlights_V.2_1_ebuwn1.mp4",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/d1a6df1b-bd65-4f61-867f-0dfd841c1902_jngbyq.mp4",
       },
     ],
   },
@@ -72,7 +72,7 @@ const films: Couple[] = [
       {
         slug: "khajukathara-preetham-1",
         category: "wedding highlights",
-        src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774496820/K_P_RECEPTION_TEASER_oqig1z.mov",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/K_P_RECEPTION_TEASER_oqig1z.mov",
       },
      
 
@@ -89,12 +89,12 @@ const films: Couple[] = [
       {
         slug: "prakruthi-sudarshan-1",
         category: "Wedding Teaser",
-        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774295776/PRAKRUTHI_SUDARSHAN_2_1_tbzgwy_adwslh.webm",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/PRAKRUTHI_SUDARSHAN_2_1_tbzgwy.webm",
       },
       {
         slug: "prakruthi-sudarshan-2",
         category: "wedding highlights",
-        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774295783/PRAKRUTHI_SUDARSHAN_3_1_1_1_tfim5k_amist3.webm",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/PRAKRUTHI_SUDARSHAN_3_1_1_1_tfim5k.webm",
       },
     ],
   },
@@ -107,47 +107,47 @@ const films: Couple[] = [
       {
         slug: "sameeksha-shravan-1",
         category: "Reception Teaser",
-        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774295877/S_S_RECEPTION_TEASER_zsf5kg_gjku1h.webm",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/S_S_RECEPTION_TEASER_zsf5kg.webm",
       },
       {
         slug: "sameeksha-shravan-2",
         category: "Wedding Teaser",
-        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774295877/S_S_WED_TEASER_4K_ddkmuw_flwygu.webm",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/S_S_WED_TEASER_4K_ddkmuw.webm",
       },
       {
         slug: "sameeksha-shravan-3",
         category: "Varapooje Teaser",
-        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774295878/S_S_varapooje_teaser-_jzg3dh_sherjs.webm",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/S_S_varapooje_teaser-_jzg3dh.webm",
       },
       {
         slug: "sameeksha-shravan-4",
         category: "Mehndi highlights",
-        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774295891/SAMEEKSHA_S_M_S_TEASER_ig5yr5_c2vmeb.webm",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/SAMEEKSHA_S_M_S_TEASER_ig5yr5.webm",
       },
       {
         slug: "sameeksha-shravan-5",
         category: "Pre-wedding Shoot",
-        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774295883/SAMEEKSHA_SHRAVAN_SAVE_THE_DATE_hssstd_qdeqyd.webm",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/SAMEEKSHA_SHRAVAN_SAVE_THE_DATE_hssstd.webm",
       },
       {
         slug: "sameeksha-shravan-6",
         category: "Haldi Teaser",
-        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774295884/SAMEEKASHA_HALDI_TEASER_tphgkt_unfbu9.webm",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/SAMEEKASHA_HALDI_TEASER_tphgkt.webm",
       },
        {
         slug: "sameeksha-shravan-7",
         category: "Haldi Highlights",
-        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774295938/SAMEEKSHA_HALDI_HIGHLIGHTS_1_medy2l_oqjmph.mp4",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/SAMEEKSHA_HALDI_HIGHLIGHTS_1_medy2l.mp4",
       },
          {
         slug: "sameeksha-shravan-8",
         category: "Reception Highlights",
-        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774295944/b0c6cb25-8c69-49d1-a31d-bf037f37ee68_etcrpz_wockoz.mp4",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/b0c6cb25-8c69-49d1-a31d-bf037f37ee68_etcrpz.mp4",
       },
         {
         slug: "sameeksha-shravan-9",
         category: "Wedding Highlights",
-        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774295940/dfd5fefe-cc3d-4625-8335-c490810de454_pzktaz_wvarj3.mp4",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/dfd5fefe-cc3d-4625-8335-c490810de454_pzktaz.mp4",
       },
 
     ],
@@ -161,17 +161,17 @@ const films: Couple[] = [
       {
         slug: "shraddha-neelgriv-1",
         category: "Haldi Teaser",
-        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774296197/S_N_HALDI_TEASER_qwnjfv_w3i6pu.webm",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/S_N_HALDI_TEASER_qwnjfv.webm",
       },
       {
         slug: "shraddha-neelgriv-2",
         category: "Wedding Teaser",
-        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774296194/S_N_WEDDING_TEASER_wee1jv_jjpjpm.webm",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/S_N_WEDDING_TEASER_wee1jv.webm",
       },
       {
         slug: "shraddha-neelgriv-3",
         category: "Wedding highlights",
-        src: "https://res.cloudinary.com/dttelbpwy/video/upload/v1774296192/S_N_TEASER_1_tzeytd_ngxol6.webm",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/S_N_TEASER_1_tzeytd.webm",
       },
     ],
   },
@@ -184,42 +184,42 @@ const films: Couple[] = [
       {
         slug: "dheeraj-sakshi-1",
         category: "Wedding Teaser",
-        src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774332593/D_S_WEDDING_TEASER_1_1_ipnrf7_fe2izr.webm",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/D_S_WEDDING_TEASER_1_1_ipnrf7.webm",
       },
       {
         slug: "dheeraj-sakshi-2",
         category: "Pre-Wedding highlights",
-        src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774332589/S_D_SAVE_THE_DATE_REEL_-_sznuem_f9e5d2.webm",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/S_D_SAVE_THE_DATE_REEL_-_sznuem.webm",
       },
       {
         slug: "dheeraj-sakshi-3",
         category: "Wedding highlights",
-        src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774332594/SHAKSHI_REEL_TEASER_1_pqclys_pvo5hf.webm",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/SHAKSHI_REEL_TEASER_1_pqclys.webm",
       },
       {
         slug: "dheeraj-sakshi-4",
         category: "Haldi Teaser",
-        src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774332590/DHEERAJ_HALDI_TEASER_1_hvaxuo_zefiuy.webm",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/DHEERAJ_HALDI_TEASER_1_hvaxuo.webm",
       },
         {
         slug: "dheeraj-sakshi-5",
         category: "Haldi & Sangeet highlights",
-        src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774332654/e3d818c8-7bad-41ab-b89b-7805f1bce796_vhxe5g_a7rtfp.mp4",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/e3d818c8-7bad-41ab-b89b-7805f1bce796_vhxe5g.mp4",
       },
         {
         slug: "dheeraj-sakshi-6",
         category: "Pre-Wedding Teaser",
-        src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774332641/D_S_pre-wedding_TEASER_1_khdmap_fh7wur.mp4",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/D_S_pre-wedding_TEASER_1_khdmap.mp4",
       },
         {
         slug: "dheeraj-sakshi-7",
         category: "Reception higlights",
-        src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774332636/0659a570-24c3-4315-892d-ef840a45a29c_figclx_gm31o7.mp4",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/0659a570-24c3-4315-892d-ef840a45a29c_figclx.mp4",
       },
        {
         slug: "dheeraj-sakshi-8",
         category: "Mehndi Highlights",
-        src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774332645/8c87b673-c68a-4fbf-8484-bd2ef54fcf2b_pfw6jh_xdheot.mp4",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/8c87b673-c68a-4fbf-8484-bd2ef54fcf2b_pfw6jh.mp4",
       },
     ],
   },
@@ -232,7 +232,7 @@ const films: Couple[] = [
       {
         slug: "nitin-rachana-1",
         category: "Wedding highlights",
-        src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774332929/NITIN_RACHANA_SAVE_THE_DATE-_fcyfmo_yhbdrn.webm",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/NITIN_RACHANA_SAVE_THE_DATE-_fcyfmo.webm",
       },
       // {
       //   slug: "nitin-rachana-2",
@@ -250,22 +250,22 @@ const films: Couple[] = [
       {
         slug: "vidhya-pavan-1",
         category: "Haldi highlights",
-        src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774333019/HALDI_TEASER_teaser_m4hqdx_rdcpx3.webm",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/HALDI_TEASER_teaser_m4hqdx.webm",
       },
       {
         slug: "vidhya-pavan-2",
         category: "Mehndi Highlights",
-        src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774333025/MEHNDI_TEASER_yh0rg1_aawizy.webm",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/MEHNDI_TEASER_yh0rg1.webm",
       },
       {
         slug: "vidhya-pavan-3",
         category: "Wedding highlights",
-        src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774333037/PAVAN_VIDYA_COMBINE_REEL_jll8rz_mrmvcg.webm",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/PAVAN_VIDYA_COMBINE_REEL_jll8rz.webm",
       },
       {
         slug: "vidhya-pavan-4",
         category: "",
-        src: "https://res.cloudinary.com/dxcoo0eza/video/upload/v1774333105/Couple_Singles_V.2_1_nedf5n_fzue19.mp4",
+        src: "https://hsrtiles.in/wp-content/uploads/2026/04/Couple_Singles_V.2_1_nedf5n.mp4",
       },
     ],
   },

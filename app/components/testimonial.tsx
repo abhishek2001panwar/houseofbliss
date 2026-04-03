@@ -2,8 +2,8 @@
 import React, { useRef } from 'react'
 
 const videos = [
-  "https://res.cloudinary.com/dttelbpwy/video/upload/v1774296551/testimonial2_afgwa4_e9rbgb.mp4",
-  "https://res.cloudinary.com/dttelbpwy/video/upload/v1774296571/testimonial1_jsfz4e_bu7yl0.mp4",
+  "https://hsrtiles.in/wp-content/uploads/2026/04/testimonial2_afgwa4_e9rbgb.mp4",
+  "https://hsrtiles.in/wp-content/uploads/2026/04/testimonial1_jsfz4e_bu7yl0.mp4",
 ];
 
 /* ─── VideoPlayer ─── */
